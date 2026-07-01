@@ -1,0 +1,22 @@
+name: TD Change Monitor
+
+on:
+  schedule:
+    - cron: "0 23 * * *"  # JST 8:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show test message
+        run: |
+          echo "TD Change Monitor started"
+          date
