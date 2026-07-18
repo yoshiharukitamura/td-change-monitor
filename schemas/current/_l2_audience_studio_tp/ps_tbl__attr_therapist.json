@@ -1,0 +1,217 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_name",
+      "description": null,
+      "name": "therapist_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "professional_name",
+      "description": null,
+      "name": "professional_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "division",
+      "description": null,
+      "name": "division",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "age",
+      "description": null,
+      "name": "age",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "pref_name",
+      "description": null,
+      "name": "pref_name",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "area_name",
+      "description": null,
+      "name": "area_name",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "old_therapist_id",
+      "description": null,
+      "name": "old_therapist_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "introducer_therapist_id",
+      "description": null,
+      "name": "introducer_therapist_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "contract_type",
+      "description": null,
+      "name": "contract_type",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "first_entry_datetime",
+      "description": null,
+      "name": "first_entry_datetime",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "hope_property_id_1",
+      "description": null,
+      "name": "hope_property_id_1",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "hope_property_id_2",
+      "description": null,
+      "name": "hope_property_id_2",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "work_saturday",
+      "description": null,
+      "name": "work_saturday",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "work_sunday",
+      "description": null,
+      "name": "work_sunday",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "work_holiday",
+      "description": null,
+      "name": "work_holiday",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "week_days",
+      "description": null,
+      "name": "week_days",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "timezone",
+      "description": null,
+      "name": "timezone",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "min_applicant_reqenst",
+      "description": null,
+      "name": "min_applicant_reqenst",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "avg_applicant_reqenst",
+      "description": null,
+      "name": "avg_applicant_reqenst",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "max_applicant_reqenst",
+      "description": null,
+      "name": "max_applicant_reqenst",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "max_nuturing_reqenst",
+      "description": null,
+      "name": "max_nuturing_reqenst",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "tel01",
+      "description": null,
+      "name": "tel01",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "tel02",
+      "description": null,
+      "name": "tel02",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "tel03",
+      "description": null,
+      "name": "tel03",
+      "position": 29,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "ps_tbl__attr_therapist",
+  "table_id": "297466191"
+}

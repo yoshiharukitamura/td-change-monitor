@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "week",
+      "description": null,
+      "name": "week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "f",
+      "description": null,
+      "name": "f",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no_last_order",
+      "description": null,
+      "name": "shop_no_last_order",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "shop_name_last_order",
+      "description": null,
+      "name": "shop_name_last_order",
+      "position": 5,
+      "type": "string"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "mktg_customer_list_rf",
+  "table_id": "234958471"
+}

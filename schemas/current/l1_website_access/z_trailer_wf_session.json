@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "project_id",
+      "description": null,
+      "name": "project_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "wf_name",
+      "description": null,
+      "name": "wf_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "attempt_id",
+      "description": null,
+      "name": "attempt_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "session_time",
+      "description": null,
+      "name": "session_time",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "is_success",
+      "description": null,
+      "name": "is_success",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "is_done",
+      "description": null,
+      "name": "is_done",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "is_cancel",
+      "description": null,
+      "name": "is_cancel",
+      "position": 6,
+      "type": "long"
+    }
+  ],
+  "database": "l1_website_access",
+  "table": "z_trailer_wf_session",
+  "table_id": "16633727"
+}

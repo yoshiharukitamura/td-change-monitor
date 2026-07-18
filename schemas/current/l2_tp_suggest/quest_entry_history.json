@@ -1,0 +1,147 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_entry_history_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_time_slot_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "property_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "start_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "end_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_entry_history_type",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "operate_datetime",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 18,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 19,
+      "type": "long"
+    }
+  ],
+  "database": "l2_tp_suggest",
+  "table": "quest_entry_history",
+  "table_id": "214544857"
+}

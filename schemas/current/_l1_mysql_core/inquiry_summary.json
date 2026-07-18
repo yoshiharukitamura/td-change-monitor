@@ -1,0 +1,231 @@
+{
+  "columns": [
+    {
+      "alias": "inquiry_summary_id",
+      "description": null,
+      "name": "inquiry_summary_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "accept_datetime",
+      "description": null,
+      "name": "accept_datetime",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "main_category",
+      "description": null,
+      "name": "main_category",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "category",
+      "description": null,
+      "name": "category",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "inquiry_type",
+      "description": null,
+      "name": "inquiry_type",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "organization_code",
+      "description": null,
+      "name": "organization_code",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "staff_id",
+      "description": null,
+      "name": "staff_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "member_code",
+      "description": null,
+      "name": "member_code",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "member_name",
+      "description": null,
+      "name": "member_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "member_tel",
+      "description": null,
+      "name": "member_tel",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "member_email",
+      "description": null,
+      "name": "member_email",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "data",
+      "description": null,
+      "name": "data",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "member_correspondence_code",
+      "description": null,
+      "name": "member_correspondence_code",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "member_correspondence_status",
+      "description": null,
+      "name": "member_correspondence_status",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "member_correspondence_datetime",
+      "description": null,
+      "name": "member_correspondence_datetime",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_correspondence_status",
+      "description": null,
+      "name": "therapist_correspondence_status",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_correspondence_datetime",
+      "description": null,
+      "name": "therapist_correspondence_datetime",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "area_code",
+      "description": null,
+      "name": "area_code",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "pref_code",
+      "description": null,
+      "name": "pref_code",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 29,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 31,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "inquiry_summary",
+  "table_id": "297408284"
+}

@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "shop_id",
+      "description": null,
+      "name": "shop_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "pref_name",
+      "description": null,
+      "name": "pref_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "latest_bed_num",
+      "description": null,
+      "name": "latest_bed_num",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "memo",
+      "description": null,
+      "name": "memo",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 8,
+      "type": "string"
+    }
+  ],
+  "database": "l2_demand_forecast_auto",
+  "table": "spreadsheets_shop_master",
+  "table_id": "107264876"
+}

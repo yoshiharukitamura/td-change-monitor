@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "Name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name2",
+      "description": null,
+      "name": "Name2",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "latest_order_date",
+      "description": null,
+      "name": "latest_order_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "order_rank_in_one_year",
+      "description": null,
+      "name": "order_rank_in_one_year",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "reviews_rank",
+      "description": null,
+      "name": "reviews_rank",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "reviews_rate",
+      "description": null,
+      "name": "reviews_rate",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "shopname2",
+      "description": null,
+      "name": "shopname2",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "todaymonth",
+      "description": null,
+      "name": "todaymonth",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "today",
+      "description": null,
+      "name": "today",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "todaydate",
+      "description": null,
+      "name": "todaydate",
+      "position": 11,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "low_review_follow_f0_1",
+  "table_id": "49634135"
+}

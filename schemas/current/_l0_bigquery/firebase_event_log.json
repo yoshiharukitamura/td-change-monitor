@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "user_pseudo_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "table_suffix",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "event_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "ga_session_id",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "event_timestamp_micros",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "event_unixtime",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "event_name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "event_params",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "user_properties",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "device",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "geo",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "traffic_source",
+      "position": 11,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_bigquery",
+  "table": "firebase_event_log",
+  "table_id": "212560135"
+}

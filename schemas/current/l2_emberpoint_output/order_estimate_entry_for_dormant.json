@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "estimate_order_date",
+      "description": null,
+      "name": "estimate_order_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "diff_days",
+      "description": null,
+      "name": "diff_days",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "dormant_group",
+      "description": null,
+      "name": "dormant_group",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_date",
+      "description": null,
+      "name": "last_order_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "last_reserve_date",
+      "description": null,
+      "name": "last_reserve_date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "journey_entry_date",
+      "description": null,
+      "name": "journey_entry_date",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "order_count",
+      "description": null,
+      "name": "order_count",
+      "position": 7,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "order_estimate_entry_for_dormant",
+  "table_id": "148867817"
+}

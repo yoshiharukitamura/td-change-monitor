@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "professional_name",
+      "description": null,
+      "name": "professional_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "mst_timetable_id",
+      "description": null,
+      "name": "mst_timetable_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 10,
+      "type": "string"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "cls_dwb_slot_raw",
+  "table_id": "297444619"
+}

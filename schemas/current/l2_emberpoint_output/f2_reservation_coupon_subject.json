@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "today",
+      "description": null,
+      "name": "today",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "weekday",
+      "description": null,
+      "name": "weekday",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "new_end_date",
+      "description": null,
+      "name": "new_end_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "new_end_date_day",
+      "description": null,
+      "name": "new_end_date_day",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "target_flag",
+      "description": null,
+      "name": "target_flag",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "f2_reservation_coupon_subject",
+  "table_id": "72764400"
+}

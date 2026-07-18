@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reward_item_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "reward_item_customers",
+  "table_id": "230600386"
+}

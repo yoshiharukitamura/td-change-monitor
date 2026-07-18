@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_customer_id",
+      "description": null,
+      "name": "cstm_01_customer_id",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_email",
+      "description": null,
+      "name": "cstm_01_email",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_bingo_complete_cnt",
+      "description": null,
+      "name": "cstm_01_bingo_complete_cnt",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__attr_custom_list_01",
+  "table_id": "297473494"
+}

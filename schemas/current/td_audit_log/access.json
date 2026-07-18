@@ -1,0 +1,476 @@
+{
+  "columns": [
+    {
+      "alias": "account_id",
+      "description": null,
+      "name": "account_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "affected_user",
+      "description": null,
+      "name": "affected_user",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "affected_user_id",
+      "description": null,
+      "name": "affected_user_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "amount",
+      "description": null,
+      "name": "amount",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "apikey_type",
+      "description": null,
+      "name": "apikey_type",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "attribute_name",
+      "description": null,
+      "name": "attribute_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "bytesize",
+      "description": null,
+      "name": "bytesize",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "caller_account_id",
+      "description": null,
+      "name": "caller_account_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "caller_user_id",
+      "description": null,
+      "name": "caller_user_id",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "count",
+      "description": null,
+      "name": "count",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "diagnostic_messages",
+      "description": null,
+      "name": "diagnostic_messages",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "docker_image",
+      "description": null,
+      "name": "docker_image",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "event_detail",
+      "description": null,
+      "name": "event_detail",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "event_name",
+      "description": null,
+      "name": "event_name",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "event_result",
+      "description": null,
+      "name": "event_result",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "expires_at",
+      "description": null,
+      "name": "expires_at",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "format",
+      "description": null,
+      "name": "format",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "ip_address",
+      "description": null,
+      "name": "ip_address",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "is_scheduled",
+      "description": null,
+      "name": "is_scheduled",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "job",
+      "description": null,
+      "name": "job",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "job_type",
+      "description": null,
+      "name": "job_type",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "mail_bcc",
+      "description": null,
+      "name": "mail_bcc",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "mail_cc",
+      "description": null,
+      "name": "mail_cc",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "mail_delivery",
+      "description": null,
+      "name": "mail_delivery",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "mail_from",
+      "description": null,
+      "name": "mail_from",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "mail_subject",
+      "description": null,
+      "name": "mail_subject",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "mail_to",
+      "description": null,
+      "name": "mail_to",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "new_value",
+      "description": null,
+      "name": "new_value",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "old_value",
+      "description": null,
+      "name": "old_value",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "policy_id",
+      "description": null,
+      "name": "policy_id",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "primary_keys",
+      "description": null,
+      "name": "primary_keys",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": "query_text",
+      "description": null,
+      "name": "query_text",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": "reason",
+      "description": null,
+      "name": "reason",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "requested_http_verb",
+      "description": null,
+      "name": "requested_http_verb",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "requested_path_info",
+      "description": null,
+      "name": "requested_path_info",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": "required_visibility",
+      "description": null,
+      "name": "required_visibility",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": "resource_id",
+      "description": null,
+      "name": "resource_id",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": "resource_name",
+      "description": null,
+      "name": "resource_name",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": "resource_namespace",
+      "description": null,
+      "name": "resource_namespace",
+      "position": 39,
+      "type": "string"
+    },
+    {
+      "alias": "resource_path",
+      "description": null,
+      "name": "resource_path",
+      "position": 40,
+      "type": "string"
+    },
+    {
+      "alias": "resource_type",
+      "description": null,
+      "name": "resource_type",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": "revision_created_user",
+      "description": null,
+      "name": "revision_created_user",
+      "position": 42,
+      "type": "string"
+    },
+    {
+      "alias": "scheduled_time",
+      "description": null,
+      "name": "scheduled_time",
+      "position": 43,
+      "type": "long"
+    },
+    {
+      "alias": "session_id",
+      "description": null,
+      "name": "session_id",
+      "position": 44,
+      "type": "long"
+    },
+    {
+      "alias": "setting_name",
+      "description": null,
+      "name": "setting_name",
+      "position": 45,
+      "type": "string"
+    },
+    {
+      "alias": "size",
+      "description": null,
+      "name": "size",
+      "position": 46,
+      "type": "long"
+    },
+    {
+      "alias": "source_account_id",
+      "description": null,
+      "name": "source_account_id",
+      "position": 47,
+      "type": "long"
+    },
+    {
+      "alias": "source_user_email",
+      "description": null,
+      "name": "source_user_email",
+      "position": 48,
+      "type": "string"
+    },
+    {
+      "alias": "source_user_id",
+      "description": null,
+      "name": "source_user_id",
+      "position": 49,
+      "type": "long"
+    },
+    {
+      "alias": "target_account_id",
+      "description": null,
+      "name": "target_account_id",
+      "position": 50,
+      "type": "long"
+    },
+    {
+      "alias": "target_connection",
+      "description": null,
+      "name": "target_connection",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": "target_project",
+      "description": null,
+      "name": "target_project",
+      "position": 52,
+      "type": "string"
+    },
+    {
+      "alias": "target_resource_id",
+      "description": null,
+      "name": "target_resource_id",
+      "position": 53,
+      "type": "long"
+    },
+    {
+      "alias": "target_resource_name",
+      "description": null,
+      "name": "target_resource_name",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": "target_resource_namespace",
+      "description": null,
+      "name": "target_resource_namespace",
+      "position": 55,
+      "type": "string"
+    },
+    {
+      "alias": "target_table",
+      "description": null,
+      "name": "target_table",
+      "position": 56,
+      "type": "string"
+    },
+    {
+      "alias": "target_user_email",
+      "description": null,
+      "name": "target_user_email",
+      "position": 57,
+      "type": "string"
+    },
+    {
+      "alias": "target_user_id",
+      "description": null,
+      "name": "target_user_id",
+      "position": 58,
+      "type": "long"
+    },
+    {
+      "alias": "target_workflow",
+      "description": null,
+      "name": "target_workflow",
+      "position": 59,
+      "type": "string"
+    },
+    {
+      "alias": "task_created_at",
+      "description": null,
+      "name": "task_created_at",
+      "position": 60,
+      "type": "long"
+    },
+    {
+      "alias": "task_duration",
+      "description": null,
+      "name": "task_duration",
+      "position": 61,
+      "type": "long"
+    },
+    {
+      "alias": "task_exit_code",
+      "description": null,
+      "name": "task_exit_code",
+      "position": 62,
+      "type": "long"
+    },
+    {
+      "alias": "task_finished_at",
+      "description": null,
+      "name": "task_finished_at",
+      "position": 63,
+      "type": "long"
+    },
+    {
+      "alias": "user_email",
+      "description": null,
+      "name": "user_email",
+      "position": 64,
+      "type": "string"
+    },
+    {
+      "alias": "user_id",
+      "description": null,
+      "name": "user_id",
+      "position": 65,
+      "type": "long"
+    },
+    {
+      "alias": "visibility",
+      "description": null,
+      "name": "visibility",
+      "position": 66,
+      "type": "string"
+    }
+  ],
+  "database": "td_audit_log",
+  "table": "access",
+  "table_id": "12467495"
+}

@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "is_repeat",
+      "description": null,
+      "name": "is_repeat",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "r_month",
+      "description": null,
+      "name": "r_month",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "f",
+      "description": null,
+      "name": "f",
+      "position": 8,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_customer_rf_2",
+  "table_id": "213040249"
+}

@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "mailflg_lastday",
+      "description": null,
+      "name": "mailflg_lastday",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "mailflg",
+      "description": null,
+      "name": "mailflg",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "dt",
+      "description": null,
+      "name": "dt",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 4,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "mail_opt_out_customers",
+  "table_id": "65692934"
+}

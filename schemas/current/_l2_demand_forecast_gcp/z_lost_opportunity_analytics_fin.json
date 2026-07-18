@@ -1,0 +1,133 @@
+{
+  "columns": [
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_no",
+      "description": null,
+      "name": "mst_shop_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_name",
+      "description": null,
+      "name": "mst_shop_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "pref_id",
+      "description": null,
+      "name": "pref_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "pref_name",
+      "description": null,
+      "name": "pref_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "pref_sort_order",
+      "description": null,
+      "name": "pref_sort_order",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "area_id",
+      "description": null,
+      "name": "area_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "area_name",
+      "description": null,
+      "name": "area_name",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "area_sort_order",
+      "description": null,
+      "name": "area_sort_order",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "split_count",
+      "description": null,
+      "name": "split_count",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_dow",
+      "description": null,
+      "name": "reservation_dow",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_hour",
+      "description": null,
+      "name": "reservation_hour",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "loss_opps_tmp",
+      "description": null,
+      "name": "loss_opps_tmp",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "loss_opps_fin",
+      "description": null,
+      "name": "loss_opps_fin",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": "date_diff_reserve_treat",
+      "description": null,
+      "name": "date_diff_reserve_treat",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_hour",
+      "description": null,
+      "name": "treatment_hour",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "treatment_dt",
+      "description": null,
+      "name": "treatment_dt",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "lost_opportunity_rate",
+      "description": null,
+      "name": "lost_opportunity_rate",
+      "position": 17,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "z_lost_opportunity_analytics_fin",
+  "table_id": "237588919"
+}

@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": "model",
+      "description": null,
+      "name": "model",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "short__forecast_value",
+      "description": null,
+      "name": "short__forecast_value",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": "short__treatment_value",
+      "description": null,
+      "name": "short__treatment_value",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": "short__vs_forecast",
+      "description": null,
+      "name": "short__vs_forecast",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": "surplus__forecast_value",
+      "description": null,
+      "name": "surplus__forecast_value",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": "surplus__treatment_value",
+      "description": null,
+      "name": "surplus__treatment_value",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": "surplus__vs_forecast",
+      "description": null,
+      "name": "surplus__vs_forecast",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": "appro__forecast_value",
+      "description": null,
+      "name": "appro__forecast_value",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": "appro__treatment_value",
+      "description": null,
+      "name": "appro__treatment_value",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "appro__vs_forecast",
+      "description": null,
+      "name": "appro__vs_forecast",
+      "position": 11,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "analytics_demand_forecast_variance",
+  "table_id": "273965050"
+}

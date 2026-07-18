@@ -1,0 +1,126 @@
+{
+  "columns": [
+    {
+      "alias": "yow",
+      "description": null,
+      "name": "yow",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "woy",
+      "description": null,
+      "name": "woy",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no_last_order",
+      "description": null,
+      "name": "shop_no_last_order",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "shop_name_last_order",
+      "description": null,
+      "name": "shop_name_last_order",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "customer_count",
+      "description": null,
+      "name": "customer_count",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "order_customer_count",
+      "description": null,
+      "name": "order_customer_count",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_customer_count",
+      "description": null,
+      "name": "forecast_customer_count",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_order_customer_count",
+      "description": null,
+      "name": "forecast_order_customer_count",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "order_count",
+      "description": null,
+      "name": "order_count",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_hours",
+      "description": null,
+      "name": "treatment_hours",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": "uriage1",
+      "description": null,
+      "name": "uriage1",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "prev_y_customer_count",
+      "description": null,
+      "name": "prev_y_customer_count",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "prev_y_order_customer_count",
+      "description": null,
+      "name": "prev_y_order_customer_count",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "next_w_customer_count",
+      "description": null,
+      "name": "next_w_customer_count",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "next_w_order_customer_count",
+      "description": null,
+      "name": "next_w_order_customer_count",
+      "position": 16,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "mktg_customer_flow_rw",
+  "table_id": "234958477"
+}

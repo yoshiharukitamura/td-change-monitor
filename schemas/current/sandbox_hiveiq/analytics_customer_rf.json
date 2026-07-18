@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "is_repeat",
+      "description": null,
+      "name": "is_repeat",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "r_month",
+      "description": null,
+      "name": "r_month",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "f",
+      "description": null,
+      "name": "f",
+      "position": 5,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_customer_rf",
+  "table_id": "297476181"
+}

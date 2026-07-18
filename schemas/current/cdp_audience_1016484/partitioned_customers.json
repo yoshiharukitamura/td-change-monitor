@@ -1,0 +1,623 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "customer_name",
+      "description": null,
+      "name": "customer_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "membership_no",
+      "description": null,
+      "name": "membership_no",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "age",
+      "description": null,
+      "name": "age",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "birth_date",
+      "description": null,
+      "name": "birth_date",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "birth_month",
+      "description": null,
+      "name": "birth_month",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "membership_channel",
+      "description": null,
+      "name": "membership_channel",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "membership_senior",
+      "description": null,
+      "name": "membership_senior",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "membership_royal",
+      "description": null,
+      "name": "membership_royal",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "new_or_repeat",
+      "description": null,
+      "name": "new_or_repeat",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "registered_date_datetime",
+      "description": null,
+      "name": "registered_date_datetime",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "hex_email",
+      "description": null,
+      "name": "hex_email",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "format_phone_no",
+      "description": null,
+      "name": "format_phone_no",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "hex_format_phone_no",
+      "description": null,
+      "name": "hex_format_phone_no",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "prefecture",
+      "description": null,
+      "name": "prefecture",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "push_permission",
+      "description": null,
+      "name": "push_permission",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "mail_permission",
+      "description": null,
+      "name": "mail_permission",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_count",
+      "description": null,
+      "name": "reservation_count",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_app_count",
+      "description": null,
+      "name": "reservation_app_count",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "order_count",
+      "description": null,
+      "name": "order_count",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_mon",
+      "description": null,
+      "name": "order_count_mon",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_tue",
+      "description": null,
+      "name": "order_count_tue",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_wed",
+      "description": null,
+      "name": "order_count_wed",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_thu",
+      "description": null,
+      "name": "order_count_thu",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_fri",
+      "description": null,
+      "name": "order_count_fri",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_sat",
+      "description": null,
+      "name": "order_count_sat",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_sun",
+      "description": null,
+      "name": "order_count_sun",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_holi",
+      "description": null,
+      "name": "order_count_holi",
+      "position": 33,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_6_9",
+      "description": null,
+      "name": "order_count_ts_6_9",
+      "position": 34,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_10_12",
+      "description": null,
+      "name": "order_count_ts_10_12",
+      "position": 35,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_13_15",
+      "description": null,
+      "name": "order_count_ts_13_15",
+      "position": 36,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_16_18",
+      "description": null,
+      "name": "order_count_ts_16_18",
+      "position": 37,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_19_21",
+      "description": null,
+      "name": "order_count_ts_19_21",
+      "position": 38,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_22_24",
+      "description": null,
+      "name": "order_count_ts_22_24",
+      "position": 39,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_25_29",
+      "description": null,
+      "name": "order_count_ts_25_29",
+      "position": 40,
+      "type": "long"
+    },
+    {
+      "alias": "tp_nomination_count",
+      "description": null,
+      "name": "tp_nomination_count",
+      "position": 41,
+      "type": "long"
+    },
+    {
+      "alias": "tp_nomination_uu",
+      "description": null,
+      "name": "tp_nomination_uu",
+      "position": 42,
+      "type": "long"
+    },
+    {
+      "alias": "gender_nomination_count",
+      "description": null,
+      "name": "gender_nomination_count",
+      "position": 43,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_90min_count",
+      "description": null,
+      "name": "treatment_90min_count",
+      "position": 44,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_foot_count",
+      "description": null,
+      "name": "treatment_foot_count",
+      "position": 45,
+      "type": "long"
+    },
+    {
+      "alias": "option_count",
+      "description": null,
+      "name": "option_count",
+      "position": 46,
+      "type": "long"
+    },
+    {
+      "alias": "review_count",
+      "description": null,
+      "name": "review_count",
+      "position": 47,
+      "type": "long"
+    },
+    {
+      "alias": "review_positive_count",
+      "description": null,
+      "name": "review_positive_count",
+      "position": 48,
+      "type": "long"
+    },
+    {
+      "alias": "review_negative_count",
+      "description": null,
+      "name": "review_negative_count",
+      "position": 49,
+      "type": "long"
+    },
+    {
+      "alias": "gift_card_count",
+      "description": null,
+      "name": "gift_card_count",
+      "position": 50,
+      "type": "long"
+    },
+    {
+      "alias": "bonus_point_count",
+      "description": null,
+      "name": "bonus_point_count",
+      "position": 51,
+      "type": "long"
+    },
+    {
+      "alias": "limited_bonus_point_count",
+      "description": null,
+      "name": "limited_bonus_point_count",
+      "position": 52,
+      "type": "long"
+    },
+    {
+      "alias": "charge_point_count",
+      "description": null,
+      "name": "charge_point_count",
+      "position": 53,
+      "type": "long"
+    },
+    {
+      "alias": "charge_point_charge_count",
+      "description": null,
+      "name": "charge_point_charge_count",
+      "position": 54,
+      "type": "long"
+    },
+    {
+      "alias": "bonus_point_use_count",
+      "description": null,
+      "name": "bonus_point_use_count",
+      "position": 55,
+      "type": "long"
+    },
+    {
+      "alias": "limited_bonus_point_use_count",
+      "description": null,
+      "name": "limited_bonus_point_use_count",
+      "position": 56,
+      "type": "long"
+    },
+    {
+      "alias": "charge_point_use_count",
+      "description": null,
+      "name": "charge_point_use_count",
+      "position": 57,
+      "type": "long"
+    },
+    {
+      "alias": "first_app_registered_date_datetime",
+      "description": null,
+      "name": "first_app_registered_date_datetime",
+      "position": 58,
+      "type": "long"
+    },
+    {
+      "alias": "first_order_date_datetime",
+      "description": null,
+      "name": "first_order_date_datetime",
+      "position": 59,
+      "type": "long"
+    },
+    {
+      "alias": "most_order_dow",
+      "description": null,
+      "name": "most_order_dow",
+      "position": 60,
+      "type": "string"
+    },
+    {
+      "alias": "most_order_timeslot",
+      "description": null,
+      "name": "most_order_timeslot",
+      "position": 61,
+      "type": "long"
+    },
+    {
+      "alias": "most_order_menu",
+      "description": null,
+      "name": "most_order_menu",
+      "position": 62,
+      "type": "string"
+    },
+    {
+      "alias": "most_order_shop",
+      "description": null,
+      "name": "most_order_shop",
+      "position": 63,
+      "type": "string"
+    },
+    {
+      "alias": "most_nomination_tp",
+      "description": null,
+      "name": "most_nomination_tp",
+      "position": 64,
+      "type": "long"
+    },
+    {
+      "alias": "last_app_login_date_datetime",
+      "description": null,
+      "name": "last_app_login_date_datetime",
+      "position": 65,
+      "type": "long"
+    },
+    {
+      "alias": "last_reserve_datetime",
+      "description": null,
+      "name": "last_reserve_datetime",
+      "position": 66,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_datetime",
+      "description": null,
+      "name": "last_order_datetime",
+      "position": 67,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_dow",
+      "description": null,
+      "name": "last_order_dow",
+      "position": 68,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_timeslot",
+      "description": null,
+      "name": "last_order_timeslot",
+      "position": 69,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_shop",
+      "description": null,
+      "name": "last_order_shop",
+      "position": 70,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_shop_area",
+      "description": null,
+      "name": "last_order_shop_area",
+      "position": 71,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_shop_pref",
+      "description": null,
+      "name": "last_order_shop_pref",
+      "position": 72,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_review",
+      "description": null,
+      "name": "last_order_review",
+      "position": 73,
+      "type": "string"
+    },
+    {
+      "alias": "r_segment",
+      "description": null,
+      "name": "r_segment",
+      "position": 74,
+      "type": "string"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 75,
+      "type": "long"
+    },
+    {
+      "alias": "w12_f",
+      "description": null,
+      "name": "w12_f",
+      "position": 76,
+      "type": "long"
+    },
+    {
+      "alias": "prev_r_segment",
+      "description": null,
+      "name": "prev_r_segment",
+      "position": 77,
+      "type": "string"
+    },
+    {
+      "alias": "prev_r_week",
+      "description": null,
+      "name": "prev_r_week",
+      "position": 78,
+      "type": "long"
+    },
+    {
+      "alias": "prev_w12_f",
+      "description": null,
+      "name": "prev_w12_f",
+      "position": 79,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id_last_digit",
+      "description": null,
+      "name": "customer_id_last_digit",
+      "position": 80,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_bingo_complete_cnt",
+      "description": null,
+      "name": "cstm_01_bingo_complete_cnt",
+      "position": 81,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_customer_id",
+      "description": null,
+      "name": "cstm_01_customer_id",
+      "position": 82,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_customer_id",
+      "description": null,
+      "name": "cstm_02_customer_id",
+      "position": 83,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_05_customer_id",
+      "description": null,
+      "name": "cstm_05_customer_id",
+      "position": 84,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_04_customer_id",
+      "description": null,
+      "name": "cstm_04_customer_id",
+      "position": 85,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_customer_id",
+      "description": null,
+      "name": "cstm_03_customer_id",
+      "position": 86,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_email",
+      "description": null,
+      "name": "cstm_01_email",
+      "position": 87,
+      "type": "string"
+    }
+  ],
+  "database": "cdp_audience_1016484",
+  "table": "partitioned_customers",
+  "table_id": "297474617"
+}

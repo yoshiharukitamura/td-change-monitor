@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "entry_fri_15",
+      "description": null,
+      "name": "entry_fri_15",
+      "position": 2,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "z_mart_entry_progress_250707_250721",
+  "table_id": "224568784"
+}

@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cluster_no",
+      "description": null,
+      "name": "cluster_no",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "business_datetime",
+      "description": null,
+      "name": "business_datetime",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "weeks_ahead",
+      "description": null,
+      "name": "weeks_ahead",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_day",
+      "description": null,
+      "name": "business_day",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "entry_minutes_forecast",
+      "description": null,
+      "name": "entry_minutes_forecast",
+      "position": 8,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "test_60w_forecast",
+  "table_id": "252534766"
+}

@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "customer_type",
+      "description": null,
+      "name": "customer_type",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "segment",
+      "description": null,
+      "name": "segment",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "l2_verification",
+  "table": "tmp_app_ui_renovation_customer_list_add_customer",
+  "table_id": "247338107"
+}

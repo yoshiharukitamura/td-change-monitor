@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": "parent_segment_name",
+      "description": null,
+      "name": "parent_segment_name",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "description",
+      "description": null,
+      "name": "description",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "database_name",
+      "description": null,
+      "name": "database_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "table_type_name",
+      "description": null,
+      "name": "table_type_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "table_name",
+      "description": null,
+      "name": "table_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "table_name_jp",
+      "description": null,
+      "name": "table_name_jp",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "column_name",
+      "description": null,
+      "name": "column_name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "data_type",
+      "description": null,
+      "name": "data_type",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "column_name_jp",
+      "description": null,
+      "name": "column_name_jp",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "attribute_group",
+      "description": null,
+      "name": "attribute_group",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "ordinal_position",
+      "description": null,
+      "name": "ordinal_position",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 11,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "z_cnfg_fin",
+  "table_id": "297467389"
+}

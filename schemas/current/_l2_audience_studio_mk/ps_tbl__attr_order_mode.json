@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "most_order_dow",
+      "description": null,
+      "name": "most_order_dow",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "most_order_timeslot",
+      "description": null,
+      "name": "most_order_timeslot",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "most_order_menu",
+      "description": null,
+      "name": "most_order_menu",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "most_order_shop",
+      "description": null,
+      "name": "most_order_shop",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "most_nomination_tp",
+      "description": null,
+      "name": "most_nomination_tp",
+      "position": 5,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__attr_order_mode",
+  "table_id": "297467492"
+}

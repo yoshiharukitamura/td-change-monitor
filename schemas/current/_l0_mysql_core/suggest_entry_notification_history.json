@@ -1,0 +1,98 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_entry_notification_history_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_entry_notification_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mode",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 12,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_core",
+  "table": "suggest_entry_notification_history",
+  "table_id": "265505811"
+}

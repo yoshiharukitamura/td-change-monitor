@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_date",
+      "description": null,
+      "name": "last_order_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "order_interval_median",
+      "description": null,
+      "name": "order_interval_median",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "estimate_order_date",
+      "description": null,
+      "name": "estimate_order_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "minus_days",
+      "description": null,
+      "name": "minus_days",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "journey_entry_date",
+      "description": null,
+      "name": "journey_entry_date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "interval_group",
+      "description": null,
+      "name": "interval_group",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "last_reserve_date",
+      "description": null,
+      "name": "last_reserve_date",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "order_count",
+      "description": null,
+      "name": "order_count",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "total_amount",
+      "description": null,
+      "name": "total_amount",
+      "position": 9,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "order_estimate_for_dormant",
+  "table_id": "148867810"
+}

@@ -1,0 +1,112 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_detail_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reward_item_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "unit",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reward_item_value",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "consumption_tax",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "receipt_name",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_printed_on_receipt",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_therapist_id_who_used_reward",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "amount_of_sharing_discount_for_therapist",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 14,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "order_detail_reward_items",
+  "table_id": "231315816"
+}

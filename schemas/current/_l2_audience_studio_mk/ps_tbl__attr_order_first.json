@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "first_app_registered_date_datetime",
+      "description": null,
+      "name": "first_app_registered_date_datetime",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "first_order_date_datetime",
+      "description": null,
+      "name": "first_order_date_datetime",
+      "position": 2,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__attr_order_first",
+  "table_id": "297466658"
+}

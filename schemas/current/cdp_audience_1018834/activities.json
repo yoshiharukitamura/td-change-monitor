@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cdp_activity_index",
+      "description": null,
+      "name": "cdp_activity_index",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "behavior",
+      "description": null,
+      "name": "behavior",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "record",
+      "description": null,
+      "name": "record",
+      "position": 4,
+      "type": "string"
+    }
+  ],
+  "database": "cdp_audience_1018834",
+  "table": "activities",
+  "table_id": "297469475"
+}

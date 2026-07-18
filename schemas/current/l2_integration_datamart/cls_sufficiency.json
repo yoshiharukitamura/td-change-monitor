@@ -1,0 +1,119 @@
+{
+  "columns": [
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "td_time_slot",
+      "description": null,
+      "name": "td_time_slot",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "td1",
+      "description": null,
+      "name": "td1",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "td2",
+      "description": null,
+      "name": "td2",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "td3",
+      "description": null,
+      "name": "td3",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot",
+      "description": null,
+      "name": "entry_slot",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "sufficiency_past_4week",
+      "description": null,
+      "name": "sufficiency_past_4week",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "sufficiency_past_8week",
+      "description": null,
+      "name": "sufficiency_past_8week",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": "sufficiency_past_15week",
+      "description": null,
+      "name": "sufficiency_past_15week",
+      "position": 14,
+      "type": "double"
+    },
+    {
+      "alias": "utilization",
+      "description": null,
+      "name": "utilization",
+      "position": 15,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "cls_sufficiency",
+  "table_id": "297449937"
+}

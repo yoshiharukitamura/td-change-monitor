@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "time_",
+      "position": 1,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "test_visits_frequency_increase",
+  "table_id": "56609388"
+}

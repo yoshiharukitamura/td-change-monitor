@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "resource_timetable_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reservation_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_reservation",
+  "table": "reservation_relations",
+  "table_id": "265663540"
+}

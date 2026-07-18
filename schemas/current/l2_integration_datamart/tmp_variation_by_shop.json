@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "type",
+      "description": null,
+      "name": "type",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "sufficiency_1",
+      "description": null,
+      "name": "sufficiency_1",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "sufficiency_2",
+      "description": null,
+      "name": "sufficiency_2",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "hour_range",
+      "description": null,
+      "name": "hour_range",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "diff_range_1",
+      "description": null,
+      "name": "diff_range_1",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "diff_range_2",
+      "description": null,
+      "name": "diff_range_2",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "slot_count",
+      "description": null,
+      "name": "slot_count",
+      "position": 8,
+      "type": "long"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "tmp_variation_by_shop",
+  "table_id": "202230324"
+}

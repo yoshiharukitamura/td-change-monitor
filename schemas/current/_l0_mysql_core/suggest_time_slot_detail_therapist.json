@@ -1,0 +1,140 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_time_slot_detail_therapist_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_entry_notification_history_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "property_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "start_time",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "end_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "send_datetime",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "read_flag",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 17,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 18,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_core",
+  "table": "suggest_time_slot_detail_therapist",
+  "table_id": "265505808"
+}

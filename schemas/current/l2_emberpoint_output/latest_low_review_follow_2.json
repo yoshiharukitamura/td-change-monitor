@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "delivery_date",
+      "description": null,
+      "name": "delivery_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "senario_name",
+      "description": null,
+      "name": "senario_name",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "latest_low_review_follow_2",
+  "table_id": "52021701"
+}

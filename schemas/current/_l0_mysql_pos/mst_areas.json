@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sort_order",
+      "position": 2,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "mst_areas",
+  "table_id": "230600390"
+}

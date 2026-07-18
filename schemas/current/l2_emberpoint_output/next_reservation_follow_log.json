@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "delivery_date",
+      "description": null,
+      "name": "delivery_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "senario_name",
+      "description": null,
+      "name": "senario_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "delivery_name",
+      "description": null,
+      "name": "delivery_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "target_flag",
+      "description": null,
+      "name": "target_flag",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "file_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "delievery_name",
+      "description": null,
+      "name": "delievery_name",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "next_reservation_follow_log",
+  "table_id": "52105190"
+}

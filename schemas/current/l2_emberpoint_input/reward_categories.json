@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "genre",
+      "description": null,
+      "name": "genre",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "is_active",
+      "description": null,
+      "name": "is_active",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "start_date",
+      "description": null,
+      "name": "start_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "end_date",
+      "description": null,
+      "name": "end_date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "is_available_to_be_used_by_non_member",
+      "description": null,
+      "name": "is_available_to_be_used_by_non_member",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "is_available_to_only_first_time_customer",
+      "description": null,
+      "name": "is_available_to_only_first_time_customer",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "is_available_be_used_in_app",
+      "description": null,
+      "name": "is_available_be_used_in_app",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "sort_order",
+      "description": null,
+      "name": "sort_order",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 13,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "reward_categories",
+  "table_id": "237467677"
+}

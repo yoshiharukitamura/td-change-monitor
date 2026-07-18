@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "star_rating",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "card_public_info_flag",
+      "position": 2,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "tmp_tp_card_info",
+  "table_id": "250882089"
+}

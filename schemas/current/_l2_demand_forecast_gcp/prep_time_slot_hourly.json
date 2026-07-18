@@ -1,0 +1,98 @@
+{
+  "columns": [
+    {
+      "alias": "therapist_daily_report_id",
+      "description": null,
+      "name": "therapist_daily_report_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_datetime",
+      "description": null,
+      "name": "business_datetime",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "start_hour_range",
+      "description": null,
+      "name": "start_hour_range",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 12,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "prep_time_slot_hourly",
+  "table_id": "296417386"
+}

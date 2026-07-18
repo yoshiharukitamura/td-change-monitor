@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "start_time_hour",
+      "description": null,
+      "name": "start_time_hour",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "minute",
+      "description": null,
+      "name": "minute",
+      "position": 4,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "cls_dwb_slot_tmp",
+  "table_id": "265696661"
+}

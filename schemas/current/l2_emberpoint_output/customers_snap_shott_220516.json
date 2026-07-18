@@ -1,0 +1,245 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "members_card_no",
+      "description": null,
+      "name": "members_card_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "name_full",
+      "description": null,
+      "name": "name_full",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "password",
+      "description": null,
+      "name": "password",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "birth_date",
+      "description": null,
+      "name": "birth_date",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "job_id",
+      "description": null,
+      "name": "job_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "phone_no2",
+      "description": null,
+      "name": "phone_no2",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code1",
+      "description": null,
+      "name": "zip_code1",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code2",
+      "description": null,
+      "name": "zip_code2",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "pref_id",
+      "description": null,
+      "name": "pref_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "city",
+      "description": null,
+      "name": "city",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "street",
+      "description": null,
+      "name": "street",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "email2",
+      "description": null,
+      "name": "email2",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "mail_magazine",
+      "description": null,
+      "name": "mail_magazine",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "email_existing",
+      "description": null,
+      "name": "email_existing",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "count_of_product_sales",
+      "description": null,
+      "name": "count_of_product_sales",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "price_of_product_sales",
+      "description": null,
+      "name": "price_of_product_sales",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "registration_route",
+      "description": null,
+      "name": "registration_route",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "referral_customer_id",
+      "description": null,
+      "name": "referral_customer_id",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "remarks",
+      "description": null,
+      "name": "remarks",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "shop_id_where_visited_first_time",
+      "description": null,
+      "name": "shop_id_where_visited_first_time",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "is_not_sent_to_core",
+      "description": null,
+      "name": "is_not_sent_to_core",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "is_app_user",
+      "description": null,
+      "name": "is_app_user",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "is_senior_member",
+      "description": null,
+      "name": "is_senior_member",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": "deactivated",
+      "description": null,
+      "name": "deactivated",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": "deactivated_date",
+      "description": null,
+      "name": "deactivated_date",
+      "position": 33,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "customers_snap_shott_220516",
+  "table_id": "58974015"
+}

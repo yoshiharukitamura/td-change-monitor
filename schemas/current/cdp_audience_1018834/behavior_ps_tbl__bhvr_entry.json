@@ -1,0 +1,112 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "slot_shop_no",
+      "description": null,
+      "name": "slot_shop_no",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "slot_shop_name",
+      "description": null,
+      "name": "slot_shop_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "slot_datetime",
+      "description": null,
+      "name": "slot_datetime",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "slot_dow",
+      "description": null,
+      "name": "slot_dow",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "slot_hour",
+      "description": null,
+      "name": "slot_hour",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "slot_count",
+      "description": null,
+      "name": "slot_count",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "slot_td1",
+      "description": null,
+      "name": "slot_td1",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "slot_td2",
+      "description": null,
+      "name": "slot_td2",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "slot_td3",
+      "description": null,
+      "name": "slot_td3",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "slot_total_entered",
+      "description": null,
+      "name": "slot_total_entered",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "slot_remain",
+      "description": null,
+      "name": "slot_remain",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": "slot_tp_entered",
+      "description": null,
+      "name": "slot_tp_entered",
+      "position": 14,
+      "type": "string"
+    }
+  ],
+  "database": "cdp_audience_1018834",
+  "table": "behavior_ps_tbl__bhvr_entry",
+  "table_id": "263956425"
+}

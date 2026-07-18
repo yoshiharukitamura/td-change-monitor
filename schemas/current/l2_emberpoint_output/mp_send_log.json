@@ -1,0 +1,140 @@
+{
+  "columns": [
+    {
+      "alias": "unique_name",
+      "description": null,
+      "name": "unique_name",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "start_date",
+      "description": null,
+      "name": "start_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "end_date",
+      "description": null,
+      "name": "end_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "subject",
+      "description": null,
+      "name": "subject",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "count_all",
+      "description": null,
+      "name": "count_all",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "count_err_hard",
+      "description": null,
+      "name": "count_err_hard",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "count_err_soft",
+      "description": null,
+      "name": "count_err_soft",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "success_rate",
+      "description": null,
+      "name": "success_rate",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": "open_rate",
+      "description": null,
+      "name": "open_rate",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": "open_count",
+      "description": null,
+      "name": "open_count",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "csv_file_id",
+      "description": null,
+      "name": "csv_file_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "csv_file_name",
+      "description": null,
+      "name": "csv_file_name",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "senario_name",
+      "description": null,
+      "name": "senario_name",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "smartmail",
+      "description": null,
+      "name": "smartmail",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "article_id",
+      "description": null,
+      "name": "article_id",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "index",
+      "description": null,
+      "name": "index",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "click_cnt",
+      "description": null,
+      "name": "click_cnt",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "click_rate",
+      "description": null,
+      "name": "click_rate",
+      "position": 18,
+      "type": "double"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "mp_send_log",
+  "table_id": "157417416"
+}

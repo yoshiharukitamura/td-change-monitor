@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "alias": "therapy_date",
+      "description": null,
+      "name": "therapy_date",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "therapy_date_1ago",
+      "description": null,
+      "name": "therapy_date_1ago",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_date",
+      "description": null,
+      "name": "reserve_date",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_within_1day",
+      "description": null,
+      "name": "reserve_within_1day",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_within_2day",
+      "description": null,
+      "name": "reserve_within_2day",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_within_3day",
+      "description": null,
+      "name": "reserve_within_3day",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_dt",
+      "description": null,
+      "name": "reservation_dt",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_no",
+      "description": null,
+      "name": "mst_shop_no",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "reserved_from",
+      "description": null,
+      "name": "reserved_from",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_count",
+      "description": null,
+      "name": "reservation_count",
+      "position": 13,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "prep_sys_reservation_logs_with_therapy_date",
+  "table_id": "237587776"
+}

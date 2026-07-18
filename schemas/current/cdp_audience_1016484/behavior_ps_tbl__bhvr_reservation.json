@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "hst_reservation_id",
+      "description": null,
+      "name": "hst_reservation_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_date_datetime",
+      "description": null,
+      "name": "reserve_date_datetime",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_timeslot_start_datetime",
+      "description": null,
+      "name": "reserve_timeslot_start_datetime",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_timeslot_end_datetime",
+      "description": null,
+      "name": "reserve_timeslot_end_datetime",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_dow",
+      "description": null,
+      "name": "reserve_dow",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "reserve_shop",
+      "description": null,
+      "name": "reserve_shop",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "reserve_product",
+      "description": null,
+      "name": "reserve_product",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_status",
+      "description": null,
+      "name": "reservation_status",
+      "position": 10,
+      "type": "string"
+    }
+  ],
+  "database": "cdp_audience_1016484",
+  "table": "behavior_ps_tbl__bhvr_reservation",
+  "table_id": "297474155"
+}

@@ -1,0 +1,217 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "name_kana",
+      "description": null,
+      "name": "name_kana",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "logo_image_file_name",
+      "description": null,
+      "name": "logo_image_file_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "mst_area_id",
+      "description": null,
+      "name": "mst_area_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "pref_id",
+      "description": null,
+      "name": "pref_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "city",
+      "description": null,
+      "name": "city",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "street",
+      "description": null,
+      "name": "street",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "telephone_no",
+      "description": null,
+      "name": "telephone_no",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "fax_no",
+      "description": null,
+      "name": "fax_no",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour_start",
+      "description": null,
+      "name": "business_hour_start",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour_end",
+      "description": null,
+      "name": "business_hour_end",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "prepared_change",
+      "description": null,
+      "name": "prepared_change",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_points_given_to_introducer",
+      "description": null,
+      "name": "amount_of_points_given_to_introducer",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "free_content_for_receipt_1",
+      "description": null,
+      "name": "free_content_for_receipt_1",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "free_content_for_receipt_2",
+      "description": null,
+      "name": "free_content_for_receipt_2",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "is_not_sent_to_core",
+      "description": null,
+      "name": "is_not_sent_to_core",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "threshold_for_shop_vacancy",
+      "description": null,
+      "name": "threshold_for_shop_vacancy",
+      "position": 20,
+      "type": "double"
+    },
+    {
+      "alias": "is_available_to_use_qr_code_payment",
+      "description": null,
+      "name": "is_available_to_use_qr_code_payment",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "is_available_to_use_credit_card_payment",
+      "description": null,
+      "name": "is_available_to_use_credit_card_payment",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "is_available_to_use_electronic_money_payment",
+      "description": null,
+      "name": "is_available_to_use_electronic_money_payment",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "payment_information",
+      "description": null,
+      "name": "payment_information",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "print_type",
+      "description": null,
+      "name": "print_type",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 29,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "mst_shops",
+  "table_id": "237467429"
+}

@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "delivery_date",
+      "description": null,
+      "name": "delivery_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "seq_no",
+      "description": null,
+      "name": "seq_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "coupon_id1",
+      "description": null,
+      "name": "coupon_id1",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "coupon_id2",
+      "description": null,
+      "name": "coupon_id2",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "coupon_id3",
+      "description": null,
+      "name": "coupon_id3",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "special_coupon_id1",
+      "description": null,
+      "name": "special_coupon_id1",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "special_coupon_id2",
+      "description": null,
+      "name": "special_coupon_id2",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "special_coupon_id3",
+      "description": null,
+      "name": "special_coupon_id3",
+      "position": 7,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "couponlist_visits_frequency",
+  "table_id": "72062531"
+}

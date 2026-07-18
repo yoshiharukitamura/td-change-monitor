@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "week",
+      "description": null,
+      "name": "week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "reserved_from",
+      "description": null,
+      "name": "reserved_from",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "new_repeat",
+      "description": null,
+      "name": "new_repeat",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "r",
+      "description": null,
+      "name": "r",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_count",
+      "description": null,
+      "name": "reservation_count",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "order_reservation_count",
+      "description": null,
+      "name": "order_reservation_count",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "fullfill_reservation_count",
+      "description": null,
+      "name": "fullfill_reservation_count",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "cancel_count",
+      "description": null,
+      "name": "cancel_count",
+      "position": 8,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "mktg_sys",
+  "table_id": "297460326"
+}

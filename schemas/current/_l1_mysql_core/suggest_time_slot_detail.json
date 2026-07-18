@@ -1,0 +1,140 @@
+{
+  "columns": [
+    {
+      "alias": "suggest_time_slot_detail_id",
+      "description": null,
+      "name": "suggest_time_slot_detail_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "suggest_entry_notification_history_id",
+      "description": null,
+      "name": "suggest_entry_notification_history_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot_detail_id",
+      "description": null,
+      "name": "time_slot_detail_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "date",
+      "description": null,
+      "name": "date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 16,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 18,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "suggest_time_slot_detail",
+  "table_id": "297411052"
+}

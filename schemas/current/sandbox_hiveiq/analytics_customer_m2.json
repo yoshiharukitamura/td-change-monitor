@@ -1,0 +1,98 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_1_f",
+      "description": null,
+      "name": "y2024_1_f",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_3_f",
+      "description": null,
+      "name": "y2024_3_f",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_5_f",
+      "description": null,
+      "name": "y2024_5_f",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_7_f",
+      "description": null,
+      "name": "y2024_7_f",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_9_f",
+      "description": null,
+      "name": "y2024_9_f",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_11_f",
+      "description": null,
+      "name": "y2024_11_f",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "y2025_1_f",
+      "description": null,
+      "name": "y2025_1_f",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "y2025_3_f",
+      "description": null,
+      "name": "y2025_3_f",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "y2025_5_f",
+      "description": null,
+      "name": "y2025_5_f",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_f",
+      "description": null,
+      "name": "y2024_f",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "y2024_avg_m2f",
+      "description": null,
+      "name": "y2024_avg_m2f",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": "y2024_stddev_m2f",
+      "description": null,
+      "name": "y2024_stddev_m2f",
+      "position": 12,
+      "type": "double"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_customer_m2",
+  "table_id": "228145533"
+}

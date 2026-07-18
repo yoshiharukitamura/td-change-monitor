@@ -1,0 +1,98 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "coach_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "description",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "type",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "rule",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sql_condition",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_active",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sort_order",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 12,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_hp",
+  "table": "bingo_mission",
+  "table_id": "262492928"
+}

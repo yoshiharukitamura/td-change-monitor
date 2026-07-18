@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "last_order",
+      "description": null,
+      "name": "last_order",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "last_nth_order_seq",
+      "description": null,
+      "name": "last_nth_order_seq",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "last_nth_order_lag_date",
+      "description": null,
+      "name": "last_nth_order_lag_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "last_nth_recency",
+      "description": null,
+      "name": "last_nth_recency",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "m6f",
+      "description": null,
+      "name": "m6f",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "m3f",
+      "description": null,
+      "name": "m3f",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "m2f",
+      "description": null,
+      "name": "m2f",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "total_order_count",
+      "description": null,
+      "name": "total_order_count",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "avg_last_4times_recency",
+      "description": null,
+      "name": "avg_last_4times_recency",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "peak_avg_recency",
+      "description": null,
+      "name": "peak_avg_recency",
+      "position": 11,
+      "type": "double"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_customer_recency",
+  "table_id": "221779299"
+}

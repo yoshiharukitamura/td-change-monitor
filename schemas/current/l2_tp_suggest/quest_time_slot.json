@@ -1,0 +1,196 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_time_slot_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "time_slot_detail_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "property_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "start_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "end_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_publication_period_start_datetime",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_publication_period_end_datetime",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_reward",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "indication_order",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_time_slot_type",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_entry_possible_therapist_no",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quest_achieved_flag",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pre_reward_adjustment_id",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reward_calculated_flag",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 25,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 26,
+      "type": "long"
+    }
+  ],
+  "database": "l2_tp_suggest",
+  "table": "quest_time_slot",
+  "table_id": "214544856"
+}

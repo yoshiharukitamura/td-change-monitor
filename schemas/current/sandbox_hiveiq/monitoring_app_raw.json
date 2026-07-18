@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "user_pseudo_id",
+      "description": null,
+      "name": "user_pseudo_id",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "ga_session_id",
+      "description": null,
+      "name": "ga_session_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_source_name",
+      "description": null,
+      "name": "traffic_source_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_source_medium",
+      "description": null,
+      "name": "traffic_source_medium",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_source_source",
+      "description": null,
+      "name": "traffic_source_source",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "event_datetime",
+      "description": null,
+      "name": "event_datetime",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "event_timestamp",
+      "description": null,
+      "name": "event_timestamp",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "event_name",
+      "description": null,
+      "name": "event_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 10,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "monitoring_app_raw",
+  "table_id": "211727075"
+}

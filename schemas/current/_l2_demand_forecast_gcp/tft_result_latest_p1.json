@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "s_property_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_datetime",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pred_q0_5",
+      "position": 2,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pred_q0_55",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pred_q0_6",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pred_q0_65",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pred_q0_7",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pred_q_mixed",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "time_means",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "processing_date",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 10,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "tft_result_latest_p1",
+  "table_id": "272159822"
+}

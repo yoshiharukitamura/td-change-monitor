@@ -1,0 +1,119 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "last_app_login_date_datetime",
+      "description": null,
+      "name": "last_app_login_date_datetime",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "last_reserve_datetime",
+      "description": null,
+      "name": "last_reserve_datetime",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_datetime",
+      "description": null,
+      "name": "last_order_datetime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_dow",
+      "description": null,
+      "name": "last_order_dow",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_timeslot",
+      "description": null,
+      "name": "last_order_timeslot",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_shop",
+      "description": null,
+      "name": "last_order_shop",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_shop_area",
+      "description": null,
+      "name": "last_order_shop_area",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_shop_pref",
+      "description": null,
+      "name": "last_order_shop_pref",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_review",
+      "description": null,
+      "name": "last_order_review",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "r_segment",
+      "description": null,
+      "name": "r_segment",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "w12_f",
+      "description": null,
+      "name": "w12_f",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "prev_r_segment",
+      "description": null,
+      "name": "prev_r_segment",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "prev_r_week",
+      "description": null,
+      "name": "prev_r_week",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "prev_w12_f",
+      "description": null,
+      "name": "prev_w12_f",
+      "position": 15,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__attr_order_recent",
+  "table_id": "297467761"
+}

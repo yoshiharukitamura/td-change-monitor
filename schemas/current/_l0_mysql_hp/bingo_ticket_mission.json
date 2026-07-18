@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "bingo_ticket_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "bingo_mission_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "position",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "rule",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "image",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_active",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 10,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_hp",
+  "table": "bingo_ticket_mission",
+  "table_id": "262492925"
+}

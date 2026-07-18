@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "intime_journey",
+      "description": null,
+      "name": "intime_journey",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "outtime_journey",
+      "description": null,
+      "name": "outtime_journey",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "intime_goal",
+      "description": null,
+      "name": "intime_goal",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "intime_stage_0",
+      "description": null,
+      "name": "intime_stage_0",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "outtime_stage_0",
+      "description": null,
+      "name": "outtime_stage_0",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "intime_stage_0_milestone",
+      "description": null,
+      "name": "intime_stage_0_milestone",
+      "position": 6,
+      "type": "long"
+    }
+  ],
+  "database": "cdp_audience_1016484",
+  "table": "journey_225806_jump_history",
+  "table_id": "265649096"
+}

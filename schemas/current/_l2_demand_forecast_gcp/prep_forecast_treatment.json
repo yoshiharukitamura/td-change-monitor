@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cluster_no",
+      "description": null,
+      "name": "cluster_no",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "cluster_id",
+      "description": null,
+      "name": "cluster_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_datetime",
+      "description": null,
+      "name": "forecast_datetime",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "weeks_ahead",
+      "description": null,
+      "name": "weeks_ahead",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_day",
+      "description": null,
+      "name": "business_day",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_treatment_value",
+      "description": null,
+      "name": "forecast_treatment_value",
+      "position": 10,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "prep_forecast_treatment",
+  "table_id": "296417388"
+}

@@ -1,0 +1,161 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "dtb_customer_id",
+      "description": null,
+      "name": "dtb_customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "pref_id",
+      "description": null,
+      "name": "pref_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "city",
+      "description": null,
+      "name": "city",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "street",
+      "description": null,
+      "name": "street",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "activation_expiration",
+      "description": null,
+      "name": "activation_expiration",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "activation_sms_expiration",
+      "description": null,
+      "name": "activation_sms_expiration",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "activated",
+      "description": null,
+      "name": "activated",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "activated_from",
+      "description": null,
+      "name": "activated_from",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "reset_password_date",
+      "description": null,
+      "name": "reset_password_date",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "reset_password_device",
+      "description": null,
+      "name": "reset_password_device",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "last_login",
+      "description": null,
+      "name": "last_login",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "last_login_app",
+      "description": null,
+      "name": "last_login_app",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "created_app",
+      "description": null,
+      "name": "created_app",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "push_noti",
+      "description": null,
+      "name": "push_noti",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "mailflg",
+      "description": null,
+      "name": "mailflg",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "modified_batch",
+      "description": null,
+      "name": "modified_batch",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "is_login_app",
+      "description": null,
+      "name": "is_login_app",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 21,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "web_customers_backup_20240702",
+  "table_id": "164130828"
+}

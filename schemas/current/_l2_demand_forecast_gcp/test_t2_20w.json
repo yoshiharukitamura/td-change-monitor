@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "time_fmt",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "time_means",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_datetime",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "cluster_no",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "s_property_id",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "week",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "weekday",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "processing_date",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_holiday",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 10,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "test_t2_20w",
+  "table_id": "250868585"
+}

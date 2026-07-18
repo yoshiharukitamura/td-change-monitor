@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_therapist_no",
+      "description": null,
+      "name": "cstm_01_therapist_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_name",
+      "description": null,
+      "name": "cstm_01_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_email",
+      "description": null,
+      "name": "cstm_01_email",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entry",
+      "description": null,
+      "name": "cstm_01_entry",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entryw",
+      "description": null,
+      "name": "cstm_01_entryw",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entry2",
+      "description": null,
+      "name": "cstm_01_entry2",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entryw2",
+      "description": null,
+      "name": "cstm_01_entryw2",
+      "position": 7,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "ps_tbl__attr_custom_list_01",
+  "table_id": "297465368"
+}

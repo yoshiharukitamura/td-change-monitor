@@ -1,0 +1,126 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "email",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "cast_null_as_varchar_as_name",
+      "description": null,
+      "name": "cast(null as varchar) as name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mailflg",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "latest_treatment_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shopname",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shopname2",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "recency",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_treatment_count",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "frequency",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "annual_treatment_count",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "interval_median",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "notification_date",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "review_rank",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "review_rate",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_message",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "r_week",
+      "position": 16,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_s3",
+  "table": "customer_emails",
+  "table_id": "263578763"
+}

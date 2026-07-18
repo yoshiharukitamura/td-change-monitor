@@ -1,0 +1,168 @@
+{
+  "columns": [
+    {
+      "alias": "therapistno",
+      "description": null,
+      "name": "therapistNo",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_version",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_charset",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_language",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_color",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_screen",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_viewport",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_title",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_description",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_url",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_user_agent",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_platform",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_host",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_path",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_referrer",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_browser",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_browser_version",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_os",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_os_version",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_global_id",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_client_id",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "td_ip",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "where",
+      "description": null,
+      "name": "$where",
+      "position": 22,
+      "type": "string"
+    }
+  ],
+  "database": "l0_website_access",
+  "table": "pv_log_therapist",
+  "table_id": "98477980"
+}

@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cluster_id",
+      "description": null,
+      "name": "cluster_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "td_time_slot",
+      "description": null,
+      "name": "td_time_slot",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "td1",
+      "description": null,
+      "name": "td1",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "td2",
+      "description": null,
+      "name": "td2",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "td3",
+      "description": null,
+      "name": "td3",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_value",
+      "description": null,
+      "name": "forecast_value",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": "loss_opps_fin_value",
+      "description": null,
+      "name": "loss_opps_fin_value",
+      "position": 10,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "cls_td_time_slot_v9",
+  "table_id": "297449864"
+}

@@ -1,0 +1,210 @@
+{
+  "columns": [
+    {
+      "alias": "customerid_deviceid",
+      "description": null,
+      "name": "customerid_deviceid",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "session_start_date",
+      "description": null,
+      "name": "session_start_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "session_start_time",
+      "description": null,
+      "name": "session_start_time",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "arry_mst_shop_no",
+      "description": null,
+      "name": "arry_mst_shop_no",
+      "position": 4,
+      "type": "array<string>"
+    },
+    {
+      "alias": "pv_shop_detail",
+      "description": null,
+      "name": "pv_shop_detail",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "pv_reservation_confirm",
+      "description": null,
+      "name": "pv_reservation_confirm",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "pv_reservation_complete",
+      "description": null,
+      "name": "pv_reservation_complete",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "pv_reservation_change",
+      "description": null,
+      "name": "pv_reservation_change",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "pv_sci",
+      "description": null,
+      "name": "pv_sci",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "pv_notification",
+      "description": null,
+      "name": "pv_notification",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "pv_reservation_history",
+      "description": null,
+      "name": "pv_reservation_history",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "pv_shop_serach",
+      "description": null,
+      "name": "pv_shop_serach",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "pv_reservation_history_before_reserve",
+      "description": null,
+      "name": "pv_reservation_history_before_reserve",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "is_therapy_date",
+      "description": null,
+      "name": "is_therapy_date",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "is_therapy_date_1ago",
+      "description": null,
+      "name": "is_therapy_date_1ago",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "is_reserve_within_1day",
+      "description": null,
+      "name": "is_reserve_within_1day",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "is_reserve_within_2day",
+      "description": null,
+      "name": "is_reserve_within_2day",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "is_reserve_within_3day",
+      "description": null,
+      "name": "is_reserve_within_3day",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "is_reserve_0day",
+      "description": null,
+      "name": "is_reserve_0day",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_dt",
+      "description": null,
+      "name": "reservation_dt",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "treatment_dt",
+      "description": null,
+      "name": "treatment_dt",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "stay_sec",
+      "description": null,
+      "name": "stay_sec",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_dow",
+      "description": null,
+      "name": "reservation_dow",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_hour",
+      "description": null,
+      "name": "reservation_hour",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "date_diff_reserve_treat",
+      "description": null,
+      "name": "date_diff_reserve_treat",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_hour",
+      "description": null,
+      "name": "treatment_hour",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "loss_opps_tmp",
+      "description": null,
+      "name": "loss_opps_tmp",
+      "position": 27,
+      "type": "double"
+    },
+    {
+      "alias": "loss_opps_fin",
+      "description": null,
+      "name": "loss_opps_fin",
+      "position": 28,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "z_lost_opportunity_analytics_raw_by_user",
+  "table_id": "237588655"
+}

@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "data_type",
+      "description": null,
+      "name": "data_type",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "forecast_value",
+      "description": null,
+      "name": "forecast_value",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": "lossopps_value",
+      "description": null,
+      "name": "lossopps_value",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": "need_timeslot",
+      "description": null,
+      "name": "need_timeslot",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": "entry_slot",
+      "description": null,
+      "name": "entry_slot",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": "slot_type",
+      "description": null,
+      "name": "slot_type",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "diff_fcst",
+      "description": null,
+      "name": "diff_fcst",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": "diff_fcst_loss",
+      "description": null,
+      "name": "diff_fcst_loss",
+      "position": 10,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "analytics_demand_forecast_variance_tomi",
+  "table_id": "286148830"
+}

@@ -1,0 +1,14 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "low_review_follow_entry_de",
+  "table_id": "148867921"
+}

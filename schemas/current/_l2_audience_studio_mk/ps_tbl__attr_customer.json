@@ -1,0 +1,154 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "customer_name",
+      "description": null,
+      "name": "customer_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "membership_no",
+      "description": null,
+      "name": "membership_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "age",
+      "description": null,
+      "name": "age",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "birth_date",
+      "description": null,
+      "name": "birth_date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "birth_month",
+      "description": null,
+      "name": "birth_month",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "membership_channel",
+      "description": null,
+      "name": "membership_channel",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "membership_senior",
+      "description": null,
+      "name": "membership_senior",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "membership_royal",
+      "description": null,
+      "name": "membership_royal",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "new_or_repeat",
+      "description": null,
+      "name": "new_or_repeat",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "registered_date_datetime",
+      "description": null,
+      "name": "registered_date_datetime",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "hex_email",
+      "description": null,
+      "name": "hex_email",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "format_phone_no",
+      "description": null,
+      "name": "format_phone_no",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "hex_format_phone_no",
+      "description": null,
+      "name": "hex_format_phone_no",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "prefecture",
+      "description": null,
+      "name": "prefecture",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "push_permission",
+      "description": null,
+      "name": "push_permission",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "mail_permission",
+      "description": null,
+      "name": "mail_permission",
+      "position": 20,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__attr_customer",
+  "table_id": "297464861"
+}

@@ -1,0 +1,224 @@
+{
+  "columns": [
+    {
+      "alias": "time_fmt",
+      "description": null,
+      "name": "time_fmt",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "slot_from",
+      "description": null,
+      "name": "slot_from",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "slot_to",
+      "description": null,
+      "name": "slot_to",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot",
+      "description": null,
+      "name": "entry_slot",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_name",
+      "description": null,
+      "name": "therapist_name",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "division",
+      "description": null,
+      "name": "division",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "age",
+      "description": null,
+      "name": "age",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "hope_property_id_1",
+      "description": null,
+      "name": "hope_property_id_1",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "hope_property_id_2",
+      "description": null,
+      "name": "hope_property_id_2",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "work_saturday",
+      "description": null,
+      "name": "work_saturday",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "work_sunday",
+      "description": null,
+      "name": "work_sunday",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "work_holiday",
+      "description": null,
+      "name": "work_holiday",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "week_days",
+      "description": null,
+      "name": "week_days",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "timezone",
+      "description": null,
+      "name": "timezone",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "status_name",
+      "description": null,
+      "name": "status_name",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "business_start_time",
+      "description": null,
+      "name": "business_start_time",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "business_end_time",
+      "description": null,
+      "name": "business_end_time",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "latest_bed_num",
+      "description": null,
+      "name": "latest_bed_num",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "pref_name",
+      "description": null,
+      "name": "pref_name",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "area_name",
+      "description": null,
+      "name": "area_name",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "market_population_1km",
+      "description": null,
+      "name": "market_population_1km",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": "market_population_3km",
+      "description": null,
+      "name": "market_population_3km",
+      "position": 30,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "cls_time_slot_detail",
+  "table_id": "297444614"
+}

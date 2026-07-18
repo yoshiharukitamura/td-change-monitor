@@ -1,0 +1,182 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "parent_order_detail_id",
+      "description": null,
+      "name": "parent_order_detail_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "priority",
+      "description": null,
+      "name": "priority",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "is_necessary_to_add_relation_with_treatment_product",
+      "description": null,
+      "name": "is_necessary_to_add_relation_with_treatment_product",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "category_id",
+      "description": null,
+      "name": "category_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "category_name",
+      "description": null,
+      "name": "category_name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "mst_product_id",
+      "description": null,
+      "name": "mst_product_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "product_name",
+      "description": null,
+      "name": "product_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "receipt_name",
+      "description": null,
+      "name": "receipt_name",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "order_added_timing",
+      "description": null,
+      "name": "order_added_timing",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "price_type",
+      "description": null,
+      "name": "price_type",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "sales_price",
+      "description": null,
+      "name": "sales_price",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "quantity",
+      "description": null,
+      "name": "quantity",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "consumption_tax",
+      "description": null,
+      "name": "consumption_tax",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "sub_total",
+      "description": null,
+      "name": "sub_total",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "basis_of_additional_bonus_point",
+      "description": null,
+      "name": "basis_of_additional_bonus_point",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "additional_bonus_point",
+      "description": null,
+      "name": "additional_bonus_point",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "additional_charge_point",
+      "description": null,
+      "name": "additional_charge_point",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_reward_for_therapist",
+      "description": null,
+      "name": "amount_of_reward_for_therapist",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 24,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "order_details",
+  "table_id": "237466652"
+}

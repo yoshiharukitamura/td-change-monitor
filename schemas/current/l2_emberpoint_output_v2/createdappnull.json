@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "customer_customer_id",
+      "description": null,
+      "name": "customer_customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "customer_deleted",
+      "description": null,
+      "name": "customer_deleted",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "customer_mail_magazine",
+      "description": null,
+      "name": "customer_mail_magazine",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "customer_is_app_user",
+      "description": null,
+      "name": "customer_is_app_user",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "webcustomer_activated",
+      "description": null,
+      "name": "webcustomer_activated",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "webcustomer_deleted",
+      "description": null,
+      "name": "webcustomer_deleted",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "webcustomer_mailflg",
+      "description": null,
+      "name": "webcustomer_mailflg",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "webcustomer_created_app",
+      "description": null,
+      "name": "webcustomer_created_app",
+      "position": 7,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output_v2",
+  "table": "createdappnull",
+  "table_id": "126396105"
+}

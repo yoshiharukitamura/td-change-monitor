@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "name2",
+      "description": null,
+      "name": "name2",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "shopname",
+      "description": null,
+      "name": "shopname",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "shopname2",
+      "description": null,
+      "name": "shopname2",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "today",
+      "description": null,
+      "name": "today",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "weekday",
+      "description": null,
+      "name": "weekday",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "new_end_date",
+      "description": null,
+      "name": "new_end_date",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "new_end_date_day",
+      "description": null,
+      "name": "new_end_date_day",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "target_flag",
+      "description": null,
+      "name": "target_flag",
+      "position": 9,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "low_review_follow_1",
+  "table_id": "148868265"
+}

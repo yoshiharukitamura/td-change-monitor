@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "send_datetime",
+      "description": null,
+      "name": "send_datetime",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "timeslot_datetime",
+      "description": null,
+      "name": "timeslot_datetime",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "timeslot_dow",
+      "description": null,
+      "name": "timeslot_dow",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "timeslot_hour",
+      "description": null,
+      "name": "timeslot_hour",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "suggest_type",
+      "description": null,
+      "name": "suggest_type",
+      "position": 7,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "ps_tbl__bhvr_therapist_app_suggest",
+  "table_id": "297467054"
+}

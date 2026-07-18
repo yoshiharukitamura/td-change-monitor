@@ -1,0 +1,469 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_additional_info_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "family_member_type",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "nationality",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "work_permit_flag",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "permit_no",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "car_commuting_flag",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registration_consent_flag",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pledge_flag",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "proxy_flag",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "retrained_flag",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "petitioned_flag",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "dispatch_remotely_flag",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "married_type",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "show_ranking_type",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "ban_quest_entry_flag",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "ban_all_property_flag",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "retrained_remarks",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_special_unit_price",
+      "position": 18,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "nationality_confirmation_proof",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "special_permanent_resident_certificate_expiration_date",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "latest_accident_date",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "eligible_business_number",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "eligible_business_number_image",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "card_public_flag",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "card_public_info_flag",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "card_skill",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "card_comment",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "application_entry_flag",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "application_entry_start_date",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "application_entry_end_date",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 39,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 40,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "permit_expiration_date",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "permit_type",
+      "position": 42,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "parental_consent_form",
+      "position": 43,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "parental_consent_form_frag",
+      "position": 44,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "means_of_transportation",
+      "position": 45,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "means_of_transportation_other",
+      "position": 46,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pledge_date",
+      "position": 47,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "personal_designation_reservation_type",
+      "position": 48,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "personal_designation_reservation_deny_reason",
+      "position": 49,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "gender_designation_reservation_type",
+      "position": 50,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "entry_shops_display_flag",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "foot_course_reservation_type",
+      "position": 52,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hand_course_reservation_type",
+      "position": 53,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "neck_course_reservation_type",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "head_course_reservation_type",
+      "position": 55,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "course_reservation_ng",
+      "position": 56,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hope_annual_income",
+      "position": 57,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "main_shop",
+      "position": 58,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sub_shop",
+      "position": 59,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_checkout_updatetime",
+      "position": 60,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "push_notify_time_slot_flag",
+      "position": 61,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "push_notify_flag",
+      "position": 62,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_checkout_flag",
+      "position": 63,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_checkin_updatetime",
+      "position": 64,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "suggest_checkin_flag",
+      "position": 65,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_core",
+  "table": "therapist_additional_info",
+  "table_id": "253562932"
+}

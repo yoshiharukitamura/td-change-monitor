@@ -1,0 +1,154 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "professional_name_kana",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "password",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "professional_name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "zip_code",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pref_id",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "city",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "street",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "email",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "phone_no",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_type",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "gender",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "contract_type",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "eligible_business_number",
+      "position": 20,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "mst_therapists",
+  "table_id": "231315817"
+}

@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "access_date",
+      "description": null,
+      "name": "access_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "event_unixtime",
+      "description": null,
+      "name": "event_unixtime",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "event_timestamp",
+      "description": null,
+      "name": "event_timestamp",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "user_pseudo_id",
+      "description": null,
+      "name": "user_pseudo_id",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "ga_session_id",
+      "description": null,
+      "name": "ga_session_id",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_source_name",
+      "description": null,
+      "name": "traffic_source_name",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_source_medium",
+      "description": null,
+      "name": "traffic_source_medium",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_source_source",
+      "description": null,
+      "name": "traffic_source_source",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "event_name",
+      "description": null,
+      "name": "event_name",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "event_status",
+      "description": null,
+      "name": "event_status",
+      "position": 13,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "z_tmp_cls_app_log",
+  "table_id": "211713290"
+}

@@ -1,0 +1,182 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "today",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "weekday",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "new_end_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "new_end_date_day",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "target_flag",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "__id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name2",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_rank_in_one_year",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "latest_order_date",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shopname",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shopname2",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_interval_median",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "last_order_date",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "goal",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "count",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "point",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "date",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reviews_rank",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_rank",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_name",
+      "position": 24,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_result",
+  "table": "upload_list",
+  "table_id": "73524382"
+}

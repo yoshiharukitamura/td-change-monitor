@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "business_datetime",
+      "description": null,
+      "name": "business_datetime",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "s_property_id",
+      "description": null,
+      "name": "s_property_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "z_tmp_src_order_history",
+  "table_id": "297454897"
+}

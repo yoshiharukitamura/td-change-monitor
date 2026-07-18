@@ -1,0 +1,392 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_code",
+      "description": null,
+      "name": "reservation_code",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_person_id",
+      "description": null,
+      "name": "reservation_person_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_index",
+      "description": null,
+      "name": "reservation_index",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "parent_reservation_id",
+      "description": null,
+      "name": "parent_reservation_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "reserved_from",
+      "description": null,
+      "name": "reserved_from",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "interval_end_time",
+      "description": null,
+      "name": "interval_end_time",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "total_amount_of_price",
+      "description": null,
+      "name": "total_amount_of_price",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "mst_product_id",
+      "description": null,
+      "name": "mst_product_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_premium_mattress",
+      "description": null,
+      "name": "if_use_premium_mattress",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_university_option",
+      "description": null,
+      "name": "if_use_university_option",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "if_wants_to_change_cloth",
+      "description": null,
+      "name": "if_wants_to_change_cloth",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "designation_type",
+      "description": null,
+      "name": "designation_type",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "designation_fixed",
+      "description": null,
+      "name": "designation_fixed",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "mst_pressure_id",
+      "description": null,
+      "name": "mst_pressure_id",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "mst_conversation_id",
+      "description": null,
+      "name": "mst_conversation_id",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "remarks",
+      "description": null,
+      "name": "remarks",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "if_experienced_serious_injury",
+      "description": null,
+      "name": "if_experienced_serious_injury",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "injured_date",
+      "description": null,
+      "name": "injured_date",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "sign_image_file_name",
+      "description": null,
+      "name": "sign_image_file_name",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "if_agreed_with_escape_clause",
+      "description": null,
+      "name": "if_agreed_with_escape_clause",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "if_agreed_with_cancellation_policy",
+      "description": null,
+      "name": "if_agreed_with_cancellation_policy",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "if_cleaned_hands_and_checked_temperature",
+      "description": null,
+      "name": "if_cleaned_hands_and_checked_temperature",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "if_not_go_to_foreign_country",
+      "description": null,
+      "name": "if_not_go_to_foreign_country",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": "serious_injury_details",
+      "description": null,
+      "name": "serious_injury_details",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": "message_to_shop",
+      "description": null,
+      "name": "message_to_shop",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": "if_use_option_1",
+      "description": null,
+      "name": "if_use_option_1",
+      "position": 33,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_2",
+      "description": null,
+      "name": "if_use_option_2",
+      "position": 34,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_3",
+      "description": null,
+      "name": "if_use_option_3",
+      "position": 35,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_4",
+      "description": null,
+      "name": "if_use_option_4",
+      "position": 36,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_5",
+      "description": null,
+      "name": "if_use_option_5",
+      "position": 37,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_6",
+      "description": null,
+      "name": "if_use_option_6",
+      "position": 38,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_7",
+      "description": null,
+      "name": "if_use_option_7",
+      "position": 39,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_8",
+      "description": null,
+      "name": "if_use_option_8",
+      "position": 40,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_9",
+      "description": null,
+      "name": "if_use_option_9",
+      "position": 41,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_10",
+      "description": null,
+      "name": "if_use_option_10",
+      "position": 42,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_11",
+      "description": null,
+      "name": "if_use_option_11",
+      "position": 43,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_12",
+      "description": null,
+      "name": "if_use_option_12",
+      "position": 44,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_13",
+      "description": null,
+      "name": "if_use_option_13",
+      "position": 45,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_14",
+      "description": null,
+      "name": "if_use_option_14",
+      "position": 46,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_15",
+      "description": null,
+      "name": "if_use_option_15",
+      "position": 47,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_16",
+      "description": null,
+      "name": "if_use_option_16",
+      "position": 48,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_17",
+      "description": null,
+      "name": "if_use_option_17",
+      "position": 49,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_18",
+      "description": null,
+      "name": "if_use_option_18",
+      "position": 50,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_19",
+      "description": null,
+      "name": "if_use_option_19",
+      "position": 51,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_option_20",
+      "description": null,
+      "name": "if_use_option_20",
+      "position": 52,
+      "type": "long"
+    },
+    {
+      "alias": "cancel_from",
+      "description": null,
+      "name": "cancel_from",
+      "position": 53,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 54,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_reservation",
+  "table": "reservations",
+  "table_id": "297412585"
+}

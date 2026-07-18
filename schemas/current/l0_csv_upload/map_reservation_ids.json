@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "num",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "bjhxn1lpstrvywnuvxdhmgvpcgr2ut09",
+      "description": null,
+      "name": "bjhXN1lPSTRvYWNuVXdhMGVpcGR2UT09",
+      "position": 1,
+      "type": "string"
+    }
+  ],
+  "database": "l0_csv_upload",
+  "table": "map_reservation_ids",
+  "table_id": "197487088"
+}

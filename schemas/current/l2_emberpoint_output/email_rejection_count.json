@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": "email_rejection_count",
+      "description": null,
+      "name": "email_rejection_count",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "analysis_date",
+      "description": null,
+      "name": "analysis_date",
+      "position": 1,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "email_rejection_count",
+  "table_id": "56737738"
+}

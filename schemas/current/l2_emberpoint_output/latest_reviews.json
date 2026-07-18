@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "rank",
+      "description": null,
+      "name": "rank",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id",
+      "description": null,
+      "name": "order_detail_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "latest_order_raview",
+      "description": null,
+      "name": "latest_order_raview",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 6,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "latest_reviews",
+  "table_id": "148867705"
+}

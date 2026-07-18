@@ -1,0 +1,112 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "is_kagoochi_ui",
+      "description": null,
+      "name": "is_kagoochi_ui",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "ga_session_id",
+      "description": null,
+      "name": "ga_session_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "seq",
+      "description": null,
+      "name": "seq",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "event_datetime",
+      "description": null,
+      "name": "event_datetime",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "event_name",
+      "description": null,
+      "name": "event_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "pattern_a",
+      "description": null,
+      "name": "pattern_a",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "lag_pattern_a",
+      "description": null,
+      "name": "lag_pattern_a",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "pattern_b",
+      "description": null,
+      "name": "pattern_b",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "lag_pattern_b",
+      "description": null,
+      "name": "lag_pattern_b",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "last_status",
+      "description": null,
+      "name": "last_status",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "confirm_datetime",
+      "description": null,
+      "name": "confirm_datetime",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "complete_datetime",
+      "description": null,
+      "name": "complete_datetime",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "last_pattern_a",
+      "description": null,
+      "name": "last_pattern_a",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "last_pattern_b",
+      "description": null,
+      "name": "last_pattern_b",
+      "position": 14,
+      "type": "string"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_app_session_prep",
+  "table_id": "297446510"
+}

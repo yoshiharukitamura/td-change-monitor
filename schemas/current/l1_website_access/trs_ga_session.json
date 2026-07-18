@@ -1,0 +1,252 @@
+{
+  "columns": [
+    {
+      "alias": "td_uid",
+      "description": null,
+      "name": "td_uid",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "first_access_time",
+      "description": null,
+      "name": "first_access_time",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "device_category",
+      "description": null,
+      "name": "device_category",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "device_detail",
+      "description": null,
+      "name": "device_detail",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "device_browser",
+      "description": null,
+      "name": "device_browser",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "ga_session_id",
+      "description": null,
+      "name": "ga_session_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "start_date",
+      "description": null,
+      "name": "start_date",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "country_name",
+      "description": null,
+      "name": "country_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "prefecture_name",
+      "description": null,
+      "name": "prefecture_name",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "city_name",
+      "description": null,
+      "name": "city_name",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "referral_source",
+      "description": null,
+      "name": "referral_source",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "utm_source",
+      "description": null,
+      "name": "utm_source",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "utm_medium",
+      "description": null,
+      "name": "utm_medium",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "utm_campaign",
+      "description": null,
+      "name": "utm_campaign",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "utm_content",
+      "description": null,
+      "name": "utm_content",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "utm_term",
+      "description": null,
+      "name": "utm_term",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "organic_search_kw",
+      "description": null,
+      "name": "organic_search_kw",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "row_num",
+      "description": null,
+      "name": "row_num",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "pv_id",
+      "description": null,
+      "name": "pv_id",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "access_time",
+      "description": null,
+      "name": "access_time",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "td_client_id",
+      "description": null,
+      "name": "td_client_id",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "td_global_id",
+      "description": null,
+      "name": "td_global_id",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "td_user_agent",
+      "description": null,
+      "name": "td_user_agent",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "td_ip",
+      "description": null,
+      "name": "td_ip",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "td_host",
+      "description": null,
+      "name": "td_host",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "td_path",
+      "description": null,
+      "name": "td_path",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "td_params",
+      "description": null,
+      "name": "td_params",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "td_url",
+      "description": null,
+      "name": "td_url",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "td_referrer",
+      "description": null,
+      "name": "td_referrer",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "td_title",
+      "description": null,
+      "name": "td_title",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": "log_tbl_name",
+      "description": null,
+      "name": "log_tbl_name",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": "td_description",
+      "description": null,
+      "name": "td_description",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": "cid",
+      "description": null,
+      "name": "cid",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "reserve_id",
+      "description": null,
+      "name": "reserve_id",
+      "position": 34,
+      "type": "string"
+    }
+  ],
+  "database": "l1_website_access",
+  "table": "trs_ga_session",
+  "table_id": "21583205"
+}

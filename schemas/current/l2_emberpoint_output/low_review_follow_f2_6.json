@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "name_full",
+      "description": null,
+      "name": "name_full",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "latest_order_date",
+      "description": null,
+      "name": "latest_order_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "order_rank_in_one_year",
+      "description": null,
+      "name": "order_rank_in_one_year",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "reviews_rank",
+      "description": null,
+      "name": "reviews_rank",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "reviews_rate",
+      "description": null,
+      "name": "reviews_rate",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 7,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "low_review_follow_f2_6",
+  "table_id": "49634339"
+}

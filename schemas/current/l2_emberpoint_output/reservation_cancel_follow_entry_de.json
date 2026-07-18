@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "canceled_reservation",
+      "description": null,
+      "name": "canceled_reservation",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_type",
+      "description": null,
+      "name": "cancel_type",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "canceled_shop_id",
+      "description": null,
+      "name": "canceled_shop_id",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "reservation_cancel_follow_entry_de",
+  "table_id": "47929225"
+}

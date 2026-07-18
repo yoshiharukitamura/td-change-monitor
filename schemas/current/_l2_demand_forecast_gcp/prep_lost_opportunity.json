@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "loss_opps_fin",
+      "description": null,
+      "name": "loss_opps_fin",
+      "position": 3,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "prep_lost_opportunity",
+  "table_id": "237589046"
+}

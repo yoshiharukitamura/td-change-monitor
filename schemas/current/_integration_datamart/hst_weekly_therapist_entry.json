@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "yow",
+      "description": null,
+      "name": "yow",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "woy",
+      "description": null,
+      "name": "woy",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "business_week_string",
+      "description": null,
+      "name": "business_week_string",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "tp_type",
+      "description": null,
+      "name": "tp_type",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "entry_hour",
+      "description": null,
+      "name": "entry_hour",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": "passes_week_first_enrty",
+      "description": null,
+      "name": "passes_week_first_enrty",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "passes_week_last_enrty",
+      "description": null,
+      "name": "passes_week_last_enrty",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "entry0_flag",
+      "description": null,
+      "name": "entry0_flag",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "avg_last4",
+      "description": null,
+      "name": "avg_last4",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "avg_prev4",
+      "description": null,
+      "name": "avg_prev4",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": "avg_8w",
+      "description": null,
+      "name": "avg_8w",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "entry_trend",
+      "description": null,
+      "name": "entry_trend",
+      "position": 13,
+      "type": "string"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "hst_weekly_therapist_entry",
+  "table_id": "296371693"
+}

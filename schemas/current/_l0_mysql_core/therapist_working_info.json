@@ -1,0 +1,203 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_working_info_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "affiliation_shop_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "affiliation_shop_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "first_working_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "last_working_date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_a_1",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_a_2",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_a_3",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_b_1",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_b_2",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_b_3",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_a_total",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "facilities_usage_time_b_total",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "month_work_time_rank",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "month_appoint_num_rank",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "month_total_work_time_min",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "month_total_appoint_num",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 26,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 27,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_core",
+  "table": "therapist_working_info",
+  "table_id": "265489305"
+}

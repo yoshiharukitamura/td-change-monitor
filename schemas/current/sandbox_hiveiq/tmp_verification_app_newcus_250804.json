@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "deactivated_flg",
+      "description": null,
+      "name": "deactivated_flg",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "app_single_flg",
+      "description": null,
+      "name": "app_single_flg",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "mail_flg",
+      "description": null,
+      "name": "mail_flg",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "push_flg",
+      "description": null,
+      "name": "push_flg",
+      "position": 4,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "tmp_verification_app_newcus_250804",
+  "table_id": "229120029"
+}

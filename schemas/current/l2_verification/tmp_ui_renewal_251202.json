@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "area",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "segment_id",
+      "position": 2,
+      "type": "long"
+    }
+  ],
+  "database": "l2_verification",
+  "table": "tmp_ui_renewal_251202",
+  "table_id": "256420205"
+}

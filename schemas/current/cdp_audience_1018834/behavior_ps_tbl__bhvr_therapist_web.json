@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "web_access_datetime",
+      "description": null,
+      "name": "web_access_datetime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "web_access_page",
+      "description": null,
+      "name": "web_access_page",
+      "position": 4,
+      "type": "string"
+    }
+  ],
+  "database": "cdp_audience_1018834",
+  "table": "behavior_ps_tbl__bhvr_therapist_web",
+  "table_id": "297468083"
+}

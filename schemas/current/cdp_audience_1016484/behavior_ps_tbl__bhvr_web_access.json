@@ -1,0 +1,133 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "web_access_datetime",
+      "description": null,
+      "name": "web_access_datetime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "web_shop_name",
+      "description": null,
+      "name": "web_shop_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "web_reservation_id",
+      "description": null,
+      "name": "web_reservation_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "web_session_id",
+      "description": null,
+      "name": "web_session_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "web_referral_source",
+      "description": null,
+      "name": "web_referral_source",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "web_utm_source",
+      "description": null,
+      "name": "web_utm_source",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "web_utm_medium",
+      "description": null,
+      "name": "web_utm_medium",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "web_utm_campaign",
+      "description": null,
+      "name": "web_utm_campaign",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "td_url",
+      "description": null,
+      "name": "td_url",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "td_path",
+      "description": null,
+      "name": "td_path",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "web_event_status",
+      "description": null,
+      "name": "web_event_status",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "pv",
+      "description": null,
+      "name": "pv",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "td_utm_campaign",
+      "description": null,
+      "name": "td_utm_campaign",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "td_utm_medium",
+      "description": null,
+      "name": "td_utm_medium",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "td_utm_source",
+      "description": null,
+      "name": "td_utm_source",
+      "position": 17,
+      "type": "string"
+    }
+  ],
+  "database": "cdp_audience_1016484",
+  "table": "behavior_ps_tbl__bhvr_web_access",
+  "table_id": "297474152"
+}

@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "flag",
+      "description": null,
+      "name": "flag",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "processing_week",
+      "description": null,
+      "name": "processing_week",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "offset_diff",
+      "description": null,
+      "name": "offset_diff",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot_detail_id",
+      "description": null,
+      "name": "time_slot_detail_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "shop_id",
+      "description": null,
+      "name": "shop_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "business_datetime",
+      "description": null,
+      "name": "business_datetime",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 10,
+      "type": "double"
+    }
+  ],
+  "database": "l2_shop_db_dev",
+  "table": "time_slot_progress_prep",
+  "table_id": "297323302"
+}

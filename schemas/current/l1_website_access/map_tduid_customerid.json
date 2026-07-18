@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "td_uid",
+      "description": null,
+      "name": "td_uid",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "last_access_time",
+      "description": null,
+      "name": "last_access_time",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "log_tbl_name",
+      "description": null,
+      "name": "log_tbl_name",
+      "position": 3,
+      "type": "array<string>"
+    }
+  ],
+  "database": "l1_website_access",
+  "table": "map_tduid_customerid",
+  "table_id": "297403207"
+}

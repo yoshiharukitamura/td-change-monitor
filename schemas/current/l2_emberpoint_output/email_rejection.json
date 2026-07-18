@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "email_rejection",
+      "description": null,
+      "name": "email_rejection",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "c_modified",
+      "description": null,
+      "name": "c_modified",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "webc_modified",
+      "description": null,
+      "name": "webc_modified",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "email_rejection",
+  "table_id": "58843280"
+}

@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_no",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "segment",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "before_from",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "before_to",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "after_from",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "after_to",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "l2_verification",
+  "table": "list_demand_paypay_v4",
+  "table_id": "244437049"
+}

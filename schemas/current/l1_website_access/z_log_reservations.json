@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "reserve_id",
+      "description": null,
+      "name": "reserve_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "pv_id",
+      "description": null,
+      "name": "pv_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "td_uid",
+      "description": null,
+      "name": "td_uid",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l1_website_access",
+  "table": "z_log_reservations",
+  "table_id": "297476514"
+}

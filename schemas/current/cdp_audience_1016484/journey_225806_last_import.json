@@ -1,0 +1,14 @@
+{
+  "columns": [
+    {
+      "alias": "last_commit_id",
+      "description": null,
+      "name": "last_commit_id",
+      "position": 0,
+      "type": "long"
+    }
+  ],
+  "database": "cdp_audience_1016484",
+  "table": "journey_225806_last_import",
+  "table_id": "265649063"
+}

@@ -1,0 +1,112 @@
+{
+  "columns": [
+    {
+      "alias": "holiday_id",
+      "description": null,
+      "name": "holiday_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "holiday_type",
+      "description": null,
+      "name": "holiday_type",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "holiday_date",
+      "description": null,
+      "name": "holiday_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "holiday_name",
+      "description": null,
+      "name": "holiday_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 14,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "holiday",
+  "table_id": "297408252"
+}

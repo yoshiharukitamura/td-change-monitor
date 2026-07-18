@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "order_date",
+      "description": null,
+      "name": "order_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "next_order_date",
+      "description": null,
+      "name": "next_order_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "order_interval",
+      "description": null,
+      "name": "order_interval",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "order_interval_for_dormant",
+  "table_id": "148867801"
+}

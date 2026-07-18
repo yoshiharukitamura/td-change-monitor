@@ -1,0 +1,1015 @@
+{
+  "columns": [
+    {
+      "alias": "shop_additional_info_id",
+      "description": null,
+      "name": "shop_additional_info_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "deposit_card_no",
+      "description": null,
+      "name": "deposit_card_no",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "part_employee_flag",
+      "description": null,
+      "name": "part_employee_flag",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "shop_business_type",
+      "description": null,
+      "name": "shop_business_type",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "special_shop_reward",
+      "description": null,
+      "name": "special_shop_reward",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": "business_start_time",
+      "description": null,
+      "name": "business_start_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_end_time",
+      "description": null,
+      "name": "business_end_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "reception_final_time",
+      "description": null,
+      "name": "reception_final_time",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "regular_closing_day_sat",
+      "description": null,
+      "name": "regular_closing_day_sat",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "regular_closing_day_sun",
+      "description": null,
+      "name": "regular_closing_day_sun",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "regular_closing_day_hol",
+      "description": null,
+      "name": "regular_closing_day_hol",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "garbage_collection_method",
+      "description": null,
+      "name": "garbage_collection_method",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "training_space",
+      "description": null,
+      "name": "training_space",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "in_shop_lesson_flag",
+      "description": null,
+      "name": "in_shop_lesson_flag",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "in_shop_lesson_remarks",
+      "description": null,
+      "name": "in_shop_lesson_remarks",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "lesson_start_possible_date",
+      "description": null,
+      "name": "lesson_start_possible_date",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "lesson_reservation_target",
+      "description": null,
+      "name": "lesson_reservation_target",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "briefing_datetime",
+      "description": null,
+      "name": "briefing_datetime",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "open_date",
+      "description": null,
+      "name": "open_date",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "open_date_remarks",
+      "description": null,
+      "name": "open_date_remarks",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "fix_open_date_flag",
+      "description": null,
+      "name": "fix_open_date_flag",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "application_date",
+      "description": null,
+      "name": "application_date",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "delivery_date",
+      "description": null,
+      "name": "delivery_date",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "delivery_date_remarks",
+      "description": null,
+      "name": "delivery_date_remarks",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "rent_start_date",
+      "description": null,
+      "name": "rent_start_date",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "rent_start_date_remarks",
+      "description": null,
+      "name": "rent_start_date_remarks",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "installation_date",
+      "description": null,
+      "name": "installation_date",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "distribute_date",
+      "description": null,
+      "name": "distribute_date",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "close_date",
+      "description": null,
+      "name": "close_date",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "fix_close_date_flag",
+      "description": null,
+      "name": "fix_close_date_flag",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "map_regist_flag",
+      "description": null,
+      "name": "map_regist_flag",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": "open_announce_date",
+      "description": null,
+      "name": "open_announce_date",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": "garbage_client_code",
+      "description": null,
+      "name": "garbage_client_code",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "garbage_arrange_date",
+      "description": null,
+      "name": "garbage_arrange_date",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "electricity_start_date",
+      "description": null,
+      "name": "electricity_start_date",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": "electricity_start_date_remarks",
+      "description": null,
+      "name": "electricity_start_date_remarks",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": "water_start_date",
+      "description": null,
+      "name": "water_start_date",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": "water_start_date_remarks",
+      "description": null,
+      "name": "water_start_date_remarks",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": "sewer_septic_tank_type",
+      "description": null,
+      "name": "sewer_septic_tank_type",
+      "position": 39,
+      "type": "string"
+    },
+    {
+      "alias": "septic_tank_arrange_date",
+      "description": null,
+      "name": "septic_tank_arrange_date",
+      "position": 40,
+      "type": "string"
+    },
+    {
+      "alias": "septic_tank_progress",
+      "description": null,
+      "name": "septic_tank_progress",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": "septic_tank_client_code",
+      "description": null,
+      "name": "septic_tank_client_code",
+      "position": 42,
+      "type": "string"
+    },
+    {
+      "alias": "septic_tank_size",
+      "description": null,
+      "name": "septic_tank_size",
+      "position": 43,
+      "type": "string"
+    },
+    {
+      "alias": "septic_tank_annual_cost",
+      "description": null,
+      "name": "septic_tank_annual_cost",
+      "position": 44,
+      "type": "double"
+    },
+    {
+      "alias": "septic_tank_check_num",
+      "description": null,
+      "name": "septic_tank_check_num",
+      "position": 45,
+      "type": "string"
+    },
+    {
+      "alias": "septic_tank_remarks",
+      "description": null,
+      "name": "septic_tank_remarks",
+      "position": 46,
+      "type": "string"
+    },
+    {
+      "alias": "tel_start_possible_date",
+      "description": null,
+      "name": "tel_start_possible_date",
+      "position": 47,
+      "type": "string"
+    },
+    {
+      "alias": "line_type",
+      "description": null,
+      "name": "line_type",
+      "position": 48,
+      "type": "string"
+    },
+    {
+      "alias": "line_construction_date",
+      "description": null,
+      "name": "line_construction_date",
+      "position": 49,
+      "type": "string"
+    },
+    {
+      "alias": "provider_regist_flag",
+      "description": null,
+      "name": "provider_regist_flag",
+      "position": 50,
+      "type": "long"
+    },
+    {
+      "alias": "camera_setting_date",
+      "description": null,
+      "name": "camera_setting_date",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": "security_client_code",
+      "description": null,
+      "name": "security_client_code",
+      "position": 52,
+      "type": "string"
+    },
+    {
+      "alias": "security_arrange_date",
+      "description": null,
+      "name": "security_arrange_date",
+      "position": 53,
+      "type": "string"
+    },
+    {
+      "alias": "rental_towel_client_code",
+      "description": null,
+      "name": "rental_towel_client_code",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": "rental_towel_arrange_date",
+      "description": null,
+      "name": "rental_towel_arrange_date",
+      "position": 55,
+      "type": "string"
+    },
+    {
+      "alias": "vending_machine_setup_flag",
+      "description": null,
+      "name": "vending_machine_setup_flag",
+      "position": 56,
+      "type": "string"
+    },
+    {
+      "alias": "vending_machine_setup_date",
+      "description": null,
+      "name": "vending_machine_setup_date",
+      "position": 57,
+      "type": "string"
+    },
+    {
+      "alias": "vending_machine_remarks",
+      "description": null,
+      "name": "vending_machine_remarks",
+      "position": 58,
+      "type": "string"
+    },
+    {
+      "alias": "fire_apply_use_report_flag",
+      "description": null,
+      "name": "fire_apply_use_report_flag",
+      "position": 59,
+      "type": "string"
+    },
+    {
+      "alias": "fire_apply_administrator_flag",
+      "description": null,
+      "name": "fire_apply_administrator_flag",
+      "position": 60,
+      "type": "string"
+    },
+    {
+      "alias": "fire_apply_plan_flag",
+      "description": null,
+      "name": "fire_apply_plan_flag",
+      "position": 61,
+      "type": "string"
+    },
+    {
+      "alias": "fire_apply_check_report",
+      "description": null,
+      "name": "fire_apply_check_report",
+      "position": 62,
+      "type": "string"
+    },
+    {
+      "alias": "fire_apply_person",
+      "description": null,
+      "name": "fire_apply_person",
+      "position": 63,
+      "type": "string"
+    },
+    {
+      "alias": "fire_apply_remarks",
+      "description": null,
+      "name": "fire_apply_remarks",
+      "position": 64,
+      "type": "string"
+    },
+    {
+      "alias": "fire_client_code",
+      "description": null,
+      "name": "fire_client_code",
+      "position": 65,
+      "type": "string"
+    },
+    {
+      "alias": "fire_remarks",
+      "description": null,
+      "name": "fire_remarks",
+      "position": 66,
+      "type": "string"
+    },
+    {
+      "alias": "cable_arrange_date",
+      "description": null,
+      "name": "cable_arrange_date",
+      "position": 67,
+      "type": "string"
+    },
+    {
+      "alias": "dev_remarks",
+      "description": null,
+      "name": "dev_remarks",
+      "position": 68,
+      "type": "string"
+    },
+    {
+      "alias": "general_remarks",
+      "description": null,
+      "name": "general_remarks",
+      "position": 69,
+      "type": "string"
+    },
+    {
+      "alias": "personnel",
+      "description": null,
+      "name": "personnel",
+      "position": 70,
+      "type": "string"
+    },
+    {
+      "alias": "median_flag",
+      "description": null,
+      "name": "median_flag",
+      "position": 71,
+      "type": "string"
+    },
+    {
+      "alias": "lane_num",
+      "description": null,
+      "name": "lane_num",
+      "position": 72,
+      "type": "string"
+    },
+    {
+      "alias": "market_population_05km",
+      "description": null,
+      "name": "market_population_05km",
+      "position": 73,
+      "type": "long"
+    },
+    {
+      "alias": "market_population_1km",
+      "description": null,
+      "name": "market_population_1km",
+      "position": 74,
+      "type": "long"
+    },
+    {
+      "alias": "market_population_3km",
+      "description": null,
+      "name": "market_population_3km",
+      "position": 75,
+      "type": "long"
+    },
+    {
+      "alias": "market_population_5km",
+      "description": null,
+      "name": "market_population_5km",
+      "position": 76,
+      "type": "long"
+    },
+    {
+      "alias": "traffic_forward",
+      "description": null,
+      "name": "traffic_forward",
+      "position": 77,
+      "type": "long"
+    },
+    {
+      "alias": "traffic_forward_from",
+      "description": null,
+      "name": "traffic_forward_from",
+      "position": 78,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_forward_to",
+      "description": null,
+      "name": "traffic_forward_to",
+      "position": 79,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_backward",
+      "description": null,
+      "name": "traffic_backward",
+      "position": 80,
+      "type": "long"
+    },
+    {
+      "alias": "traffic_backward_from",
+      "description": null,
+      "name": "traffic_backward_from",
+      "position": 81,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_backward_to",
+      "description": null,
+      "name": "traffic_backward_to",
+      "position": 82,
+      "type": "string"
+    },
+    {
+      "alias": "avg_customer_num",
+      "description": null,
+      "name": "avg_customer_num",
+      "position": 83,
+      "type": "long"
+    },
+    {
+      "alias": "dev_expect_customer_num",
+      "description": null,
+      "name": "dev_expect_customer_num",
+      "position": 84,
+      "type": "long"
+    },
+    {
+      "alias": "pres_expect_cutomer_num",
+      "description": null,
+      "name": "pres_expect_cutomer_num",
+      "position": 85,
+      "type": "long"
+    },
+    {
+      "alias": "busy_season_customer_num",
+      "description": null,
+      "name": "busy_season_customer_num",
+      "position": 86,
+      "type": "long"
+    },
+    {
+      "alias": "dic_expect_customer_num",
+      "description": null,
+      "name": "dic_expect_customer_num",
+      "position": 87,
+      "type": "long"
+    },
+    {
+      "alias": "dev_expect_comment",
+      "description": null,
+      "name": "dev_expect_comment",
+      "position": 88,
+      "type": "string"
+    },
+    {
+      "alias": "dic_road_3km_nighttime_population",
+      "description": null,
+      "name": "dic_road_3km_nighttime_population",
+      "position": 89,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_3km_daytime_population",
+      "description": null,
+      "name": "dic_road_3km_daytime_population",
+      "position": 90,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_05km_year_a_lank_shop",
+      "description": null,
+      "name": "dic_road_05km_year_a_lank_shop",
+      "position": 91,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_traffic_volume",
+      "description": null,
+      "name": "dic_road_traffic_volume",
+      "position": 92,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_toll_fee",
+      "description": null,
+      "name": "dic_road_toll_fee",
+      "position": 93,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_parking_cars",
+      "description": null,
+      "name": "dic_road_parking_cars",
+      "position": 94,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_site_frontage_width",
+      "description": null,
+      "name": "dic_road_site_frontage_width",
+      "position": 95,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_corner_lot_form",
+      "description": null,
+      "name": "dic_road_corner_lot_form",
+      "position": 96,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_5km_riraku_conflict",
+      "description": null,
+      "name": "dic_road_5km_riraku_conflict",
+      "position": 97,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_5km_other_conflict",
+      "description": null,
+      "name": "dic_road_5km_other_conflict",
+      "position": 98,
+      "type": "long"
+    },
+    {
+      "alias": "dic_road_large_car_ratio",
+      "description": null,
+      "name": "dic_road_large_car_ratio",
+      "position": 99,
+      "type": "double"
+    },
+    {
+      "alias": "dic_road_3km_less_2million_household_ratio",
+      "description": null,
+      "name": "dic_road_3km_less_2million_household_ratio",
+      "position": 100,
+      "type": "double"
+    },
+    {
+      "alias": "dic_building_in_1km_nighttime_population",
+      "description": null,
+      "name": "dic_building_in_1km_nighttime_population",
+      "position": 101,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_1km_daytime_population",
+      "description": null,
+      "name": "dic_building_in_1km_daytime_population",
+      "position": 102,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_toll_fee",
+      "description": null,
+      "name": "dic_building_in_toll_fee",
+      "position": 103,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_opening_floor",
+      "description": null,
+      "name": "dic_building_in_opening_floor",
+      "position": 104,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_shop_floor_space",
+      "description": null,
+      "name": "dic_building_in_shop_floor_space",
+      "position": 105,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_frontage_width",
+      "description": null,
+      "name": "dic_building_in_frontage_width",
+      "position": 106,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_corner_lot_form",
+      "description": null,
+      "name": "dic_building_in_corner_lot_form",
+      "position": 107,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_riraku_conflict",
+      "description": null,
+      "name": "dic_building_in_riraku_conflict",
+      "position": 108,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_other_conflict",
+      "description": null,
+      "name": "dic_building_in_other_conflict",
+      "position": 109,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_nearest_station_users",
+      "description": null,
+      "name": "dic_building_in_nearest_station_users",
+      "position": 110,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_nearest_station_distance",
+      "description": null,
+      "name": "dic_building_in_nearest_station_distance",
+      "position": 111,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_1km_household",
+      "description": null,
+      "name": "dic_building_in_1km_household",
+      "position": 112,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_1km_500_1000_household",
+      "description": null,
+      "name": "dic_building_in_1km_500_1000_household",
+      "position": 113,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_1km_10million_more_than_household",
+      "description": null,
+      "name": "dic_building_in_1km_10million_more_than_household",
+      "position": 114,
+      "type": "long"
+    },
+    {
+      "alias": "dic_building_in_5million_more_than_household_ratio",
+      "description": null,
+      "name": "dic_building_in_5million_more_than_household_ratio",
+      "position": 115,
+      "type": "double"
+    },
+    {
+      "alias": "show_ranking_type",
+      "description": null,
+      "name": "show_ranking_type",
+      "position": 116,
+      "type": "string"
+    },
+    {
+      "alias": "verbal_agreement_date",
+      "description": null,
+      "name": "verbal_agreement_date",
+      "position": 117,
+      "type": "string"
+    },
+    {
+      "alias": "time_to_station",
+      "description": null,
+      "name": "time_to_station",
+      "position": 118,
+      "type": "long"
+    },
+    {
+      "alias": "distance_to_station",
+      "description": null,
+      "name": "distance_to_station",
+      "position": 119,
+      "type": "long"
+    },
+    {
+      "alias": "bicycle_park_num",
+      "description": null,
+      "name": "bicycle_park_num",
+      "position": 120,
+      "type": "long"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 121,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 122,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 123,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 124,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 125,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 126,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 127,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 128,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 129,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 130,
+      "type": "long"
+    },
+    {
+      "alias": "entry_order_start_yyyymm",
+      "description": null,
+      "name": "entry_order_start_yyyymm",
+      "position": 131,
+      "type": "string"
+    },
+    {
+      "alias": "application_entry_shop_flag",
+      "description": null,
+      "name": "application_entry_shop_flag",
+      "position": 132,
+      "type": "long"
+    },
+    {
+      "alias": "application_entry_start_date",
+      "description": null,
+      "name": "application_entry_start_date",
+      "position": 133,
+      "type": "string"
+    },
+    {
+      "alias": "application_entry_end_date",
+      "description": null,
+      "name": "application_entry_end_date",
+      "position": 134,
+      "type": "string"
+    },
+    {
+      "alias": "application_entry_target_period_dvn",
+      "description": null,
+      "name": "application_entry_target_period_dvn",
+      "position": 135,
+      "type": "string"
+    },
+    {
+      "alias": "application_entry_target_mon_flag",
+      "description": null,
+      "name": "application_entry_target_mon_flag",
+      "position": 136,
+      "type": "long"
+    },
+    {
+      "alias": "application_entry_target_tue_flag",
+      "description": null,
+      "name": "application_entry_target_tue_flag",
+      "position": 137,
+      "type": "long"
+    },
+    {
+      "alias": "application_entry_target_wed_flag",
+      "description": null,
+      "name": "application_entry_target_wed_flag",
+      "position": 138,
+      "type": "long"
+    },
+    {
+      "alias": "application_entry_target_thu_flag",
+      "description": null,
+      "name": "application_entry_target_thu_flag",
+      "position": 139,
+      "type": "long"
+    },
+    {
+      "alias": "application_entry_target_fri_flag",
+      "description": null,
+      "name": "application_entry_target_fri_flag",
+      "position": 140,
+      "type": "long"
+    },
+    {
+      "alias": "application_entry_target_sat_flag",
+      "description": null,
+      "name": "application_entry_target_sat_flag",
+      "position": 141,
+      "type": "long"
+    },
+    {
+      "alias": "application_entry_target_sun_flag",
+      "description": null,
+      "name": "application_entry_target_sun_flag",
+      "position": 142,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 143,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "property_additional_info",
+  "table_id": "297407613"
+}

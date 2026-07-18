@@ -1,0 +1,175 @@
+{
+  "columns": [
+    {
+      "alias": "daily_time_slot_id",
+      "description": null,
+      "name": "daily_time_slot_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_type",
+      "description": null,
+      "name": "therapist_type",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "date",
+      "description": null,
+      "name": "date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "break_start_time",
+      "description": null,
+      "name": "break_start_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "break_end_time",
+      "description": null,
+      "name": "break_end_time",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "substitute_therapist_id",
+      "description": null,
+      "name": "substitute_therapist_id",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "fix_flag",
+      "description": null,
+      "name": "fix_flag",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "open_operation_flag",
+      "description": null,
+      "name": "open_operation_flag",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "close_operation_flag",
+      "description": null,
+      "name": "close_operation_flag",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 21,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 23,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "daily_time_slot",
+  "table_id": "297407633"
+}

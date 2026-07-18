@@ -1,0 +1,322 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "dtb_customer_id",
+      "description": null,
+      "name": "dtb_customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "search_id",
+      "description": null,
+      "name": "search_id",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "email_mask",
+      "description": null,
+      "name": "email_mask",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "phone_no_mask",
+      "description": null,
+      "name": "phone_no_mask",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "sms_phone_no",
+      "description": null,
+      "name": "sms_phone_no",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "pref_id",
+      "description": null,
+      "name": "pref_id",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "address_mask",
+      "description": null,
+      "name": "address_mask",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "city",
+      "description": null,
+      "name": "city",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "street",
+      "description": null,
+      "name": "street",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "password",
+      "description": null,
+      "name": "password",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "is_update_rn",
+      "description": null,
+      "name": "is_update_rn",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "activation_key",
+      "description": null,
+      "name": "activation_key",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "activation_expiration",
+      "description": null,
+      "name": "activation_expiration",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "activation_sms_key",
+      "description": null,
+      "name": "activation_sms_key",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "activation_sms_expiration",
+      "description": null,
+      "name": "activation_sms_expiration",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "activated",
+      "description": null,
+      "name": "activated",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "activated_from",
+      "description": null,
+      "name": "activated_from",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "reset_password_date",
+      "description": null,
+      "name": "reset_password_date",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "reset_password_key",
+      "description": null,
+      "name": "reset_password_key",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "reset_password_device",
+      "description": null,
+      "name": "reset_password_device",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "last_login",
+      "description": null,
+      "name": "last_login",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "last_login_app",
+      "description": null,
+      "name": "last_login_app",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "is_login_app",
+      "description": null,
+      "name": "is_login_app",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "created_app",
+      "description": null,
+      "name": "created_app",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "push_noti",
+      "description": null,
+      "name": "push_noti",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": "mailflg",
+      "description": null,
+      "name": "mailflg",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "first_name_kanji",
+      "description": null,
+      "name": "first_name_kanji",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": "is_confirm",
+      "description": null,
+      "name": "is_confirm",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": "work_address",
+      "description": null,
+      "name": "work_address",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "home_address",
+      "description": null,
+      "name": "home_address",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "last_name_kanji",
+      "description": null,
+      "name": "last_name_kanji",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": "modified_batch",
+      "description": null,
+      "name": "modified_batch",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": "anniversary",
+      "description": null,
+      "name": "anniversary",
+      "position": 39,
+      "type": "string"
+    },
+    {
+      "alias": "birth_date_changed",
+      "description": null,
+      "name": "birth_date_changed",
+      "position": 40,
+      "type": "string"
+    },
+    {
+      "alias": "name_changed",
+      "description": null,
+      "name": "name_changed",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": "is_change_email",
+      "description": null,
+      "name": "is_change_email",
+      "position": 42,
+      "type": "long"
+    },
+    {
+      "alias": "encrypted",
+      "description": null,
+      "name": "encrypted",
+      "position": 43,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 44,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_hp",
+  "table": "customers",
+  "table_id": "297411779"
+}

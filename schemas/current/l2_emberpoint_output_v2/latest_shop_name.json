@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "purchased_date",
+      "description": null,
+      "name": "purchased_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output_v2",
+  "table": "latest_shop_name",
+  "table_id": "297430136"
+}

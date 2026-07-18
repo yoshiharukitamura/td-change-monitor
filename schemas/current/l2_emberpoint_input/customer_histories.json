@@ -1,0 +1,126 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "customer_name",
+      "description": null,
+      "name": "customer_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "members_card_no",
+      "description": null,
+      "name": "members_card_no",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "number_of_visits",
+      "description": null,
+      "name": "number_of_visits",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "last_purchase_of_charge_point",
+      "description": null,
+      "name": "last_purchase_of_charge_point",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "current_charge_point",
+      "description": null,
+      "name": "current_charge_point",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "expiration_date_of_charge_point",
+      "description": null,
+      "name": "expiration_date_of_charge_point",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "current_bonus_point",
+      "description": null,
+      "name": "current_bonus_point",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "expiration_date_of_bonus_point",
+      "description": null,
+      "name": "expiration_date_of_bonus_point",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "last_treatment_date",
+      "description": null,
+      "name": "last_treatment_date",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "availability_of_point_consumption",
+      "description": null,
+      "name": "availability_of_point_consumption",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "whether_customer_info_detail_is_satisfied",
+      "description": null,
+      "name": "whether_customer_info_detail_is_satisfied",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 16,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "customer_histories",
+  "table_id": "237466554"
+}

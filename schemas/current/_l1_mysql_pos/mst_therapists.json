@@ -1,0 +1,161 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "professional_name_kana",
+      "description": null,
+      "name": "professional_name_kana",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "password",
+      "description": null,
+      "name": "password",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "professional_name",
+      "description": null,
+      "name": "professional_name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "pref_id",
+      "description": null,
+      "name": "pref_id",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "city",
+      "description": null,
+      "name": "city",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "street",
+      "description": null,
+      "name": "street",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "business_type",
+      "description": null,
+      "name": "business_type",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "contract_type",
+      "description": null,
+      "name": "contract_type",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "eligible_business_number",
+      "description": null,
+      "name": "eligible_business_number",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 21,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "mst_therapists",
+  "table_id": "297404605"
+}

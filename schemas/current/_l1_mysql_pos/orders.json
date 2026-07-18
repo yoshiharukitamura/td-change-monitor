@@ -1,0 +1,700 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "unique_order_id",
+      "description": null,
+      "name": "unique_order_id",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "order_type",
+      "description": null,
+      "name": "order_type",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "payment_type",
+      "description": null,
+      "name": "payment_type",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "member_type",
+      "description": null,
+      "name": "member_type",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "mst_member_grades_id",
+      "description": null,
+      "name": "mst_member_grades_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "is_canceled_when_closing_shop",
+      "description": null,
+      "name": "is_canceled_when_closing_shop",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "cancel_reason",
+      "description": null,
+      "name": "cancel_reason",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "original_order_id",
+      "description": null,
+      "name": "original_order_id",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "parent_order_id",
+      "description": null,
+      "name": "parent_order_id",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "order_received_date",
+      "description": null,
+      "name": "order_received_date",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "order_received_datetime",
+      "description": null,
+      "name": "order_received_datetime",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "total_amount_of_treatment_minutes",
+      "description": null,
+      "name": "total_amount_of_treatment_minutes",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_start_datetime",
+      "description": null,
+      "name": "treatment_start_datetime",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "treatment_end_datetime",
+      "description": null,
+      "name": "treatment_end_datetime",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "purchased_date",
+      "description": null,
+      "name": "purchased_date",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "purchased_datetime",
+      "description": null,
+      "name": "purchased_datetime",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "registered_business_date",
+      "description": null,
+      "name": "registered_business_date",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "total_number_of_products",
+      "description": null,
+      "name": "total_number_of_products",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "total_amount_of_nomination_fee",
+      "description": null,
+      "name": "total_amount_of_nomination_fee",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "total_reward_amount_of_price",
+      "description": null,
+      "name": "total_reward_amount_of_price",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "subtotal_amount_of_price",
+      "description": null,
+      "name": "subtotal_amount_of_price",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "total_amount_of_price",
+      "description": null,
+      "name": "total_amount_of_price",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "total_tax",
+      "description": null,
+      "name": "total_tax",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "received_amount",
+      "description": null,
+      "name": "received_amount",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_cash_payment",
+      "description": null,
+      "name": "amount_of_cash_payment",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "payment_type_id",
+      "description": null,
+      "name": "payment_type_id",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "cashless_payment_service_name",
+      "description": null,
+      "name": "cashless_payment_service_name",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "amount_of_cashless_payment",
+      "description": null,
+      "name": "amount_of_cashless_payment",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_difference_of_cashless_payment",
+      "description": null,
+      "name": "amount_of_difference_of_cashless_payment",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": "paygate_order_id",
+      "description": null,
+      "name": "paygate_order_id",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": "terminal_sequence",
+      "description": null,
+      "name": "terminal_sequence",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "credit_card_no",
+      "description": null,
+      "name": "credit_card_no",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "used_charge_point",
+      "description": null,
+      "name": "used_charge_point",
+      "position": 35,
+      "type": "long"
+    },
+    {
+      "alias": "used_bonus_point",
+      "description": null,
+      "name": "used_bonus_point",
+      "position": 36,
+      "type": "long"
+    },
+    {
+      "alias": "used_standard_bonus_point",
+      "description": null,
+      "name": "used_standard_bonus_point",
+      "position": 37,
+      "type": "long"
+    },
+    {
+      "alias": "used_limited_time_bonus_point",
+      "description": null,
+      "name": "used_limited_time_bonus_point",
+      "position": 38,
+      "type": "long"
+    },
+    {
+      "alias": "old_gift_card",
+      "description": null,
+      "name": "old_gift_card",
+      "position": 39,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_used_old_gift_card",
+      "description": null,
+      "name": "amount_of_used_old_gift_card",
+      "position": 40,
+      "type": "long"
+    },
+    {
+      "alias": "cash_change",
+      "description": null,
+      "name": "cash_change",
+      "position": 41,
+      "type": "long"
+    },
+    {
+      "alias": "birthday_point",
+      "description": null,
+      "name": "birthday_point",
+      "position": 42,
+      "type": "long"
+    },
+    {
+      "alias": "total_additional_charge_point",
+      "description": null,
+      "name": "total_additional_charge_point",
+      "position": 43,
+      "type": "long"
+    },
+    {
+      "alias": "total_additional_bonus_point",
+      "description": null,
+      "name": "total_additional_bonus_point",
+      "position": 44,
+      "type": "long"
+    },
+    {
+      "alias": "additional_bonus_point_for_stamp_rally",
+      "description": null,
+      "name": "additional_bonus_point_for_stamp_rally",
+      "position": 45,
+      "type": "long"
+    },
+    {
+      "alias": "balance_of_charge_point",
+      "description": null,
+      "name": "balance_of_charge_point",
+      "position": 46,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_charge_point_expires_earliest",
+      "description": null,
+      "name": "amount_of_charge_point_expires_earliest",
+      "position": 47,
+      "type": "long"
+    },
+    {
+      "alias": "expiration_date_of_charge_point",
+      "description": null,
+      "name": "expiration_date_of_charge_point",
+      "position": 48,
+      "type": "string"
+    },
+    {
+      "alias": "earliest_expiration_date_of_charge_point",
+      "description": null,
+      "name": "earliest_expiration_date_of_charge_point",
+      "position": 49,
+      "type": "string"
+    },
+    {
+      "alias": "balance_of_bonus_point",
+      "description": null,
+      "name": "balance_of_bonus_point",
+      "position": 50,
+      "type": "long"
+    },
+    {
+      "alias": "expiration_date_of_bonus_point",
+      "description": null,
+      "name": "expiration_date_of_bonus_point",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": "balance_of_standard_bonus_point",
+      "description": null,
+      "name": "balance_of_standard_bonus_point",
+      "position": 52,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_standard_bonus_point_expires_earliest",
+      "description": null,
+      "name": "amount_of_standard_bonus_point_expires_earliest",
+      "position": 53,
+      "type": "long"
+    },
+    {
+      "alias": "earliest_expiration_date_of_standard_bonus_point",
+      "description": null,
+      "name": "earliest_expiration_date_of_standard_bonus_point",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": "balance_of_limited_time_bonus_point",
+      "description": null,
+      "name": "balance_of_limited_time_bonus_point",
+      "position": 55,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_limited_time_bonus_point_expires_earliest",
+      "description": null,
+      "name": "amount_of_limited_time_bonus_point_expires_earliest",
+      "position": 56,
+      "type": "long"
+    },
+    {
+      "alias": "earliest_expiration_date_of_limited_time_bonus_point",
+      "description": null,
+      "name": "earliest_expiration_date_of_limited_time_bonus_point",
+      "position": 57,
+      "type": "string"
+    },
+    {
+      "alias": "balance_of_service_ticket",
+      "description": null,
+      "name": "balance_of_service_ticket",
+      "position": 58,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 59,
+      "type": "long"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 60,
+      "type": "string"
+    },
+    {
+      "alias": "shop_telephone_no",
+      "description": null,
+      "name": "shop_telephone_no",
+      "position": 61,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 62,
+      "type": "long"
+    },
+    {
+      "alias": "customer_name",
+      "description": null,
+      "name": "customer_name",
+      "position": 63,
+      "type": "string"
+    },
+    {
+      "alias": "customer_members_card_no",
+      "description": null,
+      "name": "customer_members_card_no",
+      "position": 64,
+      "type": "string"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 65,
+      "type": "string"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 66,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 67,
+      "type": "string"
+    },
+    {
+      "alias": "purchased_customer_id",
+      "description": null,
+      "name": "purchased_customer_id",
+      "position": 68,
+      "type": "long"
+    },
+    {
+      "alias": "purchased_customer_name",
+      "description": null,
+      "name": "purchased_customer_name",
+      "position": 69,
+      "type": "string"
+    },
+    {
+      "alias": "purchased_customer_members_card_no",
+      "description": null,
+      "name": "purchased_customer_members_card_no",
+      "position": 70,
+      "type": "string"
+    },
+    {
+      "alias": "if_experienced_serious_injury",
+      "description": null,
+      "name": "if_experienced_serious_injury",
+      "position": 71,
+      "type": "long"
+    },
+    {
+      "alias": "injured_date",
+      "description": null,
+      "name": "injured_date",
+      "position": 72,
+      "type": "string"
+    },
+    {
+      "alias": "sign_image_file_name",
+      "description": null,
+      "name": "sign_image_file_name",
+      "position": 73,
+      "type": "string"
+    },
+    {
+      "alias": "pandemic_virus_signature_images",
+      "description": null,
+      "name": "pandemic_virus_signature_images",
+      "position": 74,
+      "type": "string"
+    },
+    {
+      "alias": "accepted_therapist_id",
+      "description": null,
+      "name": "accepted_therapist_id",
+      "position": 75,
+      "type": "long"
+    },
+    {
+      "alias": "accepted_therapist_name",
+      "description": null,
+      "name": "accepted_therapist_name",
+      "position": 76,
+      "type": "string"
+    },
+    {
+      "alias": "purchased_therapist_id",
+      "description": null,
+      "name": "purchased_therapist_id",
+      "position": 77,
+      "type": "long"
+    },
+    {
+      "alias": "purchased_therapist_name",
+      "description": null,
+      "name": "purchased_therapist_name",
+      "position": 78,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_therapist_id",
+      "description": null,
+      "name": "cancel_therapist_id",
+      "position": 79,
+      "type": "long"
+    },
+    {
+      "alias": "cancel_therapist_name",
+      "description": null,
+      "name": "cancel_therapist_name",
+      "position": 80,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_datetime",
+      "description": null,
+      "name": "cancel_datetime",
+      "position": 81,
+      "type": "string"
+    },
+    {
+      "alias": "if_body_pillow_is_used",
+      "description": null,
+      "name": "if_body_pillow_is_used",
+      "position": 82,
+      "type": "long"
+    },
+    {
+      "alias": "if_customer_does_not_feel_uncomfortable_and_pain",
+      "description": null,
+      "name": "if_customer_does_not_feel_uncomfortable_and_pain",
+      "position": 83,
+      "type": "long"
+    },
+    {
+      "alias": "is_updated_different_month",
+      "description": null,
+      "name": "is_updated_different_month",
+      "position": 84,
+      "type": "long"
+    },
+    {
+      "alias": "is_registered_in_admin",
+      "description": null,
+      "name": "is_registered_in_admin",
+      "position": 85,
+      "type": "long"
+    },
+    {
+      "alias": "visit_date_before_last_time",
+      "description": null,
+      "name": "visit_date_before_last_time",
+      "position": 86,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_name_who_treated_before_last_time",
+      "description": null,
+      "name": "therapist_name_who_treated_before_last_time",
+      "position": 87,
+      "type": "string"
+    },
+    {
+      "alias": "visit_date_last_time",
+      "description": null,
+      "name": "visit_date_last_time",
+      "position": 88,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_name_who_treated_last_time",
+      "description": null,
+      "name": "therapist_name_who_treated_last_time",
+      "position": 89,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_name_who_treated_this_time",
+      "description": null,
+      "name": "therapist_name_who_treated_this_time",
+      "position": 90,
+      "type": "string"
+    },
+    {
+      "alias": "remarks",
+      "description": null,
+      "name": "remarks",
+      "position": 91,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 92,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 93,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 94,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 95,
+      "type": "string"
+    },
+    {
+      "alias": "serious_injury_details",
+      "description": null,
+      "name": "serious_injury_details",
+      "position": 96,
+      "type": "string"
+    },
+    {
+      "alias": "app_status",
+      "description": null,
+      "name": "app_status",
+      "position": 97,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 98,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "orders",
+  "table_id": "297405577"
+}

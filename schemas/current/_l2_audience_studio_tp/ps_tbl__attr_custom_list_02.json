@@ -1,0 +1,147 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_therapist_no",
+      "description": null,
+      "name": "cstm_02_therapist_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_email",
+      "description": null,
+      "name": "cstm_02_email",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_name",
+      "description": null,
+      "name": "cstm_02_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_entry",
+      "description": null,
+      "name": "cstm_02_entry",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_entryw",
+      "description": null,
+      "name": "cstm_02_entryw",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_entry2",
+      "description": null,
+      "name": "cstm_02_entry2",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_entryw2",
+      "description": null,
+      "name": "cstm_02_entryw2",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_entry3",
+      "description": null,
+      "name": "cstm_02_entry3",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_entryw3",
+      "description": null,
+      "name": "cstm_02_entryw3",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_yesterday",
+      "description": null,
+      "name": "cstm_02_yesterday",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_act",
+      "description": null,
+      "name": "cstm_02_act",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_today",
+      "description": null,
+      "name": "cstm_02_today",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_schedule",
+      "description": null,
+      "name": "cstm_02_schedule",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_total",
+      "description": null,
+      "name": "cstm_02_total",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_time",
+      "description": null,
+      "name": "cstm_02_time",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_w1",
+      "description": null,
+      "name": "cstm_02_w1",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_w2",
+      "description": null,
+      "name": "cstm_02_w2",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_w3",
+      "description": null,
+      "name": "cstm_02_w3",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_02_w4",
+      "description": null,
+      "name": "cstm_02_w4",
+      "position": 19,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "ps_tbl__attr_custom_list_02",
+  "table_id": "297466023"
+}

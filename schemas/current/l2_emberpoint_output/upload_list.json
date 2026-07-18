@@ -1,0 +1,308 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name2",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shopname",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shopname2",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "canceled_shop_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "canceled_reservation",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "cancel_type",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "__id",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_rank_in_one_year",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "latest_order_date",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "target_flag",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "goal",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "count",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "date",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_interval_median",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "last_order_date",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "today",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "weekday",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "new_end_date",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "new_end_date_day",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reviews_rank",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_rank",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "type",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "week",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "url",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pass",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_id",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_name",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "price",
+      "position": 33,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "none",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "no",
+      "position": 35,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "award_name_nominated",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "rank",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "award_name_treatment_time",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_time",
+      "position": 39,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop",
+      "position": 40,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_name",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_no",
+      "position": 42,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "upload_list",
+  "table_id": "53311371"
+}

@@ -1,0 +1,371 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "property_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "property_type",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_type",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_brand",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "status",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_name_kana",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_short_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "zip",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pref_code",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "address",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "tel",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "fax",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "latitude",
+      "position": 14,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "longitude",
+      "position": 15,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "previous_tenant_name",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "previous_tenant_type",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "previous_tenant_remarks",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "frontal_road_name",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "floor_area",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "rent_tax_excl",
+      "position": 21,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reduced_rent_amount",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reduced_rent_start_date",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reduced_rent_end_date",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "park_num",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "park_num_remarks",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_park",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hope_bed_num",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "initial_bed_num",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "latest_bed_num",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "option_mattress_num",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hot_warmer_num",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "foot_warmer_num",
+      "position": 33,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "electric_blanket_num",
+      "position": 34,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "booth_form_type",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pole_signboard_flag",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shutter_flag",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "auto_door_flag",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "increase_bed",
+      "position": 39,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_banner_disabled",
+      "position": 40,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "banner_disabled_reason",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 42,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 43,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 44,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 45,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 46,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 47,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 48,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 49,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 50,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 51,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_core",
+  "table": "property",
+  "table_id": "265488259"
+}

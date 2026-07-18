@@ -1,0 +1,147 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "n_week_ago",
+      "description": null,
+      "name": "n_week_ago",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_name",
+      "description": null,
+      "name": "therapist_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "age",
+      "description": null,
+      "name": "age",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "timeslot",
+      "description": null,
+      "name": "timeslot",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "is_repeat",
+      "description": null,
+      "name": "is_repeat",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "is_nomination",
+      "description": null,
+      "name": "is_nomination",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "first_entry_week",
+      "description": null,
+      "name": "first_entry_week",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "n_week_from_first",
+      "description": null,
+      "name": "n_week_from_first",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "last_entry_week",
+      "description": null,
+      "name": "last_entry_week",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "n_week_from_last",
+      "description": null,
+      "name": "n_week_from_last",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "seq",
+      "description": null,
+      "name": "seq",
+      "position": 19,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_therapist",
+  "table_id": "212720172"
+}

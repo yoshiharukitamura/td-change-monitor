@@ -1,0 +1,196 @@
+{
+  "columns": [
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cluster_id",
+      "description": null,
+      "name": "cluster_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_week",
+      "description": null,
+      "name": "forecast_week",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "business_day",
+      "description": null,
+      "name": "business_day",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "latest_bed_num",
+      "description": null,
+      "name": "latest_bed_num",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "work_value",
+      "description": null,
+      "name": "work_value",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "result_value",
+      "description": null,
+      "name": "result_value",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_value",
+      "description": null,
+      "name": "forecast_value",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "loss_opps_fin_value",
+      "description": null,
+      "name": "loss_opps_fin_value",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": "forecast_minus_avg_result",
+      "description": null,
+      "name": "forecast_minus_avg_result",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "bullish_rank",
+      "description": null,
+      "name": "bullish_rank",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "bearish_rank",
+      "description": null,
+      "name": "bearish_rank",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "square_count",
+      "description": null,
+      "name": "square_count",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "case_num",
+      "description": null,
+      "name": "case_num",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "target_utilization",
+      "description": null,
+      "name": "target_utilization",
+      "position": 17,
+      "type": "double"
+    },
+    {
+      "alias": "upper_surplus_minute",
+      "description": null,
+      "name": "upper_surplus_minute",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "bullish_rank_top_percent",
+      "description": null,
+      "name": "bullish_rank_top_percent",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "bullish_minus_minute",
+      "description": null,
+      "name": "bullish_minus_minute",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "bearish_rank_top_percent",
+      "description": null,
+      "name": "bearish_rank_top_percent",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "bearish_plus_minute",
+      "description": null,
+      "name": "bearish_plus_minute",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "culculate_work_raw",
+      "description": null,
+      "name": "culculate_work_raw",
+      "position": 23,
+      "type": "double"
+    },
+    {
+      "alias": "culculate_work_min2",
+      "description": null,
+      "name": "culculate_work_min2",
+      "position": 24,
+      "type": "double"
+    },
+    {
+      "alias": "culculate_work",
+      "description": null,
+      "name": "culculate_work",
+      "position": 25,
+      "type": "double"
+    },
+    {
+      "alias": "missing_assumption",
+      "description": null,
+      "name": "missing_assumption",
+      "position": 26,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "prep_join_all_with_lost_opps_55_3_v11",
+  "table_id": "286152117"
+}

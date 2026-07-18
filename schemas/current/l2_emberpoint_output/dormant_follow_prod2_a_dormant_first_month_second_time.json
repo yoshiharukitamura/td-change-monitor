@@ -1,0 +1,119 @@
+{
+  "columns": [
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name2",
+      "description": null,
+      "name": "name2",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "name14",
+      "description": null,
+      "name": "name14",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "name24",
+      "description": null,
+      "name": "name24",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "yesterday",
+      "description": null,
+      "name": "yesterday",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "bonuspoint",
+      "description": null,
+      "name": "bonuspoint",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "bonuspointdate",
+      "description": null,
+      "name": "bonuspointdate",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "chargepointdate",
+      "description": null,
+      "name": "chargepointdate",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "chargepoint",
+      "description": null,
+      "name": "chargepoint",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "estimate_order_date",
+      "description": null,
+      "name": "estimate_order_date",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "diff_days",
+      "description": null,
+      "name": "diff_days",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "dormant_group",
+      "description": null,
+      "name": "dormant_group",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "order_diff_days",
+      "description": null,
+      "name": "order_diff_days",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "created_diff_days",
+      "description": null,
+      "name": "created_diff_days",
+      "position": 15,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "dormant_follow_prod2_a_dormant_first_month_second_time",
+  "table_id": "52021843"
+}

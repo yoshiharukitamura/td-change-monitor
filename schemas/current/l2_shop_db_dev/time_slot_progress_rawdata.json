@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "flag",
+      "description": null,
+      "name": "flag",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "processing_datetime",
+      "description": null,
+      "name": "processing_datetime",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "time_slot_detail_id",
+      "description": null,
+      "name": "time_slot_detail_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "shop_id",
+      "description": null,
+      "name": "shop_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_datetime",
+      "description": null,
+      "name": "business_datetime",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 9,
+      "type": "double"
+    }
+  ],
+  "database": "l2_shop_db_dev",
+  "table": "time_slot_progress_rawdata",
+  "table_id": "272927820"
+}

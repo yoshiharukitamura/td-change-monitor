@@ -1,0 +1,273 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_available_to_use_qr_code_payment",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_available_to_use_credit_card_payment",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_available_to_use_electronic_money_payment",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "payment_information",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name_kana",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "logo_image_file_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "status",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_area_id",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pref_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "zip_code",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "city",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "street",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "telephone_no",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "fax_no",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_hour_start",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_hour_end",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "prepared_change",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "amount_of_points_given_to_introducer",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "free_content_for_receipt_1",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "free_content_for_receipt_2",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_not_sent_to_core",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "threshold_for_shop_vacancy",
+      "position": 24,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "print_type",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "device_status",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "device_range",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "global_ip",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "product_code_dwb",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "twilio_number",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "status_call",
+      "position": 35,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "status_chat_bot",
+      "position": 36,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_brand",
+      "position": 37,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "mst_shops",
+  "table_id": "231315823"
+}

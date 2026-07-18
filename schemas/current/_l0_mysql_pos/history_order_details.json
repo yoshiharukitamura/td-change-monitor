@@ -1,0 +1,210 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "history_order_detail_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "history_datetime",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "added_timing",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "route",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "parent_order_detail_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "priority",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_necessary_to_add_relation_with_treatment_product",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "category_id",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "category_name",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_product_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "product_name",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_added_timing",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sales_price",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "price_type",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quantity",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "consumption_tax",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sub_total",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "basis_of_additional_bonus_point",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "additional_bonus_point",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "additional_charge_point",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "amount_of_reward_for_therapist",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 28,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "history_order_details",
+  "table_id": "231315821"
+}

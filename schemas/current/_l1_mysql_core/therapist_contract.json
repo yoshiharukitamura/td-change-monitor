@@ -1,0 +1,504 @@
+{
+  "columns": [
+    {
+      "alias": "therapist_contract_id",
+      "description": null,
+      "name": "therapist_contract_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "contract_type",
+      "description": null,
+      "name": "contract_type",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "contract_status",
+      "description": null,
+      "name": "contract_status",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "condition_type",
+      "description": null,
+      "name": "condition_type",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "agreement_renewal_type",
+      "description": null,
+      "name": "agreement_renewal_type",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "zip",
+      "description": null,
+      "name": "zip",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "pref_code",
+      "description": null,
+      "name": "pref_code",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "address",
+      "description": null,
+      "name": "address",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "first_contract_date",
+      "description": null,
+      "name": "first_contract_date",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "contract_renewal_date",
+      "description": null,
+      "name": "contract_renewal_date",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_agreement_request_date",
+      "description": null,
+      "name": "cancel_agreement_request_date",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_agreed_date",
+      "description": null,
+      "name": "cancel_agreed_date",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_notified_date",
+      "description": null,
+      "name": "cancel_notified_date",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_notice_arrived_date",
+      "description": null,
+      "name": "cancel_notice_arrived_date",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_date",
+      "description": null,
+      "name": "cancel_date",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "temporary_retirement_from",
+      "description": null,
+      "name": "temporary_retirement_from",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "temporary_retirement_to",
+      "description": null,
+      "name": "temporary_retirement_to",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_reason",
+      "description": null,
+      "name": "cancel_reason",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "ulterior_work",
+      "description": null,
+      "name": "ulterior_work",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "under_constract_training_institute_id",
+      "description": null,
+      "name": "under_constract_training_institute_id",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "registration_change_date",
+      "description": null,
+      "name": "registration_change_date",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "rescission_reason_type",
+      "description": null,
+      "name": "rescission_reason_type",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "restoration_flag",
+      "description": null,
+      "name": "restoration_flag",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "contract_copy",
+      "description": null,
+      "name": "contract_copy",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "forced_release_reason",
+      "description": null,
+      "name": "forced_release_reason",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "forced_release_remarks",
+      "description": null,
+      "name": "forced_release_remarks",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "cancellation_notification_mail_transmission_date",
+      "description": null,
+      "name": "cancellation_notification_mail_transmission_date",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_reason_remarks",
+      "description": null,
+      "name": "cancel_reason_remarks",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "tel01",
+      "description": null,
+      "name": "tel01",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": "tel02",
+      "description": null,
+      "name": "tel02",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": "tel03",
+      "description": null,
+      "name": "tel03",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": "tel01_contact_type",
+      "description": null,
+      "name": "tel01_contact_type",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "tel01_contact_type_other",
+      "description": null,
+      "name": "tel01_contact_type_other",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "tel01_contact_state_type",
+      "description": null,
+      "name": "tel01_contact_state_type",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": "tel02_contact_type",
+      "description": null,
+      "name": "tel02_contact_type",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": "tel02_contact_type_other",
+      "description": null,
+      "name": "tel02_contact_type_other",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": "tel02_contact_state_type",
+      "description": null,
+      "name": "tel02_contact_state_type",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": "tel03_contact_type",
+      "description": null,
+      "name": "tel03_contact_type",
+      "position": 39,
+      "type": "string"
+    },
+    {
+      "alias": "tel03_contact_type_other",
+      "description": null,
+      "name": "tel03_contact_type_other",
+      "position": 40,
+      "type": "string"
+    },
+    {
+      "alias": "tel03_contact_state_type",
+      "description": null,
+      "name": "tel03_contact_state_type",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": "contractant_type",
+      "description": null,
+      "name": "contractant_type",
+      "position": 42,
+      "type": "string"
+    },
+    {
+      "alias": "substitute_contract",
+      "description": null,
+      "name": "substitute_contract",
+      "position": 43,
+      "type": "string"
+    },
+    {
+      "alias": "address_state_type",
+      "description": null,
+      "name": "address_state_type",
+      "position": 44,
+      "type": "string"
+    },
+    {
+      "alias": "contract_expiration_date",
+      "description": null,
+      "name": "contract_expiration_date",
+      "position": 45,
+      "type": "string"
+    },
+    {
+      "alias": "contract_update_date",
+      "description": null,
+      "name": "contract_update_date",
+      "position": 46,
+      "type": "string"
+    },
+    {
+      "alias": "registration_consent_date",
+      "description": null,
+      "name": "registration_consent_date",
+      "position": 47,
+      "type": "string"
+    },
+    {
+      "alias": "insurance_non_participation_doc",
+      "description": null,
+      "name": "insurance_non_participation_doc",
+      "position": 48,
+      "type": "string"
+    },
+    {
+      "alias": "insurance_expiration_date",
+      "description": null,
+      "name": "insurance_expiration_date",
+      "position": 49,
+      "type": "string"
+    },
+    {
+      "alias": "identification",
+      "description": null,
+      "name": "identification",
+      "position": 50,
+      "type": "string"
+    },
+    {
+      "alias": "final_return_pledge_doc_flag",
+      "description": null,
+      "name": "final_return_pledge_doc_flag",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": "renewal_contract_agreed_status",
+      "description": null,
+      "name": "renewal_contract_agreed_status",
+      "position": 52,
+      "type": "string"
+    },
+    {
+      "alias": "renewal_reward_start_yyyymm",
+      "description": null,
+      "name": "renewal_reward_start_yyyymm",
+      "position": 53,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_sheet",
+      "description": null,
+      "name": "therapist_sheet",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": "practice_post_date",
+      "description": null,
+      "name": "practice_post_date",
+      "position": 55,
+      "type": "string"
+    },
+    {
+      "alias": "practice_post_destination",
+      "description": null,
+      "name": "practice_post_destination",
+      "position": 56,
+      "type": "string"
+    },
+    {
+      "alias": "etc",
+      "description": null,
+      "name": "etc",
+      "position": 57,
+      "type": "string"
+    },
+    {
+      "alias": "agreement_or_discard_all_submission_frag",
+      "description": null,
+      "name": "agreement_or_discard_all_submission_frag",
+      "position": 58,
+      "type": "long"
+    },
+    {
+      "alias": "blank_check_role",
+      "description": null,
+      "name": "blank_check_role",
+      "position": 59,
+      "type": "long"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 60,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 61,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 62,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 63,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 64,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 65,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 66,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 67,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 68,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 69,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 70,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "therapist_contract",
+  "table_id": "297407609"
+}

@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": "date",
+      "description": null,
+      "name": "Date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "app_members",
+      "description": null,
+      "name": "app_members",
+      "position": 1,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "app_customers_cnt",
+  "table_id": "91357941"
+}

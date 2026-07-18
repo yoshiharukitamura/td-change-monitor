@@ -1,0 +1,140 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_product_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "price_serial",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "app_member_course_price",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "card_member_course_price",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "non_member_course_price",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "senior_member_course_price",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "loyal_member_course_price",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "app_member_option_price",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "card_member_option_price",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "non_member_option_price",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "senior_member_option_price",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "loyal_member_option_price",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "amount_of_reward_for_therapist",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "web_member_course_price",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "web_member_option_price",
+      "position": 18,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "mst_product_prices",
+  "table_id": "231315818"
+}

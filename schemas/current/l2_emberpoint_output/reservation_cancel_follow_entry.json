@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "name_full",
+      "description": null,
+      "name": "name_full",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "canceled_reservation",
+      "description": null,
+      "name": "canceled_reservation",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_type",
+      "description": null,
+      "name": "cancel_type",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "canceled_shop_id",
+      "description": null,
+      "name": "canceled_shop_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "reservation_cancel_follow_entry",
+  "table_id": "49635274"
+}

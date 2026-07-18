@@ -1,0 +1,406 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "issue_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name_kana",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_type",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "password",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hash_password",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "photo",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "professional_name",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sex_type",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "birthday",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "identification_proof",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "identification_proof_other",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "identification_proof_filing_date",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "zip",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pref_code",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "address",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "identification_address_same_flag",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "confirmation_document",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "confirmation_document_other",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "certificate_zip",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "certificate_pref_code",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "certificate_address",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registration_change_date",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "old_therapist_id",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "remarks",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hope_property_id_1",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hope_property_id_2",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "daily_work_hours",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "normal_day",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "work_saturday",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "work_sunday",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "work_holiday",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "week_days",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "timezone",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "has_medical_history",
+      "position": 36,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "disease_name",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_foreigner",
+      "position": 38,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "introducer_therapist_id",
+      "position": 39,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 40,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_datetime",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_system",
+      "position": 42,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registered_module",
+      "position": 43,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 44,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_datetime",
+      "position": 45,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_system",
+      "position": 46,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "updated_module",
+      "position": 47,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "version",
+      "position": 48,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 49,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "maiden_name",
+      "position": 50,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "maiden_name_kana",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "foreign_countries_name",
+      "position": 52,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "foreign_countries_name_kana",
+      "position": 53,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "professional_name_kana",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "address_state_type",
+      "position": 55,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_class_type",
+      "position": 56,
+      "type": "string"
+    }
+  ],
+  "database": "_l0_mysql_core",
+  "table": "therapist",
+  "table_id": "265488257"
+}

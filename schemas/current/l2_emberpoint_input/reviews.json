@@ -1,0 +1,217 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id",
+      "description": null,
+      "name": "order_detail_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "rank",
+      "description": null,
+      "name": "rank",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "rate",
+      "description": null,
+      "name": "rate",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "comment",
+      "description": null,
+      "name": "comment",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "answer1",
+      "description": null,
+      "name": "answer1",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "answer2",
+      "description": null,
+      "name": "answer2",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "answer3",
+      "description": null,
+      "name": "answer3",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "question_review_1",
+      "description": null,
+      "name": "question_review_1",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "answer_review_1",
+      "description": null,
+      "name": "answer_review_1",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "question_review_2",
+      "description": null,
+      "name": "question_review_2",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "answer_review_2",
+      "description": null,
+      "name": "answer_review_2",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "question_review_3",
+      "description": null,
+      "name": "question_review_3",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "answer_review_3",
+      "description": null,
+      "name": "answer_review_3",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "question_review_4",
+      "description": null,
+      "name": "question_review_4",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "answer_review_4",
+      "description": null,
+      "name": "answer_review_4",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "question_review_5",
+      "description": null,
+      "name": "question_review_5",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "answer_review_5",
+      "description": null,
+      "name": "answer_review_5",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "is_confirmed",
+      "description": null,
+      "name": "is_confirmed",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "is_display_comment",
+      "description": null,
+      "name": "is_display_comment",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "is_approved_by_user",
+      "description": null,
+      "name": "is_approved_by_user",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "is_review_app",
+      "description": null,
+      "name": "is_review_app",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "date_show_popup",
+      "description": null,
+      "name": "date_show_popup",
+      "position": 29,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "reviews",
+  "table_id": "237467005"
+}

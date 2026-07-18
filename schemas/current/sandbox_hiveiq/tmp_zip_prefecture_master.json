@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "zip_code",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "prefecture",
+      "position": 1,
+      "type": "string"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "tmp_zip_prefecture_master",
+  "table_id": "270887415"
+}

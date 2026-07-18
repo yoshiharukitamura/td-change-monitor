@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "timeslot_datetime",
+      "description": null,
+      "name": "timeslot_datetime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "timeslot_dow",
+      "description": null,
+      "name": "timeslot_dow",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "timeslot_hour",
+      "description": null,
+      "name": "timeslot_hour",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "facilities_usage_minuites",
+      "description": null,
+      "name": "facilities_usage_minuites",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": "final_entry_minuites",
+      "description": null,
+      "name": "final_entry_minuites",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": "treatment_minuites",
+      "description": null,
+      "name": "treatment_minuites",
+      "position": 8,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "ps_tbl__bhvr_therapist_entry_hour",
+  "table_id": "297466851"
+}

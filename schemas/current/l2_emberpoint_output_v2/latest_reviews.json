@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "review_rate",
+      "description": null,
+      "name": "review_rate",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "review_rank",
+      "description": null,
+      "name": "review_rank",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "review_date",
+      "description": null,
+      "name": "review_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "row_num",
+      "description": null,
+      "name": "row_num",
+      "position": 5,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output_v2",
+  "table": "latest_reviews",
+  "table_id": "297432401"
+}

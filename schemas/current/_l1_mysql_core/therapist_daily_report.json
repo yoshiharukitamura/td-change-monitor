@@ -1,0 +1,182 @@
+{
+  "columns": [
+    {
+      "alias": "therapist_daily_report_id",
+      "description": null,
+      "name": "therapist_daily_report_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "facilities_usage_time",
+      "description": null,
+      "name": "facilities_usage_time",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "break_time",
+      "description": null,
+      "name": "break_time",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "sub_task_commission_tax_incl",
+      "description": null,
+      "name": "sub_task_commission_tax_incl",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "sub_task_commission_tax",
+      "description": null,
+      "name": "sub_task_commission_tax",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": "leaks_clocking_out",
+      "description": null,
+      "name": "leaks_clocking_out",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "info_change_datetime",
+      "description": null,
+      "name": "info_change_datetime",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 22,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 24,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "therapist_daily_report",
+  "table_id": "297407608"
+}

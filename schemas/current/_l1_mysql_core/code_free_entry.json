@@ -1,0 +1,133 @@
+{
+  "columns": [
+    {
+      "alias": "code_free_entry_id",
+      "description": null,
+      "name": "code_free_entry_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "code_category_free_entry_id",
+      "description": null,
+      "name": "code_category_free_entry_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "code_key",
+      "description": null,
+      "name": "code_key",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "code_value",
+      "description": null,
+      "name": "code_value",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "code_alias",
+      "description": null,
+      "name": "code_alias",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "indication_order",
+      "description": null,
+      "name": "indication_order",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "invalid_flag",
+      "description": null,
+      "name": "invalid_flag",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 15,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 17,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "code_free_entry",
+  "table_id": "297411053"
+}

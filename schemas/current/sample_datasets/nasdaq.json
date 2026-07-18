@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "symbol",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "open",
+      "position": 1,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "volume",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "high",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "low",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "close",
+      "position": 5,
+      "type": "double"
+    }
+  ],
+  "database": "sample_datasets",
+  "table": "nasdaq",
+  "table_id": "7"
+}

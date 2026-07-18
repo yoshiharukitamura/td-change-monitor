@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "no",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "parent_segment_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "description",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "table_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "table_name_jp",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "column_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "column_name_jp",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "attribute_group",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "_col0",
+      "description": null,
+      "name": "_col0",
+      "position": 8,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "z_cnfg_raw",
+  "table_id": "297467206"
+}

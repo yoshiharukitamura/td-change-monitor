@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "interval_median",
+      "description": null,
+      "name": "interval_median",
+      "position": 1,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output_v2",
+  "table": "treatment_interval",
+  "table_id": "297432178"
+}

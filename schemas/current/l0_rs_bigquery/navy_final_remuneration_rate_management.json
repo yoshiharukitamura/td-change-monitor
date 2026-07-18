@@ -1,0 +1,217 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "target_quater",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "base_rate",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "preferential_rate",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "nomination_remuneration",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "option_rate",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "product_sales_rate",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_sales_rate",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "holiday_treatment_sales_rate",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "nomination_minutes_rate",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "cumulated_minutes_rate",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "daily_work_shifts_rate",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_operation_support_rate",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_sales_rate",
+      "position": 14,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "maximum_sales_shop_id",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "maximum_sales_shop_name",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_rate",
+      "position": 17,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "basic_daily_time_slot_status",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "fixed_daily_time_slot_status",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "original_id",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "displayed_cumulated_treatments_minutes",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "target_shop_revenue_status",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "bubusrate_confirm_flag",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_status",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "early_working_time_rate",
+      "position": 29,
+      "type": "double"
+    }
+  ],
+  "database": "l0_rs_bigquery",
+  "table": "navy_final_remuneration_rate_management",
+  "table_id": "121056539"
+}

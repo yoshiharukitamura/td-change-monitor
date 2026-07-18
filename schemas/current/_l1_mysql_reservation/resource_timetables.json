@@ -1,0 +1,182 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "daily_work_shift_id",
+      "description": null,
+      "name": "daily_work_shift_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "daily_work_shift_detail_id",
+      "description": null,
+      "name": "daily_work_shift_detail_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "mst_timetable_id",
+      "description": null,
+      "name": "mst_timetable_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "mst_reservation_resource_id",
+      "description": null,
+      "name": "mst_reservation_resource_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "parent_resource_timetable_id",
+      "description": null,
+      "name": "parent_resource_timetable_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "revision",
+      "description": null,
+      "name": "revision",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "early_arrival_time",
+      "description": null,
+      "name": "early_arrival_time",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "working_date",
+      "description": null,
+      "name": "working_date",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "last_reservable_time",
+      "description": null,
+      "name": "last_reservable_time",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "max_treatment_minutes_of_last_reservation",
+      "description": null,
+      "name": "max_treatment_minutes_of_last_reservation",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "last_reservable_kind",
+      "description": null,
+      "name": "last_reservable_kind",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "comment",
+      "description": null,
+      "name": "comment",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "is_orange",
+      "description": null,
+      "name": "is_orange",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "entry_datetime",
+      "description": null,
+      "name": "entry_datetime",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "mst_business_tag_id",
+      "description": null,
+      "name": "mst_business_tag_id",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 24,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_reservation",
+  "table": "resource_timetables",
+  "table_id": "297412590"
+}

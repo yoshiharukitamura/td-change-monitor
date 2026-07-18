@@ -1,0 +1,147 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "cluster_no",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "weekday",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_09",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_10",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_11",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_12",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_13",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_14",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_15",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_16",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_17",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_18",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_19",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_20",
+      "position": 14,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_21",
+      "position": 15,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_22",
+      "position": 16,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "allocation_value_23",
+      "position": 17,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "processing_date",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 19,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "new_forecast_rebate_coefficient_p2",
+  "table_id": "195418644"
+}

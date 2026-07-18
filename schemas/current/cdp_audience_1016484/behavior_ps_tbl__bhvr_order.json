@@ -1,0 +1,112 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "order_date_datetime",
+      "description": null,
+      "name": "order_date_datetime",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "order_dow",
+      "description": null,
+      "name": "order_dow",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "order_timeslot_start_datetime",
+      "description": null,
+      "name": "order_timeslot_start_datetime",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "order_timeslot_end_datetime",
+      "description": null,
+      "name": "order_timeslot_end_datetime",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "order_amount_price",
+      "description": null,
+      "name": "order_amount_price",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": "nomination_type",
+      "description": null,
+      "name": "nomination_type",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "order_shop_name",
+      "description": null,
+      "name": "order_shop_name",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "shop_area",
+      "description": null,
+      "name": "shop_area",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "shop_prefecture",
+      "description": null,
+      "name": "shop_prefecture",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "order_product",
+      "description": null,
+      "name": "order_product",
+      "position": 14,
+      "type": "string"
+    }
+  ],
+  "database": "cdp_audience_1016484",
+  "table": "behavior_ps_tbl__bhvr_order",
+  "table_id": "297474153"
+}

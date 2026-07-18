@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "list_name",
+      "description": null,
+      "name": "list_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "segment",
+      "description": null,
+      "name": "segment",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "birthday",
+      "description": null,
+      "name": "birthday",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "frequency",
+      "description": null,
+      "name": "frequency",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "recency",
+      "description": null,
+      "name": "recency",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "_col1",
+      "description": null,
+      "name": "_col1",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "l2_verification",
+  "table": "list_demand_customers",
+  "table_id": "208654101"
+}

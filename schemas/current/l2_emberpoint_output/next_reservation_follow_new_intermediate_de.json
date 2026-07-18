@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "order_rank_in_one_year",
+      "description": null,
+      "name": "order_rank_in_one_year",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "latest_order_date",
+      "description": null,
+      "name": "latest_order_date",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "next_reservation_follow_new_intermediate_de",
+  "table_id": "148867858"
+}

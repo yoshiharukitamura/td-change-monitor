@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cluster_no",
+      "description": null,
+      "name": "cluster_no",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "forecast_cluster_result",
+  "table_id": "193215411"
+}

@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "yow",
+      "description": null,
+      "name": "yow",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "woy",
+      "description": null,
+      "name": "woy",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "segment",
+      "description": null,
+      "name": "segment",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "app_session",
+      "description": null,
+      "name": "app_session",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "app_session_uu",
+      "description": null,
+      "name": "app_session_uu",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "app_session_uu_rate",
+      "description": null,
+      "name": "app_session_uu_rate",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": "reservation_complete_uu",
+      "description": null,
+      "name": "reservation_complete_uu",
+      "position": 6,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "z_tmp_kpi_app_session_w12f",
+  "table_id": "296392498"
+}

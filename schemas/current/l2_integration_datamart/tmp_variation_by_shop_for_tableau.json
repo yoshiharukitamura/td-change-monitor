@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "hour_range",
+      "description": null,
+      "name": "hour_range",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "sufficiency_1",
+      "description": null,
+      "name": "sufficiency_1",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "diff_range_1",
+      "description": null,
+      "name": "diff_range_1",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "v1_share",
+      "description": null,
+      "name": "v1_share",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": "v2_share",
+      "description": null,
+      "name": "v2_share",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": "v3_share",
+      "description": null,
+      "name": "v3_share",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": "v2_vs_v1",
+      "description": null,
+      "name": "v2_vs_v1",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": "v3_vs_v1",
+      "description": null,
+      "name": "v3_vs_v1",
+      "position": 8,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "tmp_variation_by_shop_for_tableau",
+  "table_id": "201116508"
+}

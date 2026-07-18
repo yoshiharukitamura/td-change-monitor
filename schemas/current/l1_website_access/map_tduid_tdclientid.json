@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "td_uid",
+      "description": null,
+      "name": "td_uid",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "first_access_time",
+      "description": null,
+      "name": "first_access_time",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "td_client_id",
+      "description": null,
+      "name": "td_client_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "last_access_time",
+      "description": null,
+      "name": "last_access_time",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l1_website_access",
+  "table": "map_tduid_tdclientid",
+  "table_id": "297402395"
+}

@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": "campaign",
+      "description": null,
+      "name": "campaign",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 1,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "0426_analytical_grade",
+  "table_id": "53966885"
+}

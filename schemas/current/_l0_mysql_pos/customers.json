@@ -1,0 +1,273 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "members_card_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "name_full",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "password",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "gender",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "birth_date",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "job_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "phone_no",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "phone_no2",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "zip_code1",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "zip_code2",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "pref_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "city",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "street",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "email",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "email2",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mail_magazine",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "email_existing",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "count_of_product_sales",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "price_of_product_sales",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "registration_route",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "referral_customer_id",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "remarks",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_id_where_visited_first_time",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_not_sent_to_core",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_app_user",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_senior_member",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "has_sci",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "modified",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deleted_date",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deactivated",
+      "position": 33,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "deactivated_date",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_accept_new_term_of_use",
+      "position": 35,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "search_id",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "encrypted",
+      "position": 37,
+      "type": "long"
+    }
+  ],
+  "database": "_l0_mysql_pos",
+  "table": "customers",
+  "table_id": "231315822"
+}

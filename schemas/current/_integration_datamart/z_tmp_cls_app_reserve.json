@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "user_pseudo_id",
+      "description": null,
+      "name": "user_pseudo_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "ga_session_id",
+      "description": null,
+      "name": "ga_session_id",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "event_name",
+      "description": null,
+      "name": "event_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "event_unixtime",
+      "description": null,
+      "name": "event_unixtime",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "event_timestamp",
+      "description": null,
+      "name": "event_timestamp",
+      "position": 5,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "z_tmp_cls_app_reserve",
+  "table_id": "297447418"
+}

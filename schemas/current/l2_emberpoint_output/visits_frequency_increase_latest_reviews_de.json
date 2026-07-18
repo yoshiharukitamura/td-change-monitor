@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "rank",
+      "description": null,
+      "name": "rank",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "rate",
+      "description": null,
+      "name": "rate",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id",
+      "description": null,
+      "name": "order_detail_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "latest_order_review",
+      "description": null,
+      "name": "latest_order_review",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 7,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "visits_frequency_increase_latest_reviews_de",
+  "table_id": "54161179"
+}

@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "processing_week",
+      "description": null,
+      "name": "processing_week",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "offset_diff",
+      "description": null,
+      "name": "offset_diff",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "shop_id",
+      "description": null,
+      "name": "shop_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "td1",
+      "description": null,
+      "name": "td1",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "td2",
+      "description": null,
+      "name": "td2",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "td12",
+      "description": null,
+      "name": "td12",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "td3",
+      "description": null,
+      "name": "td3",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "td123",
+      "description": null,
+      "name": "td123",
+      "position": 11,
+      "type": "long"
+    }
+  ],
+  "database": "l2_shop_db_dev",
+  "table": "time_slot_history",
+  "table_id": "272930412"
+}

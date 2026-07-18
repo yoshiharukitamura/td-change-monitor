@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "list_name",
+      "description": null,
+      "name": "list_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "segment",
+      "description": null,
+      "name": "segment",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "l2_verification",
+  "table": "tmp_list_summer_fatigue",
+  "table_id": "220994765"
+}

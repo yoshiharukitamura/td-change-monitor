@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "name2",
+      "description": null,
+      "name": "name2",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "relationid",
+      "description": null,
+      "name": "relationid",
+      "position": 2,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "ep_test_01",
+  "table_id": "50976466"
+}

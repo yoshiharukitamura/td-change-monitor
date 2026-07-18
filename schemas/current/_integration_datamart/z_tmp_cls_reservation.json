@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": "week",
+      "description": null,
+      "name": "week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "created_unixtime",
+      "description": null,
+      "name": "created_unixtime",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "start_unixtime",
+      "description": null,
+      "name": "start_unixtime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "parent_reservation_id",
+      "description": null,
+      "name": "parent_reservation_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "reserved_from",
+      "description": null,
+      "name": "reserved_from",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "new_repeat",
+      "description": null,
+      "name": "new_repeat",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 11,
+      "type": "string"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "z_tmp_cls_reservation",
+  "table_id": "297446586"
+}

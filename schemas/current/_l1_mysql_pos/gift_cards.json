@@ -1,0 +1,168 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id",
+      "description": null,
+      "name": "order_detail_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_points_charged",
+      "description": null,
+      "name": "amount_of_points_charged",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "purchased_date",
+      "description": null,
+      "name": "purchased_date",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "purchased_shop_id",
+      "description": null,
+      "name": "purchased_shop_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "purchased_therapist_id",
+      "description": null,
+      "name": "purchased_therapist_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "purchased_members_card_no",
+      "description": null,
+      "name": "purchased_members_card_no",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "purchased_customer_name",
+      "description": null,
+      "name": "purchased_customer_name",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "consumed_date",
+      "description": null,
+      "name": "consumed_date",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "consumed_shop_id",
+      "description": null,
+      "name": "consumed_shop_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "consumed_therapist_id",
+      "description": null,
+      "name": "consumed_therapist_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "consumed_customer_id",
+      "description": null,
+      "name": "consumed_customer_id",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "consumed_members_card_no",
+      "description": null,
+      "name": "consumed_members_card_no",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "consumed_customer_name",
+      "description": null,
+      "name": "consumed_customer_name",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "is_consumed",
+      "description": null,
+      "name": "is_consumed",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "is_expired",
+      "description": null,
+      "name": "is_expired",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 22,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "gift_cards",
+  "table_id": "297405566"
+}

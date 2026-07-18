@@ -1,0 +1,119 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "unique_name",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "status",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "start_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "end_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "subject",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "count_all",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "count_err_hard",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "count_err_soft",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "success_rate",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "open_rate",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "open_count",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "csv_file_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "csv_file_name",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "smartmail",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "article_id",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 15,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "summary_data",
+  "table_id": "53310954"
+}

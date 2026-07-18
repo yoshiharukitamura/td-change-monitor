@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_name",
+      "description": null,
+      "name": "therapist_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "division",
+      "description": null,
+      "name": "division",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "tp_info",
+  "table_id": "297448870"
+}

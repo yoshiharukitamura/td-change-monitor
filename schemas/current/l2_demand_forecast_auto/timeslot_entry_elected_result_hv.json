@@ -1,0 +1,140 @@
+{
+  "columns": [
+    {
+      "alias": "application_time_slot_id",
+      "description": null,
+      "name": "application_time_slot_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "td123",
+      "description": null,
+      "name": "td123",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "td123_fixed",
+      "description": null,
+      "name": "td123_fixed",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_name",
+      "description": null,
+      "name": "therapist_name",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "tp_rnk_1",
+      "description": null,
+      "name": "tp_rnk_1",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "result_tmp",
+      "description": null,
+      "name": "result_tmp",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "lag_result",
+      "description": null,
+      "name": "lag_result",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "lag_hour",
+      "description": null,
+      "name": "lag_hour",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "lead_result",
+      "description": null,
+      "name": "lead_result",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "lead_hour",
+      "description": null,
+      "name": "lead_hour",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "result_h",
+      "description": null,
+      "name": "result_h",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "tp_rnk_2",
+      "description": null,
+      "name": "tp_rnk_2",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "result_hv",
+      "description": null,
+      "name": "result_hv",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "shop_id",
+      "description": null,
+      "name": "shop_id",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 18,
+      "type": "long"
+    }
+  ],
+  "database": "l2_demand_forecast_auto",
+  "table": "timeslot_entry_elected_result_hv",
+  "table_id": "131196484"
+}

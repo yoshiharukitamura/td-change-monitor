@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "alias": "time_fmt",
+      "description": null,
+      "name": "time_fmt",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "processing_unixtime",
+      "description": null,
+      "name": "processing_unixtime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "week",
+      "description": null,
+      "name": "week",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "first_order_unixtime",
+      "description": null,
+      "name": "first_order_unixtime",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "r_month",
+      "description": null,
+      "name": "r_month",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "f",
+      "description": null,
+      "name": "f",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "sales_amount",
+      "description": null,
+      "name": "sales_amount",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "nomination_last_order",
+      "description": null,
+      "name": "nomination_last_order",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no_last_order",
+      "description": null,
+      "name": "shop_no_last_order",
+      "position": 13,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "hst_weekly_customer_rf",
+  "table_id": "232664449"
+}

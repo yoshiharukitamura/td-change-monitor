@@ -1,0 +1,259 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "category_id",
+      "description": null,
+      "name": "category_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "sales_price",
+      "description": null,
+      "name": "sales_price",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "is_open",
+      "description": null,
+      "name": "is_open",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "product_type_id",
+      "description": null,
+      "name": "product_type_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "ean_code",
+      "description": null,
+      "name": "ean_code",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "start_date",
+      "description": null,
+      "name": "start_date",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "end_date",
+      "description": null,
+      "name": "end_date",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "receipt_name",
+      "description": null,
+      "name": "receipt_name",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "is_taxable",
+      "description": null,
+      "name": "is_taxable",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "adjustment_of_amount_of_tax_exclusive",
+      "description": null,
+      "name": "adjustment_of_amount_of_tax_exclusive",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "price_of_option_or_goods",
+      "description": null,
+      "name": "price_of_option_or_goods",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "display_price_without_tax",
+      "description": null,
+      "name": "display_price_without_tax",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_charge_points",
+      "description": null,
+      "name": "amount_of_charge_points",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_bonus_points",
+      "description": null,
+      "name": "amount_of_bonus_points",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "remarks",
+      "description": null,
+      "name": "remarks",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "color_1",
+      "description": null,
+      "name": "color_1",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "color_2",
+      "description": null,
+      "name": "color_2",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "is_available_to_nominate_therapist",
+      "description": null,
+      "name": "is_available_to_nominate_therapist",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "is_available_to_add_therapist_nomination_fee",
+      "description": null,
+      "name": "is_available_to_add_therapist_nomination_fee",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "is_necessary_to_add_relation_with_treatment_product",
+      "description": null,
+      "name": "is_necessary_to_add_relation_with_treatment_product",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "is_displayed_in_web",
+      "description": null,
+      "name": "is_displayed_in_web",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "is_displayed_in_dwb",
+      "description": null,
+      "name": "is_displayed_in_dwb",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "is_displayed_in_pos",
+      "description": null,
+      "name": "is_displayed_in_pos",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "icon_name",
+      "description": null,
+      "name": "icon_name",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": "number_hp",
+      "description": null,
+      "name": "number_hp",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": "number_dwb",
+      "description": null,
+      "name": "number_dwb",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": "number_of_option",
+      "description": null,
+      "name": "number_of_option",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "is_number_of_option",
+      "description": null,
+      "name": "is_number_of_option",
+      "position": 34,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 35,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "mst_products",
+  "table_id": "297404602"
+}

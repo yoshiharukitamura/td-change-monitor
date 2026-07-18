@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "store_id__property_id",
+      "description": null,
+      "name": "store_id__property_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "area_name",
+      "description": null,
+      "name": "area_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "flag_repeat_tp",
+      "description": null,
+      "name": "flag_repeat_tp",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l2_verification",
+  "table": "tmp_tp_matching_customer_list",
+  "table_id": "253564743"
+}

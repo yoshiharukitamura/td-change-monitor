@@ -1,0 +1,280 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "is_available_to_use_qr_code_payment",
+      "description": null,
+      "name": "is_available_to_use_qr_code_payment",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "is_available_to_use_credit_card_payment",
+      "description": null,
+      "name": "is_available_to_use_credit_card_payment",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "is_available_to_use_electronic_money_payment",
+      "description": null,
+      "name": "is_available_to_use_electronic_money_payment",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "payment_information",
+      "description": null,
+      "name": "payment_information",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "name_kana",
+      "description": null,
+      "name": "name_kana",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "logo_image_file_name",
+      "description": null,
+      "name": "logo_image_file_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "mst_area_id",
+      "description": null,
+      "name": "mst_area_id",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "pref_id",
+      "description": null,
+      "name": "pref_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "city",
+      "description": null,
+      "name": "city",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "street",
+      "description": null,
+      "name": "street",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "telephone_no",
+      "description": null,
+      "name": "telephone_no",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "fax_no",
+      "description": null,
+      "name": "fax_no",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour_start",
+      "description": null,
+      "name": "business_hour_start",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour_end",
+      "description": null,
+      "name": "business_hour_end",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "prepared_change",
+      "description": null,
+      "name": "prepared_change",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_points_given_to_introducer",
+      "description": null,
+      "name": "amount_of_points_given_to_introducer",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "free_content_for_receipt_1",
+      "description": null,
+      "name": "free_content_for_receipt_1",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "free_content_for_receipt_2",
+      "description": null,
+      "name": "free_content_for_receipt_2",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "is_not_sent_to_core",
+      "description": null,
+      "name": "is_not_sent_to_core",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "threshold_for_shop_vacancy",
+      "description": null,
+      "name": "threshold_for_shop_vacancy",
+      "position": 24,
+      "type": "double"
+    },
+    {
+      "alias": "print_type",
+      "description": null,
+      "name": "print_type",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "device_status",
+      "description": null,
+      "name": "device_status",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "device_range",
+      "description": null,
+      "name": "device_range",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "global_ip",
+      "description": null,
+      "name": "global_ip",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "product_code_dwb",
+      "description": null,
+      "name": "product_code_dwb",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "twilio_number",
+      "description": null,
+      "name": "twilio_number",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "status_call",
+      "description": null,
+      "name": "status_call",
+      "position": 35,
+      "type": "long"
+    },
+    {
+      "alias": "status_chat_bot",
+      "description": null,
+      "name": "status_chat_bot",
+      "position": 36,
+      "type": "long"
+    },
+    {
+      "alias": "shop_brand",
+      "description": null,
+      "name": "shop_brand",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 38,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "mst_shops",
+  "table_id": "297404646"
+}

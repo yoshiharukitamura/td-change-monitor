@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id",
+      "description": null,
+      "name": "order_detail_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "is_repeat",
+      "description": null,
+      "name": "is_repeat",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "is_nomination",
+      "description": null,
+      "name": "is_nomination",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 9,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "cls_order_timeslot",
+  "table_id": "212251493"
+}

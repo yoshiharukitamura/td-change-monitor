@@ -1,0 +1,133 @@
+{
+  "columns": [
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "professional_name",
+      "description": null,
+      "name": "professional_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "holiday_type",
+      "description": null,
+      "name": "holiday_type",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "holiday_name",
+      "description": null,
+      "name": "holiday_name",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "facilities_usage_minuites",
+      "description": null,
+      "name": "facilities_usage_minuites",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "apportion_break_minuites",
+      "description": null,
+      "name": "apportion_break_minuites",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": "dwb_entry_minuites",
+      "description": null,
+      "name": "dwb_entry_minuites",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "dwb_blocked_minuites",
+      "description": null,
+      "name": "dwb_blocked_minuites",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": "final_entry_minuites",
+      "description": null,
+      "name": "final_entry_minuites",
+      "position": 14,
+      "type": "double"
+    },
+    {
+      "alias": "treatment_minuites",
+      "description": null,
+      "name": "treatment_minuites",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "order_id_list",
+      "description": null,
+      "name": "order_id_list",
+      "position": 16,
+      "type": "array<long>"
+    },
+    {
+      "alias": "customer_id_list",
+      "description": null,
+      "name": "customer_id_list",
+      "position": 17,
+      "type": "array<long>"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "cls_time_slot_integrated",
+  "table_id": "267189613"
+}

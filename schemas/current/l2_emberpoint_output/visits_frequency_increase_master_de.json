@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "latest_order_date",
+      "description": null,
+      "name": "latest_order_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "order_rank_in_one_year",
+      "description": null,
+      "name": "order_rank_in_one_year",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "reviews_rank",
+      "description": null,
+      "name": "reviews_rank",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "reviews_rate",
+      "description": null,
+      "name": "reviews_rate",
+      "position": 4,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "visits_frequency_increase_master_de",
+  "table_id": "54161194"
+}

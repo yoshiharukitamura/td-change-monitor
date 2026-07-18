@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "f",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "r",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "last_order",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "last_shop_no",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "last_shop_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "last_order_date",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "paypay_app_popup",
+  "table_id": "219929267"
+}

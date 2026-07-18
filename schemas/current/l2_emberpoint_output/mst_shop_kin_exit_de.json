@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "from_app",
+      "description": null,
+      "name": "from_app",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "latest_form_reach",
+      "description": null,
+      "name": "latest_form_reach",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "latest_form_reach_shop_id",
+      "description": null,
+      "name": "latest_form_reach_shop_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "latest_reserve_complete",
+      "description": null,
+      "name": "latest_reserve_complete",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "latest_treatment",
+      "description": null,
+      "name": "latest_treatment",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "latest_shop_id",
+      "description": null,
+      "name": "latest_shop_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "latest_reservation",
+      "description": null,
+      "name": "latest_reservation",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "latest_reserved_from",
+      "description": null,
+      "name": "latest_reserved_from",
+      "position": 8,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "mst_shop_kin_exit_de",
+  "table_id": "148867917"
+}

@@ -1,0 +1,147 @@
+{
+  "columns": [
+    {
+      "alias": "session_dow",
+      "description": null,
+      "name": "session_dow",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "session_hour",
+      "description": null,
+      "name": "session_hour",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "user_pseudo_id",
+      "description": null,
+      "name": "user_pseudo_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "session_date",
+      "description": null,
+      "name": "session_date",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "arry_shop_no",
+      "description": null,
+      "name": "arry_shop_no",
+      "position": 4,
+      "type": "array<long>"
+    },
+    {
+      "alias": "session_datehour",
+      "description": null,
+      "name": "session_datehour",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "max_event_status",
+      "description": null,
+      "name": "max_event_status",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "max_event_status_over_n_sec",
+      "description": null,
+      "name": "max_event_status_over_n_sec",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "therapy_within_3day",
+      "description": null,
+      "name": "therapy_within_3day",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_within_3day",
+      "description": null,
+      "name": "reserve_within_3day",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "split_count",
+      "description": null,
+      "name": "split_count",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "loss_opps",
+      "description": null,
+      "name": "loss_opps",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "loss_opps_yesterday",
+      "description": null,
+      "name": "loss_opps_yesterday",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "diff_hour",
+      "description": null,
+      "name": "diff_hour",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "coef",
+      "description": null,
+      "name": "coef",
+      "position": 15,
+      "type": "double"
+    },
+    {
+      "alias": "business_datehour",
+      "description": null,
+      "name": "business_datehour",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "loss_opps_fin",
+      "description": null,
+      "name": "loss_opps_fin",
+      "position": 19,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "z_tmp_lost_opps_raw",
+  "table_id": "297458193"
+}

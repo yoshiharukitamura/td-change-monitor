@@ -1,0 +1,189 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "property_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_day",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h06",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h07",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h08",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h09",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h10",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h11",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h12",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h13",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h14",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h15",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h16",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h17",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h18",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h19",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h20",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h21",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h22",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h23",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h24",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h25",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h26",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h27",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h28",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "h29",
+      "position": 25,
+      "type": "long"
+    }
+  ],
+  "database": "l2_demand_forecast_auto",
+  "table": "spreadsheet_manual_linkage",
+  "table_id": "98650834"
+}

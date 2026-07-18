@@ -1,0 +1,126 @@
+{
+  "columns": [
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "business_datetime",
+      "description": null,
+      "name": "business_datetime",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "business_day",
+      "description": null,
+      "name": "business_day",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "cluster_no",
+      "description": null,
+      "name": "cluster_no",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_treatment_value",
+      "description": null,
+      "name": "forecast_treatment_value",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": "result_treatment_value",
+      "description": null,
+      "name": "result_treatment_value",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "avg_result_treatment_value",
+      "description": null,
+      "name": "avg_result_treatment_value",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "result_timeslot_value",
+      "description": null,
+      "name": "result_timeslot_value",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "avg_result_timeslot_value",
+      "description": null,
+      "name": "avg_result_timeslot_value",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "forecast_minus_avg_result",
+      "description": null,
+      "name": "forecast_minus_avg_result",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": "bullish_rank",
+      "description": null,
+      "name": "bullish_rank",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "bearish_rank",
+      "description": null,
+      "name": "bearish_rank",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "square_count",
+      "description": null,
+      "name": "square_count",
+      "position": 16,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "prep_join_all_v10",
+  "table_id": "286152067"
+}

@@ -1,0 +1,119 @@
+{
+  "columns": [
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "suggest_uu",
+      "description": null,
+      "name": "suggest_uu",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "mail_open_uu",
+      "description": null,
+      "name": "mail_open_uu",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "url_access_uu",
+      "description": null,
+      "name": "url_access_uu",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "mail_open_slot",
+      "description": null,
+      "name": "mail_open_slot",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "mail_open_slot_1",
+      "description": null,
+      "name": "mail_open_slot_1",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "mail_open_slot_2",
+      "description": null,
+      "name": "mail_open_slot_2",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot",
+      "description": null,
+      "name": "entry_slot",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_1",
+      "description": null,
+      "name": "entry_slot_1",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_2",
+      "description": null,
+      "name": "entry_slot_2",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_mailop",
+      "description": null,
+      "name": "entry_slot_mailop",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_mailop_1",
+      "description": null,
+      "name": "entry_slot_mailop_1",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_mailop_2",
+      "description": null,
+      "name": "entry_slot_mailop_2",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_mailop_urlac",
+      "description": null,
+      "name": "entry_slot_mailop_urlac",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_mailop_urlac_1",
+      "description": null,
+      "name": "entry_slot_mailop_urlac_1",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot_mailop_urlac_2",
+      "description": null,
+      "name": "entry_slot_mailop_urlac_2",
+      "position": 15,
+      "type": "long"
+    }
+  ],
+  "database": "l2_tp_suggest",
+  "table": "suggest_verification",
+  "table_id": "238728311"
+}

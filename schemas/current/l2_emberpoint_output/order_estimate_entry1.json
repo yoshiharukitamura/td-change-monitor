@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "journey_entry_date",
+      "description": null,
+      "name": "journey_entry_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "last_order_date",
+      "description": null,
+      "name": "last_order_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "last_reserve_date",
+      "description": null,
+      "name": "last_reserve_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "interval_group",
+      "description": null,
+      "name": "interval_group",
+      "position": 4,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "order_estimate_entry1",
+  "table_id": "148867776"
+}

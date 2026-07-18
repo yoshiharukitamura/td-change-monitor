@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "web_access_datetime",
+      "description": null,
+      "name": "web_access_datetime",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "web_access_page",
+      "description": null,
+      "name": "web_access_page",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_tp",
+  "table": "ps_tbl__bhvr_therapist_web",
+  "table_id": "297466670"
+}

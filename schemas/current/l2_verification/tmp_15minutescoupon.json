@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "flg",
+      "position": 1,
+      "type": "long"
+    }
+  ],
+  "database": "l2_verification",
+  "table": "tmp_15minutescoupon",
+  "table_id": "220976786"
+}

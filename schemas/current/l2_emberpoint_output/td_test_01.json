@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "name2",
+      "description": null,
+      "name": "name2",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "shopname2",
+      "description": null,
+      "name": "shopname2",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "td_test_01",
+  "table_id": "49991333"
+}

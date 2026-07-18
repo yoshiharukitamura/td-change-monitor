@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "pv_id",
+      "description": null,
+      "name": "pv_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_id",
+      "description": null,
+      "name": "reserve_id",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "z_tmp_cls_web_reserve",
+  "table_id": "297446585"
+}

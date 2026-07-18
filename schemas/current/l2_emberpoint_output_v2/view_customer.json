@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output_v2",
+  "table": "view_customer",
+  "table_id": "297429937"
+}

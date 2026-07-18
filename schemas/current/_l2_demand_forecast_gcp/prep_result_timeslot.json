@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "result_datetime",
+      "description": null,
+      "name": "result_datetime",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "result_timeslot_value",
+      "description": null,
+      "name": "result_timeslot_value",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "avg_result_timeslot_value",
+      "description": null,
+      "name": "avg_result_timeslot_value",
+      "position": 7,
+      "type": "double"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "prep_result_timeslot",
+  "table_id": "296418120"
+}

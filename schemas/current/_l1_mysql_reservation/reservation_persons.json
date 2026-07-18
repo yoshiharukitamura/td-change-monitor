@@ -1,0 +1,147 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "member_type",
+      "description": null,
+      "name": "member_type",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "mst_member_grades_id",
+      "description": null,
+      "name": "mst_member_grades_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "member_card_no",
+      "description": null,
+      "name": "member_card_no",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "birthday",
+      "description": null,
+      "name": "birthday",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "phone",
+      "description": null,
+      "name": "phone",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code1",
+      "description": null,
+      "name": "zip_code1",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code2",
+      "description": null,
+      "name": "zip_code2",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "password",
+      "description": null,
+      "name": "password",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "send_news_mail",
+      "description": null,
+      "name": "send_news_mail",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "search_id",
+      "description": null,
+      "name": "search_id",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "encrypted",
+      "description": null,
+      "name": "encrypted",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 19,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_reservation",
+  "table": "reservation_persons",
+  "table_id": "297412595"
+}

@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "item_state",
+      "description": null,
+      "name": "item_state",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "delete_state",
+      "description": null,
+      "name": "delete_state",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "indication_order",
+      "description": null,
+      "name": "indication_order",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "order_display",
+      "description": null,
+      "name": "order_display",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_hp",
+  "table": "area",
+  "table_id": "297411780"
+}

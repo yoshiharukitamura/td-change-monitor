@@ -1,0 +1,133 @@
+{
+  "columns": [
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "mst_shop_no",
+      "description": null,
+      "name": "mst_shop_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_name",
+      "description": null,
+      "name": "mst_shop_name",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "latest_bed_num",
+      "description": null,
+      "name": "latest_bed_num",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "processing_date_riraku",
+      "description": null,
+      "name": "processing_date_riraku",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_day",
+      "description": null,
+      "name": "business_day",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow_fixed",
+      "description": null,
+      "name": "business_dow_fixed",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot_restricted",
+      "description": null,
+      "name": "time_slot_restricted",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "time_slot",
+      "description": null,
+      "name": "time_slot",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "td1",
+      "description": null,
+      "name": "td1",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "td2",
+      "description": null,
+      "name": "td2",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "td3",
+      "description": null,
+      "name": "td3",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_value",
+      "description": null,
+      "name": "forecast_value",
+      "position": 16,
+      "type": "double"
+    },
+    {
+      "alias": "loss_opps_fin_value",
+      "description": null,
+      "name": "loss_opps_fin_value",
+      "position": 17,
+      "type": "double"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "fin_timeslot_raw_vtable_p1",
+  "table_id": "195524665"
+}

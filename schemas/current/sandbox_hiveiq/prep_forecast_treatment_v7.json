@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cluster_no",
+      "description": null,
+      "name": "cluster_no",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "_col2",
+      "description": null,
+      "name": "_col2",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_id",
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_datetime",
+      "description": null,
+      "name": "forecast_datetime",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "business_day",
+      "description": null,
+      "name": "business_day",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "forecast_treatment_value",
+      "description": null,
+      "name": "forecast_treatment_value",
+      "position": 9,
+      "type": "double"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "prep_forecast_treatment_v7",
+  "table_id": "205479436"
+}

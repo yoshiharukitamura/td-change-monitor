@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "day",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "dow",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "desc",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_original",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "l0_csv_upload",
+  "table": "holiday_calendar",
+  "table_id": "43098947"
+}

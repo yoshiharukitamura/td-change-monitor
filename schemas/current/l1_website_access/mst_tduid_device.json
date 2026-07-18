@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "td_uid",
+      "description": null,
+      "name": "td_uid",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "device_category",
+      "description": null,
+      "name": "device_category",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "device_detail",
+      "description": null,
+      "name": "device_detail",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "device_browser",
+      "description": null,
+      "name": "device_browser",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "l1_website_access",
+  "table": "mst_tduid_device",
+  "table_id": "297402936"
+}

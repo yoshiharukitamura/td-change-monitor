@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_shop_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_no",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "span",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "l2_demand_forecast_auto",
+  "table": "tmp_250205",
+  "table_id": "196630839"
+}

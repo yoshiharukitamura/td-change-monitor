@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "order_date",
+      "description": null,
+      "name": "order_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "amount",
+      "description": null,
+      "name": "amount",
+      "position": 2,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "order_history_edit",
+  "table_id": "148867727"
+}

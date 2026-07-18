@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "row_no",
+      "description": null,
+      "name": "row_no",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "no_kin",
+      "description": null,
+      "name": "no_kin",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "name_kin",
+      "description": null,
+      "name": "name_kin",
+      "position": 5,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "online_form_reach_kin_de",
+  "table_id": "148867847"
+}

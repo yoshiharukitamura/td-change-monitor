@@ -1,0 +1,308 @@
+{
+  "columns": [
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "property_type",
+      "description": null,
+      "name": "property_type",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "shop_type",
+      "description": null,
+      "name": "shop_type",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "shop_name_kana",
+      "description": null,
+      "name": "shop_name_kana",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "shop_short_name",
+      "description": null,
+      "name": "shop_short_name",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "zip",
+      "description": null,
+      "name": "zip",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "pref_code",
+      "description": null,
+      "name": "pref_code",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "address",
+      "description": null,
+      "name": "address",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "tel",
+      "description": null,
+      "name": "tel",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "fax",
+      "description": null,
+      "name": "fax",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "previous_tenant_name",
+      "description": null,
+      "name": "previous_tenant_name",
+      "position": 13,
+      "type": "string"
+    },
+    {
+      "alias": "previous_tenant_type",
+      "description": null,
+      "name": "previous_tenant_type",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "previous_tenant_remarks",
+      "description": null,
+      "name": "previous_tenant_remarks",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "frontal_road_name",
+      "description": null,
+      "name": "frontal_road_name",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "floor_area",
+      "description": null,
+      "name": "floor_area",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "rent_tax_excl",
+      "description": null,
+      "name": "rent_tax_excl",
+      "position": 18,
+      "type": "double"
+    },
+    {
+      "alias": "park_num",
+      "description": null,
+      "name": "park_num",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "park_num_remarks",
+      "description": null,
+      "name": "park_num_remarks",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_park",
+      "description": null,
+      "name": "therapist_park",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "hope_bed_num",
+      "description": null,
+      "name": "hope_bed_num",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "initial_bed_num",
+      "description": null,
+      "name": "initial_bed_num",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "latest_bed_num",
+      "description": null,
+      "name": "latest_bed_num",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "option_mattress_num",
+      "description": null,
+      "name": "option_mattress_num",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "booth_form_type",
+      "description": null,
+      "name": "booth_form_type",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "pole_signboard_flag",
+      "description": null,
+      "name": "pole_signboard_flag",
+      "position": 27,
+      "type": "string"
+    },
+    {
+      "alias": "shutter_flag",
+      "description": null,
+      "name": "shutter_flag",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "auto_door_flag",
+      "description": null,
+      "name": "auto_door_flag",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "increase_bed",
+      "description": null,
+      "name": "increase_bed",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": "latitude",
+      "description": null,
+      "name": "latitude",
+      "position": 31,
+      "type": "double"
+    },
+    {
+      "alias": "longitude",
+      "description": null,
+      "name": "longitude",
+      "position": 32,
+      "type": "double"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 38,
+      "type": "long"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 39,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 40,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 42,
+      "type": "double"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "property",
+  "table_id": "237466544"
+}

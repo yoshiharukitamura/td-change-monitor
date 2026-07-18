@@ -1,0 +1,203 @@
+{
+  "columns": [
+    {
+      "alias": "therapist_monthly_reward_rank_id",
+      "description": null,
+      "name": "therapist_monthly_reward_rank_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "yyyymm",
+      "description": null,
+      "name": "yyyymm",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "calculated_reward_rank_kind",
+      "description": null,
+      "name": "calculated_reward_rank_kind",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "retouched_reward_rank_kind",
+      "description": null,
+      "name": "retouched_reward_rank_kind",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "fixed_reward_rank_kind",
+      "description": null,
+      "name": "fixed_reward_rank_kind",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "next_judgement_yyyymm",
+      "description": null,
+      "name": "next_judgement_yyyymm",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "reward_rank_duration_months",
+      "description": null,
+      "name": "reward_rank_duration_months",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "new_contract_flag",
+      "description": null,
+      "name": "new_contract_flag",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "months_range_reset_flag",
+      "description": null,
+      "name": "months_range_reset_flag",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "calculate_target_flag",
+      "description": null,
+      "name": "calculate_target_flag",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "retouch_flag",
+      "description": null,
+      "name": "retouch_flag",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "based_time_slot_summary_id_main",
+      "description": null,
+      "name": "based_time_slot_summary_id_main",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "based_time_slot_summary_id_sub",
+      "description": null,
+      "name": "based_time_slot_summary_id_sub",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "area_code",
+      "description": null,
+      "name": "area_code",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "qualification_type",
+      "description": null,
+      "name": "qualification_type",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "retouch_remarks",
+      "description": null,
+      "name": "retouch_remarks",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "registered_user_keyword",
+      "description": null,
+      "name": "registered_user_keyword",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "registered_datetime",
+      "description": null,
+      "name": "registered_datetime",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "registered_system",
+      "description": null,
+      "name": "registered_system",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "registered_module",
+      "description": null,
+      "name": "registered_module",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "updated_user_keyword",
+      "description": null,
+      "name": "updated_user_keyword",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "updated_datetime",
+      "description": null,
+      "name": "updated_datetime",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "updated_system",
+      "description": null,
+      "name": "updated_system",
+      "position": 23,
+      "type": "string"
+    },
+    {
+      "alias": "updated_module",
+      "description": null,
+      "name": "updated_module",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "version",
+      "description": null,
+      "name": "version",
+      "position": 25,
+      "type": "double"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 27,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_core",
+  "table": "therapist_monthly_reward_rank",
+  "table_id": "297408248"
+}

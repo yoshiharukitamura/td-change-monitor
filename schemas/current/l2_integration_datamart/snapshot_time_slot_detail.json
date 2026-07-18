@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "week_diff",
+      "description": null,
+      "name": "week_diff",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "entry_slot",
+      "description": null,
+      "name": "entry_slot",
+      "position": 8,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "snapshot_time_slot_detail",
+  "table_id": "195535204"
+}

@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_customer_id",
+      "description": null,
+      "name": "cstm_03_customer_id",
+      "position": 1,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__attr_custom_list_03",
+  "table_id": "297473555"
+}

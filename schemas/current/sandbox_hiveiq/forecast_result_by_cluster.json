@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "ds",
+      "description": null,
+      "name": "ds",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "yhat",
+      "description": null,
+      "name": "yhat",
+      "position": 1,
+      "type": "double"
+    },
+    {
+      "alias": "cluster_id",
+      "description": null,
+      "name": "cluster_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "week",
+      "description": null,
+      "name": "week",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 5,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "forecast_result_by_cluster",
+  "table_id": "193215409"
+}

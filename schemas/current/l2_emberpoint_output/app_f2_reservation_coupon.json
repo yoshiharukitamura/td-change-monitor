@@ -1,0 +1,14 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "app_f2_reservation_coupon",
+  "table_id": "72767541"
+}

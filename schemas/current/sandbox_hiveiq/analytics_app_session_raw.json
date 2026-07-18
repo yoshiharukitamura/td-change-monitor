@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "is_kagoochi_ui",
+      "description": null,
+      "name": "is_kagoochi_ui",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "ga_session_id",
+      "description": null,
+      "name": "ga_session_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "event_datetime",
+      "description": null,
+      "name": "event_datetime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "event_name",
+      "description": null,
+      "name": "event_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "mst_shop_no",
+      "description": null,
+      "name": "mst_shop_no",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "pattern_a",
+      "description": null,
+      "name": "pattern_a",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "pattern_b",
+      "description": null,
+      "name": "pattern_b",
+      "position": 8,
+      "type": "string"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_app_session_raw",
+  "table_id": "297444269"
+}

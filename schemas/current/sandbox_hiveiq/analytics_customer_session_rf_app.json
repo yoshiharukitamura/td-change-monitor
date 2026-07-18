@@ -1,0 +1,42 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "r_week",
+      "description": null,
+      "name": "r_week",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "f",
+      "description": null,
+      "name": "f",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "app_open_flg",
+      "description": null,
+      "name": "app_open_flg",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "session_count",
+      "description": null,
+      "name": "session_count",
+      "position": 4,
+      "type": "long"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_customer_session_rf_app",
+  "table_id": "229096703"
+}

@@ -1,0 +1,98 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "app_access_datetime",
+      "description": null,
+      "name": "app_access_datetime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "app_shop_name",
+      "description": null,
+      "name": "app_shop_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "app_reservation_id",
+      "description": null,
+      "name": "app_reservation_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "app_session_id",
+      "description": null,
+      "name": "app_session_id",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "app_utm_source_name",
+      "description": null,
+      "name": "app_utm_source_name",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "app_utm_medium",
+      "description": null,
+      "name": "app_utm_medium",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "app_utm_source",
+      "description": null,
+      "name": "app_utm_source",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "app_event_name",
+      "description": null,
+      "name": "app_event_name",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "app_event_status",
+      "description": null,
+      "name": "app_event_status",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "view",
+      "description": null,
+      "name": "view",
+      "position": 12,
+      "type": "long"
+    }
+  ],
+  "database": "cdp_audience_1016484",
+  "table": "behavior_ps_tbl__bhvr_app_access",
+  "table_id": "297474154"
+}

@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "access_date",
+      "description": null,
+      "name": "access_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "event_unixtime",
+      "description": null,
+      "name": "event_unixtime",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "td_uid",
+      "description": null,
+      "name": "td_uid",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "ga_session_id",
+      "description": null,
+      "name": "ga_session_id",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "referral_source",
+      "description": null,
+      "name": "referral_source",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "utm_source",
+      "description": null,
+      "name": "utm_source",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "utm_medium",
+      "description": null,
+      "name": "utm_medium",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "utm_campaign",
+      "description": null,
+      "name": "utm_campaign",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "td_path",
+      "description": null,
+      "name": "td_path",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "event_status",
+      "description": null,
+      "name": "event_status",
+      "position": 13,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "z_tmp_cls_web_log_104w",
+  "table_id": "297446641"
+}

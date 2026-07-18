@@ -1,0 +1,14 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    }
+  ],
+  "database": "l2_tp_suggest",
+  "table": "ps_tbl__mstr_ids",
+  "table_id": "205659579"
+}

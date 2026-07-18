@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "synd_date",
+      "description": null,
+      "name": "synd_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "canceled_shop_id",
+      "description": null,
+      "name": "canceled_shop_id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "canceled_reservation",
+      "description": null,
+      "name": "canceled_reservation",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "cancel_type",
+      "description": null,
+      "name": "cancel_type",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "journey_entry_diff_days",
+      "description": null,
+      "name": "journey_entry_diff_days",
+      "position": 5,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "reservation_cancele_follow_de",
+  "table_id": "51650162"
+}

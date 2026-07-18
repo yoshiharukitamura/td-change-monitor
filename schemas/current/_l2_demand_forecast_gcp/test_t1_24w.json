@@ -1,0 +1,98 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "time_fmt",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "time_means",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_datetime",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "yhat",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "yhat_lower",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "yhat_upper",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "cluster_no",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "processing_date",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "week",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "weekday",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "hour",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_holiday",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "index",
+      "position": 12,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_demand_forecast_gcp",
+  "table": "test_t1_24w",
+  "table_id": "250882781"
+}

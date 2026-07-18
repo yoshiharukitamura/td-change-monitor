@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "hst_reservation_id",
+      "description": null,
+      "name": "hst_reservation_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_date_datetime",
+      "description": null,
+      "name": "reserve_date_datetime",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_timeslot_start_datetime",
+      "description": null,
+      "name": "reserve_timeslot_start_datetime",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_timeslot_end_datetime",
+      "description": null,
+      "name": "reserve_timeslot_end_datetime",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "reserve_dow",
+      "description": null,
+      "name": "reserve_dow",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "reserved_from",
+      "description": null,
+      "name": "reserved_from",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "reserve_shop",
+      "description": null,
+      "name": "reserve_shop",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "reserve_product",
+      "description": null,
+      "name": "reserve_product",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_status",
+      "description": null,
+      "name": "reservation_status",
+      "position": 9,
+      "type": "string"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__bhvr_reservation",
+  "table_id": "297468048"
+}

@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "time_fmt",
+      "description": null,
+      "name": "time_fmt",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "holiday_type",
+      "description": null,
+      "name": "holiday_type",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "holiday_type_name",
+      "description": null,
+      "name": "holiday_type_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "holiday_name",
+      "description": null,
+      "name": "holiday_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "dow_num",
+      "description": null,
+      "name": "dow_num",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "business_datetime",
+      "description": null,
+      "name": "business_datetime",
+      "position": 10,
+      "type": "string"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "mst_datetime",
+  "table_id": "297443540"
+}

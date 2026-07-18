@@ -1,0 +1,56 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "no",
+      "description": null,
+      "name": "no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "mst_area_id",
+      "description": null,
+      "name": "mst_area_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "latest_treatment",
+      "description": null,
+      "name": "latest_treatment",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "latest_form_reach",
+      "description": null,
+      "name": "latest_form_reach",
+      "position": 6,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "online_form_reach_target_de",
+  "table_id": "148867842"
+}

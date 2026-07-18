@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "app_access_datetime",
+      "description": null,
+      "name": "app_access_datetime",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "app_shop_name",
+      "description": null,
+      "name": "app_shop_name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "app_reservation_id",
+      "description": null,
+      "name": "app_reservation_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "app_session_id",
+      "description": null,
+      "name": "app_session_id",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "app_utm_source_name",
+      "description": null,
+      "name": "app_utm_source_name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "app_utm_medium",
+      "description": null,
+      "name": "app_utm_medium",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "app_utm_source",
+      "description": null,
+      "name": "app_utm_source",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "app_event_name",
+      "description": null,
+      "name": "app_event_name",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "app_event_status",
+      "description": null,
+      "name": "app_event_status",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "view",
+      "description": null,
+      "name": "view",
+      "position": 10,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__bhvr_app_access",
+  "table_id": "297472192"
+}

@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "dormant_group",
+      "description": null,
+      "name": "dormant_group",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "order_diff_days",
+      "description": null,
+      "name": "order_diff_days",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "created_diff_days",
+      "description": null,
+      "name": "created_diff_days",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "dormant_follow_diff_days",
+  "table_id": "51463364"
+}

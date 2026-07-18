@@ -1,0 +1,259 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_count",
+      "description": null,
+      "name": "reservation_count",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_app_count",
+      "description": null,
+      "name": "reservation_app_count",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "order_count",
+      "description": null,
+      "name": "order_count",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_mon",
+      "description": null,
+      "name": "order_count_mon",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_tue",
+      "description": null,
+      "name": "order_count_tue",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_wed",
+      "description": null,
+      "name": "order_count_wed",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_thu",
+      "description": null,
+      "name": "order_count_thu",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_fri",
+      "description": null,
+      "name": "order_count_fri",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_sat",
+      "description": null,
+      "name": "order_count_sat",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_sun",
+      "description": null,
+      "name": "order_count_sun",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_holi",
+      "description": null,
+      "name": "order_count_holi",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_6_9",
+      "description": null,
+      "name": "order_count_ts_6_9",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_10_12",
+      "description": null,
+      "name": "order_count_ts_10_12",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_13_15",
+      "description": null,
+      "name": "order_count_ts_13_15",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_16_18",
+      "description": null,
+      "name": "order_count_ts_16_18",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_19_21",
+      "description": null,
+      "name": "order_count_ts_19_21",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_22_24",
+      "description": null,
+      "name": "order_count_ts_22_24",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "order_count_ts_25_29",
+      "description": null,
+      "name": "order_count_ts_25_29",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "tp_nomination_count",
+      "description": null,
+      "name": "tp_nomination_count",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "tp_nomination_uu",
+      "description": null,
+      "name": "tp_nomination_uu",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "gender_nomination_count",
+      "description": null,
+      "name": "gender_nomination_count",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_90min_count",
+      "description": null,
+      "name": "treatment_90min_count",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_foot_count",
+      "description": null,
+      "name": "treatment_foot_count",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "option_count",
+      "description": null,
+      "name": "option_count",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "review_count",
+      "description": null,
+      "name": "review_count",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "review_positive_count",
+      "description": null,
+      "name": "review_positive_count",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "review_negative_count",
+      "description": null,
+      "name": "review_negative_count",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "gift_card_count",
+      "description": null,
+      "name": "gift_card_count",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": "bonus_point_count",
+      "description": null,
+      "name": "bonus_point_count",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": "limited_bonus_point_count",
+      "description": null,
+      "name": "limited_bonus_point_count",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "charge_point_count",
+      "description": null,
+      "name": "charge_point_count",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": "charge_point_charge_count",
+      "description": null,
+      "name": "charge_point_charge_count",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": "bonus_point_use_count",
+      "description": null,
+      "name": "bonus_point_use_count",
+      "position": 33,
+      "type": "long"
+    },
+    {
+      "alias": "limited_bonus_point_use_count",
+      "description": null,
+      "name": "limited_bonus_point_use_count",
+      "position": 34,
+      "type": "long"
+    },
+    {
+      "alias": "charge_point_use_count",
+      "description": null,
+      "name": "charge_point_use_count",
+      "position": 35,
+      "type": "long"
+    }
+  ],
+  "database": "_l2_audience_studio_mk",
+  "table": "ps_tbl__attr_order_aggregate",
+  "table_id": "297466203"
+}

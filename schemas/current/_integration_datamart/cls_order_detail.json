@@ -1,0 +1,245 @@
+{
+  "columns": [
+    {
+      "alias": "time_fmt",
+      "description": null,
+      "name": "time_fmt",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "order_id",
+      "description": null,
+      "name": "order_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "phone_no",
+      "description": null,
+      "name": "phone_no",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "parent_order_id",
+      "description": null,
+      "name": "parent_order_id",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "is_repeat",
+      "description": null,
+      "name": "is_repeat",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "member_type",
+      "description": null,
+      "name": "member_type",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id",
+      "description": null,
+      "name": "order_detail_id",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "product_id",
+      "description": null,
+      "name": "product_id",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "product_name",
+      "description": null,
+      "name": "product_name",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "price_type",
+      "description": null,
+      "name": "price_type",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": "product_type_id",
+      "description": null,
+      "name": "product_type_id",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": "hr_discount",
+      "description": null,
+      "name": "hr_discount",
+      "position": 21,
+      "type": "double"
+    },
+    {
+      "alias": "nomination_fee",
+      "description": null,
+      "name": "nomination_fee",
+      "position": 22,
+      "type": "double"
+    },
+    {
+      "alias": "royalty_program_discount",
+      "description": null,
+      "name": "royalty_program_discount",
+      "position": 23,
+      "type": "double"
+    },
+    {
+      "alias": "uriage_sejutsu",
+      "description": null,
+      "name": "uriage_sejutsu",
+      "position": 24,
+      "type": "double"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "slot_from",
+      "description": null,
+      "name": "slot_from",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "slot_to",
+      "description": null,
+      "name": "slot_to",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id_seq",
+      "description": null,
+      "name": "order_detail_id_seq",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": "order_id_hour_seq",
+      "description": null,
+      "name": "order_id_hour_seq",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": "order_detail_id_hour_seq",
+      "description": null,
+      "name": "order_detail_id_hour_seq",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_minutes_in_hour",
+      "description": null,
+      "name": "treatment_minutes_in_hour",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": "uriage1",
+      "description": null,
+      "name": "uriage1",
+      "position": 32,
+      "type": "double"
+    },
+    {
+      "alias": "uriage",
+      "description": null,
+      "name": "uriage",
+      "position": 33,
+      "type": "double"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "cls_order_detail",
+  "table_id": "297444628"
+}

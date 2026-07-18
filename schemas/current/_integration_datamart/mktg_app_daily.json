@@ -1,0 +1,98 @@
+{
+  "columns": [
+    {
+      "alias": "business_day",
+      "description": null,
+      "name": "business_day",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "traffic_source",
+      "description": null,
+      "name": "traffic_source",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "new_repeat",
+      "description": null,
+      "name": "new_repeat",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "r",
+      "description": null,
+      "name": "r",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "session_count",
+      "description": null,
+      "name": "session_count",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "session_uu",
+      "description": null,
+      "name": "session_uu",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_bahavior_uu",
+      "description": null,
+      "name": "reservation_bahavior_uu",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_confirm_uu",
+      "description": null,
+      "name": "reservation_confirm_uu",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_complete_uu",
+      "description": null,
+      "name": "reservation_complete_uu",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_order_count",
+      "description": null,
+      "name": "reservation_order_count",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "nw_reservation_complete_uu",
+      "description": null,
+      "name": "nw_reservation_complete_uu",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "nw_session_uu_not_reservation",
+      "description": null,
+      "name": "nw_session_uu_not_reservation",
+      "position": 12,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "mktg_app_daily",
+  "table_id": "297461362"
+}

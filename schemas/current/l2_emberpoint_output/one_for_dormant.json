@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_date",
+      "description": null,
+      "name": "last_order_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "last_reserve_date",
+      "description": null,
+      "name": "last_reserve_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "cnt",
+      "description": null,
+      "name": "cnt",
+      "position": 3,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "one_for_dormant",
+  "table_id": "148867820"
+}

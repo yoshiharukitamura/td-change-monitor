@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "time_fmt",
+      "description": null,
+      "name": "time_fmt",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "first_business_date",
+      "description": null,
+      "name": "first_business_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "first_business_date_y2023",
+      "description": null,
+      "name": "first_business_date_y2023",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "return_date",
+      "description": null,
+      "name": "return_date",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "return_business_week",
+      "description": null,
+      "name": "return_business_week",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "tp_flag",
+      "description": null,
+      "name": "tp_flag",
+      "position": 9,
+      "type": "string"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "hst_weekly_therapist_flag",
+  "table_id": "230692560"
+}

@@ -1,0 +1,91 @@
+{
+  "columns": [
+    {
+      "alias": "yom",
+      "description": null,
+      "name": "yom",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "moy",
+      "description": null,
+      "name": "moy",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "processing_date",
+      "description": null,
+      "name": "processing_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "r_month",
+      "description": null,
+      "name": "r_month",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "f",
+      "description": null,
+      "name": "f",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "customer_uu",
+      "description": null,
+      "name": "customer_uu",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "order_customer_uu",
+      "description": null,
+      "name": "order_customer_uu",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "order_customer_uu_rate",
+      "description": null,
+      "name": "order_customer_uu_rate",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": "order_count",
+      "description": null,
+      "name": "order_count",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "treatment_minutes",
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "option_order_count",
+      "description": null,
+      "name": "option_order_count",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "nomination_order_count",
+      "description": null,
+      "name": "nomination_order_count",
+      "position": 11,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "z_tmp_kpi_rf_monthly",
+  "table_id": "253700450"
+}

@@ -1,0 +1,63 @@
+{
+  "columns": [
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "name2",
+      "description": null,
+      "name": "name2",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "shopname",
+      "description": null,
+      "name": "shopname",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "shopname2",
+      "description": null,
+      "name": "shopname2",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "order_interval_median",
+      "description": null,
+      "name": "order_interval_median",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "last_order_date",
+      "description": null,
+      "name": "last_order_date",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "target_flag",
+      "description": null,
+      "name": "target_flag",
+      "position": 7,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "order_interval_v2_e61_remind_pattern_c",
+  "table_id": "148868257"
+}

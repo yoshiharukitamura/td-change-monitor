@@ -1,0 +1,126 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "mailflg",
+      "description": null,
+      "name": "mailflg",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "latest_treatment_date",
+      "description": null,
+      "name": "latest_treatment_date",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "shopname",
+      "description": null,
+      "name": "shopname",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "shopname2",
+      "description": null,
+      "name": "shopname2",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "recency",
+      "description": null,
+      "name": "recency",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "total_treatment_count",
+      "description": null,
+      "name": "total_treatment_count",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "frequency",
+      "description": null,
+      "name": "frequency",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "annual_treatment_count",
+      "description": null,
+      "name": "annual_treatment_count",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "interval_median",
+      "description": null,
+      "name": "interval_median",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "notification_date",
+      "description": null,
+      "name": "notification_date",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "review_rank",
+      "description": null,
+      "name": "review_rank",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "review_rate",
+      "description": null,
+      "name": "review_rate",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "shop_message",
+      "description": null,
+      "name": "shop_message",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": "member_type",
+      "description": null,
+      "name": "member_type",
+      "position": 16,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output_v2",
+  "table": "ma_customers",
+  "table_id": "297432510"
+}

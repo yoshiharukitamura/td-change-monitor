@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "week",
+      "description": null,
+      "name": "week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "r",
+      "description": null,
+      "name": "r",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "f",
+      "description": null,
+      "name": "f",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "customer_cnt",
+      "description": null,
+      "name": "customer_cnt",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "uriage1_kjpy",
+      "description": null,
+      "name": "uriage1_kjpy",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": "treatment_hours",
+      "description": null,
+      "name": "treatment_hours",
+      "position": 5,
+      "type": "long"
+    }
+  ],
+  "database": "_integration_datamart",
+  "table": "mktg_customer_rf_map",
+  "table_id": "234958473"
+}

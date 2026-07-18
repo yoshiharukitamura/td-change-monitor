@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "synd_date",
+      "description": null,
+      "name": "synd_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "registration_date",
+      "description": null,
+      "name": "registration_date",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "first_order_datetime",
+      "description": null,
+      "name": "first_order_datetime",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "latest_treatment_datetime",
+      "description": null,
+      "name": "latest_treatment_datetime",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "latest_treatment_mst_shop_id",
+      "description": null,
+      "name": "latest_treatment_mst_shop_id",
+      "position": 5,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "first_login_follow",
+  "table_id": "64013326"
+}

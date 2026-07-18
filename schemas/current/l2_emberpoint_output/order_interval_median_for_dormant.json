@@ -1,0 +1,21 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "order_interval_median",
+      "description": null,
+      "name": "order_interval_median",
+      "position": 1,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "order_interval_median_for_dormant",
+  "table_id": "148867808"
+}

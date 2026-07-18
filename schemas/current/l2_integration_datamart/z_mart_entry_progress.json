@@ -1,0 +1,119 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "business_dow",
+      "description": null,
+      "name": "business_dow",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "business_hour",
+      "description": null,
+      "name": "business_hour",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "property_id",
+      "description": null,
+      "name": "property_id",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "td_time_slot",
+      "description": null,
+      "name": "td_time_slot",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "td1",
+      "description": null,
+      "name": "td1",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "td2",
+      "description": null,
+      "name": "td2",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "td3",
+      "description": null,
+      "name": "td3",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "entry_fixed",
+      "description": null,
+      "name": "entry_fixed",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": "entry_w0",
+      "description": null,
+      "name": "entry_w0",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": "exclude_quest",
+      "description": null,
+      "name": "exclude_quest",
+      "position": 10,
+      "type": "double"
+    },
+    {
+      "alias": "entry_w1",
+      "description": null,
+      "name": "entry_w1",
+      "position": 11,
+      "type": "double"
+    },
+    {
+      "alias": "entry_w2",
+      "description": null,
+      "name": "entry_w2",
+      "position": 12,
+      "type": "double"
+    },
+    {
+      "alias": "entry_w3",
+      "description": null,
+      "name": "entry_w3",
+      "position": 13,
+      "type": "double"
+    },
+    {
+      "alias": "entry_w4",
+      "description": null,
+      "name": "entry_w4",
+      "position": 14,
+      "type": "double"
+    },
+    {
+      "alias": "entry_w5",
+      "description": null,
+      "name": "entry_w5",
+      "position": 15,
+      "type": "double"
+    }
+  ],
+  "database": "l2_integration_datamart",
+  "table": "z_mart_entry_progress",
+  "table_id": "297505274"
+}

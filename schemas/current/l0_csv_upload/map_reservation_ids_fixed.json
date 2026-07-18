@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "reserve_id_dec",
+      "description": null,
+      "name": "reserve_id_dec",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "reserve_id_enc",
+      "description": null,
+      "name": "reserve_id_enc",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_id",
+      "description": null,
+      "name": "reservation_id",
+      "position": 2,
+      "type": "long"
+    }
+  ],
+  "database": "l0_csv_upload",
+  "table": "map_reservation_ids_fixed",
+  "table_id": "297476068"
+}

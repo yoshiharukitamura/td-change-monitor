@@ -1,0 +1,49 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "mst_area_id",
+      "description": null,
+      "name": "mst_area_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "sort_order",
+      "description": null,
+      "name": "sort_order",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "bit",
+      "description": null,
+      "name": "bit",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 5,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "mst_prefectures",
+  "table_id": "297405584"
+}

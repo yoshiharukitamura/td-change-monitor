@@ -1,0 +1,77 @@
+{
+  "columns": [
+    {
+      "alias": "business_week",
+      "description": null,
+      "name": "business_week",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "entry_hour",
+      "description": null,
+      "name": "entry_hour",
+      "position": 2,
+      "type": "double"
+    },
+    {
+      "alias": "pw_entry_hour",
+      "description": null,
+      "name": "pw_entry_hour",
+      "position": 3,
+      "type": "double"
+    },
+    {
+      "alias": "avg_entry_hour",
+      "description": null,
+      "name": "avg_entry_hour",
+      "position": 4,
+      "type": "double"
+    },
+    {
+      "alias": "stddev_entry_hour",
+      "description": null,
+      "name": "stddev_entry_hour",
+      "position": 5,
+      "type": "double"
+    },
+    {
+      "alias": "avg_entry_hour_bin_from",
+      "description": null,
+      "name": "avg_entry_hour_bin_from",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "stddev_entry_hour_bin_from",
+      "description": null,
+      "name": "stddev_entry_hour_bin_from",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "avg_entry_hour_bin",
+      "description": null,
+      "name": "avg_entry_hour_bin",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "stddev_entry_hour_bin",
+      "description": null,
+      "name": "stddev_entry_hour_bin",
+      "position": 9,
+      "type": "string"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "analytics_tp_entry_hour",
+  "table_id": "229494226"
+}

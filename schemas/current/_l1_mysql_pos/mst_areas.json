@@ -1,0 +1,35 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "sort_order",
+      "description": null,
+      "name": "sort_order",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 3,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "mst_areas",
+  "table_id": "297405576"
+}

@@ -1,0 +1,182 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_code",
+      "description": null,
+      "name": "reservation_code",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_person_id",
+      "description": null,
+      "name": "reservation_person_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "reservation_index",
+      "description": null,
+      "name": "reservation_index",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "parent_reservation_id",
+      "description": null,
+      "name": "parent_reservation_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "status",
+      "description": null,
+      "name": "status",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "reserved_from",
+      "description": null,
+      "name": "reserved_from",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "start_time",
+      "description": null,
+      "name": "start_time",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "end_time",
+      "description": null,
+      "name": "end_time",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "interval_end_time",
+      "description": null,
+      "name": "interval_end_time",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "total_amount_of_price",
+      "description": null,
+      "name": "total_amount_of_price",
+      "position": 10,
+      "type": "long"
+    },
+    {
+      "alias": "mst_product_id",
+      "description": null,
+      "name": "mst_product_id",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "if_use_premium_mattress",
+      "description": null,
+      "name": "if_use_premium_mattress",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "designation_type",
+      "description": null,
+      "name": "designation_type",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "designation_fixed",
+      "description": null,
+      "name": "designation_fixed",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "mst_pressure_id",
+      "description": null,
+      "name": "mst_pressure_id",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "mst_conversation_id",
+      "description": null,
+      "name": "mst_conversation_id",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "remarks",
+      "description": null,
+      "name": "remarks",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "if_experienced_serious_injury",
+      "description": null,
+      "name": "if_experienced_serious_injury",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "injured_date",
+      "description": null,
+      "name": "injured_date",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "sign_image_file_name",
+      "description": null,
+      "name": "sign_image_file_name",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 24,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "reservations",
+  "table_id": "237466902"
+}

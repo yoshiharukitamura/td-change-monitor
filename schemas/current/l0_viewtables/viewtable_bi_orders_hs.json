@@ -1,0 +1,581 @@
+{
+  "columns": [
+    {
+      "alias": null,
+      "description": null,
+      "name": "orders_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_members_card_no",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_first_time",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "customer_type",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "member_type",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_received_datetime",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "purchased_datetime",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_treated_datetime_modified",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "business_date",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treated_date",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_admin",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "original_order_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "accepted_therapist_id",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "accepted_therapist_name",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "bill_datetime",
+      "position": 15,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "bill_therapist_id",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "bill_therapist_name",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_amount_of_treatment_minutes",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_amount_of_price_excluding_rewards",
+      "position": 19,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_amount_of_therapist_nomination_fees",
+      "position": 20,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_amount_of_rewards",
+      "position": 21,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "consumption_tax_rate",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_old_gift_card",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "used_charge_point",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "used_bonus_point",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_additional_charge_point",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_additional_bonus_point",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "payment_type",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "purchased_customer_id",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "purchased_customer_members_card_no",
+      "position": 30,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_start_datetime",
+      "position": 31,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_end_datetime",
+      "position": 32,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "remarks",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_id",
+      "position": 34,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_no",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "shop_name",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "oders_modified",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "order_details_id",
+      "position": 38,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "product_id",
+      "position": 39,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "parent_order_detail_id",
+      "position": 40,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "product_name",
+      "position": 41,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "product_type_id",
+      "position": 42,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_product_name",
+      "position": 43,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "category_id",
+      "position": 44,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "original_category_id",
+      "position": 45,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_minutes",
+      "position": 46,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "amount_of_reward_for_therapist",
+      "position": 47,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sales_price",
+      "position": 48,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "consumption_tax",
+      "position": 49,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "basis_of_additional_bonus_point",
+      "position": 50,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_no_1",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_minutes_1",
+      "position": 52,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_name_1",
+      "position": 53,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_gender_1",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reason_for_change",
+      "position": 55,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_no_2",
+      "position": 56,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "treatment_minutes_2",
+      "position": 57,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "therapist_name_2",
+      "position": 58,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "total_minutes",
+      "position": 59,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "nomination_type",
+      "position": 60,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "nomination_fee",
+      "position": 61,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_nomination_fee_changed",
+      "position": 62,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "amount_of_reward_discount",
+      "position": 63,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "times_of_reward_bonus_point",
+      "position": 64,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "reward_bonus_point",
+      "position": 65,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "additional_charge_point",
+      "position": 66,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "additional_bonus_point",
+      "position": 67,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "gift_cards_id",
+      "position": 68,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sales_price_including_reward_discount",
+      "position": 69,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "quantity",
+      "position": 70,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "sub_total",
+      "position": 71,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "uriage1_undiscounted",
+      "position": 72,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "uriage1",
+      "position": 73,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_countable",
+      "position": 74,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "is_body_pillow",
+      "position": 75,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "oder_detais_modified",
+      "position": 76,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "created",
+      "position": 77,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "payment_type_id",
+      "position": 78,
+      "type": "string"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "used_standard_bonus_point",
+      "position": 79,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "used_limited_time_bonus_point",
+      "position": 80,
+      "type": "long"
+    },
+    {
+      "alias": null,
+      "description": null,
+      "name": "mst_member_grades_id",
+      "position": 81,
+      "type": "long"
+    }
+  ],
+  "database": "l0_viewtables",
+  "table": "viewtable_bi_orders_hs",
+  "table_id": "84187359"
+}

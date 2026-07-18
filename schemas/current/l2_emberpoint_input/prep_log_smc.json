@@ -1,0 +1,84 @@
+{
+  "columns": [
+    {
+      "alias": "job_id",
+      "description": null,
+      "name": "job_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "batch_id",
+      "description": null,
+      "name": "batch_id",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "sent_dt",
+      "description": null,
+      "name": "sent_dt",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "open_dt",
+      "description": null,
+      "name": "open_dt",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "click_dt",
+      "description": null,
+      "name": "click_dt",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "reservation_dt",
+      "description": null,
+      "name": "reservation_dt",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "order_dt",
+      "description": null,
+      "name": "order_dt",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "is_deleted",
+      "description": null,
+      "name": "is_deleted",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "is_opt_in",
+      "description": null,
+      "name": "is_opt_in",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "mail_magazine",
+      "description": null,
+      "name": "mail_magazine",
+      "position": 10,
+      "type": "long"
+    }
+  ],
+  "database": "l2_emberpoint_input",
+  "table": "prep_log_smc",
+  "table_id": "56646658"
+}

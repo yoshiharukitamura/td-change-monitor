@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "business_date",
+      "description": null,
+      "name": "business_date",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "first_use_date",
+      "description": null,
+      "name": "first_use_date",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "sandbox_hiveiq",
+  "table": "spot_new_customer_app_use",
+  "table_id": "214270763"
+}

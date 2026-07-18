@@ -1,0 +1,28 @@
+{
+  "columns": [
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_name",
+      "description": null,
+      "name": "therapist_name",
+      "position": 2,
+      "type": "string"
+    }
+  ],
+  "database": "l2_tp_suggest",
+  "table": "ps_tbl__attr_therapist",
+  "table_id": "205659580"
+}

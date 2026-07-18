@@ -1,0 +1,70 @@
+{
+  "columns": [
+    {
+      "alias": "delivery_date",
+      "description": null,
+      "name": "delivery_date",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "senario_name",
+      "description": null,
+      "name": "senario_name",
+      "position": 1,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "name2",
+      "description": null,
+      "name": "name2",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "customer_id",
+      "description": null,
+      "name": "customer_id",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "shopname",
+      "description": null,
+      "name": "shopname",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "shopname2",
+      "description": null,
+      "name": "shopname2",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "today",
+      "description": null,
+      "name": "today",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "weekday",
+      "description": null,
+      "name": "weekday",
+      "position": 8,
+      "type": "string"
+    }
+  ],
+  "database": "l2_emberpoint_output",
+  "table": "visits_frequency_increase_subject_save",
+  "table_id": "51855224"
+}

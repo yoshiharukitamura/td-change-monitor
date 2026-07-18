@@ -1,0 +1,385 @@
+{
+  "columns": [
+    {
+      "alias": "id",
+      "description": null,
+      "name": "id",
+      "position": 0,
+      "type": "long"
+    },
+    {
+      "alias": "reward_category_id",
+      "description": null,
+      "name": "reward_category_id",
+      "position": 1,
+      "type": "long"
+    },
+    {
+      "alias": "unit",
+      "description": null,
+      "name": "unit",
+      "position": 2,
+      "type": "long"
+    },
+    {
+      "alias": "price_type",
+      "description": null,
+      "name": "price_type",
+      "position": 3,
+      "type": "long"
+    },
+    {
+      "alias": "display_style",
+      "description": null,
+      "name": "display_style",
+      "position": 4,
+      "type": "long"
+    },
+    {
+      "alias": "name",
+      "description": null,
+      "name": "name",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "code",
+      "description": null,
+      "name": "code",
+      "position": 6,
+      "type": "string"
+    },
+    {
+      "alias": "value",
+      "description": null,
+      "name": "value",
+      "position": 7,
+      "type": "long"
+    },
+    {
+      "alias": "sort_order",
+      "description": null,
+      "name": "sort_order",
+      "position": 8,
+      "type": "long"
+    },
+    {
+      "alias": "sort_order_coupon",
+      "description": null,
+      "name": "sort_order_coupon",
+      "position": 9,
+      "type": "long"
+    },
+    {
+      "alias": "receipt_name",
+      "description": null,
+      "name": "receipt_name",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "is_printed_on_receipt",
+      "description": null,
+      "name": "is_printed_on_receipt",
+      "position": 11,
+      "type": "long"
+    },
+    {
+      "alias": "is_applicable_to_total_number_of_treatment_minutes",
+      "description": null,
+      "name": "is_applicable_to_total_number_of_treatment_minutes",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "min_of_total_treatment_minutes",
+      "description": null,
+      "name": "min_of_total_treatment_minutes",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "max_of_total_treatment_minutes",
+      "description": null,
+      "name": "max_of_total_treatment_minutes",
+      "position": 14,
+      "type": "long"
+    },
+    {
+      "alias": "is_able_to_be_used_in_combination_of_rewards",
+      "description": null,
+      "name": "is_able_to_be_used_in_combination_of_rewards",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "is_used_as_app_coupon",
+      "description": null,
+      "name": "is_used_as_app_coupon",
+      "position": 16,
+      "type": "long"
+    },
+    {
+      "alias": "is_displayed_in_app",
+      "description": null,
+      "name": "is_displayed_in_app",
+      "position": 17,
+      "type": "long"
+    },
+    {
+      "alias": "is_public",
+      "description": null,
+      "name": "is_public",
+      "position": 18,
+      "type": "long"
+    },
+    {
+      "alias": "distribution_start_datetime",
+      "description": null,
+      "name": "distribution_start_datetime",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "end_date_of_validity",
+      "description": null,
+      "name": "end_date_of_validity",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "image_file_name",
+      "description": null,
+      "name": "image_file_name",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "terms_of_use_per_coupon",
+      "description": null,
+      "name": "terms_of_use_per_coupon",
+      "position": 22,
+      "type": "string"
+    },
+    {
+      "alias": "target",
+      "description": null,
+      "name": "target",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 24,
+      "type": "long"
+    },
+    {
+      "alias": "start_age",
+      "description": null,
+      "name": "start_age",
+      "position": 25,
+      "type": "long"
+    },
+    {
+      "alias": "end_age",
+      "description": null,
+      "name": "end_age",
+      "position": 26,
+      "type": "long"
+    },
+    {
+      "alias": "number_of_visits",
+      "description": null,
+      "name": "number_of_visits",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "number_of_visits_operator",
+      "description": null,
+      "name": "number_of_visits_operator",
+      "position": 28,
+      "type": "long"
+    },
+    {
+      "alias": "is_birthday",
+      "description": null,
+      "name": "is_birthday",
+      "position": 29,
+      "type": "long"
+    },
+    {
+      "alias": "number_of_days_of_application_before_birthday",
+      "description": null,
+      "name": "number_of_days_of_application_before_birthday",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "is_birth_month",
+      "description": null,
+      "name": "is_birth_month",
+      "position": 31,
+      "type": "long"
+    },
+    {
+      "alias": "number_of_days_of_application_before_first_day_of_birth_month",
+      "description": null,
+      "name": "number_of_days_of_application_before_first_day_of_birth_month",
+      "position": 32,
+      "type": "long"
+    },
+    {
+      "alias": "last_login_start",
+      "description": null,
+      "name": "last_login_start",
+      "position": 33,
+      "type": "string"
+    },
+    {
+      "alias": "last_login_end",
+      "description": null,
+      "name": "last_login_end",
+      "position": 34,
+      "type": "string"
+    },
+    {
+      "alias": "registered_date_start",
+      "description": null,
+      "name": "registered_date_start",
+      "position": 35,
+      "type": "string"
+    },
+    {
+      "alias": "registered_date_end",
+      "description": null,
+      "name": "registered_date_end",
+      "position": 36,
+      "type": "string"
+    },
+    {
+      "alias": "available_period_of_time_start",
+      "description": null,
+      "name": "available_period_of_time_start",
+      "position": 37,
+      "type": "string"
+    },
+    {
+      "alias": "available_period_of_time_end",
+      "description": null,
+      "name": "available_period_of_time_end",
+      "position": 38,
+      "type": "string"
+    },
+    {
+      "alias": "lapsed_days_from_last_visit",
+      "description": null,
+      "name": "lapsed_days_from_last_visit",
+      "position": 39,
+      "type": "long"
+    },
+    {
+      "alias": "lapsed_days_from_last_visit_operator",
+      "description": null,
+      "name": "lapsed_days_from_last_visit_operator",
+      "position": 40,
+      "type": "long"
+    },
+    {
+      "alias": "number_of_days_of_validity_from_last_visit",
+      "description": null,
+      "name": "number_of_days_of_validity_from_last_visit",
+      "position": 41,
+      "type": "long"
+    },
+    {
+      "alias": "type_of_sharing_discount",
+      "description": null,
+      "name": "type_of_sharing_discount",
+      "position": 42,
+      "type": "long"
+    },
+    {
+      "alias": "percentage_of_sharing_discount_for_therapist",
+      "description": null,
+      "name": "percentage_of_sharing_discount_for_therapist",
+      "position": 43,
+      "type": "long"
+    },
+    {
+      "alias": "if_rounding_up_or_down_ones_place",
+      "description": null,
+      "name": "if_rounding_up_or_down_ones_place",
+      "position": 44,
+      "type": "long"
+    },
+    {
+      "alias": "amount_of_sharing_discount_for_therapist",
+      "description": null,
+      "name": "amount_of_sharing_discount_for_therapist",
+      "position": 45,
+      "type": "long"
+    },
+    {
+      "alias": "is_displayed_in_pos_dwb",
+      "description": null,
+      "name": "is_displayed_in_pos_dwb",
+      "position": 46,
+      "type": "long"
+    },
+    {
+      "alias": "is_displayed_in_rsv_app",
+      "description": null,
+      "name": "is_displayed_in_rsv_app",
+      "position": 47,
+      "type": "long"
+    },
+    {
+      "alias": "created",
+      "description": null,
+      "name": "created",
+      "position": 48,
+      "type": "string"
+    },
+    {
+      "alias": "modified",
+      "description": null,
+      "name": "modified",
+      "position": 49,
+      "type": "string"
+    },
+    {
+      "alias": "deleted",
+      "description": null,
+      "name": "deleted",
+      "position": 50,
+      "type": "long"
+    },
+    {
+      "alias": "deleted_date",
+      "description": null,
+      "name": "deleted_date",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": "is_therapist_coupon",
+      "description": null,
+      "name": "is_therapist_coupon",
+      "position": 52,
+      "type": "long"
+    },
+    {
+      "alias": "time_means",
+      "description": null,
+      "name": "time_means",
+      "position": 53,
+      "type": "string"
+    }
+  ],
+  "database": "_l1_mysql_pos",
+  "table": "reward_items",
+  "table_id": "297405569"
+}

@@ -1,0 +1,105 @@
+{
+  "columns": [
+    {
+      "alias": "cdp_customer_id",
+      "description": null,
+      "name": "cdp_customer_id",
+      "position": 0,
+      "type": "string"
+    },
+    {
+      "alias": "timestamp",
+      "description": null,
+      "name": "timestamp",
+      "position": 1,
+      "type": "int"
+    },
+    {
+      "alias": "mstr__id",
+      "description": null,
+      "name": "mstr__id",
+      "position": 2,
+      "type": "string"
+    },
+    {
+      "alias": "shop_no",
+      "description": null,
+      "name": "shop_no",
+      "position": 3,
+      "type": "string"
+    },
+    {
+      "alias": "shop_name",
+      "description": null,
+      "name": "shop_name",
+      "position": 4,
+      "type": "string"
+    },
+    {
+      "alias": "timeslot_datetime",
+      "description": null,
+      "name": "timeslot_datetime",
+      "position": 5,
+      "type": "long"
+    },
+    {
+      "alias": "td_minuites",
+      "description": null,
+      "name": "td_minuites",
+      "position": 6,
+      "type": "double"
+    },
+    {
+      "alias": "td1_minuites",
+      "description": null,
+      "name": "td1_minuites",
+      "position": 7,
+      "type": "double"
+    },
+    {
+      "alias": "td2_minuites",
+      "description": null,
+      "name": "td2_minuites",
+      "position": 8,
+      "type": "double"
+    },
+    {
+      "alias": "td3_minuites",
+      "description": null,
+      "name": "td3_minuites",
+      "position": 9,
+      "type": "double"
+    },
+    {
+      "alias": "not_enough_td1",
+      "description": null,
+      "name": "not_enough_td1",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "not_enough_td2",
+      "description": null,
+      "name": "not_enough_td2",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "not_enough_td3",
+      "description": null,
+      "name": "not_enough_td3",
+      "position": 12,
+      "type": "string"
+    },
+    {
+      "alias": "last_week_util",
+      "description": null,
+      "name": "last_week_util",
+      "position": 13,
+      "type": "double"
+    }
+  ],
+  "database": "cdp_audience_1018834",
+  "table": "behavior_ps_tbl__bhvr_therapist_available_timeslot",
+  "table_id": "297468090"
+}
