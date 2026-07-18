@@ -1,0 +1,22 @@
+[
+  {
+    "id": "audit-0001",
+    "time": 1783900800,
+    "event_name": "table_modify",
+    "event_result": "success",
+    "resource_id": "table-0001",
+    "resource_name": "sample_database.sample_table",
+    "resource_namespace": "table",
+    "resource_path": "sample_database.sample_table",
+    "resource_type": "table",
+    "requested_http_verb": "POST",
+    "requested_path_info": "/v3/table/update-schema/sample_database/sample_table",
+    "attribute_name": "schema",
+    "old_value": "[[\"id\",\"long\",\"id\"],[\"uriage1\",\"long\",\"uriage1\"]]",
+    "new_value": "[[\"id\",\"long\",\"id\"],[\"uriage1\",\"double\",\"uriage1\"]]",
+    "user_email": "masked@example.com",
+    "source_user_email": "masked@example.com",
+    "target_resource_id": null,
+    "target_resource_name": null
+  }
+]

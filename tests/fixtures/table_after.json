@@ -1,0 +1,6 @@
+{
+  "id": "table-0001",
+  "database": "sample_database",
+  "table": "sample_table",
+  "schema": "[[\"id\",\"long\",\"id\"],[\"uriage1\",\"double\",\"uriage1\"],[\"shop_no\",\"string\",\"shop_no\",\"店舗番号\"]]"
+}

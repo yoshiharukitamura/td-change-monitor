@@ -1,0 +1,14 @@
+monitored_tables:
+  - database: l1_core
+    table: customers
+  - database: l1_pos
+    table: orders
+
+exclude:
+  # PoCでは原則として上の許可リストを優先する。
+  # どうしても除外が必要な場合だけ使用する。
+  table_patterns: []
+
+bootstrap:
+  # 空ならmonitored_tablesを初回スナップショット対象にする。
+  tables: []

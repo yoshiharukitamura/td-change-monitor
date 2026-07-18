@@ -1,0 +1,21 @@
+{
+  "database": "sample_database",
+  "table": "sample_table",
+  "table_id": "table-0001",
+  "columns": [
+    {
+      "name": "id",
+      "type": "long",
+      "alias": "id",
+      "description": null,
+      "position": 0
+    },
+    {
+      "name": "uriage1",
+      "type": "long",
+      "alias": "uriage1",
+      "description": null,
+      "position": 1
+    }
+  ]
+}
