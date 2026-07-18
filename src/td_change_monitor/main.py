@@ -4,6 +4,7 @@ import argparse
 import asyncio
 import json
 import logging
+import sys
 from datetime import UTC, datetime
 
 from td_change_monitor.clients.backlog import BacklogClient
@@ -96,7 +97,7 @@ def cli() -> None:
 
 
 def _configure_logging(level: str) -> None:
-    handler = logging.StreamHandler()
+    handler = logging.StreamHandler(sys.stdout)
     handler.setFormatter(_JsonFormatter())
     logging.basicConfig(
         level=getattr(logging, level.upper(), logging.INFO),

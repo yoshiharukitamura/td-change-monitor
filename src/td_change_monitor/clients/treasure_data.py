@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 from collections.abc import Mapping
 from datetime import datetime
 from typing import Any
@@ -143,7 +144,14 @@ class TreasureDataClient:
             f"job/result/{job_id}",
             params={"format": "json"},
         )
-        return _records_from_td_result(response.json())
+        try:
+            payload = response.json()
+        except json.JSONDecodeError:
+            payload = _json_lines_from_td_result(response.text)
+        return _records_from_td_result(
+            payload,
+            expected_columns=_audit_result_columns(self._settings),
+        )
 
 
 def _sql_time_literal(value: datetime, unit: str) -> str:
@@ -152,9 +160,20 @@ def _sql_time_literal(value: datetime, unit: str) -> str:
     return f"'{value.isoformat()}'"
 
 
-def _records_from_td_result(payload: object) -> list[Mapping[str, Any]]:
+def _records_from_td_result(
+    payload: object,
+    *,
+    expected_columns: list[str] | None = None,
+) -> list[Mapping[str, Any]]:
     if isinstance(payload, list):
-        return [_ensure_mapping(item) for item in payload]
+        if all(isinstance(item, Mapping) for item in payload):
+            return [_ensure_mapping(item) for item in payload]
+        if expected_columns is not None:
+            if len(payload) == len(expected_columns) and not any(
+                isinstance(item, (list, Mapping)) for item in payload
+            ):
+                return [_row_to_mapping(expected_columns, payload)]
+            return [_row_to_mapping(expected_columns, row) for row in payload]
     if isinstance(payload, Mapping):
         rows = payload.get("rows") or payload.get("results")
         if isinstance(rows, list):
@@ -165,6 +184,37 @@ def _records_from_td_result(payload: object) -> list[Mapping[str, Any]]:
                 names = [str(column) for column in columns]
                 return [_row_to_mapping(names, row) for row in rows]
     raise ExternalApiError("invalid TD job result response")
+
+
+def _json_lines_from_td_result(text: str) -> list[object]:
+    rows: list[object] = []
+    try:
+        for line in text.splitlines():
+            if line.strip():
+                rows.append(json.loads(line))
+    except json.JSONDecodeError as exc:
+        raise ExternalApiError("invalid TD job result JSON lines") from exc
+    return rows
+
+
+def _audit_result_columns(settings: Settings) -> list[str]:
+    columns = settings.audit_columns
+    return [
+        columns.id_column,
+        columns.time_column,
+        columns.event_column,
+        columns.event_result_column,
+        columns.resource_name_column,
+        columns.resource_id_column,
+        columns.request_path_column,
+        columns.request_http_verb_column,
+        columns.user_column,
+        columns.source_user_column,
+        columns.attribute_column,
+        columns.old_value_column,
+        columns.new_value_column,
+        columns.target_resource_name_column,
+    ]
 
 
 def _snapshot_from_td_payload(

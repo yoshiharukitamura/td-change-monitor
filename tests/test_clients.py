@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 from datetime import UTC, datetime
 
 import httpx
@@ -105,6 +106,65 @@ def test_treasure_data_fetches_audit_events_through_query_job() -> None:
         assert events[0].event_type == EventType.TABLE_MODIFY
         assert events[0].database == "db"
         assert events[0].table == "table"
+
+    asyncio.run(scenario())
+
+
+@respx.mock
+def test_treasure_data_parses_json_lines_array_job_result() -> None:
+    async def scenario() -> None:
+        settings = make_settings(http_max_retries=1)
+        respx.post("https://api.td.test/v3/job/issue/presto/audit_db").mock(
+            return_value=httpx.Response(200, json={"job_id": "job-jsonl"})
+        )
+        respx.get("https://api.td.test/v3/job/status/job-jsonl").mock(
+            return_value=httpx.Response(200, json={"status": "success"})
+        )
+        row = [
+            "audit-jsonl-1",
+            1783900800,
+            "table_modify",
+            "success",
+            "db.table",
+            "table-1",
+            "/v3/table/update-schema/db/table",
+            "POST",
+            "operator@example.com",
+            None,
+            "schema",
+            '[["id","long"]]',
+            '[["id","long"],["name","string"]]',
+            None,
+        ]
+        second_row = row.copy()
+        second_row[0] = "audit-jsonl-2"
+        second_row[1] += 1
+        respx.get("https://api.td.test/v3/job/result/job-jsonl").mock(
+            return_value=httpx.Response(
+                200,
+                content=(
+                    json.dumps(row) + "\n" + json.dumps(second_row) + "\n"
+                ).encode(),
+                headers={"content-type": "application/json"},
+            )
+        )
+        client = TreasureDataClient(settings, poll_interval_seconds=0)
+        try:
+            events = await client.fetch_audit_events(
+                TimeWindow(
+                    start=datetime(2026, 7, 13, 0, 0, tzinfo=UTC),
+                    end=datetime(2026, 7, 13, 1, 0, tzinfo=UTC),
+                )
+            )
+        finally:
+            await client.aclose()
+
+        assert len(events) == 2
+        assert events[0].event_id == "audit-jsonl-1"
+        assert events[0].resource_id == "table-1"
+        assert events[0].actor == "operator@example.com"
+        assert events[1].event_id == "audit-jsonl-2"
+        assert events[0].old_value == '[["id","long"]]'
 
     asyncio.run(scenario())
 
