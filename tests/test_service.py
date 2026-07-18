@@ -9,7 +9,11 @@ from conftest import make_settings
 
 from td_change_monitor.clients.local_git import FileChange
 from td_change_monitor.config import TargetTablesConfig
-from td_change_monitor.errors import ExternalApiError, UnresolvedAuditEventsError
+from td_change_monitor.errors import (
+    ChangeMonitorError,
+    ExternalApiError,
+    UnresolvedAuditEventsError,
+)
 from td_change_monitor.models import AuditEvent, ColumnDefinition, EventType, TableSnapshot
 from td_change_monitor.service import ChangeMonitorService
 from td_change_monitor.time_window import TimeWindow
@@ -499,3 +503,35 @@ def test_bootstrap_can_write_single_initial_state() -> None:
     assert payload["audit_query_to"] == STATE_AT
     assert payload["processed_audit_event_ids"] == {}
     assert payload["table_ids"] == {"db.table": "table-1"}
+
+
+def test_bootstrap_reports_all_missing_targets_without_commit() -> None:
+    repository = FakeRepository()
+    td = FakeTreasureData(
+        snapshots={("db", "table"): snapshot(("id", "long"))}
+    )
+    targets = TargetTablesConfig(
+        (("db", "table"), ("db", "missing_one"), ("db", "missing_two")),
+        (),
+        (),
+    )
+
+    with pytest.raises(
+        ChangeMonitorError,
+        match=r"count=2; tables=db\.missing_one,db\.missing_two",
+    ):
+        asyncio.run(
+            service(
+                td=td,
+                repository=repository,
+                backlog=FakeBacklog(),
+                target_tables=targets,
+            ).run(bootstrap=True)
+        )
+
+    assert td.fetches == [
+        ("db", "table"),
+        ("db", "missing_one"),
+        ("db", "missing_two"),
+    ]
+    assert repository.commits == []

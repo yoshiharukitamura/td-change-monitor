@@ -254,8 +254,15 @@ class ChangeMonitorService:
 
         changes: list[FileChange] = []
         bootstrap_table_ids: dict[str, str] = {}
+        missing_targets: list[str] = []
         for database, table in targets:
-            snapshot = await self._td.fetch_table_snapshot(database, table)
+            try:
+                snapshot = await self._td.fetch_table_snapshot(database, table)
+            except ExternalApiError as exc:
+                if exc.status_code == 404:
+                    missing_targets.append(f"{database}.{table}")
+                    continue
+                raise
             if snapshot.table_id:
                 bootstrap_table_ids[f"{database}.{table}"] = snapshot.table_id
             changes.append(
@@ -263,6 +270,12 @@ class ChangeMonitorService:
                     path=_schema_path(database, table),
                     content=snapshot_to_json_bytes(snapshot),
                 )
+            )
+
+        if missing_targets:
+            raise ChangeMonitorError(
+                "bootstrap target tables were not found in Treasure Data: "
+                f"count={len(missing_targets)}; tables={','.join(missing_targets)}"
             )
 
         if state_end_at is not None:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import pytest
 from pydantic import SecretStr
 
 from td_change_monitor.config import Settings, load_target_tables_config
@@ -26,7 +27,11 @@ bootstrap:
     assert config.monitored_tables == (("l2_emberpoint_output", "0426_analytical_grade"),)
 
 
-def test_settings_accept_legacy_non_secret_github_names_for_local_git() -> None:
+def test_settings_accept_legacy_non_secret_github_names_for_local_git(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.chdir(tmp_path)
     settings = Settings.model_validate(
         {
             "td_api_base_url": "https://api.td.test/v3",

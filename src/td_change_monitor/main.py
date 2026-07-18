@@ -103,6 +103,8 @@ def _configure_logging(level: str) -> None:
         handlers=[handler],
         force=True,
     )
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("httpcore").setLevel(logging.WARNING)
 
 
 def _parse_datetime(value: str) -> datetime:
