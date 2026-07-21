@@ -19,6 +19,6 @@ Audit履歴上、同一テーブルのpreview操作でtable IDが継続してい
 
 APIキーをquery parameterとして送るが、URL、例外、ログへキーを出さない。`aggregated_change_id`で既存課題を検索してから必要時だけ作成する。
 
-## GitHub
+## Git連携
 
-GitHub APIは使用しない。Git remoteに対してローカルGitで`pull --ff-only`、`commit`、`push`する。`GITHUB_REPOSITORY_URL`はBacklog本文へ載せるblob URLの組み立てだけに使用する。
+Git remoteに対してローカルGitで`pull --ff-only`、`commit`、`push`する。`GITHUB_REPOSITORY_URL`はBacklog本文へ載せるblob URLの組み立てに使用する。

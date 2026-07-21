@@ -20,7 +20,6 @@
 - [x] APIキー、token、Authorization headerを成果物へ保存しない。
 - [x] 複数テーブルの変更を1実行1コミットにまとめる。
 - [x] 同じ論理テーブルの複数操作をBacklog課題1件にまとめる。
-- [x] GitHub REST APIを呼ばない。
 - [x] ローカルGitのpull、commit、pushを実リポジトリで検証する。
 
 ## 品質ゲート

@@ -4,7 +4,7 @@
 
 対象テーブルの定義変更を1日1回監視し、必要最小限の証跡をGitHubへ保存し、重要変更をBacklogへ通知する。TDテーブルのレコード内容は扱わない。
 
-本番実行基盤はWindowsタスクスケジューラとPowerShell。TDとBacklogはAPI、GitHubはローカルGitのremoteとして扱い、GitHub REST APIは使わない。
+本番実行基盤はWindowsタスクスケジューラとPowerShell。TDとBacklogはAPI、GitHubはローカルGitのremoteとして扱う。
 
 ## 2. 時刻と再実行
 

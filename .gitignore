@@ -30,3 +30,5 @@ temp/
 *.debug.json
 .td_change_monitor.lock
 .DS_Store
+/CODEX_PROMPT.md
+/docs/BEGINNER_SYSTEM_GUIDE.md

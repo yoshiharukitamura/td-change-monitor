@@ -20,14 +20,6 @@ def test_gitignore_excludes_logs_temporary_files_and_environment() -> None:
     assert not any(pattern.startswith("!logs/") for pattern in patterns)
 
 
-def test_python_source_does_not_use_github_api_or_token() -> None:
-    source = "\n".join(path.read_text(encoding="utf-8") for path in (ROOT / "src").rglob("*.py"))
-
-    assert "api.github.com" not in source
-    assert "GITHUB_TOKEN" not in source
-    assert "github_token" not in source
-
-
 @pytest.mark.skipif(os.name != "nt", reason="PowerShell retention test runs on Windows")
 def test_cleanup_logs_removes_only_expired_log_files(tmp_path: Path) -> None:
     log_dir = tmp_path / "logs"

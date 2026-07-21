@@ -12,7 +12,7 @@ Windowsタスクスケジューラ -> PowerShell -> uv/Python
   -> local Git: pull --ff-only / commit / push
 ```
 
-GitHub APIは使用しません。本番はWindowsタスクスケジューラで動かし、WSL/Linuxは開発・検証だけに使います。
+本番はWindowsタスクスケジューラで動かし、WSL/Linuxは開発・検証だけに使います。
 
 ## 初期設定
 
@@ -106,4 +106,4 @@ Linux cronは設定しません。
 - タスク実行ユーザーで`git pull --ff-only`と`git push`が非対話で成功すること
 - bootstrap開始時刻と初回通常実行のdry-run結果
 
-詳しい処理は[初心者向けシステム説明](docs/BEGINNER_SYSTEM_GUIDE.md)、厳密な仕様は[仕様書](docs/SPEC.md)を参照してください。
+詳しい処理は[仕様書](docs/SPEC.md)を参照してください。
