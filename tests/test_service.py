@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import json
+import logging
 from datetime import UTC, datetime
 
 import pytest
@@ -310,6 +311,40 @@ def test_table_recreate_same_schema_records_audit_without_issue() -> None:
     assert audit_payload(repository)["change_kind"] == "table_recreate"
 
 
+def test_temporary_table_rename_uses_existing_target_as_previous_state() -> None:
+    repository = FakeRepository(
+        {STATE_PATH: state_text(), SCHEMA_PATH: snapshot_text(("id", "long"), table_id="old-id")}
+    )
+    td = FakeTreasureData(
+        events=[
+            event(
+                EventType.TABLE_MODIFY,
+                event_id="rename-temp",
+                table="table",
+                previous_table="tmp_table",
+                resource_id="new-id",
+                attribute_name="name",
+                old_value="tmp_table",
+                new_value="table",
+            )
+        ],
+        snapshots={
+            ("db", "table"): snapshot(("id", "long"), table_id="new-id")
+        },
+    )
+    backlog = FakeBacklog()
+
+    summary = asyncio.run(service(td=td, repository=repository, backlog=backlog).run())
+
+    assert summary["diff_count"] == 1
+    assert summary["issue_count"] == 0
+    assert backlog.issues == []
+    payload = audit_payload(repository)
+    assert payload["change_kind"] == "table_recreate"
+    assert payload["previous_table"] is None
+    assert payload["net_diff"]["added_columns"] == []
+
+
 def test_modify_rename_delete_creates_one_issue_and_one_grouped_audit_file() -> None:
     old_path = "schemas/current/db/old_table.json"
     repository = FakeRepository(
@@ -452,7 +487,9 @@ def test_no_ready_time_window_is_noop_without_commit() -> None:
     assert repository.commits == []
 
 
-def test_dry_run_does_not_write_repository_or_backlog() -> None:
+def test_dry_run_does_not_write_repository_or_backlog(
+    caplog: pytest.LogCaptureFixture,
+) -> None:
     repository = FakeRepository(
         {STATE_PATH: state_text(), SCHEMA_PATH: snapshot_text(("id", "long"))}
     )
@@ -462,12 +499,41 @@ def test_dry_run_does_not_write_repository_or_backlog() -> None:
     )
     backlog = FakeBacklog()
 
-    summary = asyncio.run(service(td=td, repository=repository, backlog=backlog).run(dry_run=True))
+    with caplog.at_level(logging.INFO, logger="td_change_monitor.service"):
+        summary = asyncio.run(
+            service(td=td, repository=repository, backlog=backlog).run(dry_run=True)
+        )
 
     assert summary["diff_count"] == 1
     assert repository.prepare_calls == [False]
     assert repository.commits == []
     assert backlog.issues == []
+    change_records = [
+        record
+        for record in caplog.records
+        if record.message == "td_change_monitor_dry_run_change"
+    ]
+    assert len(change_records) == 1
+    dry_run_change = dict(change_records[0].dry_run_change)
+    change_id = dry_run_change.pop("change_id")
+    assert isinstance(change_id, str)
+    assert len(change_id) == 64
+    assert dry_run_change == {
+        "database": "db",
+        "table": "table",
+        "previous_table": None,
+        "change_kind": "schema_change",
+        "backlog_candidate": True,
+        "table_id_changed": False,
+        "audit_event_count": 1,
+        "event_types": ["table_modify"],
+        "added_columns": ["name"],
+        "removed_columns": [],
+        "type_changes": [],
+        "alias_changed_columns": [],
+        "description_changed_columns": [],
+        "order_changed_columns": [],
+    }
 
 
 def test_bootstrap_overwrites_only_current_snapshot_without_daily_schema() -> None:

@@ -173,6 +173,11 @@ class ChangeMonitorService:
         table_ids = _updated_table_ids(state.table_ids, changes)
 
         if dry_run:
+            for change in changes:
+                logger.info(
+                    "td_change_monitor_dry_run_change",
+                    extra={"dry_run_change": _dry_run_change_dict(change)},
+                )
             planned_files = self._build_run_file_changes(
                 run_id=run_id,
                 window=fetch_window,
@@ -326,8 +331,18 @@ class ChangeMonitorService:
         *,
         group: EventGroup,
     ) -> DetectedChange | None:
+        is_rename = group.previous_table is not None and group.previous_table != group.table
         before_table = group.previous_table or group.table
         before = await self._read_snapshot(_schema_path(group.database, before_table))
+        effective_previous_table = group.previous_table
+        if is_rename and before is None:
+            current_name_before = await self._read_snapshot(
+                _schema_path(group.database, group.table)
+            )
+            if current_name_before is not None:
+                before = current_name_before
+                is_rename = False
+                effective_previous_table = None
         event_types = group.event_types
         event_type_set = set(event_types)
         after = await self._fetch_snapshot_or_none(group.database, group.table)
@@ -343,7 +358,7 @@ class ChangeMonitorService:
             event_type_set=event_type_set,
             diff=diff,
             table_id_changed=table_id_changed,
-            is_rename=group.previous_table is not None and group.previous_table != group.table,
+            is_rename=is_rename,
             after_exists=after is not None,
         )
         if not _should_record_change(change_kind, diff):
@@ -362,7 +377,7 @@ class ChangeMonitorService:
         return DetectedChange(
             database=group.database,
             table=group.table,
-            previous_table=group.previous_table,
+            previous_table=effective_previous_table,
             event_types=event_types,
             events=group.events,
             before=before,
@@ -639,6 +654,31 @@ def _diff_dict(diff: SchemaDiff) -> dict[str, object]:
             {"name": name, "before": before, "after": after}
             for name, before, after in diff.order_changed
         ],
+    }
+
+
+def _dry_run_change_dict(change: DetectedChange) -> dict[str, object]:
+    return {
+        "database": change.database,
+        "table": change.table,
+        "previous_table": change.previous_table,
+        "change_kind": change.change_kind.value,
+        "backlog_candidate": change.should_create_issue,
+        "table_id_changed": change.table_id_changed,
+        "change_id": change.change_id,
+        "audit_event_count": len(change.events),
+        "event_types": [event_type.value for event_type in change.event_types],
+        "added_columns": [column.name for column in change.diff.added],
+        "removed_columns": [column.name for column in change.diff.removed],
+        "type_changes": [
+            {"column": name, "before": before, "after": after}
+            for name, before, after in change.diff.type_changed
+        ],
+        "alias_changed_columns": [name for name, _, _ in change.diff.alias_changed],
+        "description_changed_columns": [
+            name for name, _, _ in change.diff.description_changed
+        ],
+        "order_changed_columns": [name for name, _, _ in change.diff.order_changed],
     }
 
 

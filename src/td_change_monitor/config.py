@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     display_timezone: str = "Asia/Tokyo"
     audit_log_lag_minutes: int = 10
     audit_log_overlap_minutes: int = 30
-    max_changed_tables_per_run: int = 100
+    max_changed_tables_per_run: int = 250
     processed_id_retention_days: int = Field(default=7, ge=1)
     local_log_retention_days: int = Field(default=30, ge=1)
     max_generated_file_size_mb: int = Field(default=5, ge=1)

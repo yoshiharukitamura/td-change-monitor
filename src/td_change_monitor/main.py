@@ -125,7 +125,7 @@ class _JsonFormatter(logging.Formatter):
             "message": record.getMessage(),
             "logger": record.name,
         }
-        for key in ("summary", "error", "exc_type"):
+        for key in ("summary", "dry_run_change", "error", "exc_type"):
             value = getattr(record, key, None)
             if value is not None:
                 payload[key] = value

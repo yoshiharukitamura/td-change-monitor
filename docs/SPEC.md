@@ -103,3 +103,7 @@ Audit成果物は対象論理テーブルの判定に使ったイベントだけ
 標準出力はJSON構造化ログとし、PowerShellが`logs/`へ保存する。ログはGit対象外で、開始時と終了時に`LOCAL_LOG_RETENTION_DAYS`より古い`.log`を削除する。既定30日。
 
 `scripts/check_storage.ps1`は作業ツリー、`.git`、schema、diff、Audit、state、logsの容量を表示する。削除、gc、履歴変更はしない。
+
+dry-runでは、検出した変更ごとに`td_change_monitor_dry_run_change`ログを出力する。テーブル名、変更種別、Backlog候補かどうか、Audit件数、カラム差分を含める。schema本文、APIレスポンス全体、秘密情報は含めない。
+
+1実行で処理する変更テーブル数は`MAX_CHANGED_TABLES_PER_RUN`で制限し、既定値は250とする。上限を超えた場合はBacklog・Git・stateを更新せず失敗する。
