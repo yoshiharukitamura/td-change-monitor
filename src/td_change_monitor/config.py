@@ -17,6 +17,7 @@ _QUALIFIED_TABLE_RE = re.compile(r"^[A-Za-z0-9_]+\.[A-Za-z0-9_]+$")
 
 
 class Settings(BaseSettings):
+    """環境変数と.envから読み込むバッチ全体の設定を保持する。"""
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
@@ -89,6 +90,13 @@ class Settings(BaseSettings):
     @field_validator("backlog_category_ids", mode="before")
     @classmethod
     def _parse_category_ids(cls, value: object) -> object:
+        """BacklogカテゴリIDのカンマ区切り文字列を整数タプルへ変換する。
+
+        引数:
+            value: 環境変数または既に解析済みの設定値。
+        戻り値:
+            文字列なら整数タプル、それ以外なら元の値。
+        """
         if value is None or value == "":
             return []
         if isinstance(value, str):
@@ -98,12 +106,26 @@ class Settings(BaseSettings):
     @field_validator("backlog_assignee_id", mode="before")
     @classmethod
     def _parse_optional_int(cls, value: object) -> object:
+        """空文字の任意整数設定をNoneへ変換する。
+
+        引数:
+            value: 環境変数から得た設定値。
+        戻り値:
+            空文字ならNone、それ以外なら元の値。
+        """
         if value == "":
             return None
         return value
 
     @model_validator(mode="after")
     def _build_legacy_github_repository_url(self) -> Settings:
+        """旧設定値がある場合にBacklog差分リンク用URLを補完する。
+
+        引数:
+            なし。
+        戻り値:
+            URL補完後の同じSettingsインスタンス。
+        """
         if not self.github_repository_url and self.github_owner and self.github_repo:
             self.github_repository_url = (
                 f"https://github.com/{self.github_owner}/{self.github_repo}"
@@ -114,6 +136,13 @@ class Settings(BaseSettings):
 
     @property
     def audit_columns(self) -> AuditColumnConfig:
+        """Audit Log解析用の列名設定をまとめて返す。
+
+        引数:
+            なし。
+        戻り値:
+            Settings内の列名と時刻単位から作ったAuditColumnConfig。
+        """
         return AuditColumnConfig(
             id_column=self.td_audit_id_column,
             time_column=self.td_audit_time_column,
@@ -135,11 +164,20 @@ class Settings(BaseSettings):
 
 @dataclass(frozen=True)
 class TargetTablesConfig:
+    """監視対象table、除外パターン、bootstrap対象を保持する。"""
     monitored_tables: tuple[tuple[str, str], ...]
     exclude_table_patterns: tuple[str, ...]
     bootstrap_tables: tuple[str, ...]
 
     def includes(self, database: str, table: str) -> bool:
+        """指定tableが許可リストに含まれ、除外対象でないかを判定する。
+
+        引数:
+            database: 判定するdatabase名。
+            table: 判定するtable名。
+        戻り値:
+            監視対象ならTrue。
+        """
         qualified = f"{database}.{table}"
         monitored = {f"{db}.{name}" for db, name in self.monitored_tables}
         if qualified not in monitored:
@@ -147,9 +185,24 @@ class TargetTablesConfig:
         return not any(re.search(pattern, table) for pattern in self.exclude_table_patterns)
 
     def includes_any(self, database: str, *tables: str | None) -> bool:
+        """rename前後名のいずれかが監視対象かを判定する。
+
+        引数:
+            database: 判定するdatabase名。
+            tables: 判定候補のtable名列。Noneは無視する。
+        戻り値:
+            1件以上が監視対象ならTrue。
+        """
         return any(table is not None and self.includes(database, table) for table in tables)
 
     def bootstrap_targets(self) -> tuple[tuple[str, str], ...]:
+        """初回snapshotを取得するtable一覧を返す。
+
+        引数:
+            なし。
+        戻り値:
+            bootstrap専用指定があればその一覧、なければ監視対象一覧。
+        """
         tables = self.bootstrap_tables or tuple(
             f"{database}.{table}" for database, table in self.monitored_tables
         )
@@ -157,6 +210,13 @@ class TargetTablesConfig:
 
 
 def load_target_tables_config(path: str | Path = "config/target_tables.yml") -> TargetTablesConfig:
+    """YAMLファイルから監視対象設定を読み込み検証する。
+
+    引数:
+        path: 対象table設定YAMLのパス。
+    戻り値:
+        重複除去・形式検証済みTargetTablesConfig。
+    """
     config_path = Path(path)
     payload = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
     if not isinstance(payload, dict):
@@ -189,18 +249,39 @@ def load_target_tables_config(path: str | Path = "config/target_tables.yml") -> 
 
 
 def validate_sql_identifier(identifier: str) -> str:
+    """SQLへ埋め込む識別子が安全な英数字とアンダースコアだけか検証する。
+
+    引数:
+        identifier: 検証対象の列名または識別子。
+    戻り値:
+        検証に成功した元の文字列。
+    """
     if not _SQL_IDENTIFIER_RE.fullmatch(identifier):
         raise ValueError(f"invalid SQL identifier: {identifier!r}")
     return identifier
 
 
 def validate_td_resource_name(name: str) -> str:
+    """TDのdatabaseまたはtable名として許可する形式か検証する。
+
+    引数:
+        name: 検証対象のresource名。
+    戻り値:
+        検証に成功した元の文字列。
+    """
     if not _TD_RESOURCE_NAME_RE.fullmatch(name):
         raise ValueError(f"invalid TD resource name: {name!r}")
     return name
 
 
 def validate_qualified_table(value: str) -> str:
+    """`database.table`形式の完全修飾名を検証する。
+
+    引数:
+        value: 検証対象の完全修飾table名。
+    戻り値:
+        検証に成功した元の文字列。
+    """
     if not _QUALIFIED_TABLE_RE.fullmatch(value):
         raise ValueError(f"invalid qualified table: {value!r}")
     database, table = value.split(".", 1)
@@ -210,6 +291,13 @@ def validate_qualified_table(value: str) -> str:
 
 
 def _mapping(value: object) -> dict[str, Any]:
+    """YAML値を文字列キーの辞書として検証する。
+
+    引数:
+        value: YAMLから読み込んだ任意値。
+    戻り値:
+        Noneなら空辞書、Mappingなら通常の辞書。
+    """
     if value is None:
         return {}
     if not isinstance(value, dict):
@@ -218,6 +306,13 @@ def _mapping(value: object) -> dict[str, Any]:
 
 
 def _string_tuple(value: object) -> tuple[str, ...]:
+    """YAMLの文字列配列をタプルへ変換する。
+
+    引数:
+        value: YAMLから読み込んだ配列またはNone。
+    戻り値:
+        検証済み文字列タプル。
+    """
     if value is None:
         return ()
     if not isinstance(value, list):
@@ -232,12 +327,26 @@ def _string_tuple(value: object) -> tuple[str, ...]:
 
 
 def _split_qualified_table(value: str) -> tuple[str, str]:
+    """完全修飾table名をdatabase名とtable名へ分割する。
+
+    引数:
+        value: `database.table`形式の文字列。
+    戻り値:
+        database名とtable名のタプル。
+    """
     validate_qualified_table(value)
     database, table = value.split(".", 1)
     return database, table
 
 
 def _monitored_tables(value: object) -> tuple[tuple[str, str], ...]:
+    """YAMLの監視対象定義をdatabase・tableのタプル列へ変換する。
+
+    引数:
+        value: 文字列形式または辞書形式を含むYAML配列。
+    戻り値:
+        重複除去前の検証済みtable識別子列。
+    """
     if value is None:
         return ()
     if not isinstance(value, list):

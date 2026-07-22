@@ -9,6 +9,13 @@ from td_change_monitor.models import ColumnDefinition, SchemaDiff, TableSnapshot
 
 
 def normalize_snapshot(snapshot: TableSnapshot) -> TableSnapshot:
+    """schema比較が安定するよう型名・空文字・位置を正規化する。
+
+    引数:
+        snapshot: TDまたはGitから読み込んだtable snapshot。
+    戻り値:
+        比較用に正規化した新しいTableSnapshot。
+    """
     """Return a stable representation used for hashing and comparison."""
     columns = tuple(
         ColumnDefinition(
@@ -31,6 +38,14 @@ def normalize_snapshot(snapshot: TableSnapshot) -> TableSnapshot:
 
 
 def diff_snapshots(before: TableSnapshot, after: TableSnapshot) -> SchemaDiff:
+    """変更前後のschemaを比較して項目別のNet Diffを作る。
+
+    引数:
+        before: Gitに保存された変更前snapshot。
+        after: Table APIから取得した現在snapshot。
+    戻り値:
+        追加・削除・型・alias・説明・順序の差分。
+    """
     before_columns = normalize_snapshot(before).columns
     after_columns = normalize_snapshot(after).columns
     before_map = {column.name: column for column in before_columns}
@@ -70,11 +85,25 @@ def diff_snapshots(before: TableSnapshot, after: TableSnapshot) -> SchemaDiff:
 
 
 def diff_created(after: TableSnapshot) -> SchemaDiff:
+    """新規作成tableの全カラムを追加差分として返す。
+
+    引数:
+        after: 新規作成後のsnapshot。
+    戻り値:
+        全カラムがaddedに入ったSchemaDiff。
+    """
     normalized = normalize_snapshot(after)
     return SchemaDiff(added=normalized.columns, removed=(), type_changed=())
 
 
 def diff_deleted(before: TableSnapshot | None) -> SchemaDiff:
+    """削除tableの全カラムを削除差分として返す。
+
+    引数:
+        before: 削除前snapshot。存在しない場合はNone。
+    戻り値:
+        全カラムがremovedに入ったSchemaDiff。
+    """
     if before is None:
         return SchemaDiff(added=(), removed=(), type_changed=())
     normalized = normalize_snapshot(before)
@@ -82,6 +111,13 @@ def diff_deleted(before: TableSnapshot | None) -> SchemaDiff:
 
 
 def snapshot_hash(snapshot: TableSnapshot | None) -> str:
+    """snapshotの内容を決定的なSHA-256へ変換する。
+
+    引数:
+        snapshot: hash対象。存在しない状態はNone。
+    戻り値:
+        正規化したsnapshotのSHA-256。Noneなら固定文字列。
+    """
     if snapshot is None:
         return "none"
 
@@ -97,6 +133,13 @@ def snapshot_hash(snapshot: TableSnapshot | None) -> str:
 
 
 def snapshot_to_dict(snapshot: TableSnapshot) -> dict[str, object]:
+    """snapshotをGit保存用の辞書へ変換する。
+
+    引数:
+        snapshot: 変換対象のtable snapshot。
+    戻り値:
+        database、table、table ID、columnsを持つ辞書。
+    """
     normalized = normalize_snapshot(snapshot)
     return {
         "database": normalized.database,
@@ -107,6 +150,13 @@ def snapshot_to_dict(snapshot: TableSnapshot) -> dict[str, object]:
 
 
 def snapshot_from_mapping(payload: Mapping[str, Any]) -> TableSnapshot:
+    """Git上のJSON辞書からTableSnapshotを復元する。
+
+    引数:
+        payload: snapshot JSONを解析したマッピング。
+    戻り値:
+        型と値を検証して構築したTableSnapshot。
+    """
     database = payload.get("database")
     table = payload.get("table")
     table_id = payload.get("table_id") or payload.get("id")
@@ -127,6 +177,13 @@ def snapshot_from_mapping(payload: Mapping[str, Any]) -> TableSnapshot:
 
 
 def snapshot_to_json_bytes(snapshot: TableSnapshot) -> bytes:
+    """snapshotを整形済みUTF-8 JSONへ変換する。
+
+    引数:
+        snapshot: 保存対象のtable snapshot。
+    戻り値:
+        Git書き込みに使用するJSONバイト列。
+    """
     payload = json.dumps(
         snapshot_to_dict(snapshot),
         ensure_ascii=False,
@@ -137,6 +194,13 @@ def snapshot_to_json_bytes(snapshot: TableSnapshot) -> bytes:
 
 
 def schema_columns_from_raw(raw_schema: object) -> list[ColumnDefinition]:
+    """TDのschema表現をColumnDefinition一覧へ変換する。
+
+    引数:
+        raw_schema: JSON文字列または解析済み配列形式のschema。
+    戻り値:
+        入力順に位置を付けたカラム定義一覧。
+    """
     if isinstance(raw_schema, str):
         try:
             decoded = json.loads(raw_schema)
@@ -153,6 +217,14 @@ def schema_columns_from_raw(raw_schema: object) -> list[ColumnDefinition]:
 
 
 def _column_from_raw(item: object, *, position: int) -> ColumnDefinition:
+    """TD schema内の1要素を正規化したカラム定義へ変換する。
+
+    引数:
+        item: 配列形式または辞書形式のカラム情報。
+        position: schema内の0始まり位置。
+    戻り値:
+        検証済みColumnDefinition。
+    """
     if isinstance(item, Mapping):
         name = item.get("name")
         type_ = item.get("type")
@@ -184,6 +256,13 @@ def _column_from_raw(item: object, *, position: int) -> ColumnDefinition:
 
 
 def _column_to_dict(column: ColumnDefinition) -> dict[str, object]:
+    """カラム定義をJSON保存可能な辞書へ変換する。
+
+    引数:
+        column: 変換対象のカラム定義。
+    戻り値:
+        name、type、positionと任意属性を持つ辞書。
+    """
     return {
         "name": column.name,
         "type": column.type,
@@ -194,4 +273,11 @@ def _column_to_dict(column: ColumnDefinition) -> dict[str, object]:
 
 
 def _blank_to_none(value: str | None) -> str | None:
+    """空文字をNoneへ統一する。
+
+    引数:
+        value: 正規化対象の文字列またはNone。
+    戻り値:
+        空でない文字列。空文字またはNoneならNone。
+    """
     return value if value else None

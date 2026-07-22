@@ -46,6 +46,7 @@ logger = logging.getLogger(__name__)
 
 @dataclass(frozen=True)
 class _RunState:
+    """state/state.jsonから復元した再実行制御情報を保持する。"""
     last_successful_run_at: datetime
     audit_query_from: datetime
     audit_query_to: datetime
@@ -56,24 +57,44 @@ class _RunState:
 
 
 class TreasureDataClientProtocol(Protocol):
-    async def fetch_audit_events(self, window: TimeWindow) -> list[AuditEvent]: ...
+    """Serviceが必要とするTDクライアントの契約を表す。"""
 
-    async def fetch_table_snapshot(self, database: str, table: str) -> TableSnapshot: ...
+    async def fetch_audit_events(self, window: TimeWindow) -> list[AuditEvent]:
+        """引数の時間範囲からAuditイベント一覧を取得して返す。"""
+        ...
+
+    async def fetch_table_snapshot(self, database: str, table: str) -> TableSnapshot:
+        """引数のdatabaseとtableから現在snapshotを取得して返す。"""
+        ...
 
 
 class RepositoryProtocol(Protocol):
-    async def prepare(self, *, push_pending: bool) -> None: ...
+    """Serviceが必要とするローカルGit repositoryの契約を表す。"""
 
-    async def read_text(self, path: str) -> str | None: ...
+    async def prepare(self, *, push_pending: bool) -> None:
+        """引数に従ってrepositoryを同期し、戻り値は返さない。"""
+        ...
 
-    async def commit_files(self, *, changes: list[FileChange], message: str) -> str: ...
+    async def read_text(self, path: str) -> str | None:
+        """引数の相対パスを読み、内容またはNoneを返す。"""
+        ...
+
+    async def commit_files(self, *, changes: list[FileChange], message: str) -> str:
+        """引数の変更を1commitでpushし、commit SHAを返す。"""
+        ...
 
 
 class BacklogClientProtocol(Protocol):
-    async def ensure_issue(self, *, change_id: str, summary: str, description: str) -> str: ...
+    """Serviceが必要とするBacklogクライアントの契約を表す。"""
+
+    async def ensure_issue(self, *, change_id: str, summary: str, description: str) -> str:
+        """引数の変更IDで課題を保証し、課題キーを返す。"""
+        ...
 
 
 class ChangeMonitorService:
+    """Audit取得からBacklog・Git反映までの業務フローを統括する。"""
+
     def __init__(
         self,
         *,
@@ -84,6 +105,18 @@ class ChangeMonitorService:
         backlog: BacklogClientProtocol,
         now_provider: Callable[[], datetime] | None = None,
     ) -> None:
+        """設定と外部依存を受け取り監視サービスを初期化する。
+
+        引数:
+            settings: 時刻、上限、接続先などの全体設定。
+            target_tables: 監視対象tableの許可リスト。
+            treasure_data: Auditと現在schemaを取得するクライアント。
+            repository: state・snapshot読取とGit書き込みを行うクライアント。
+            backlog: 重複防止付き課題作成クライアント。
+            now_provider: テスト時に現在時刻を固定する任意関数。
+        戻り値:
+            なし。
+        """
         self._settings = settings
         self._target_tables = target_tables
         self._td = treasure_data
@@ -98,6 +131,15 @@ class ChangeMonitorService:
         bootstrap: bool = False,
         bootstrap_state_end_at: datetime | None = None,
     ) -> dict[str, object]:
+        """実行モードに応じてbootstrapまたは通常監視を1回実行する。
+
+        引数:
+            dry_run: 外部への書き込みを行わず判定だけ実施するかどうか。
+            bootstrap: 初回snapshot作成モードかどうか。
+            bootstrap_state_end_at: 初回stateへ設定する監視開始時刻。
+        戻り値:
+            RunSummaryをJSON化可能な辞書へ変換した実行結果。
+        """
         run_id = uuid.uuid4().hex
         await self._repository.prepare(push_pending=not dry_run)
         if bootstrap:
@@ -114,6 +156,15 @@ class ChangeMonitorService:
         return summary.as_dict()
 
     async def _run_normal(self, *, run_id: str, dry_run: bool) -> RunSummary:
+        """stateの続きから日次Auditを処理し、必要な成果物を反映する。
+
+        引数:
+            run_id: 今回実行を識別する一意なID。
+            dry_run: Backlog・Git・stateへの書き込みを無効にするかどうか。
+        戻り値:
+            対象数、差分数、課題数、予定ファイル数を含むRunSummary。
+        """
+        # stateの終端とlagから今回処理可能な範囲を求め、未確定時間は次回へ残す。
         state = await self._read_state()
         now = self._now_provider()
         window = build_optional_time_window(
@@ -137,6 +188,7 @@ class ChangeMonitorService:
             end=window.end,
         )
 
+        # overlap分を再取得した後、state内のAudit IDで処理済みイベントを除外する。
         fetched_events = await self._td.fetch_audit_events(fetch_window)
         events = [
             event
@@ -144,6 +196,7 @@ class ChangeMonitorService:
             if event.event_id not in state.processed_audit_event_ids
         ]
         groups, unresolved = group_events_by_table(events)
+        # 1件でもtableを特定できない場合は取りこぼしを避けるためstateを進めない。
         if unresolved:
             raise UnresolvedAuditEventsError(len(unresolved))
 
@@ -163,6 +216,7 @@ class ChangeMonitorService:
             for group in target_groups
             if (change := await self._build_detected_change(group=group)) is not None
         ]
+        # ここでは次のstate内容をメモリ上だけで作り、Backlogとpush成功まで確定しない。
         processed_audit_event_ids = dict(state.processed_audit_event_ids)
         processed_audit_event_ids.update({event.event_id: event.occurred_at for event in events})
         processed_aggregated_change_ids = dict(state.processed_aggregated_change_ids)
@@ -173,6 +227,7 @@ class ChangeMonitorService:
         table_ids = _updated_table_ids(state.table_ids, changes)
 
         if dry_run:
+            # dry-runでは判定根拠をログへ出すが、課題作成とrepository書き込みは行わない。
             for change in changes:
                 logger.info(
                     "td_change_monitor_dry_run_change",
@@ -200,6 +255,7 @@ class ChangeMonitorService:
             )
 
         issue_count = 0
+        # 同一change_idの課題キーがstateにあればBacklog APIを呼ばず重複作成を防ぐ。
         for change in changes:
             if not change.should_create_issue:
                 continue
@@ -251,6 +307,15 @@ class ChangeMonitorService:
         dry_run: bool,
         state_end_at: datetime | None,
     ) -> RunSummary:
+        """監視対象全tableの現在schemaと任意の初期stateを作る。
+
+        引数:
+            run_id: 今回実行を識別する一意なID。
+            dry_run: Gitへ書き込まず予定だけ返すかどうか。
+            state_end_at: 初回stateへ保存する監視開始時刻。
+        戻り値:
+            bootstrap対象数と予定ファイル数を含むRunSummary。
+        """
         targets = self._target_tables.bootstrap_targets()
         if not targets:
             raise ChangeMonitorError(
@@ -331,11 +396,20 @@ class ChangeMonitorService:
         *,
         group: EventGroup,
     ) -> DetectedChange | None:
+        """1論理テーブルの前回状態と現在状態から最終変更を判定する。
+
+        引数:
+            group: resource IDとrename前後名で集約済みのEventGroup。
+        戻り値:
+            Git証跡を残す変更ならDetectedChange、実差分がなければNone。
+        """
         is_rename = group.previous_table is not None and group.previous_table != group.table
         before_table = group.previous_table or group.table
         before = await self._read_snapshot(_schema_path(group.database, before_table))
         effective_previous_table = group.previous_table
         if is_rename and before is None:
+            # 一時tableを本tableへ置換する定常処理では旧一時名のsnapshotがない。
+            # この場合は既存の本table snapshotを変更前状態として誤rename通知を防ぐ。
             current_name_before = await self._read_snapshot(
                 _schema_path(group.database, group.table)
             )
@@ -404,6 +478,21 @@ class ChangeMonitorService:
         last_successful_run_at: datetime,
         audit_query_to: datetime,
     ) -> list[FileChange]:
+        """検出変更と次stateからGitへ反映するファイル変更一覧を作る。
+
+        引数:
+            run_id: 今回実行のID。
+            window: 今回取得したAudit検索範囲。
+            changes: Git証跡を残す検出変更一覧。
+            processed_audit_event_ids: 更新後の処理済みAudit ID対応表。
+            processed_aggregated_change_ids: 更新後の処理済み変更ID対応表。
+            backlog_issues: 更新後の変更IDとBacklog課題キー対応表。
+            table_ids: 更新後のtable完全修飾名とTD ID対応表。
+            last_successful_run_at: 今回の正常終了候補時刻。
+            audit_query_to: 今回処理済みとするAudit終端時刻。
+        戻り値:
+            schema、diff、Audit証跡、stateのFileChange一覧。
+        """
         files: dict[str, bytes | None] = {}
         git_file_change_count = _git_file_change_count(changes)
         backlog_issue_count = sum(1 for change in changes if change.should_create_issue)
@@ -479,6 +568,13 @@ class ChangeMonitorService:
         return [FileChange(path=path, content=content) for path, content in sorted(files.items())]
 
     async def _read_state(self) -> _RunState:
+        """単一stateファイルを読み込み、型付き実行状態へ変換する。
+
+        引数:
+            なし。
+        戻り値:
+            UTC時刻と各対応表を持つ_RunState。
+        """
         text = await self._repository.read_text("state/state.json")
         if text is None:
             raise ChangeMonitorError(
@@ -501,6 +597,13 @@ class ChangeMonitorService:
         )
 
     async def _read_snapshot(self, path: str) -> TableSnapshot | None:
+        """Git作業ツリーから前回snapshotを読み込む。
+
+        引数:
+            path: repositoryルート基準のsnapshot相対パス。
+        戻り値:
+            復元したTableSnapshot。ファイルがなければNone。
+        """
         text = await self._repository.read_text(path)
         if text is None:
             return None
@@ -510,6 +613,14 @@ class ChangeMonitorService:
         return snapshot_from_mapping(payload)
 
     async def _fetch_snapshot_or_none(self, database: str, table: str) -> TableSnapshot | None:
+        """現在snapshotを取得し、Table APIの404だけを削除状態へ変換する。
+
+        引数:
+            database: 取得対象database名。
+            table: 取得対象table名。
+        戻り値:
+            現在のTableSnapshot。404ならNone。
+        """
         try:
             return await self._td.fetch_table_snapshot(database, table)
         except ExternalApiError as exc:
@@ -518,6 +629,13 @@ class ChangeMonitorService:
             raise
 
     def _github_blob_url(self, path: str) -> str:
+        """GitHub上の成果物をBacklogから参照するblob URLを作る。
+
+        引数:
+            path: repository内の成果物相対パス。
+        戻り値:
+            設定repository URLとbranchを連結したURL。
+        """
         return (
             f"{self._settings.github_repository_url.rstrip('/')}"
             f"/blob/{self._settings.git_branch}/{path}"
@@ -525,6 +643,14 @@ class ChangeMonitorService:
 
 
 def _should_issue(change_kind: ChangeKind, diff: SchemaDiff) -> bool:
+    """変更種別と重要schema差分からBacklog課題が必要か判定する。
+
+    引数:
+        change_kind: 論理テーブルの最終変更種別。
+        diff: 前回状態と現在状態のNet Diff。
+    戻り値:
+        課題作成対象ならTrue。
+    """
     if change_kind in {
         ChangeKind.TABLE_DELETE,
         ChangeKind.TABLE_RENAME,
@@ -538,6 +664,14 @@ def _should_issue(change_kind: ChangeKind, diff: SchemaDiff) -> bool:
 
 
 def _should_record_change(change_kind: ChangeKind, diff: SchemaDiff) -> bool:
+    """変更をGit証跡として記録する必要があるか判定する。
+
+    引数:
+        change_kind: 論理テーブルの最終変更種別。
+        diff: 前回状態と現在状態のNet Diff。
+    戻り値:
+        diff・Audit成果物を残す変更ならTrue。
+    """
     if change_kind == ChangeKind.AUDIT_ONLY:
         return False
     if change_kind == ChangeKind.SCHEMA_CHANGE:
@@ -559,6 +693,17 @@ def _change_kind(
     is_rename: bool,
     after_exists: bool,
 ) -> ChangeKind:
+    """イベント、Net Diff、table ID、存在状態から最終変更種別を決める。
+
+    引数:
+        event_type_set: 集約イベントに含まれる操作種別集合。
+        diff: 前回状態と現在状態のschema差分。
+        table_id_changed: TDの物理table IDが変わったかどうか。
+        is_rename: 監視対象の論理名が変わったかどうか。
+        after_exists: 現在もtableが存在するかどうか。
+    戻り値:
+        優先順位に従って決定したChangeKind。
+    """
     if not after_exists:
         return ChangeKind.TABLE_DELETE
     if is_rename and diff.has_important_changes:
@@ -581,6 +726,15 @@ def _table_id_changed(
     after: TableSnapshot | None,
     events: tuple[AuditEvent, ...],
 ) -> bool:
+    """snapshot IDまたはdelete/createイベントから物理table再作成を判定する。
+
+    引数:
+        before: 変更前snapshot。
+        after: 変更後snapshot。
+        events: 判定対象の集約Auditイベント列。
+    戻り値:
+        異なる物理tableへ置き換わったと判断できればTrue。
+    """
     if before is not None and after is not None and before.table_id and after.table_id:
         return before.table_id != after.table_id
     resource_ids = {event.resource_id for event in events if event.resource_id}
@@ -593,22 +747,64 @@ def _table_id_changed(
 
 
 def _schema_path(database: str, table: str) -> str:
+    """現在schemaを保存するrepository相対パスを作る。
+
+    引数:
+        database: 対象database名。
+        table: 対象table名。
+    戻り値:
+        `schemas/current/{database}/{table}.json`形式のパス。
+    """
     return f"schemas/current/{database}/{table}.json"
 
 
 def _diff_path(at: datetime, database: str, table: str, change_id: str) -> str:
+    """人向け差分Markdownのrepository相対パスを作る。
+
+    引数:
+        at: 最終イベントのUTC時刻。
+        database: 対象database名。
+        table: 対象table名。
+        change_id: 集約変更ID。
+    戻り値:
+        UTC日付で階層化したdiffパス。
+    """
     return f"diffs/{at:%Y/%m/%d}/{database}.{table}_{change_id}.md"
 
 
 def _audit_events_path(at: datetime, database: str, table: str, change_id: str) -> str:
+    """最小Audit証跡JSONのrepository相対パスを作る。
+
+    引数:
+        at: 最終イベントのUTC時刻。
+        database: 対象database名。
+        table: 対象table名。
+        change_id: 集約変更ID。
+    戻り値:
+        UTC日付で階層化したAudit証跡パス。
+    """
     return f"audit_events/{at:%Y/%m/%d}/{database}.{table}_{change_id}.json"
 
 
 def _json_bytes(payload: Mapping[str, Any]) -> bytes:
+    """辞書を決定的な整形済みUTF-8 JSONへ変換する。
+
+    引数:
+        payload: JSON保存するマッピング。
+    戻り値:
+        キー順を固定したJSONバイト列。
+    """
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2).encode("utf-8")
 
 
 def _audit_event_dict(event: AuditEvent) -> dict[str, object]:
+    """Auditイベントを秘密情報とschema本文を含まない証跡辞書へ変換する。
+
+    引数:
+        event: 証跡へ保存するAuditイベント。
+    戻り値:
+        None項目を除去し、schema値をhash化した辞書。
+    """
     payload: dict[str, object | None] = {
         "id": event.event_id,
         "time": event.occurred_at.isoformat(),
@@ -635,6 +831,13 @@ def _audit_event_dict(event: AuditEvent) -> dict[str, object]:
 
 
 def _diff_dict(diff: SchemaDiff) -> dict[str, object]:
+    """SchemaDiffをAudit成果物へ保存できる辞書へ変換する。
+
+    引数:
+        diff: 変換対象のschema差分。
+    戻り値:
+        項目別のカラム名と変更前後値を持つ辞書。
+    """
     return {
         "added_columns": [column.name for column in diff.added],
         "removed_columns": [column.name for column in diff.removed],
@@ -658,6 +861,13 @@ def _diff_dict(diff: SchemaDiff) -> dict[str, object]:
 
 
 def _dry_run_change_dict(change: DetectedChange) -> dict[str, object]:
+    """dry-run検証用に変更判定の要点だけをログ辞書へ変換する。
+
+    引数:
+        change: ログへ出す検出変更。
+    戻り値:
+        table名、種別、課題候補、差分列名を含む安全な辞書。
+    """
     return {
         "database": change.database,
         "table": change.table,
@@ -683,10 +893,24 @@ def _dry_run_change_dict(change: DetectedChange) -> dict[str, object]:
 
 
 def group_time(events: tuple[AuditEvent, ...]) -> datetime:
+    """集約イベント集合の最終発生時刻を返す。
+
+    引数:
+        events: 1件以上のAuditイベント列。
+    戻り値:
+        occurred_atが最も新しいdatetime。
+    """
     return max(event.occurred_at for event in events)
 
 
 def _git_file_change_count(changes: list[DetectedChange]) -> int:
+    """今回stage対象となる一意なファイルパス数を見積もる。
+
+    引数:
+        changes: Git証跡を残す検出変更一覧。
+    戻り値:
+        stateを含む一意な生成・削除対象パス数。
+    """
     paths = {"state/state.json"}
     for change in changes:
         paths.add(change.diff_path)
@@ -708,6 +932,14 @@ def _updated_table_ids(
     current: dict[str, str],
     changes: list[DetectedChange],
 ) -> dict[str, str]:
+    """検出変更を反映した最新table ID対応表を作る。
+
+    引数:
+        current: stateに保存されている現在のID対応表。
+        changes: 今回検出した変更一覧。
+    戻り値:
+        rename・削除・再作成を反映した新しい対応表。
+    """
     result = dict(current)
     for change in changes:
         current_key = f"{change.database}.{change.table}"
@@ -724,10 +956,26 @@ def _prune_timestamp_map(
     values: dict[str, datetime],
     cutoff: datetime,
 ) -> dict[str, datetime]:
+    """保持期限より古い処理済みIDを対応表から除去する。
+
+    引数:
+        values: IDと発生UTC時刻の対応表。
+        cutoff: 保持対象とする最古時刻。
+    戻り値:
+        cutoff以降の項目だけを持つ新しい辞書。
+    """
     return {key: value for key, value in values.items() if value >= cutoff}
 
 
 def _state_datetime(payload: Mapping[str, Any], key: str) -> datetime:
+    """stateの指定項目をタイムゾーン付きUTCへ変換する。
+
+    引数:
+        payload: state JSONを解析したマッピング。
+        key: 取得する時刻項目名。
+    戻り値:
+        UTCへ正規化したdatetime。
+    """
     value = payload.get(key)
     if not isinstance(value, str):
         raise ChangeMonitorError(f"state field {key} must be an ISO timestamp")
@@ -738,6 +986,14 @@ def _state_datetime(payload: Mapping[str, Any], key: str) -> datetime:
 
 
 def _state_timestamp_map(payload: Mapping[str, Any], key: str) -> dict[str, datetime]:
+    """stateのID・時刻対応表を型検証して復元する。
+
+    引数:
+        payload: state JSONを解析したマッピング。
+        key: 取得する対応表の項目名。
+    戻り値:
+        文字列IDとUTC datetimeの辞書。
+    """
     value = payload.get(key, {})
     if not isinstance(value, Mapping):
         raise ChangeMonitorError(f"state field {key} must be an object")
@@ -753,6 +1009,14 @@ def _state_timestamp_map(payload: Mapping[str, Any], key: str) -> dict[str, date
 
 
 def _state_string_map(payload: Mapping[str, Any], key: str) -> dict[str, str]:
+    """stateの文字列対応表を型検証して復元する。
+
+    引数:
+        payload: state JSONを解析したマッピング。
+        key: 取得する対応表の項目名。
+    戻り値:
+        文字列キーと文字列値の辞書。
+    """
     value = payload.get(key, {})
     if not isinstance(value, Mapping):
         raise ChangeMonitorError(f"state field {key} must be an object")
@@ -764,6 +1028,13 @@ def _state_string_map(payload: Mapping[str, Any], key: str) -> dict[str, str]:
 
 
 def _text_hash(value: str | None) -> str | None:
+    """保存禁止のschema本文をSHA-256へ置き換える。
+
+    引数:
+        value: hash化する文字列。値がなければNone。
+    戻り値:
+        SHA-256文字列。入力がNoneならNone。
+    """
     if value is None:
         return None
     return hashlib.sha256(value.encode("utf-8")).hexdigest()

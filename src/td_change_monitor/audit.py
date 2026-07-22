@@ -22,6 +22,7 @@ _RENAME_PATH_RE = re.compile(
 
 @dataclass(frozen=True)
 class AuditColumnConfig:
+    """環境ごとに異なるAudit Log列名と時刻単位を保持する。"""
     id_column: str
     time_column: str
     event_column: str
@@ -41,6 +42,7 @@ class AuditColumnConfig:
 
 @dataclass(frozen=True)
 class EventGroup:
+    """同じ論理テーブルと判定したAuditイベント集合を保持する。"""
     database: str
     table: str
     events: tuple[AuditEvent, ...]
@@ -48,6 +50,13 @@ class EventGroup:
 
     @property
     def table_names(self) -> tuple[str, ...]:
+        """イベント集合に登場するrename前後のtable名を重複なしで返す。
+
+        引数:
+            なし。
+        戻り値:
+            出現順を維持したtable名のタプル。
+        """
         names: list[str] = []
         for event in self.events:
             for name in (event.previous_table, event.table):
@@ -57,10 +66,24 @@ class EventGroup:
 
     @property
     def event_types(self) -> tuple[EventType, ...]:
+        """イベント集合の操作種別を時系列順で返す。
+
+        引数:
+            なし。
+        戻り値:
+            Auditイベント種別のタプル。
+        """
         return tuple(event.event_type for event in self.events)
 
 
 def parse_event_type(value: object) -> EventType | None:
+    """Audit Log上の文字列を監視対象イベント種別へ変換する。
+
+    引数:
+        value: Audit Logから取得したevent名。
+    戻り値:
+        対応するEventType。対象外または不正な値ならNone。
+    """
     if not isinstance(value, str):
         return None
     try:
@@ -73,6 +96,14 @@ def parse_event_type(value: object) -> EventType | None:
 
 
 def parse_audit_time(value: object, *, unit: str) -> datetime:
+    """Audit Logの時刻値をタイムゾーン付きUTCへ変換する。
+
+    引数:
+        value: datetime、epoch秒、ISO文字列のいずれか。
+        unit: 文字列時刻の解釈方法。epoch_secondsなら数値文字列として扱う。
+    戻り値:
+        UTCへ正規化したdatetime。
+    """
     if isinstance(value, datetime):
         if value.tzinfo is None:
             return value.replace(tzinfo=UTC)
@@ -94,6 +125,14 @@ def extract_table_identity(
     raw: Mapping[str, Any],
     columns: AuditColumnConfig,
 ) -> tuple[str, str] | None:
+    """Auditレコード内の複数候補からdatabase名とtable名を特定する。
+
+    引数:
+        raw: Audit Logの1レコード。
+        columns: 使用する列名設定。
+    戻り値:
+        特定できたdatabase名とtable名。解決できなければNone。
+    """
     rename = extract_rename_identity(raw, columns)
     if rename is not None:
         return rename[0], rename[2]
@@ -131,6 +170,14 @@ def extract_rename_identity(
     raw: Mapping[str, Any],
     columns: AuditColumnConfig,
 ) -> tuple[str, str, str] | None:
+    """renameイベントからdatabase名・旧table名・新table名を抽出する。
+
+    引数:
+        raw: Audit Logの1レコード。
+        columns: 使用する列名設定。
+    戻り値:
+        rename情報の3要素。renameでないか解決できなければNone。
+    """
     attribute_name = raw.get(columns.attribute_column)
     if attribute_name != "name":
         return None
@@ -158,6 +205,14 @@ def audit_event_from_record(
     raw: Mapping[str, Any],
     columns: AuditColumnConfig,
 ) -> AuditEvent | None:
+    """Audit Logの1レコードを型付きAuditEventへ変換する。
+
+    引数:
+        raw: Query APIから得た1レコード。
+        columns: 使用する列名と時刻単位の設定。
+    戻り値:
+        監視対象のAuditEvent。対象外イベントならNone。
+    """
     event_type = parse_event_type(raw.get(columns.event_column))
     if event_type is None:
         return None
@@ -194,6 +249,14 @@ def events_from_records(
     records: Iterable[Mapping[str, Any]],
     columns: AuditColumnConfig,
 ) -> list[AuditEvent]:
+    """Auditレコード列をイベントへ変換し、同一IDの重複を除去する。
+
+    引数:
+        records: Query APIから得たレコード列。
+        columns: 使用する列名と時刻単位の設定。
+    戻り値:
+        取得順を維持した重複なしのAuditEvent一覧。
+    """
     events: list[AuditEvent] = []
     seen_ids: set[str] = set()
     for record in records:
@@ -207,6 +270,13 @@ def events_from_records(
 def group_events_by_table(
     events: Iterable[AuditEvent],
 ) -> tuple[tuple[EventGroup, ...], tuple[AuditEvent, ...]]:
+    """resource IDとrename前後名を使い、イベントを論理テーブル単位へ集約する。
+
+    引数:
+        events: 重複除去済みAuditイベント列。
+    戻り値:
+        解決済みEventGroup列と、tableを特定できなかったイベント列。
+    """
     resolved: list[AuditEvent] = []
     unresolved: list[AuditEvent] = []
     for event in events:
@@ -218,12 +288,14 @@ def group_events_by_table(
     parents = list(range(len(resolved)))
 
     def find(index: int) -> int:
+        """引数のイベントが属するUnion-Findの代表インデックスを返す。"""
         while parents[index] != index:
             parents[index] = parents[parents[index]]
             index = parents[index]
         return index
 
     def union(left: int, right: int) -> None:
+        """引数の2イベントを同じ論理テーブル集合へ結合し、戻り値は返さない。"""
         left_root = find(left)
         right_root = find(right)
         if left_root != right_root:
@@ -252,6 +324,13 @@ def group_events_by_table(
 
 
 def _logical_event_keys(event: AuditEvent) -> tuple[str, ...]:
+    """イベント同士を連結するtable名・旧名・resource IDキーを作る。
+
+    引数:
+        event: databaseとtableを解決済みのAuditイベント。
+    戻り値:
+        Union-Findで同一性判定に使うキー列。
+    """
     assert event.database is not None
     assert event.table is not None
     keys = [f"name:{event.database}.{event.table}"]
@@ -263,6 +342,13 @@ def _logical_event_keys(event: AuditEvent) -> tuple[str, ...]:
 
 
 def _event_group(events: list[AuditEvent]) -> EventGroup:
+    """同一集合のイベントを時系列化し、最終table名と旧名を決定する。
+
+    引数:
+        events: 同じ論理テーブルへ結合されたAuditイベント一覧。
+    戻り値:
+        最終的なdatabase・table・旧名を持つEventGroup。
+    """
     ordered = tuple(sorted(events, key=lambda item: (item.occurred_at, item.event_id)))
     final_event = ordered[-1]
     assert final_event.database is not None
@@ -293,4 +379,11 @@ def _event_group(events: list[AuditEvent]) -> EventGroup:
 
 
 def _string_or_none(value: object) -> str | None:
+    """空でない文字列だけを返す。
+
+    引数:
+        value: 判定対象の任意値。
+    戻り値:
+        空でない文字列。条件を満たさなければNone。
+    """
     return value if isinstance(value, str) and value else None

@@ -11,7 +11,17 @@ from td_change_monitor.errors import ExternalApiError
 
 
 class BacklogClient:
+    """Backlog課題の重複確認と作成を担当する。"""
+
     def __init__(self, settings: Settings, *, client: httpx.AsyncClient | None = None) -> None:
+        """認証済みBacklog用HTTPクライアントを初期化する。
+
+        引数:
+            settings: Backlog接続先、APIキー、課題属性を含む設定。
+            client: テストなどで注入するhttpxクライアント。
+        戻り値:
+            なし。
+        """
         self._settings = settings
         self._owns_client = client is None
         self._client = client or httpx.AsyncClient(
@@ -30,6 +40,15 @@ class BacklogClient:
         summary: str,
         description: str,
     ) -> str:
+        """同じ変更IDの課題がなければBacklog課題を作る。
+
+        引数:
+            change_id: 重複防止に使用する集約変更ID。
+            summary: Backlog課題の件名。
+            description: Backlog課題の本文。
+        戻り値:
+            既存または新規作成した課題キー。
+        """
         """Return the existing or newly-created issue key."""
         existing = await self._find_issue(change_id)
         if existing is not None:
@@ -37,10 +56,24 @@ class BacklogClient:
         return await self._create_issue(summary=summary, description=description)
 
     async def aclose(self) -> None:
+        """内部で生成したHTTP接続を閉じる。
+
+        引数:
+            なし。
+        戻り値:
+            なし。
+        """
         if self._owns_client:
             await self._client.aclose()
 
     async def _find_issue(self, change_id: str) -> str | None:
+        """課題本文内の集約変更IDで既存課題を検索する。
+
+        引数:
+            change_id: 検索する集約変更ID。
+        戻り値:
+            見つかった課題キー。存在しなければNone。
+        """
         response = await self._http.request(
             "GET",
             "api/v2/issues",
@@ -62,6 +95,14 @@ class BacklogClient:
         return None
 
     async def _create_issue(self, *, summary: str, description: str) -> str:
+        """設定済みprojectへ新しいBacklog課題を作成する。
+
+        引数:
+            summary: 課題件名。
+            description: 操作履歴と差分を含む課題本文。
+        戻り値:
+            Backlogが採番した課題キー。
+        """
         data = [
             ("apiKey", self._settings.backlog_api_key.get_secret_value()),
             ("projectId", str(self._settings.backlog_project_id)),
@@ -84,6 +125,13 @@ class BacklogClient:
 
 
 def _json_mapping(value: object) -> Mapping[str, Any]:
+    """Backlogレスポンス要素をJSONオブジェクトとして検証する。
+
+    引数:
+        value: JSON解析後の任意値。
+    戻り値:
+        Mapping型として確認できた値。
+    """
     if not isinstance(value, Mapping):
         raise ExternalApiError("expected JSON object")
     return value
