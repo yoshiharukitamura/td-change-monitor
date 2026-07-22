@@ -158,7 +158,7 @@ def _parse_datetime(value: str) -> datetime:
 
 
 class _JsonFormatter(logging.Formatter):
-    """許可した追加属性だけを含むJSONログへ整形する。"""
+    """実行ログを1行JSON形式へ整形する。"""
 
     def format(self, record: logging.LogRecord) -> str:
         """LogRecordを1行JSON文字列へ変換する。

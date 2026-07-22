@@ -102,7 +102,7 @@ def _is_retryable(exc: BaseException) -> bool:
 
 
 def _safe_request_url(request: httpx.Request) -> str:
-    """query parameterを除去したログ安全なURLを返す。
+    """query parameterを除いたリクエストURLを返す。
 
     引数:
         request: 失敗したhttpxリクエスト。

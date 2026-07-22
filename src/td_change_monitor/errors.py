@@ -18,7 +18,7 @@ class ExternalApiError(ChangeMonitorError):
         """APIエラーの詳細を保持する。
 
         引数:
-            message: ログへ出す安全なエラーメッセージ。
+            message: エラー内容を表すメッセージ。
             status_code: HTTPステータスコード。不明な場合はNone。
             transient: 再試行可能な一時障害かどうか。
         戻り値:

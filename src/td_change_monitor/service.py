@@ -798,7 +798,7 @@ def _json_bytes(payload: Mapping[str, Any]) -> bytes:
 
 
 def _audit_event_dict(event: AuditEvent) -> dict[str, object]:
-    """Auditイベントを秘密情報とschema本文を含まない証跡辞書へ変換する。
+    """Auditイベントを保存用の証跡辞書へ変換する。
 
     引数:
         event: 証跡へ保存するAuditイベント。
@@ -866,7 +866,7 @@ def _dry_run_change_dict(change: DetectedChange) -> dict[str, object]:
     引数:
         change: ログへ出す検出変更。
     戻り値:
-        table名、種別、課題候補、差分列名を含む安全な辞書。
+        table名、種別、課題候補、差分列名を含む辞書。
     """
     return {
         "database": change.database,
