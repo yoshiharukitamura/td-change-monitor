@@ -1,0 +1,9 @@
+_export: 
+  workflows:
+    # Parent Segmentデータの作成
+    - !include : _z_p100_data_preparation.dig
+    # Parent Segmentの作成・更新
+    - !include : _z_p200_parent_segment_update.dig
+    # ActivationされたSegmentの連携処理
+    - !include : _z_p300_activation_management.dig
+

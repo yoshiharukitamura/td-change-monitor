@@ -1,0 +1,28 @@
+{
+  "archive_md5": "SxijecpDraWmC3y2E/HVbQ==",
+  "files": [
+    {
+      "path": "__func_/date_trunc_list.sql",
+      "sha256": "76bd04ab64cdc24725fcf97793253d4ded5ac922b2c945bda8c7ce2c15b83d71"
+    },
+    {
+      "path": "_cron_0500__daily_update.dig",
+      "sha256": "26ad284ed9e0e8364699f5a9bba779534dc2f03b52adc25d2e54743b126f76cb"
+    },
+    {
+      "path": "_cron_0920__monday_update.dig",
+      "sha256": "9a1158785b43abdc559dd026fd6082b1d41d7a5636937196472055d52c4244d4"
+    },
+    {
+      "path": "_p100__ga4.dig",
+      "sha256": "46a4e698cf62c967a66f5efcbb202ccf3852dd1a715c4deaae6e7356ffce5cae"
+    },
+    {
+      "path": "_z_bulk__p100_ga4.dig",
+      "sha256": "20c526f56a98d7afe3cb952aec6e29ebc80c66ddfe7b6eddd858da7061ac5205"
+    }
+  ],
+  "project_id": "1347312",
+  "project_name": "_l0l1_bigquery",
+  "revision": "2a154303195944a2abe3d8339f43e807"
+}

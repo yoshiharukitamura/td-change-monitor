@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "25313450",
+    "name": "_l0_mysql_pos"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": null,
+    "connector_type": null
+  },
+  "query_id": "2745318",
+  "query_name": "検証_ビンゴ対象顧客の施術数",
+  "query_string": "with customer_info as (\n  select\n    dtb_customer_id as customer_id\n    , case\n        when substr(created_app, 1, 10) between '2024-10-28' and '2024-11-17' then '24_before'\n        when substr(created_app, 1, 10) between '2024-11-18' and '2024-12-08' then '24_after'\n        when substr(created_app, 1, 10) between '2025-10-27' and '2025-11-16' then '25_before'\n        when substr(created_app, 1, 10) between '2025-11-17' and '2025-12-08' then '25_after'\n        else 'other'\n      end as segment\n    , case\n        when substr(created_app, 1, 10) between '2024-10-28' and '2024-11-17' then 1\n        when substr(created_app, 1, 10) between '2024-11-18' and '2024-12-08' then 2\n        when substr(created_app, 1, 10) between '2025-10-27' and '2025-11-16' then 3\n        when substr(created_app, 1, 10) between '2025-11-17' and '2025-12-08' then 4\n        else 9\n      end as segment_id\n    , created_app\n  from\n    _l1_mysql_hp.customers\n)\n\n, bingo_customer as (\n  select\n    customer_id\n    , '25_after' as segment\n    , 4 as segment_id\n    , created as created_app\n  from\n    l2_verification.tmp_bingo_target_customer_251211\n  where\n    substr(created, 1, 10) between '2025-11-17' and '2025-12-08'\n)\n\n, merged_target_customer as (\n  select\n    distinct\n    customer_id\n    , segment\n    , segment_id\n    , created_app\n  from (\n    select * from bingo_customer\n  )\n)\n\n, order_log as (\n  select\n    customer_id\n    , id as order_id\n    , registered_business_date\n    , purchased_datetime\n    , total_amount_of_treatment_minutes\n  from\n    _l1_mysql_pos.orders\n  where coalesce(deleted, 0) = 0\n        and cancel_datetime is null\n        --and status = 2\n        and registered_business_date is not null\n        and total_amount_of_treatment_minutes > 0\n  group by\n    1,2,3,4,5\n)\n\nselect\n  count(distinct t0.customer_id) as uu\n  , count(distinct t0.order_id) as order_count\nfrom\n  order_log as t0\ninner join\n  merged_target_customer as t1\n  on t0.customer_id = t1.customer_id\n     and t0.purchased_datetime > t1.created_app\nwhere\n  t1.segment_id = 4\n  and substr(t0.registered_business_date, 1, 10) between '2025-11-17' and '2025-12-08'\n",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

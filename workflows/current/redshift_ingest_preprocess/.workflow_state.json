@@ -1,0 +1,356 @@
+{
+  "archive_md5": "kUo8TPmFOIss9vwGO0li6g==",
+  "files": [
+    {
+      "path": "common/config/env_variables.dig",
+      "sha256": "304a3d0d804b68137d53b174c7ce52c7f62f6030344ec90fbc476e74189c704b"
+    },
+    {
+      "path": "common/config/env_variables_view.dig",
+      "sha256": "c56cc736e9c76534c36e4ab1cc25f4e7b25b2f4135f43ed33bad9e70a6b5d47a"
+    },
+    {
+      "path": "common/function/wf_error_handling.dig",
+      "sha256": "78798b599c4b04be00a6ab87f25b379be4776c876e6d0901e5ac7843a6b2e797"
+    },
+    {
+      "path": "common/function/wf_start_handling.dig",
+      "sha256": "fb38bfeea32a14372043481a0164273ce2d71af1771802b7c00cf2d9744ab826"
+    },
+    {
+      "path": "common/function/wf_success_handling.dig",
+      "sha256": "27561cfe24162b9ed397da54b367f58ef01049d98332b30bd92c9fd36c455d93"
+    },
+    {
+      "path": "function/make_l0_unique/extract_latest_log.dig",
+      "sha256": "deac0225394581a6b15da293eef3b737981724b35134520a6b24d3b3e1ae9dea"
+    },
+    {
+      "path": "proc_010/bigquery/config/tables_list.dig",
+      "sha256": "69d17b0232570328f2591d20c13118caaaa6a030fd5b9b53666c299381c0d282"
+    },
+    {
+      "path": "proc_010/pos_staging/config/tables_list.dig",
+      "sha256": "6a00342abfc96a790dc91f88dc94823a88fe39ca43a1d690aac22bb64aace061"
+    },
+    {
+      "path": "proc_010/sys_production/config/tables_list.dig",
+      "sha256": "b59b4e70b95c92bad2c92207a03b6860d05cdd5e3393ec5f6f3c74d4c0117bce"
+    },
+    {
+      "path": "proc_010/sys_production/config/tables_list_2.dig",
+      "sha256": "4627636a070a2ba87ed5a0b1c7d47a47e0d57fa14cc2f2da8a9e01ee85e39e65"
+    },
+    {
+      "path": "proc_010/viewtables/config/tables_list.dig",
+      "sha256": "6967694c412bb3ea191a69f6f256a4a59fb9f966b6898e30ac48dc503e25a1c0"
+    },
+    {
+      "path": "proc_010/web_app_production/config/tables_list.dig",
+      "sha256": "587718045596bd905c7750ab697a1e5cd409f68efaa1819b267041f25545d7ba"
+    },
+    {
+      "path": "proc_010/web_reservation_production/config/tables_list.dig",
+      "sha256": "7c36d0d3baa6f651fc4b38770353514ae7b14d98f5be981153e32e0809fde803"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/customer_histories.sql",
+      "sha256": "274c22bbae07d1ee22321f84ed19a242fbdc4987411118117b0d13694344e762"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/customer_histories_unique.sql",
+      "sha256": "7ab1eb87bb62df12570018bbec8408b4b3def80f083275df7a0ffd6a88938264"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/customers.sql",
+      "sha256": "6f2a9870da3d11cd223f1894f4db0384d380c66d7fa3c7d11b58cbf35e3e10d0"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/customers_unique.sql",
+      "sha256": "1b2d57c6975e1759809838cf181748b441cf2c7afecdb02ad2b25649efc4e39e"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/daily_work_shifts.sql",
+      "sha256": "f14ff1c5c713e48cf69e6cb2307ccbcb729b01558487f3cd6455d7738466cc59"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/gift_cards.sql",
+      "sha256": "279044c32453b6c2f96444c5b30a6264e47c638d0212f1416faa6a521451fc96"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/hp_customers.sql",
+      "sha256": "e9f5d3477c2ad3f157db82178c7c4c54421e8afbbb566e2473bc80016af77ba7"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/mst_holidays.sql",
+      "sha256": "680631fab093f9fcde37cf034f0bb9fbd0293be3b2341fb7e8feb35abca988fd"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/mst_shops.sql",
+      "sha256": "fc9b58fbb20e50348d20ba7020dec2ca0a3822ee09a1c9e8b69c191cb1f34072"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/mst_shops_unique.sql",
+      "sha256": "b720389d3ba76fefa260f4894a22afd919144829999631d3f73bceed12b0b4e1"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/opportunity_loss_details.sql",
+      "sha256": "46f6c620590ebec0f34c8705b5064a2a8cbeb8daf5769295fea607305d2c22e7"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/opportunity_losses.sql",
+      "sha256": "e889032baaa86e407484fd9e9422b7fe7a2c0557b162849217ce5af7f4e8bdc0"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/order_detail_reward_items.sql",
+      "sha256": "f9f50747e1f982bf36eb43f7c753e675c8d52db878368911884045151ff23329"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/order_detail_reward_items_unique.sql",
+      "sha256": "3c99a73a2e39f46280c98fc1e1b30121488e9646dd682b396839f7bb8a9441e7"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/order_details.sql",
+      "sha256": "2413e68d32709931534c0b71c6f983eea58e323fa6eb18c088600f95484928f0"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/order_details_unique.sql",
+      "sha256": "ee76fcb70d5409e4797931803197920607c933e6eaf4105ae39078ed854de341"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/orders.sql",
+      "sha256": "e5cc18f380a8d7eebfe1475fb5e2015072058b9af5b7016c14b5b8ea257bc30b"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/orders_unique.sql",
+      "sha256": "a09ab5ede50c274b1a315d506de96a51e5047187081eaffd5a27a4335e0bcca1"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/points.sql",
+      "sha256": "94e6beb42e6323a6455fd2b50116e7d52e00e74828092c7c9ec2cb56143b27d7"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/points_unique.sql",
+      "sha256": "1952a2405f84f67644a2f9846bd1c01acbe2efac46636ecc199ccb3c86139b2d"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/reward_categories.sql",
+      "sha256": "b7b040ac26844147cb0081d09826ceb2c9caf2879abc4b305961c316046cc5a3"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/reward_categories_unique.sql",
+      "sha256": "be1661bf130e6d836fd8c9b0d9609f84e1ef1b01a44ab3ada4d1c6caed5c3697"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/reward_item_applicable_days.sql",
+      "sha256": "eaeb8639f71eaceb1a6d84440d7eecabf6f725446fb655c3e75a697068f3781a"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/reward_item_customers.sql",
+      "sha256": "64c1fe02ef89e90b37b0cb9acd8b3b6a206ed70f7ae6d39524d1a25802ae58b2"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/reward_item_customers_unique.sql",
+      "sha256": "b36bdc96444913502926bd8c8df33ad1c946bc4b9118568a64af0f5d59c7a753"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/reward_items.sql",
+      "sha256": "296156bfbed7f2ddd023fcd507c64fb8de587d03af29d5c352f10be1dc5ae0d2"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/reward_items_unique.sql",
+      "sha256": "e3845033b8fece5762d47f029bd1f99695f461f42f1d84cea336bf112680b301"
+    },
+    {
+      "path": "proc_110/pos_staging/queries/shop_categories.sql",
+      "sha256": "5d86001814771791f79523ad3e682a5fef8ad02afd52c254f0ba18d5c3b292c5"
+    },
+    {
+      "path": "proc_110/sys_production/queries/fixed_daily_time_slot.sql",
+      "sha256": "42b184d6a86c105afbfd6ef637d00d56a5eb43b833c0285e7d431b0c7bf1a783"
+    },
+    {
+      "path": "proc_110/sys_production/queries/monthly_reward.sql",
+      "sha256": "cd6f904c302846bf1fb4f0ccd796ce0ea9438bdfbf25d245f4d756c904ed65a2"
+    },
+    {
+      "path": "proc_110/sys_production/queries/monthly_reward_summary.sql",
+      "sha256": "a6546101fe2404a8858f0c637e2cdd0556f96cf7cb9b62714df09c2675d0f9db"
+    },
+    {
+      "path": "proc_110/sys_production/queries/neighborhood_shop.sql",
+      "sha256": "12cd9bec1cacc757c2c63d71a7d7076361abdf1bc9a33e4eadfce629ca303d3c"
+    },
+    {
+      "path": "proc_110/sys_production/queries/operation_rate.sql",
+      "sha256": "96a853ba2119256a3f36b0d55e6908aec83bfbcea532b63064bb116d2b876a8e"
+    },
+    {
+      "path": "proc_110/sys_production/queries/pos_sales.sql",
+      "sha256": "0a0a1bcbb9c8ebecc7e1c555d7258ecadaf896dca29845b8fd0e0c1228fddec2"
+    },
+    {
+      "path": "proc_110/sys_production/queries/pos_sales_confirm.sql",
+      "sha256": "bf604cfaf68f584614756e08776c5d271071c515bba5410cf34a712f3c69ce17"
+    },
+    {
+      "path": "proc_110/sys_production/queries/property.sql",
+      "sha256": "f4db87b8f41cb9b2f62637e052c6917a1fc0332f2916a38ffa0c65a813c70628"
+    },
+    {
+      "path": "proc_110/sys_production/queries/property_unique.sql",
+      "sha256": "79eb882b7b638ecebe46cc0c1599294b94e3a81e4a6e7cad06d48393922a26b5"
+    },
+    {
+      "path": "proc_110/sys_production/queries/therapist_daily_report.sql",
+      "sha256": "47c2d50b2fb8e7176fdf1b662ef519f4383b9c5635b7728025317910c6ba5c51"
+    },
+    {
+      "path": "proc_110/web_app_production/queries/customers.sql",
+      "sha256": "b45f398ee3c30ab6adf6581524e8db2fba90895824b89c8343c30d2fe2778fe7"
+    },
+    {
+      "path": "proc_110/web_app_production/queries/reviews.sql",
+      "sha256": "3a5d2b94cdfc1cac4e14223291818cc116cb68e692b13a55d30e118c86ea0228"
+    },
+    {
+      "path": "proc_110/web_app_production/queries/reviews_unique.sql",
+      "sha256": "966e3369c3023c07e99f533015ddb8040ea750bf5d5d2ad7853a631409788c62"
+    },
+    {
+      "path": "proc_110/web_app_production/queries/web_customers_unique.sql",
+      "sha256": "dd72af54cdfbc051915e07502a587505ab53486f12f5fa5a711d933bb58dc21b"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/reservation_persons.sql",
+      "sha256": "25c1e1131df9918643bee21f2d2855d2f0c42536c334d802241390b64c7fe9b7"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/reservation_persons_unique.sql",
+      "sha256": "5773ec807ad65cbd001f233e7e3f1162007bf12c940df6cfaa5c4ba31fa67b7e"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/reservation_products.sql",
+      "sha256": "a265b03eb6f54ce7a566afc42a38354bcedbe03a94a2a35c5f1633ff81d5f87e"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/reservation_relations.sql",
+      "sha256": "be9004be0ab5f31b28ca2116000e8ec3ce1b68b1217f53f8ed5fbfb9e025cc3f"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/reservation_relations_unique.sql",
+      "sha256": "8e3b32fbdb897a61645f1d14a6783276a060f0b353fbd400c94627cce8c250ff"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/reservations.sql",
+      "sha256": "c1c2a9b0227804eaa6053038dfa1d21882ff947e6b9f438381a477b95d6744db"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/reservations_unique.sql",
+      "sha256": "bc61d9610cf8dcc3e0bbfd6d0ce18a937d4c2f3baedacf0bd1fd2092a252cb4e"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/resource_timetables.sql",
+      "sha256": "b6d4762f33847b4719605cca378ac512de768fd0e0c46bea08722c819c63a61d"
+    },
+    {
+      "path": "proc_110/web_reservation_production/queries/resource_timetables_unique.sql",
+      "sha256": "6d6fedfa2bd6f98e21c9e4d54e70db8bab55d04a7ccf9c101815ec113fa306a1"
+    },
+    {
+      "path": "rs_bulk_l0_proc_ingest.dig",
+      "sha256": "b23e6a61f172c225053287eb30fbed7f2fdfb04e26c845b2587b74d1c76940a7"
+    },
+    {
+      "path": "rs_bulk_l0_proc_ingest_pos.dig",
+      "sha256": "50462df34375fd93c99666aed4e67ec8abe91d00623f7e35c30c4ffb47b8468e"
+    },
+    {
+      "path": "rs_bulk_l0_proc_ingest_sys.dig",
+      "sha256": "e4bc22c15a35f0fc9dd16903ff09d406215febe064f3606d608b97c019ddb648"
+    },
+    {
+      "path": "rs_bulk_l0_proc_ingest_webapp.dig",
+      "sha256": "c4f33a855866f7d166d1cc5325d9c4346f91ce52bff234a5ad6a4c2260588ef1"
+    },
+    {
+      "path": "rs_bulk_l0_proc_ingest_webres.dig",
+      "sha256": "766425a36bc7c1478034d1933f6c01c08c9437ffcfec240a1e13a8d93d8416ee"
+    },
+    {
+      "path": "rs_cron_daily_0100.dig",
+      "sha256": "1b2ccb3a88d677cb47d13517b463a2c9822205020923db62683efb06ee9f1c22"
+    },
+    {
+      "path": "rs_l0_proc_ingest_bigquery.dig",
+      "sha256": "a25cfa867383f5ea7444f7df1c6ee5813e11170e0face8d3f7e83c176fa228c1"
+    },
+    {
+      "path": "rs_l0_proc_ingest_pos.dig",
+      "sha256": "b4a35d36833a18fcb82a3648acdaa97749f5ed01db90fa7896396e992b8cd10e"
+    },
+    {
+      "path": "rs_l0_proc_ingest_pos_unique.dig",
+      "sha256": "7499a94a3eec787c81fe09991e9d77f8e9a95e48d6a878b7a382ac7cefabc77e"
+    },
+    {
+      "path": "rs_l0_proc_ingest_sys.dig",
+      "sha256": "975e72dd0155927c47caa8065c80f2c180ef65d4dca929ff07fdcace4029c11b"
+    },
+    {
+      "path": "rs_l0_proc_ingest_sys_ss.dig",
+      "sha256": "6ea725e04d3aee00a9abc9c30176e28bde154cd95eea852688fa06a00cfcf152"
+    },
+    {
+      "path": "rs_l0_proc_ingest_sys_unique.dig",
+      "sha256": "3e2ede0e8d41a8dd84e0161cfa6e599710c649ac92a7304514764e77a3f7326b"
+    },
+    {
+      "path": "rs_l0_proc_ingest_td_time_slot.dig",
+      "sha256": "a5b578484993f6047a16107bf73a981d46a2b58437299d3949fe2750c9736df5"
+    },
+    {
+      "path": "rs_l0_proc_ingest_viewtables.dig",
+      "sha256": "94a4ee6eba2542caabd2c6d2a24cf55b7896883c7375f0c99d9dcff78506a3b9"
+    },
+    {
+      "path": "rs_l0_proc_ingest_webapp.dig",
+      "sha256": "67c5c665d0df8362a545b1eeb4d2d8936a9bce46f1c50f7028c279794606bd2c"
+    },
+    {
+      "path": "rs_l0_proc_ingest_webapp_unique.dig",
+      "sha256": "8f5e5bd0b9e33141cdc934b18bbfb8b1a716fec9ee3c7708e485148cf556ee34"
+    },
+    {
+      "path": "rs_l0_proc_ingest_webres.dig",
+      "sha256": "3779685f81996f17fa6c976788f3d8dbb17a6ff634da12f22ce72b84cd8edc7a"
+    },
+    {
+      "path": "rs_l0_proc_ingest_webres_unique.dig",
+      "sha256": "1c681d3b676db9d7810f75fa982daadb4e8c208b84bef50ab65360d5244f7151"
+    },
+    {
+      "path": "rs_l1_proc_martdata_pos.dig",
+      "sha256": "de065c57e7dd3d139798b739c1d00bc509ce11b3b13d57792e43d7101a26417f"
+    },
+    {
+      "path": "rs_l1_proc_martdata_sys.dig",
+      "sha256": "12b34adc49e2080fb34c9a5d722586dde8a866cb86ebe3ed07a69df98e1ec4cd"
+    },
+    {
+      "path": "rs_l1_proc_martdata_webapp.dig",
+      "sha256": "42b65c515aef55362b9d84b620a1b22aae9ab01e2fd7578334416cb906e3d510"
+    },
+    {
+      "path": "rs_l1_proc_martdata_webres.dig",
+      "sha256": "335cbaba4bb47ebcaac9d97cb4c57de3a8c7fe91f6b957aa3495c6b9a3fb483b"
+    },
+    {
+      "path": "rs_l1_proc_unique_for_smc.dig",
+      "sha256": "1e9067b228090343985f9344de6945447587d63e7a90d451e3c40864d1207f79"
+    }
+  ],
+  "project_id": "256493",
+  "project_name": "redshift_ingest_preprocess",
+  "revision": "9387313f4b954318b2b7a917a5c2ae20"
+}

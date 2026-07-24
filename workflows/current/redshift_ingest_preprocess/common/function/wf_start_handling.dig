@@ -1,0 +1,18 @@
++create_trailer_table:
+  td_ddl>:
+  create_tables:
+    - z_trailer_wf_session
+
++write_session_start_log:
+  td>:
+  query: |
+    select
+      '${project_id}' as project_id
+      , '${wf_name}' as wf_name
+      , '${attempt_id}' as attempt_id
+      , '${moment(session_time).format()}' as session_time
+      , ${moment(new Date()).unix()} as time
+      , 0 as is_success
+      , 0 as is_done
+      , 0 as is_cancel
+  insert_into: z_trailer_wf_session

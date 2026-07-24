@@ -1,0 +1,23 @@
++slack_alert:
+  if>: ${notify_slack}
+  _do:
+    http>: <REDACTED_SECRET>
+    method: POST
+    content:
+      username: "Failure Alert"
+      icon_emoji: ':fireball:'
+      channel: "${slack_ch}"
+      fields:
+      - title: workflow_name
+        value: "${wf_name}"
+        short: true
+      - title: session_time
+        value: "${session_local_time}"
+        short: true
+      - title: Console Access
+        value: "https://console.${api_region}/app/workflows/sessions/${session_id}"
+        short: false
+      - title: Command for Rerun
+        value: "`td wf retry ${attempt_id} --latest-revision --resume`"
+        short: false
+    content_format: json

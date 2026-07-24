@@ -1,0 +1,95 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  wf_name: ml_demand_forecast_prep
+  notify_slack: false
+  td:
+    database: l2_demand_forecast_auto
+
+_error:
+  +error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# main process
++prep_work:
+  _export:
+    td:
+      database: l1_datamart 
+      
+  +potf1: 
+    td>: queries/prep_work/sql_1/prep_work_from_to.sql
+    create_table: prep_work_from_to 
+    
+  +potf2: 
+    td>: queries/prep_work/sql_2/prep_work_vtable_minutely.sql
+    create_table: prep_work_vtable_minutely 
+  
+  +potf3: 
+    td>: queries/prep_work/sql_3/prep_break_vtable_minutly.sql
+    create_table: prep_break_vtable_minutly 
+        
+  +potf4: 
+    td>: queries/prep_work/sql_4/prep_workbreak_vtable_minutely.sql
+    create_table: prep_workbreak_vtable_minutely 
+    
++prep_treatment:
+  _export:
+    td:
+      database: l1_datamart 
+      
+  +ptm1: 
+    td>: queries/prep_treatment/sql_1/prep_treatment_from_to.sql
+    create_table: prep_treatment_from_to 
+    
+  +ptm2: 
+    td>: queries/prep_treatment/sql_2/prep_treatment_vtable_minutely.sql
+    create_table: prep_treatment_vtable_minutely 
+  
+  +ptm3: 
+    td>: queries/prep_treatment/sql_3/prep_treatment_vtable_hourly.sql
+    create_table: prep_treatment_vtable_hourly 
+        
+  +ptm4: 
+    td>: queries/prep_treatment/sql_4/insert_prep_treatment_vtable_hourly.sql
+    insert_into: prep_treatment_vtable_hourly 
+
+  +ptm5:
+    +step_0:
+      td>: queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_0.sql
+      create_table: check_forecast_diff
+    +step_1:
+      td>: queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_1.sql
+      create_table: prep_treatment_vtable_hourly_fixed_1
+    +step_2:
+      td>: queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_2.sql
+      create_table: prep_treatment_vtable_hourly_fixed_2
+  #   +step_3:
+  #     td>: queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_3.sql
+  #     create_table: prep_treatment_vtable_hourly_fixed_3
+    
++agg_treatment:
+  _export:
+    td:
+      database: l2_demand_forecast_auto 
+      
+  +atm1:
+    td>: queries/agg_treatment/sql_1/get_shop_id.sql
+    store_last_results: true
+    
+  +atm2: 
+    td>: queries/agg_treatment/sql_2/prep_treatment_htable_hourly.sql
+    create_table: prep_treatment_htable_hourly
+    
+  +atm3:
+    td>: queries/agg_treatment/sql_2/prep_treatment_htable_hourly_fixed_1.sql
+    create_table: prep_treatment_htable_hourly_fixed_1
+    
+  +atm4:
+    td>: queries/agg_treatment/sql_2/prep_treatment_htable_hourly_fixed_2.sql
+    create_table: prep_treatment_htable_hourly_fixed_2
+    
+  # +atm5:
+  #   td>: queries/agg_treatment/sql_2/prep_treatment_htable_hourly_fixed_3.sql
+  #   create_table: prep_treatment_htable_hourly_fixed_3

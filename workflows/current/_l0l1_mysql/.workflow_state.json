@@ -1,0 +1,128 @@
+{
+  "archive_md5": "l3rh6UtUL2R+o6aLN1Aw4w==",
+  "files": [
+    {
+      "path": "__README.dig",
+      "sha256": "3380fb605389e199879d58d0fe36f5aa8bf454e10a109e5674a6078f2c820c13"
+    },
+    {
+      "path": "_cron_0200__daily_update.dig",
+      "sha256": "2e2537d9a5aae4b17003d20f30024454c8505d4c4d71827c47a1703fdbf08bbd"
+    },
+    {
+      "path": "_p100__pos.dig",
+      "sha256": "91d93a67d50abf75a27d7ab94e764d39aa14ac2622ea8d29caddf97f1aa18448"
+    },
+    {
+      "path": "_p110__core.dig",
+      "sha256": "dda79685405c0dab24a0d936a3276269c794f5a8fe8082304a6fb125d729cabd"
+    },
+    {
+      "path": "_p120__hp.dig",
+      "sha256": "7a841c23d69667ac1becef51b68e2727417de9ae887ae8fb44080a0c9ab04847"
+    },
+    {
+      "path": "_p130__reservation.dig",
+      "sha256": "9d1255567a991a28d4a41c87ee0a69529fdf4ca33efc34c4ccc9e368ea404f89"
+    },
+    {
+      "path": "_p140__point.dig",
+      "sha256": "d3b8e82a2069442888a282de48df68dec654bafbcc6678e356917c5f94fe7356"
+    },
+    {
+      "path": "_p200__pos.dig",
+      "sha256": "0c76f1f1136ba04e2abda58156a7e3846e04330dc69b4c8b8d667ce953283348"
+    },
+    {
+      "path": "_p210__core.dig",
+      "sha256": "6eb6cbc7aa7eccbfe8c563ded0849cf1116e1b1a463d67e8d93441022581787e"
+    },
+    {
+      "path": "_p220__hp.dig",
+      "sha256": "68dd5a1495aa3ae308a15f1ef8825ac71fdf1898b95d7748a798602f1d91e3de"
+    },
+    {
+      "path": "_p230__reservation.dig",
+      "sha256": "bb890df3e3d1de743487be7307f414fe3ab15607e865e8d2d11342a5d00f25a0"
+    },
+    {
+      "path": "_p240__point.dig",
+      "sha256": "a11db9cd5a8079939bfd93970e3159d907bf7b390a904c6966501542b57765ec"
+    },
+    {
+      "path": "_p990__core_ss.dig",
+      "sha256": "caed963491a7501b69e45cf63b85b746e2e0158fe0f73c4e99e1da0d937f6591"
+    },
+    {
+      "path": "_p991__core_ss_2.dig",
+      "sha256": "142ca0792ffd081edec42cc5e812c5e63fd4765b6848b8df9cc71667a405d64f"
+    },
+    {
+      "path": "_p992__core_ss_3.dig",
+      "sha256": "cbf5ad94989bfaab35fc4bcc169c7ffc022e69e454ab22c6f9a98c3d3d314840"
+    },
+    {
+      "path": "_p993__core_ss_4.dig",
+      "sha256": "3b758ac2b5feac3151c77dc376890e76110d7eb443e05fb40427055365790295"
+    },
+    {
+      "path": "_p994__core_ss_5.dig",
+      "sha256": "d8fc896a3ba5ab1b990d936b3d4f06d4ac2ff139b0243540d40cd19dc82e5248"
+    },
+    {
+      "path": "_p999__generate_readme.dig",
+      "sha256": "101db97ecbb2364b0d2aa2091a9b2b716ce7fbba34afe26f78f63f7c6537723f"
+    },
+    {
+      "path": "_tmp_p120__hp.dig",
+      "sha256": "144c6e56406269ab73660ec4639a335e4cf2e01651348d08bf2a04e03b8b539f"
+    },
+    {
+      "path": "_z_bulk_p100__pos.dig",
+      "sha256": "747f4a635f43735be6fc49c77cf61f455552a446f4b39e9ddb6ba375815e2a63"
+    },
+    {
+      "path": "_z_bulk_p110__core.dig",
+      "sha256": "68030337998b1d382b6f5a501d769f4316859745bb20f6bb4c7410410c10d38d"
+    },
+    {
+      "path": "_z_bulk_p120__hp.dig",
+      "sha256": "f1e202c8f91b64e2255924bbe8d787559d8e20d83ff608e27ec634e0237cfed7"
+    },
+    {
+      "path": "_z_bulk_p130__reservation.dig",
+      "sha256": "f34abf5d0f1fc117e4183cf471084b663efc4019eea4c26905e0881de90565da"
+    },
+    {
+      "path": "_z_bulk_p140__point.dig",
+      "sha256": "a2ead86c572f5ca7854a1b7b750f57b7d09ba038b6de6aa5f1122b80c741e0a1"
+    },
+    {
+      "path": "p100_/table_list_pos.dig",
+      "sha256": "1dfc94a4fd3a2c11d8b23fb3a2067fcf61ff2a190fd9787d45960f415eab17be"
+    },
+    {
+      "path": "p110_/table_list_core.dig",
+      "sha256": "50fed9e25bc99dee184370eb0b99c9c49a96cfe9d59703b64a72d9ff83a9b27e"
+    },
+    {
+      "path": "p120_/table_list_hp.dig",
+      "sha256": "d9ef21a4d5ae76aa038d320e908c8938380eff17c82d033970931785419b4aa8"
+    },
+    {
+      "path": "p130_/table_list_reservation.dig",
+      "sha256": "d93bd2bdafc16d56364c8163fee39f52dc6d3145957fcf1ee6b339996cc80296"
+    },
+    {
+      "path": "p140_/table_list_point.dig",
+      "sha256": "e70f37e975233517b7121253b5dbe2b54c694afdfae01f5a47f263f971e1394c"
+    },
+    {
+      "path": "p200_/get_latest_data.sql",
+      "sha256": "475d44d0a4408c805d0ad11f5911ff6e79a4f08a2a5901b1ded855139e638ac1"
+    }
+  ],
+  "project_id": "1418513",
+  "project_name": "_l0l1_mysql",
+  "revision": "a5bc95af7b1440e78d0c2f5d4b4bfd20"
+}

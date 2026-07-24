@@ -10,6 +10,7 @@ from pathlib import Path, PurePosixPath
 
 from td_change_monitor.config import Settings
 from td_change_monitor.errors import ChangeMonitorError
+from td_change_monitor.secret_redaction import contains_detectable_secret
 
 GitRunner = Callable[[list[str], Path], subprocess.CompletedProcess[str]]
 
@@ -132,6 +133,10 @@ class LocalGitRepositoryClient:
                 raise ChangeMonitorError(
                     f"generated file exceeds size limit: {change.path} ({size_mb:.2f} MB)"
                 )
+            if change.content is not None and _contains_detectable_secret(change.content):
+                raise ChangeMonitorError(
+                    f"generated file contains a detectable secret: {change.path}"
+                )
             backups[target] = target.read_bytes() if target.exists() else None
 
         committed = False
@@ -237,6 +242,21 @@ def _is_generated_path(path: str) -> bool:
         or normalized.startswith("audit_events/")
         or normalized == "state/state.json"
     )
+
+
+def _contains_detectable_secret(content: bytes) -> bool:
+    """生成ファイルに既知形式の秘密値が含まれるか判定する。
+
+    引数:
+        content: Gitへ保存する生成ファイルの内容。
+    戻り値:
+        UTF-8テキスト内に既知形式の秘密値があればTrue。
+    """
+    try:
+        text = content.decode("utf-8")
+    except UnicodeDecodeError:
+        return False
+    return contains_detectable_secret(text)
 
 
 def _atomic_write(target: Path, content: bytes) -> None:

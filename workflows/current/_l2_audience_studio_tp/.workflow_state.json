@@ -1,0 +1,84 @@
+{
+  "archive_md5": "JTqkpLL9i0dhxAlD5x8U7w==",
+  "files": [
+    {
+      "path": "___README.dig",
+      "sha256": "f2f6e5a127de4335e35afad45083817688ac6d90c94281943588454d9d323954"
+    },
+    {
+      "path": "__cron_hhmm__daily_update.dig",
+      "sha256": "390a7888ed770183c9400f3f3fd8b17eeaae65cc6d882cc846e1b8309d0eea82"
+    },
+    {
+      "path": "_p100__data_preparation.dig",
+      "sha256": "a3a613ce1b22cd3300763092419b9d5a633d21621e99720a5947d7ddb922f52a"
+    },
+    {
+      "path": "_p200__parent_segment_update.dig",
+      "sha256": "597e2f7aaefcc018bd534378a05bf0c2886c3abc20ec4f5d8ff2908412b42a4e"
+    },
+    {
+      "path": "_p300__send_to_xxx.dig",
+      "sha256": "f491ef36e8cc680a322ae467ab9c55ba6d8a82f2775f99647f111c363fce9d86"
+    },
+    {
+      "path": "_p999__generate_readme.dig",
+      "sha256": "3a165bb75caa03d7b9a762e355879dcfc25b612505a9a9359b1a26d03b3a7711"
+    },
+    {
+      "path": "p100_/create_columns.sql",
+      "sha256": "92398cd7fa03fdf0d7a6c1c9ca27b61959bbc317b439407a6a13e4de8911b295"
+    },
+    {
+      "path": "p100_/custom_list_tables.sql",
+      "sha256": "0a84a3166f3937015e525e09fac03cf2cba348880350c069ccd22c02cb157341"
+    },
+    {
+      "path": "p100_/ps_tbl__attr_therapist.sql",
+      "sha256": "ef3054dfc43f7e27b442677067d9d45b7d6f772df5df8bbd86c8a2af37a1b180"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_entry.sql",
+      "sha256": "955a3fe37a57839fe59c58b7988dfd39873bc61e3cc1cd062a19bed5315cec96"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_therapist_app_suggest.sql",
+      "sha256": "8ecaa691b5ac0b24c74a1bbfe01b7e6158ba58091aa36b044d63f1f52f75ae28"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_therapist_available_timeslot.sql",
+      "sha256": "fdbbc7fa169ebd09c7ccfec6b8e7f802b15714b98f775390e60a5f8816c82975"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_therapist_entry_hour.sql",
+      "sha256": "6dac06dcb067ed49fcd542684a55705b3b279a624f626739d29cd1206d5f6bd2"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_therapist_web.sql",
+      "sha256": "2239a9d4989e2b02344923f379422ad21fa0f65111567a3a512fb3a36363af0c"
+    },
+    {
+      "path": "p100_/ps_tbl__mstr_ids.sql",
+      "sha256": "c26f4f43af0e5c729b10c764149d5ebf62a6154f956ab028632e86659f70c834"
+    },
+    {
+      "path": "p200_/additional_info.sql",
+      "sha256": "f48000b47563be20a11cda1dfc6cc660a727e62925af8128395d7385d87632fe"
+    },
+    {
+      "path": "p200_/create_cnfg_fin.sql",
+      "sha256": "62dcdd53fff06c4b3967b0ce8c3006e4372e9e9bc045b033456df4572f4e294c"
+    },
+    {
+      "path": "p200_/get_api_scr.sql",
+      "sha256": "393c8b11bfe6d9d431f5f5bead714fbea046952a1b6ade42ab155bc40dbfbe47"
+    },
+    {
+      "path": "p200_/get_update_list.sql",
+      "sha256": "6b4ec3b79fada293f7d51a53c1c7510c3207731354afa529b949206e6cd3d537"
+    }
+  ],
+  "project_id": "1524333",
+  "project_name": "_l2_audience_studio_tp",
+  "revision": "2875b1706a4244078db2d89513c5e1c8"
+}

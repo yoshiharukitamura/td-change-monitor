@@ -1,0 +1,34 @@
+timezone: Asia/Tokyo
+# schedule:
+#   cron>: 0 8 * * 1
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: ml_demand_forecast_auto_cron_weekly
+  notify_slack: true
+  td:
+    database: l2_demand_forecast_auto
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# main process
++ml_main:
+  +predict_prep:
+    require>: ml_demand_forecast_prep
+    session_time: ${moment(session_date).format()}
+    rerun_on: all
+
+  +predcit_auto:
+    require>: ml_demand_forecast_auto
+    session_time: ${moment(session_date).format()}
+    rerun_on: all
+
+  +predcit_subsequent:
+    require>: ml_demand_forecast_subsequent
+    session_time: ${moment(session_date).format()}
+    rerun_on: all

@@ -1,0 +1,131 @@
+# CDP: Syndication "google_ads_septeni_250515" of segment "Google Ads PPC" created at
+# https://console-next.treasuredata.co.jp/app/ps/1016484/e/1709239/4/ac
+
+timezone: "Asia/Tokyo"
+
+schedule: {"daily>": "10:00:00","skip_on_overtime": true,"start": "2026-03-11"}
+
+
+_export:
+  td:
+    database: "cdp_audience_1016484"
+    audience_id: 1016484
+    segment_folder_id: 1660601
+    segment_id: 1709239
+    activation_id: 564779
+    
+    
+
+
+
++get_query:
+  http>: "https://api-cdp.treasuredata.co.jp/audiences/1016484/segments/1709239/syndications/564779/workflow_queries?v=2&time=${moment(session_time).utc().format('YYYY-MM-DDTHH:mm:ss')+'Z'}&project_id=${project_id}&session_id=${session_id}&attempt_id=${attempt_id}"
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  store_content: true
+  retry: true
+
++syndicate:
+  if>: ${JSON.parse(http.last_content)["activation_logging_enabled"]}
+  _do:
+    +prepare_table:
+      td_ddl>:
+      create_tables: ["activation_log"]
+      _retry: 5
+
+    +run_query:
+      td>:
+      query: ${JSON.parse(http.last_content)["query"]}
+      create_table: ${JSON.parse(http.last_content)["activation_logging_tmp_table_name"]}
+      _retry: 5
+
+    +write_activation_log:
+      td>:
+      query: ${JSON.parse(http.last_content)["activation_log_query"]}
+      insert_into: "activation_log"
+      _retry: 5
+
+    +syndicate:
+      td>:
+      query: ${JSON.parse(http.last_content)["result_export_query"]}
+      result_connection: ${JSON.parse(http.last_content)["result_connection"]}
+      result_settings: ${JSON.parse(http.last_content)["result_settings"]}
+      _retry: 5
+
+
+    +drop_tmp_table:
+      td_ddl>:
+      drop_tables: ['${JSON.parse(http.last_content)["activation_logging_tmp_table_name"]}']
+      _retry: 5
+
+  _else_do:
+    +syndicate:
+      td>:
+      query: ${JSON.parse(http.last_content)["query"]}
+      result_connection: ${JSON.parse(http.last_content)["result_connection"]}
+      result_settings: ${JSON.parse(http.last_content)["result_settings"]}
+      _retry: 5
+
+
+
++notify_finished:
+  mail>: notification_succeeded.html
+  subject: "Activation Notification: _l2_audience_studio_mk Activation GoogleAds_PPC_アンマッチ Workflow succeeded"
+  html: true
+  from: noreply@treasure-data.com
+  audience_name: "_l2_audience_studio_mk"
+  activation_name: "GoogleAds_PPC_アンマッチ"
+  to: [noreply@treasure-data.com]
+  bcc: ["tatsuki.oya+riraku@hiveiq.co.jp","s-onoe@riracle.com"]
+
++callback_finished:
+  http>: "https://api-cdp.treasuredata.co.jp/audiences/1016484/segments/1709239/syndications/564779/workflow_finished?v=1"
+  method: POST
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  content:
+    job_id: ${td.last_job_id}
+    result_connection_type: ${JSON.parse(http.last_content)["result_connection_type"]}
+    project_id: ${project_id}
+    session_uuid: ${session_uuid}
+    session_id: ${session_id}
+    session_time: ${session_time}
+    task_name: ${task_name}
+    attempt_id: ${attempt_id}
+    to_be_success: true
+  retry: true
+  _retry: 5
+
+
+_error:
+  +send_email:
+    mail>: notification_failed.html
+    subject: "Activation Notification: _l2_audience_studio_mk Activation GoogleAds_PPC_アンマッチ Workflow failed"
+    html: true
+    from: noreply@treasure-data.com
+    audience_name: "_l2_audience_studio_mk"
+    activation_name: "GoogleAds_PPC_アンマッチ"
+    to: [noreply@treasure-data.com]
+    bcc: ["tatsuki.oya+riraku@hiveiq.co.jp","s-onoe@riracle.com"]
+  +callback_finished:
+    http>: "https://api-cdp.treasuredata.co.jp/audiences/1016484/segments/1709239/syndications/564779/workflow_finished?v=1"
+    method: POST
+    headers:
+      - authorization: ${secret:td.apikey}
+      - X-TD-CDP-SESSION-ID: ${session_id}
+      - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+    content:
+      job_id: ${td.last_job_id}
+      project_id: ${project_id}
+      session_uuid: ${session_uuid}
+      session_id: ${session_id}
+      session_time: ${session_time}
+      task_name: ${task_name}
+      attempt_id: ${attempt_id}
+      to_be_success: false
+    retry: true
+    _retry: 5

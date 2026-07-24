@@ -1,0 +1,20 @@
+timezone: Asia/Tokyo
+
+_export:
+  td:
+    database: l2_integration_datamart
+
++create_table:
+  td_ddl>:
+  empty_tables:
+    - snapshot_time_slot_detail
+
++for_each_week:
+  td_for_each>: z_query/create_week_list.sql
+  _parallel:
+    limit: 5
+  _do:
+    +insert_new_records:
+      td>: query/snapshot_time_slot_detail.sql
+      reference_time: ${td.each.business_week}
+      insert_into: snapshot_time_slot_detail

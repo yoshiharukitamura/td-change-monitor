@@ -1,0 +1,166 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Variables ###
+_export:
+  ## Output Database
+  td:
+    database: _integration_datamart
+
+  initialize: false
+
+### error handling ###
+_error:
+  require>: failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    # notify: {mail: true, slack: true}
+    notify: {mail: false, slack: false}
+
+## main process ###
+## マスタ系
++master_tables:
+  _parallel: true
+  ## 年月日+時刻、営業日・週、曜日・祝日
+  +mst_datetime:
+    td>: p100_/mst_datetime.sql
+    create_table: mst_datetime
+  ## 店舗、都道府県・エリア、営業開始・終了、周辺人口
+  +mst_shop:
+    td>: p100_/mst_shop.sql
+    create_table: mst_shop
+  ## セラピスト、性別・年齢、居住地、入店希望
+  +mst_therapist:
+    td>: p100_/mst_therapist.sql
+    create_table: mst_therapist
+
+## トランザクション系
++transaction_tables:
+  _parallel: true
+  ## エントリー時間枠
+  +cls_time_slot_detail:
+    td>: p100_/cls_time_slot_detail.sql
+    create_table: cls_time_slot_detail
+  ## DWB
+  +dwb:
+    +cls_dwb_slot_raw:
+      td>: p100_/cls_dwb_slot_raw.sql
+      create_table: cls_dwb_slot_raw
+  ## 施術時間
+  +cls_order_detail.sql:
+    td>: p100_/cls_order_detail.sql
+    create_table: cls_order_detail
+  ## TP APPサジェスト時間枠
+  +cls_suggest_app_time_slot_detail:
+    td>: p100_/cls_suggest_app_time_slot_detail.sql
+    create_table: cls_suggest_app_time_slot_detail
+
+## 複合テーブル
++merged_tables:
+  +cls_sufficiency:
+    td>: p100_/cls_sufficiency.sql
+    create_table: cls_sufficiency
+  ### 各種E時間の統合テーブル
+  +cls_time_slot_integrated:
+    td>: p100_/cls_time_slot_integrated.sql
+    create_table: cls_time_slot_integrated
+
+## web/app関連
++tmp_tables:
+  _parallel: true
+  +sys:
+    +z_tmp_cls_reservation:
+      td>: p100_/z_tmp_cls_reservation.sql
+      create_table: z_tmp_cls_reservation
+    +z_tmp_cls_reservation_daily:
+      td>: p100_/z_tmp_cls_reservation_daily.sql
+      create_table: z_tmp_cls_reservation_daily
+  +app:
+    +z_tmp_cls_app_log_104w:
+      td>: p100_/z_tmp_cls_app_log_104w.sql
+      create_table: z_tmp_cls_app_log_104w
+    +z_tmp_cls_app_reserve:
+      td>: p100_/z_tmp_cls_app_reserve.sql
+      create_table: z_tmp_cls_app_reserve
+  +web:
+    +z_tmp_cls_web_reserve:
+      td>: p100_/z_tmp_cls_web_reserve.sql
+      create_table: z_tmp_cls_web_reserve
+    +z_tmp_cls_web_log_104w:
+      td>: p100_/z_tmp_cls_web_log_104w.sql
+      create_table: z_tmp_cls_web_log_104w
+
+# ## スナップショット系
+# +snapshot_tables:
+#   +hst_customer_rf:
+#     +if_initialize_is_true:
+#       if>: ${initialize}
+#       _do:
+#         _export:
+#           date_from: "2019-01-01"
+#           date_to: "${session_date}"
+#           split: quarter
+#         +true:
+#           td_ddl>:
+#           create_databases: ["${td.database}"]
+#           empty_tables: ["hst_daily_customer_rf", "hst_weekly_customer_rf"]
+#         +parallel:
+#           _parallel: true
+#           +hst_daily_customer_rf:
+#             td_for_each>: __func_/date_trunc_list.sql
+#             _parallel:
+#               limit: 6
+#             _do:
+#               td>: p100_/hst_daily_customer_rf.sql
+#               insert_into: hst_daily_customer_rf
+#           +hst_weekly_customer_rf:
+#             td_for_each>: __func_/date_trunc_list.sql
+#             _parallel:
+#               limit: 2
+#             _do:
+#               td>: p100_/hst_weekly_customer_rf.sql
+#               insert_into: hst_weekly_customer_rf
+#       _else_do:
+#         _export:
+#           date_from: "${moment(session_date).subtract(2, 'w').format('YYYY-MM-DD')}"
+#           date_to: "${moment(session_date).add(5, 'd').format('YYYY-MM-DD')}"
+#           split: week
+#         +false:
+#           _parallel: true
+#           +daily:
+#             td>:
+#             query: |
+#               delete from hst_daily_customer_rf
+#               where
+#                 time between ${moment(date_from).unix()} and ${moment(date_to).unix()}
+#                   -- from ${moment(date_from).format('YYYY-MM-DD')} *** JOBでの期間確認用
+#                   -- to ${moment(date_to).format('YYYY-MM-DD')} *** JOBでの期間確認用
+#           +weekly:
+#             td>:
+#             query: |
+#               delete from hst_weekly_customer_rf
+#               where
+#                 time between td_date_trunc('week', ${moment(date_from).unix()}, 'jst') and ${moment(date_to).unix()}
+#                   -- from ${moment(date_from).format('YYYY-MM-DD')} *** JOBでの期間確認用
+#                   -- to ${moment(date_to).format('YYYY-MM-DD')} *** JOBでの期間確認用
+#         +parallel:
+#           _parallel: true
+#           +hst_daily_customer_rf:
+#             td_for_each>: __func_/date_trunc_list.sql
+#             _parallel:
+#               limit: 6
+#             _do:
+#               td>: p100_/hst_daily_customer_rf.sql
+#               insert_into: hst_daily_customer_rf
+#           +hst_weekly_customer_rf:
+#             td_for_each>: __func_/date_trunc_list.sql
+#             _parallel:
+#               limit: 2
+#             _do:
+#               td>: p100_/hst_weekly_customer_rf.sql
+#               insert_into: hst_weekly_customer_rf
+
+

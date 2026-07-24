@@ -1,0 +1,124 @@
+#### Data Source Variables ####
+# 常に全量を取り込む場合はincremental_byはnull、差分の場合はキーとなるカラム名を設定
+
+table_list:
+### 利用中 ###
+  - {name: customers, incremental_by:  , pk: id }
+  - {name: history_order_details, incremental_by: modified , pk: id }
+  - {name: mst_product_prices, incremental_by:  , pk: mst_product_id }
+  - {name: mst_products, incremental_by:  , pk: id }
+  - {name: mst_shops, incremental_by:  , pk: id }
+  - {name: mst_therapists, incremental_by:  , pk: id }
+  - {name: order_detail_reward_items, incremental_by: modified , pk: id }
+  - {name: order_details, incremental_by: modified , pk: id }
+  - {name: orders, incremental_by: modified , pk: id }
+  - {name: reward_item_customers, incremental_by: created , pk: id }
+  - {name: reward_items, incremental_by: modified , pk: id }
+  - {name: therapist_nominations, incremental_by: modified , pk: id }
+  - {name: mst_areas, incremental_by:  , pk:  }
+  - {name: mst_prefectures, incremental_by:  , pk:  }
+  - {name: mst_holidays, incremental_by:  , pk: id }
+  - {name: gift_cards, incremental_by:  , pk: id }
+
+### 利用なし ###
+ # - {name: acquired_stamps, incremental_by: modified , pk: id }
+ # - {name: amount_of_subsidiary_work_details, incremental_by: modified , pk: id }
+ # - {name: amount_of_subsidiary_work_detail_per_therapists, incremental_by: modified , pk: id }
+ # - {name: amount_of_subsidiary_works, incremental_by: modified , pk: id }
+ # - {name: attendance_core, incremental_by: updated_datetime , pk: attendance_id }
+ # - {name: attendance_temporary, incremental_by: updated_datetime , pk: attendance_id }
+ # - {name: attendances, incremental_by: modified , pk: id }
+ # - {name: balance_in_hands, incremental_by: modified , pk: id }
+ # - {name: batch_logs, incremental_by: created , pk: id }
+ # - {name: break_time_temporary, incremental_by: updated_datetime , pk: therapist_id }
+ # - {name: cashless_payment_api_call_histories, incremental_by: created , pk: id }
+ # - {name: categories, incremental_by: modified , pk: id }
+ # - {name: coupon_customers, incremental_by: created , pk: id }
+ # - {name: coupon_terms, incremental_by: modified , pk: id }
+ # - {name: customer_histories, incremental_by: modified , pk: id }
+ # - {name: daily_work_shifts, incremental_by: modified , pk: id }
+ # - {name: disclaimers, incremental_by: modified , pk: id }
+ # - {name: fcm_customers, incremental_by: modified , pk: id }
+ # - {name: gift_cards, incremental_by: modified , pk: id }
+ # - {name: history_customers, incremental_by: modified , pk: id }
+ # - {name: history_order_detail_reward_items, incremental_by: modified , pk: id }
+ # - {name: history_orders, incremental_by: modified , pk: id }  #Communications link failure 20250730
+ # - {name: history_therapist_nominations, incremental_by: modified , pk: id }
+ # - {name: hp_customers, incremental_by: modified , pk: id }
+ # - {name: messages, incremental_by: modified , pk: id }
+ # - {name: mst_cashless_devices, incremental_by: modified , pk:  }
+ # - {name: mst_consumption_tax_rates, incremental_by:  , pk: id }
+ # - {name: mst_product_groups, incremental_by:  , pk: id }
+ # - {name: mst_promotion_texts, incremental_by:  , pk: id }
+ # - {name: mst_reasons_for_changing_therapists, incremental_by:  , pk: id }
+ # - {name: mst_stamp_rallies, incremental_by:  , pk: id }
+ # - {name: mst_subsidiary_works, incremental_by:  , pk: id }
+ # - {name: opening_closings, incremental_by: modified , pk: id }
+ # - {name: operation_logs, incremental_by: modified , pk: id }
+ # - {name: opportunity_loss_details, incremental_by: modified , pk: id }
+ # - {name: opportunity_losses, incremental_by: modified , pk: id }
+ # - {name: order_migration_maps, incremental_by: modified , pk: id }
+ # - {name: order_not_trancefers, incremental_by: created , pk: id }
+ # - {name: physical_condition_clauses, incremental_by: modified , pk: id }
+ # - {name: points, incremental_by: modified , pk: id }
+ # - {name: pos_payment_temporary, incremental_by: updated_datetime , pk: pos_payment_id }
+ # - {name: pos_sales_temporary, incremental_by: updated_datetime , pk: pos_sales_id }
+ # - {name: product_codes, incremental_by: modified , pk: id }
+ # - {name: product_group_price_relations, incremental_by: modified , pk: id }
+ # - {name: product_group_shop_relations, incremental_by: modified , pk: id }
+ # - {name: product_reward_items, incremental_by: created , pk: id }
+ # - {name: product_shops, incremental_by: modified , pk:  } #doesn't exists 20250730
+ # - {name: receipt_advertisements, incremental_by: modified , pk: id }
+ # - {name: requested_parts_of_order_detail_comments, incremental_by: modified , pk: id }
+ # - {name: review_temporary, incremental_by: updated_datetime , pk: id } #doesn't exists 20250730
+ # - {name: reviews, incremental_by: modified , pk: id }
+ # - {name: reward_categories, incremental_by: modified , pk: id }
+ # - {name: reward_item_applicable_days, incremental_by: modified , pk: id }
+ # - {name: roles, incremental_by: modified , pk: id }
+ # - {name: sales_assists, incremental_by: modified , pk: id }
+ # - {name: set_menu_relations, incremental_by: modified , pk: id }
+ # - {name: shop_messages, incremental_by: modified , pk: id }
+ # - {name: shop_receipt_advertisements, incremental_by: created , pk: id }
+ # - {name: shop_reward_item_applicable_days, incremental_by: modified , pk: id }
+ # - {name: shop_subsidiary_works, incremental_by: modified , pk: id }
+ # - {name: shop_vacancies, incremental_by: created , pk: id }
+ # - {name: summary_daily_sales_per_shops, incremental_by: modified , pk: id }
+ # - {name: summary_monthly_points, incremental_by: created , pk: id }
+ # - {name: summary_monthly_shop_generate_points, incremental_by: created , pk: id }
+ # - {name: system_users, incremental_by: modified , pk: id }
+ # - {name: templates, incremental_by: modified , pk: id }
+ # - {name: therapist_daily_report_temporary, incremental_by: updated_datetime , pk: therapist_daily_report_id }
+ # - {name: therapist_operation_temporary, incremental_by: updated_datetime , pk: therapist_operation_id }
+ # - {name: therapist_works, incremental_by: modified , pk: id }
+ # - {name: treated_body_parts, incremental_by: modified , pk: id }
+ # - {name: use_of_stamp_rally_per_customers, incremental_by: modified , pk: id }
+ # - {name: user_preference_of_csv_output_columns, incremental_by: modified , pk: id }
+ # - {name: withdrawals, incremental_by: modified , pk: id }
+ # - {name: aros, incremental_by:  , pk:  }
+ # - {name: aros_acos, incremental_by:  , pk:  }
+ # - {name: cashless_device_api_key_pos_device_product_code_relations, incremental_by:  , pk:  }#doesn't exists 20250730
+ # - {name: mst_cashless_payment_api_types, incremental_by:  , pk:  }
+ # - {name: mst_credit_card_payment_types, incremental_by:  , pk:  } #doesn't exists 20250730
+ # - {name: mst_csv_output_columns, incremental_by:  , pk:  }
+ # - {name: mst_csv_output_tables, incremental_by:  , pk:  }
+ # - {name: mst_departments, incremental_by:  , pk:  }
+ # - {name: mst_languages, incremental_by:  , pk:  }
+ # - {name: mst_payment_types, incremental_by:  , pk:  }
+ # - {name: mst_permission_details, incremental_by:  , pk:  }
+ # - {name: mst_permissions, incremental_by:  , pk:  }
+ # - {name: mst_product_types, incremental_by:  , pk:  }
+ # - {name: mst_qr_code_payment_types, incremental_by:  , pk:  }
+ # - {name: mst_withdrawal_types, incremental_by:  , pk:  }
+ # - {name: sb_order_migration_maps, incremental_by:  , pk:  }
+ # - {name: shop_categories, incremental_by:  , pk:  }
+ # - {name: shop_sales_assists, incremental_by:  , pk:  }
+ # - {name: stamp_rally_products, incremental_by:  , pk:  }
+ # - {name: stamp_rally_shops, incremental_by:  , pk:  }
+ # - {name: system_user_areas, incremental_by:  , pk:  }
+ # - {name: template_details, incremental_by:  , pk:  }
+ # - {name: terms_of_services, incremental_by:  , pk:  }
+ # - {name: therapist_nomination_fees, incremental_by: modified , pk: id }
+ # - {name: results_of_agreement_of_rewards, incremental_by: created , pk:  }
+ # - {name: therapist_auth_histories, incremental_by: created , pk:  }
+ # - {name: therapist_operations, incremental_by: created , pk:  }
+ # - {name: mst_system_types, incremental_by:  , pk:  }

@@ -22,254 +22,254 @@
       "type": "string"
     },
     {
-      "alias": "age",
-      "description": null,
-      "name": "age",
-      "position": 3,
-      "type": "long"
-    },
-    {
-      "alias": "work_saturday",
-      "description": null,
-      "name": "work_saturday",
-      "position": 4,
-      "type": "string"
-    },
-    {
-      "alias": "introducer_therapist_id",
-      "description": null,
-      "name": "introducer_therapist_id",
-      "position": 5,
-      "type": "long"
-    },
-    {
-      "alias": "tel01",
-      "description": null,
-      "name": "tel01",
-      "position": 6,
-      "type": "string"
-    },
-    {
-      "alias": "avg_applicant_reqenst",
-      "description": null,
-      "name": "avg_applicant_reqenst",
-      "position": 7,
-      "type": "string"
-    },
-    {
-      "alias": "old_therapist_id",
-      "description": null,
-      "name": "old_therapist_id",
-      "position": 8,
-      "type": "long"
-    },
-    {
-      "alias": "division",
-      "description": null,
-      "name": "division",
-      "position": 9,
-      "type": "long"
-    },
-    {
-      "alias": "pref_name",
-      "description": null,
-      "name": "pref_name",
-      "position": 10,
-      "type": "string"
-    },
-    {
-      "alias": "hope_property_id_2",
-      "description": null,
-      "name": "hope_property_id_2",
-      "position": 11,
-      "type": "long"
-    },
-    {
-      "alias": "therapist_name",
-      "description": null,
-      "name": "therapist_name",
-      "position": 12,
-      "type": "string"
-    },
-    {
-      "alias": "professional_name",
-      "description": null,
-      "name": "professional_name",
-      "position": 13,
-      "type": "string"
-    },
-    {
-      "alias": "zip_code",
-      "description": null,
-      "name": "zip_code",
-      "position": 14,
-      "type": "string"
-    },
-    {
-      "alias": "week_days",
-      "description": null,
-      "name": "week_days",
-      "position": 15,
-      "type": "string"
-    },
-    {
-      "alias": "max_applicant_reqenst",
-      "description": null,
-      "name": "max_applicant_reqenst",
-      "position": 16,
-      "type": "string"
-    },
-    {
-      "alias": "first_entry_datetime",
-      "description": null,
-      "name": "first_entry_datetime",
-      "position": 17,
-      "type": "long"
-    },
-    {
-      "alias": "gender",
-      "description": null,
-      "name": "gender",
-      "position": 18,
-      "type": "string"
-    },
-    {
-      "alias": "min_applicant_reqenst",
-      "description": null,
-      "name": "min_applicant_reqenst",
-      "position": 19,
-      "type": "string"
-    },
-    {
-      "alias": "hope_property_id_1",
-      "description": null,
-      "name": "hope_property_id_1",
-      "position": 20,
-      "type": "long"
-    },
-    {
-      "alias": "therapist_no",
-      "description": null,
-      "name": "therapist_no",
-      "position": 21,
-      "type": "string"
-    },
-    {
-      "alias": "tel02",
-      "description": null,
-      "name": "tel02",
-      "position": 22,
-      "type": "string"
-    },
-    {
-      "alias": "work_sunday",
-      "description": null,
-      "name": "work_sunday",
-      "position": 23,
-      "type": "string"
-    },
-    {
-      "alias": "email",
-      "description": null,
-      "name": "email",
-      "position": 24,
-      "type": "string"
-    },
-    {
-      "alias": "therapist_id",
-      "description": null,
-      "name": "therapist_id",
-      "position": 25,
-      "type": "long"
-    },
-    {
-      "alias": "max_nuturing_reqenst",
-      "description": null,
-      "name": "max_nuturing_reqenst",
-      "position": 26,
-      "type": "string"
-    },
-    {
-      "alias": "contract_type",
-      "description": null,
-      "name": "contract_type",
-      "position": 27,
-      "type": "string"
-    },
-    {
-      "alias": "timezone",
-      "description": null,
-      "name": "timezone",
-      "position": 28,
-      "type": "string"
-    },
-    {
       "alias": "area_name",
       "description": null,
       "name": "area_name",
-      "position": 29,
+      "position": 3,
       "type": "string"
     },
     {
       "alias": "work_holiday",
       "description": null,
       "name": "work_holiday",
-      "position": 30,
+      "position": 4,
       "type": "string"
     },
     {
       "alias": "tel03",
       "description": null,
       "name": "tel03",
+      "position": 5,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_id",
+      "description": null,
+      "name": "therapist_id",
+      "position": 6,
+      "type": "long"
+    },
+    {
+      "alias": "max_nuturing_reqenst",
+      "description": null,
+      "name": "max_nuturing_reqenst",
+      "position": 7,
+      "type": "string"
+    },
+    {
+      "alias": "contract_type",
+      "description": null,
+      "name": "contract_type",
+      "position": 8,
+      "type": "string"
+    },
+    {
+      "alias": "timezone",
+      "description": null,
+      "name": "timezone",
+      "position": 9,
+      "type": "string"
+    },
+    {
+      "alias": "work_sunday",
+      "description": null,
+      "name": "work_sunday",
+      "position": 10,
+      "type": "string"
+    },
+    {
+      "alias": "email",
+      "description": null,
+      "name": "email",
+      "position": 11,
+      "type": "string"
+    },
+    {
+      "alias": "old_therapist_id",
+      "description": null,
+      "name": "old_therapist_id",
+      "position": 12,
+      "type": "long"
+    },
+    {
+      "alias": "introducer_therapist_id",
+      "description": null,
+      "name": "introducer_therapist_id",
+      "position": 13,
+      "type": "long"
+    },
+    {
+      "alias": "tel01",
+      "description": null,
+      "name": "tel01",
+      "position": 14,
+      "type": "string"
+    },
+    {
+      "alias": "age",
+      "description": null,
+      "name": "age",
+      "position": 15,
+      "type": "long"
+    },
+    {
+      "alias": "work_saturday",
+      "description": null,
+      "name": "work_saturday",
+      "position": 16,
+      "type": "string"
+    },
+    {
+      "alias": "avg_applicant_reqenst",
+      "description": null,
+      "name": "avg_applicant_reqenst",
+      "position": 17,
+      "type": "string"
+    },
+    {
+      "alias": "therapist_no",
+      "description": null,
+      "name": "therapist_no",
+      "position": 18,
+      "type": "string"
+    },
+    {
+      "alias": "tel02",
+      "description": null,
+      "name": "tel02",
+      "position": 19,
+      "type": "string"
+    },
+    {
+      "alias": "min_applicant_reqenst",
+      "description": null,
+      "name": "min_applicant_reqenst",
+      "position": 20,
+      "type": "string"
+    },
+    {
+      "alias": "gender",
+      "description": null,
+      "name": "gender",
+      "position": 21,
+      "type": "string"
+    },
+    {
+      "alias": "hope_property_id_1",
+      "description": null,
+      "name": "hope_property_id_1",
+      "position": 22,
+      "type": "long"
+    },
+    {
+      "alias": "first_entry_datetime",
+      "description": null,
+      "name": "first_entry_datetime",
+      "position": 23,
+      "type": "long"
+    },
+    {
+      "alias": "therapist_name",
+      "description": null,
+      "name": "therapist_name",
+      "position": 24,
+      "type": "string"
+    },
+    {
+      "alias": "professional_name",
+      "description": null,
+      "name": "professional_name",
+      "position": 25,
+      "type": "string"
+    },
+    {
+      "alias": "zip_code",
+      "description": null,
+      "name": "zip_code",
+      "position": 26,
+      "type": "string"
+    },
+    {
+      "alias": "division",
+      "description": null,
+      "name": "division",
+      "position": 27,
+      "type": "long"
+    },
+    {
+      "alias": "max_applicant_reqenst",
+      "description": null,
+      "name": "max_applicant_reqenst",
+      "position": 28,
+      "type": "string"
+    },
+    {
+      "alias": "pref_name",
+      "description": null,
+      "name": "pref_name",
+      "position": 29,
+      "type": "string"
+    },
+    {
+      "alias": "hope_property_id_2",
+      "description": null,
+      "name": "hope_property_id_2",
+      "position": 30,
+      "type": "long"
+    },
+    {
+      "alias": "week_days",
+      "description": null,
+      "name": "week_days",
       "position": 31,
       "type": "string"
     },
     {
-      "alias": "cstm_03_name",
+      "alias": "cstm_02_w3",
       "description": null,
-      "name": "cstm_03_name",
+      "name": "cstm_02_w3",
       "position": 32,
       "type": "string"
     },
     {
-      "alias": "cstm_03_entry2",
+      "alias": "cstm_02_yesterday",
       "description": null,
-      "name": "cstm_03_entry2",
+      "name": "cstm_02_yesterday",
       "position": 33,
       "type": "string"
     },
     {
-      "alias": "cstm_03_entry",
+      "alias": "cstm_02_time",
       "description": null,
-      "name": "cstm_03_entry",
+      "name": "cstm_02_time",
       "position": 34,
       "type": "string"
     },
     {
-      "alias": "cstm_03_email",
+      "alias": "cstm_02_today",
       "description": null,
-      "name": "cstm_03_email",
+      "name": "cstm_02_today",
       "position": 35,
       "type": "string"
     },
     {
-      "alias": "cstm_03_entryw",
+      "alias": "cstm_02_entry2",
       "description": null,
-      "name": "cstm_03_entryw",
+      "name": "cstm_02_entry2",
       "position": 36,
       "type": "string"
     },
     {
-      "alias": "cstm_03_entryw2",
+      "alias": "cstm_02_w2",
       "description": null,
-      "name": "cstm_03_entryw2",
+      "name": "cstm_02_w2",
       "position": 37,
       "type": "string"
     },
     {
-      "alias": "cstm_03_therapist_no",
+      "alias": "cstm_02_therapist_no",
       "description": null,
-      "name": "cstm_03_therapist_no",
+      "name": "cstm_02_therapist_no",
       "position": 38,
       "type": "string"
     },
@@ -281,182 +281,182 @@
       "type": "string"
     },
     {
-      "alias": "cstm_02_therapist_no",
+      "alias": "cstm_02_entry3",
       "description": null,
-      "name": "cstm_02_therapist_no",
+      "name": "cstm_02_entry3",
       "position": 40,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_w2",
-      "description": null,
-      "name": "cstm_02_w2",
-      "position": 41,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_entry2",
-      "description": null,
-      "name": "cstm_02_entry2",
-      "position": 42,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_email",
-      "description": null,
-      "name": "cstm_02_email",
-      "position": 43,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_w4",
-      "description": null,
-      "name": "cstm_02_w4",
-      "position": 44,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_entryw2",
-      "description": null,
-      "name": "cstm_02_entryw2",
-      "position": 45,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_total",
-      "description": null,
-      "name": "cstm_02_total",
-      "position": 46,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_entryw3",
-      "description": null,
-      "name": "cstm_02_entryw3",
-      "position": 47,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_entry",
-      "description": null,
-      "name": "cstm_02_entry",
-      "position": 48,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_entryw",
-      "description": null,
-      "name": "cstm_02_entryw",
-      "position": 49,
       "type": "string"
     },
     {
       "alias": "cstm_02_name",
       "description": null,
       "name": "cstm_02_name",
-      "position": 50,
+      "position": 41,
       "type": "string"
     },
     {
       "alias": "cstm_02_schedule",
       "description": null,
       "name": "cstm_02_schedule",
-      "position": 51,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_02_entry3",
-      "description": null,
-      "name": "cstm_02_entry3",
-      "position": 52,
+      "position": 42,
       "type": "string"
     },
     {
       "alias": "cstm_02_act",
       "description": null,
       "name": "cstm_02_act",
-      "position": 53,
+      "position": 43,
       "type": "string"
     },
     {
-      "alias": "cstm_02_yesterday",
+      "alias": "cstm_02_entry",
       "description": null,
-      "name": "cstm_02_yesterday",
-      "position": 54,
+      "name": "cstm_02_entry",
+      "position": 44,
       "type": "string"
     },
     {
-      "alias": "cstm_02_time",
+      "alias": "cstm_02_entryw",
       "description": null,
-      "name": "cstm_02_time",
-      "position": 55,
+      "name": "cstm_02_entryw",
+      "position": 45,
       "type": "string"
     },
     {
-      "alias": "cstm_02_today",
+      "alias": "cstm_02_email",
       "description": null,
-      "name": "cstm_02_today",
-      "position": 56,
+      "name": "cstm_02_email",
+      "position": 46,
       "type": "string"
     },
     {
-      "alias": "cstm_02_w3",
+      "alias": "cstm_02_w4",
       "description": null,
-      "name": "cstm_02_w3",
-      "position": 57,
+      "name": "cstm_02_w4",
+      "position": 47,
       "type": "string"
     },
     {
-      "alias": "cstm_01_entryw",
+      "alias": "cstm_02_entryw2",
       "description": null,
-      "name": "cstm_01_entryw",
-      "position": 58,
+      "name": "cstm_02_entryw2",
+      "position": 48,
       "type": "string"
     },
     {
-      "alias": "cstm_01_entry",
+      "alias": "cstm_02_total",
       "description": null,
-      "name": "cstm_01_entry",
-      "position": 59,
+      "name": "cstm_02_total",
+      "position": 49,
       "type": "string"
     },
     {
-      "alias": "cstm_01_entry2",
+      "alias": "cstm_02_entryw3",
       "description": null,
-      "name": "cstm_01_entry2",
-      "position": 60,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_01_email",
-      "description": null,
-      "name": "cstm_01_email",
-      "position": 61,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_01_entryw2",
-      "description": null,
-      "name": "cstm_01_entryw2",
-      "position": 62,
-      "type": "string"
-    },
-    {
-      "alias": "cstm_01_therapist_no",
-      "description": null,
-      "name": "cstm_01_therapist_no",
-      "position": 63,
+      "name": "cstm_02_entryw3",
+      "position": 50,
       "type": "string"
     },
     {
       "alias": "cstm_01_name",
       "description": null,
       "name": "cstm_01_name",
+      "position": 51,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entryw",
+      "description": null,
+      "name": "cstm_01_entryw",
+      "position": 52,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entryw2",
+      "description": null,
+      "name": "cstm_01_entryw2",
+      "position": 53,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_therapist_no",
+      "description": null,
+      "name": "cstm_01_therapist_no",
+      "position": 54,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entry2",
+      "description": null,
+      "name": "cstm_01_entry2",
+      "position": 55,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_entry",
+      "description": null,
+      "name": "cstm_01_entry",
+      "position": 56,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_email",
+      "description": null,
+      "name": "cstm_01_email",
+      "position": 57,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_email",
+      "description": null,
+      "name": "cstm_03_email",
+      "position": 58,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_entry2",
+      "description": null,
+      "name": "cstm_03_entry2",
+      "position": 59,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_name",
+      "description": null,
+      "name": "cstm_03_name",
+      "position": 60,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_entry",
+      "description": null,
+      "name": "cstm_03_entry",
+      "position": 61,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_therapist_no",
+      "description": null,
+      "name": "cstm_03_therapist_no",
+      "position": 62,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_entryw",
+      "description": null,
+      "name": "cstm_03_entryw",
+      "position": 63,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_03_entryw2",
+      "description": null,
+      "name": "cstm_03_entryw2",
       "position": 64,
       "type": "string"
     }
   ],
   "database": "cdp_audience_1018834",
   "table": "customers",
-  "table_id": "297467950"
+  "table_id": "298771325"
 }

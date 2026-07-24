@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "922a73a41bd9bd3fc117edf0a9a82f1357e9e529066b76f695ece5cd8cd5af90",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l1_mysql_pos",
+  "events": [
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "58bccfc7-4b7a-4362-9dae-ebb54b1b4f73",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297405567",
+      "resource_id": "297405567",
+      "table": "therapist_nominations",
+      "time": "2026-07-18T18:34:17+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "21029793-0083-4a54-aca1-d61ba21455b4",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297619133",
+      "table": "therapist_nominations",
+      "time": "2026-07-18T18:34:18+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "7607419b-ecbf-42b8-a3b1-b20b58dc8650",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297619133",
+      "resource_id": "297619133",
+      "table": "therapist_nominations",
+      "time": "2026-07-19T18:19:24+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "ee8c9e4a-bb83-4931-82d8-9eed076d537e",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297837197",
+      "table": "therapist_nominations",
+      "time": "2026-07-19T18:19:25+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "3ded6a0c-dfc5-4e2f-80e4-df673b87f9b6",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297837197",
+      "resource_id": "297837197",
+      "table": "therapist_nominations",
+      "time": "2026-07-20T18:32:54+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "34639944-c14a-4d19-aa00-5dd84302c653",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298053768",
+      "table": "therapist_nominations",
+      "time": "2026-07-20T18:32:55+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "2c38fa87-9cb4-4438-b3ee-7e954afc4169",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298053768",
+      "resource_id": "298053768",
+      "table": "therapist_nominations",
+      "time": "2026-07-21T18:22:34+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "7a29ca95-d902-43a8-bece-50d2236d1b7d",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298268116",
+      "table": "therapist_nominations",
+      "time": "2026-07-21T18:22:35+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "6d6ccc74-b422-4eb4-9a7d-0eaddcc5b610",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298268116",
+      "resource_id": "298268116",
+      "table": "therapist_nominations",
+      "time": "2026-07-22T18:33:28+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "4ae409fb-82cf-4e6f-b5d7-825bad831532",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298493276",
+      "table": "therapist_nominations",
+      "time": "2026-07-22T18:33:29+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "e10d0bdb-0192-4f7c-af77-ea3855d5d1c5",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298493276",
+      "resource_id": "298493276",
+      "table": "therapist_nominations",
+      "time": "2026-07-23T18:33:13+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "fd2352a1-556a-457a-8d92-9a20bc77907a",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298711907",
+      "table": "therapist_nominations",
+      "time": "2026-07-23T18:33:13+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "therapist_nominations"
+}

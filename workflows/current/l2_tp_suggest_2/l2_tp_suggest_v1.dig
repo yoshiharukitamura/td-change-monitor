@@ -1,0 +1,139 @@
+timezone: Asia/Tokyo
+
+_export: 
+  td:
+    database: l2_tp_suggest
+
++suggest_rawdata:
+  td>: suggest_rawdata.sql
+
++suggest_history:
+  td>: suggest_history.sql
+
++send_to_gs:
+  td>:
+  query: |
+    select
+      pattern
+      , email
+      , therapist_no as TPNo
+      , professional_name as name
+      , shop_no as shopno
+      , shop_name as shop
+      , cast(business_month as bigint) as mon
+      , cast(business_day as bigint) as day
+      , business_dow as week
+      -- , entry_from
+      -- , entry_to
+      -- , entry_from_lw
+      -- , entry_to_lw
+      -- , utilization_advance
+      -- , utilization_extend
+      , cast(cast(substr(entry_from, 12, 2) as bigint) as varchar)||'時' as start
+      , cast(cast(substr(entry_to, 12, 2) as bigint)+1 as varchar)||'時' as "end"
+      , if(suggeststart1 is not null, cast(suggeststart1 as varchar)||'時'||'　〜　'||cast(suggestend1 as varchar)||'時') as suggest1
+      , if(suggeststart2 is not null, cast(suggeststart2 as varchar)||'時'||'　〜　'||cast(suggestend2 as varchar)||'時') as suggest2
+      , message
+      , url as URL
+    from
+      l2_tp_suggest.suggest_history
+    where
+      time = td_date_trunc('day', td_scheduled_time(), 'jst')
+      and business_dow = '${"日月火水木金土".substr(moment(session_date).add(2, "day").format("d"), 1)}'
+    order by
+      1,2,4
+  result_connection: td_share
+  result_settings:
+    spreadsheet_id: 1GQDGs5qPODs0hI0rYlOTOF4xLpU3Q_s7kLW_XqqDR_o
+    sheet_title: ${"日月火水木金土".substr(moment(session_date).add(2, "day").format("d"), 1)}
+    mode: truncate
+    rows_threshold: 10000
+    set_nil_for_double_nan: true
+    range: A1
+    value_input_option: RAW
+
++send_to_gs_fri:
+  if>: ${"日月火水木金土".substr(moment(session_date).format("d"), 1)=="金"}
+  _do:
+    +Mon:
+      td>:
+      query: |
+        select
+          pattern
+          , email
+          , therapist_no as TPNo
+          , professional_name as name
+          , shop_no as shopno
+          , shop_name as shop
+          , cast(business_month as bigint) as mon
+          , cast(business_day as bigint) as day
+          , business_dow as week
+          -- , entry_from
+          -- , entry_to
+          -- , entry_from_lw
+          -- , entry_to_lw
+          -- , utilization_advance
+          -- , utilization_extend
+          , cast(cast(substr(entry_from, 12, 2) as bigint) as varchar)||'時' as start
+          , cast(cast(substr(entry_to, 12, 2) as bigint)+1 as varchar)||'時' as "end"
+          , if(suggeststart1 is not null, cast(suggeststart1 as varchar)||'時'||'　〜　'||cast(suggestend1 as varchar)||'時') as suggest1
+          , if(suggeststart2 is not null, cast(suggeststart2 as varchar)||'時'||'　〜　'||cast(suggestend2 as varchar)||'時') as suggest2
+          , message
+          , url as URL
+        from
+          l2_tp_suggest.suggest_history
+        where
+          time = td_date_trunc('day', td_scheduled_time(), 'jst')
+          and business_dow = '${"日月火水木金土".substr(moment(session_date).add(3, "day").format("d"), 1)}'
+        order by
+          1,2,4
+      result_connection: td_share
+      result_settings:
+        spreadsheet_id: 1GQDGs5qPODs0hI0rYlOTOF4xLpU3Q_s7kLW_XqqDR_o
+        sheet_title: ${"日月火水木金土".substr(moment(session_date).add(3, "day").format("d"), 1)}
+        mode: truncate
+        rows_threshold: 10000
+        set_nil_for_double_nan: true
+        range: A1
+        value_input_option: RAW
+    +Thu:
+      td>:
+      query: |
+        select
+          pattern
+          , email
+          , therapist_no as TPNo
+          , professional_name as name
+          , shop_no as shopno
+          , shop_name as shop
+          , cast(business_month as bigint) as mon
+          , cast(business_day as bigint) as day
+          , business_dow as week
+          -- , entry_from
+          -- , entry_to
+          -- , entry_from_lw
+          -- , entry_to_lw
+          -- , utilization_advance
+          -- , utilization_extend
+          , cast(cast(substr(entry_from, 12, 2) as bigint) as varchar)||'時' as start
+          , cast(cast(substr(entry_to, 12, 2) as bigint)+1 as varchar)||'時' as "end"
+          , if(suggeststart1 is not null, cast(suggeststart1 as varchar)||'時'||'　〜　'||cast(suggestend1 as varchar)||'時') as suggest1
+          , if(suggeststart2 is not null, cast(suggeststart2 as varchar)||'時'||'　〜　'||cast(suggestend2 as varchar)||'時') as suggest2
+          , message
+          , url as URL
+        from
+          l2_tp_suggest.suggest_history
+        where
+          time = td_date_trunc('day', td_scheduled_time(), 'jst')
+          and business_dow = '${"日月火水木金土".substr(moment(session_date).add(4, "day").format("d"), 1)}'
+        order by
+          1,2,4
+      result_connection: td_share
+      result_settings:
+        spreadsheet_id: 1GQDGs5qPODs0hI0rYlOTOF4xLpU3Q_s7kLW_XqqDR_o
+        sheet_title: ${"日月火水木金土".substr(moment(session_date).add(4, "day").format("d"), 1)}
+        mode: truncate
+        rows_threshold: 10000
+        set_nil_for_double_nan: true
+        range: A1
+        value_input_option: RAW

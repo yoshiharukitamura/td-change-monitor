@@ -1,0 +1,16 @@
+{
+  "project_id": "1151969",
+  "project_name": "google_sheets_ingest_preprocess",
+  "schedules": [
+    {
+      "definition_path": "google_sheets_ingest_preprocess.dig",
+      "enabled": true,
+      "schedule_id": "169635",
+      "schedule_type": "cron",
+      "schedule_value": "0 0 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "10719412",
+      "workflow_name": "google_sheets_ingest_preprocess"
+    }
+  ]
+}

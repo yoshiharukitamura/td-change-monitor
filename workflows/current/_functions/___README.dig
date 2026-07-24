@@ -1,0 +1,42 @@
+_export:
+###############################################################
+# プロジェクトの目的
+###############################################################
+# プロジェクト横断で使うものや管理系のWorkflowを集約したプロジェクト
+
+
+###############################################################
+# ワークフローの一覧: リンクを辿れるようにtd>:を利用
+###############################################################
+## スケジュール管理
+## メイン処理
+  # td>: _p100__data_catalog.dig
+  # td>: _p100_sub__data_catalog.dig
+  # td>: _p999__generate_readme.dig
+## 一括処理
+## その他
+  # td>: ___README.dig
+  # td>: __failure_alert.dig
+  # td>: __failure_alert_test.dig
+
+
+###############################################################
+### ディレクトリ構造
+###############################################################
+# project
+# ┗━━ ___README.dig
+# ┗━━ __failure_alert.dig
+# ┗━━ __failure_alert_test.dig
+# ┗━━ _p100__data_catalog.dig
+# ┗━━ _p100_sub__data_catalog.dig
+# ┗━━ _p999__generate_readme.dig
+# ┗━━ p100_/
+#       ┗━━ get_table_list.sql
+#       ┗━━ google_sheets.yml
+#       ┗━━ merge_data_catalog.sql
+#       ┗━━ sub_/
+#             ┗━━ get_column_info.sql
+#             ┗━━ get_column_list.sql
+#             ┗━━ get_table_info.sql
+# ┗━━ p999_/
+#       ┗━━ __pycache__/

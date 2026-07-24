@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "9bd02a1b2ef737de51a78aaf90a1f50a7bffe48ee6a3f182cf66cbbb4338f1a6",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l1_mysql_core",
+  "events": [
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "5fae2079-b78d-499c-a3c0-1cf2e315a51d",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297408254",
+      "resource_id": "297408254",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-18T18:48:03+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "79a7457d-8811-4807-ae75-7ed4bf1df3ef",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297622611",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-18T18:48:04+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "df73a2b5-0967-4271-9cad-1dc7351d548e",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297622611",
+      "resource_id": "297622611",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-19T18:32:40+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "69c506c1-4961-4a54-b051-e1555f3066ad",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297840515",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-19T18:32:41+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "f1bc5511-83f0-4275-a8ea-5084c068e314",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297840515",
+      "resource_id": "297840515",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-20T18:45:47+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "f5b2c301-2afa-4919-9954-bc5c75e11eac",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298057093",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-20T18:45:47+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "0012d900-fc3e-4f4c-984f-a2bf4880224d",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298057093",
+      "resource_id": "298057093",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-21T18:36:57+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "469f6a58-adf6-451a-ba29-a37611641979",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298270380",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-21T18:36:58+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "85588fb3-5e59-48d1-9159-31129ca82dfb",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298496209",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-22T18:45:11+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "c971b9ed-e474-41d0-9799-9e2052e07e1d",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298270380",
+      "resource_id": "298270380",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-22T18:45:11+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "0c016a1d-bfbb-42a7-a885-9902b0e693f1",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298496209",
+      "resource_id": "298496209",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-23T18:46:21+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "e5c0f67e-205f-4569-b87c-6963ba13d3f6",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298715097",
+      "table": "therapist_reward_rank_change_history",
+      "time": "2026-07-23T18:46:22+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "therapist_reward_rank_change_history"
+}

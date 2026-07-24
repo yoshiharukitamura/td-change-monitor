@@ -1,0 +1,52 @@
+_export:
+###############################################################
+### プロジェクトの目的
+###############################################################
+# プロジェクトの概要を記載
+ 
+ 
+###############################################################
+### プロジェクト内での処理概要: リンクを辿れるようにtd>:を利用
+###############################################################
+## スケジュール管理
+## メイン処理
+    ## WFの概要を記載
+    # td>: _p100__data_preparation.dig
+    ## WFの概要を記載
+    # td>: _p200__parent_segment_update.dig
+    ## WFの概要を記載
+    # td>: _p300__send_to_xxx.dig
+    ## WFの概要を記載
+    # td>: _p999__generate_readme.dig
+## 一括処理
+## その他
+    ## WFの概要を記載
+    # td>: ___README.dig
+    ## WFの概要を記載
+    # td>: __cron_hhmm__daily_update.dig
+ 
+ 
+###############################################################
+### ディレクトリ構造
+###############################################################
+# project
+# ┗━━ ___README.dig
+# ┗━━ __cron_hhmm__daily_update.dig
+# ┗━━ _p100__data_preparation.dig
+# ┗━━ _p200__parent_segment_update.dig
+# ┗━━ _p300__send_to_xxx.dig
+# ┗━━ _p999__generate_readme.dig
+# ┗━━ p100_/
+#       ┗━━ ps_tbl__attr_xxx.sql
+#       ┗━━ ps_tbl__bhvr_xxx.sql
+#       ┗━━ ps_tbl__mstr_xxx.sql
+# ┗━━ p200_/
+#       ┗━━ __modules.py
+#       ┗━━ create_cnfg_fin.sql
+#       ┗━━ get_api_scr.sql
+#       ┗━━ get_update_list.sql
+#       ┗━━ load_cnfg_raw.yml
+# ┗━━ p999_/
+#       ┗━━ __modules.py
+ 
+ 

@@ -1,0 +1,17 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 7 * * 1
+
+_export:
+  td:
+    database: l2_integration_datamart
+
++snapshot:
+  +timeslot:
+    +delete_existing_records:
+      td>:
+      query: "delete from snapshot_time_slot_detail where time = td_date_trunc('week', ${session_unixtime}, 'jst')"
+    +insert_new_records:
+      td>: query/snapshot_time_slot_detail.sql
+      reference_time: ${session_unixtime}
+      insert_into: snapshot_time_slot_detail

@@ -1,0 +1,36 @@
+{
+  "project_id": "256493",
+  "project_name": "redshift_ingest_preprocess",
+  "schedules": [
+    {
+      "definition_path": "rs_l0_proc_ingest_viewtables.dig",
+      "enabled": true,
+      "schedule_id": "49256",
+      "schedule_type": "cron",
+      "schedule_value": "0 11 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "12999368",
+      "workflow_name": "rs_l0_proc_ingest_viewtables"
+    },
+    {
+      "definition_path": "rs_l0_proc_ingest_bigquery.dig",
+      "enabled": true,
+      "schedule_id": "103383",
+      "schedule_type": "cron",
+      "schedule_value": "0 7 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "12999377",
+      "workflow_name": "rs_l0_proc_ingest_bigquery"
+    },
+    {
+      "definition_path": "rs_l0_proc_ingest_sys.dig",
+      "enabled": true,
+      "schedule_id": "282377",
+      "schedule_type": "cron",
+      "schedule_value": "0 7 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "12999360",
+      "workflow_name": "rs_l0_proc_ingest_sys"
+    }
+  ]
+}

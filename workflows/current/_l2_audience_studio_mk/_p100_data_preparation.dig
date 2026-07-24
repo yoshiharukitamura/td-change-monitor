@@ -1,0 +1,112 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+_export:
+  td:
+    database: _l2_audience_studio_mk
+  google_sheets:
+    - custom_list_01
+    - custom_list_02
+    - custom_list_03
+    - custom_list_04
+    - custom_list_05
+
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+# _error:
+#   require>: __failure_alert
+#   project_name: functions
+#   session_time: ${moment(session_date).format()}
+#   rerun_on: all
+#   params:
+#     failure_session_id: ${session_id}
+#     ## default false. Set true only for usage
+#     notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### 対象テーブルの更新 ###
+
+# 統合マスタ
++ps_tbl__mstr_ids:
+  td>: p100_/ps_tbl__mstr_ids.sql
+  create_table: ps_tbl__mstr_ids
+
+# 顧客基本属性・顧客連絡先
++ps_tbl__attr_customer:
+  td>: p100_/ps_tbl__attr_customer.sql
+  create_table: ps_tbl__attr_customer
+
+# 累計_顧客行動
++ps_tbl__attr_order_aggregate:
+  td>: p100_/ps_tble__attr_order_aggregate.sql
+  create_table: ps_tbl__attr_order_aggregate
+
+# 初回_顧客行動
++ps_tbl__attr_order_first:
+  td>: p100_/ps_tbl__attr_order_first.sql
+  create_table: ps_tbl__attr_order_first
+
+# 最頻_顧客行動
++ps_tbl__attr_order_mode:
+  td>: p100_/ps_tbl__attr_order_mode.sql
+  create_table: ps_tbl__attr_order_mode
+
+# 直近_顧客行動
++ps_tbl__attr_order_recent:
+  td>: p100_/ps_tbl__attr_order_recent.sql
+  create_table: ps_tbl__attr_order_recent
+
+# 施策検証_コントロール群作成(4点比較用)
++ps_tbl__attr_control_group:
+  td>: p100_/ps_tbl__attr_control_group.sql
+  create_table: ps_tbl__attr_control_group
+
+# 予約履歴
++ps_tbl__bhvr_reservation:
+  td>: p100_/ps_tbl__bhvr_reservation.sql
+  create_table: ps_tbl__bhvr_reservation
+
+# 来店履歴
++ps_tbl__bhvr_order:
+  td>: p100_/ps_tbl__bhvr_order.sql
+  create_table: ps_tbl__bhvr_order
+
+# WEB_アクセスログ
++ps_tbl__bhvr_web_access:
+  td>: p100_/ps_tbl__bhvr_web_access.sql
+  create_table: ps_tbl__bhvr_web_access
+
+# APP_アクセスログ
++ps_tbl__bhvr_app_access:
+  td>: p100_/ps_tbl__bhvr_app_access.sql
+  create_table: ps_tbl__bhvr_app_access
+
+# 差込配信用
++ps_tbl__additional_info:
+  +create_tables:
+    td_ddl>:
+    empty_tables: ${google_sheets}
+  
+  +for_each_googlesheets:
+    for_each>:
+      sheet: ${google_sheets}
+    _do:
+      +load:
+        td_load>: p100_/load_google_sheets.yml
+        table: ${sheet}
+      +prep:
+        +create_columns:
+          td>: p100_/create_columns.sql
+          store_last_results: true
+        +custom_list_tables:
+          td>: p100_/custom_list_tables.sql
+          create_table: ps_tbl__attr_${sheet}
+          
+

@@ -1,0 +1,299 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  wf_name: ml_demand_forecast_auto
+  notify_slack: false
+  td:
+    database: l2_demand_forecast_auto
+
+_error:
+  +error_handling:
+    call>: common/function/wf_error_handling.dig
+  +error_message:
+    _export:
+      mail:
+        file: ./common/function/mail_error_body.txt
+        subject: '[ERROR] riraku:wf-ml_demand_forecast'
+    !include : common/function/error_report.yml
+
+# main process
++preprocessing:
+  +main:
+    py>: scripts.predict_auto_step1.main
+    # ▽ BassSettings＝${session_date} / 実行に失敗した場合、遡って実行日(毎週月曜日)を手動設定し再度Runする ※rerun実行後元に戻す。
+    # i_date: '2024/01/08'
+    i_date: ${session_date}
+    docker:
+      image: "digdag/digdag-python:3.9"
+    _env:
+      TD_API_KEY: ${secret:td.apikey}
+      ENDPOINT:  ${api_region}
+      DB: ${db}
+      PARAMETER_SEARCH_MODE: ${parameter_search_mode}
+      ClUSTERING_MODE: ${clustering_mode}
+      ML_SLACK_ACCESSTOKEN: ${secret:http.authorization}
+      ML_SLACK_ENDPOINT: ${ml_slack_endpoint}
+      ML_SLACK_CHANNEL:  ${ml_slack_channel}
+
+      L2_DEMAND_FORECAST_DB: ${l2_demand_forecast}
+      L1_POS_DB: ${l1_pos}
+      L0_POS_DB: ${l0_pos}
+      L0_CORE_DB: ${l0_core}
+      L1_CORE_DB: ${l1_core}
+      L1_DATAMART_DB: ${l1_datamart}
+      L0_CSV_UPLOAD_DB: ${l0_csv_upload}
+      PREP_TREATMENT_HTABLE_HOURLY_TABLE: ${prep_treatment_htable_hourly}
+      MST_SHOPS_TABLE: ${mst_shops}
+      MST_PREFECTURES_TABLE: ${mst_prefectures}
+      PROPERTY_TABLE: ${property}
+      PREP_TREATMENT_VTABLE_HOURLY_TABLE: ${prep_treatment_vtable_hourly}
+      HOLIDAY_CALENDAR_TABLE: ${holiday_calendar}
+      HOLIDAY_TABLE: ${holiday}
+
+      OUTPUT_DB: ${output_db}
+      OUTPUT_DB_FLAG: ${outout_db_flag}
+      BASE_TS_PV_PRED_ADJ_TABLE: ${base_ts_pv_prep_adj}
+      FORECAST_CLUSTERING_BASE_TABLE:  ${forecast_clustering_base}
+      FORECAST_CLUSTERING_BASE_DATASET_TABLE: ${forecast_clustering_base_dataset}
+      FORECAST_PARAMETER_SEARCH_TABLE: ${forecast_parameter_search}
+      FORECAST_CLUSTERING_RESULT_TABLE: ${forecast_clustering_result}
+      FORECAST_PREDICT_RESULT_BY_CLUSTER_TABLE: ${forecast_predict_result_by_cluster}
+      FORECAST_REBATE_COEFFICIENT_TABLE: ${forecast_rebate_coefficient}
+      CONFIG_RESULT_TABLE: ${config_result}
+      PREPROCESSED_SHOP_MST_TABLE: ${preprocessed_shop_mst}
+    
+  # クラスタ作成失敗時にSlackで通知
+  +failed_cluster_slack_alert:
+   if>: ${is_error}
+   _do:
+    http>: ${ml_slack_chat_postmessage}
+    method: POST
+    content_format: json
+    content:
+      channel: ${ml_slack_channel}
+      username: "Failure Alert"
+      icon_emoji: ':fireball:'
+      blocks:
+      - type: header
+        text:
+          type: plain_text
+          text: "failed_cluster!"
+      - type: section
+        fields:
+        - type: mrkdwn
+          text: |-
+            *Session Time*
+            ${session_local_time}
+  
+  # クラスタ作成失敗時にWF終了
+  +failed_cluster:
+   if>: ${is_error}
+   _do:
+    fail>: 'failed_cluster'
+
+# 予測モデルの作成
++predict_model:
+  +group:
+    _parallel: True
+    +cluster_0:
+      py>: scripts.predict_auto_step2.main
+      cluster_no: 0
+      docker:
+        image: "digdag/digdag-python:3.9"
+      _env:
+        TD_API_KEY: ${secret:td.apikey}
+        ENDPOINT:  ${api_region}
+        DB: ${db}
+        ML_SLACK_ACCESSTOKEN: ${secret:http.authorization}
+        ML_SLACK_ENDPOINT: ${ml_slack_endpoint}
+        ML_SLACK_CHANNEL:  ${ml_slack_channel}
+        
+        L2_DEMAND_FORECAST_DB: ${l2_demand_forecast}
+        L1_POS_DB: ${l1_pos}
+        L0_POS_DB: ${l0_pos}
+        L1_CORE_DB: ${l1_core}
+        L0_CORE_DB: ${l0_core}
+        L1_DATAMART_DB: ${l1_datamart}
+        L0_CSV_UPLOAD_DB: ${l0_csv_upload}
+        PREP_TREATMENT_HTABLE_HOURLY_TABLE: ${prep_treatment_htable_hourly}
+        MST_SHOPS_TABLE: ${mst_shops}
+        MST_PREFECTURES_TABLE: ${mst_prefectures}
+        PROPERTY_TABLE: ${property}
+        PREP_TREATMENT_VTABLE_HOURLY_TABLE: ${prep_treatment_vtable_hourly}
+        HOLIDAY_CALENDAR_TABLE: ${holiday_calendar}
+        HOLIDAY_TABLE: ${holiday}
+
+        OUTPUT_DB: ${output_db}
+        OUTPUT_DB_FLAG: ${outout_db_flag}
+        BASE_TS_PV_PRED_ADJ_TABLE: ${base_ts_pv_prep_adj}
+        FORECAST_CLUSTERING_BASE_TABLE:  ${forecast_clustering_base}
+        FORECAST_CLUSTERING_BASE_DATASET_TABLE: ${forecast_clustering_base_dataset}
+        FORECAST_PARAMETER_SEARCH_TABLE: ${forecast_parameter_search}
+        FORECAST_CLUSTERING_RESULT_TABLE: ${forecast_clustering_result}
+        FORECAST_PREDICT_RESULT_BY_CLUSTER_TABLE: ${forecast_predict_result_by_cluster}
+        FORECAST_REBATE_COEFFICIENT_TABLE: ${forecast_rebate_coefficient}
+        CONFIG_RESULT_TABLE: ${config_result}
+        PREPROCESSED_SHOP_MST_TABLE: ${preprocessed_shop_mst}
+          
+    +cluster_1:
+      py>: scripts.predict_auto_step2.main
+      cluster_no: 1
+      docker:
+        image: "digdag/digdag-python:3.9"
+      _env:
+        TD_API_KEY: ${secret:td.apikey}
+        ENDPOINT:  ${api_region}
+        DB: ${db}
+        ML_SLACK_ACCESSTOKEN: ${secret:http.authorization}
+        ML_SLACK_ENDPOINT: ${ml_slack_endpoint}
+        ML_SLACK_CHANNEL:  ${ml_slack_channel}
+        
+        L2_DEMAND_FORECAST_DB: ${l2_demand_forecast}
+        L1_POS_DB: ${l1_pos}
+        L0_POS_DB: ${l0_pos}
+        L1_CORE_DB: ${l1_core}
+        L0_CORE_DB: ${l0_core}
+        L1_DATAMART_DB: ${l1_datamart}
+        L0_CSV_UPLOAD_DB: ${l0_csv_upload}
+        PREP_TREATMENT_HTABLE_HOURLY_TABLE: ${prep_treatment_htable_hourly}
+        MST_SHOPS_TABLE: ${mst_shops}
+        MST_PREFECTURES_TABLE: ${mst_prefectures}
+        PROPERTY_TABLE: ${property}
+        PREP_TREATMENT_VTABLE_HOURLY_TABLE: ${prep_treatment_vtable_hourly}
+        HOLIDAY_CALENDAR_TABLE: ${holiday_calendar}
+        HOLIDAY_TABLE: ${holiday}
+
+        OUTPUT_DB: ${output_db}
+        OUTPUT_DB_FLAG: ${outout_db_flag}
+        BASE_TS_PV_PRED_ADJ_TABLE: ${base_ts_pv_prep_adj}
+        FORECAST_CLUSTERING_BASE_TABLE:  ${forecast_clustering_base}
+        FORECAST_CLUSTERING_BASE_DATASET_TABLE: ${forecast_clustering_base_dataset}
+        FORECAST_PARAMETER_SEARCH_TABLE: ${forecast_parameter_search}
+        FORECAST_CLUSTERING_RESULT_TABLE: ${forecast_clustering_result}
+        FORECAST_PREDICT_RESULT_BY_CLUSTER_TABLE: ${forecast_predict_result_by_cluster}
+        FORECAST_REBATE_COEFFICIENT_TABLE: ${forecast_rebate_coefficient}
+        CONFIG_RESULT_TABLE: ${config_result}
+        PREPROCESSED_SHOP_MST_TABLE: ${preprocessed_shop_mst}
+      
+    +cluster_2:
+      py>: scripts.predict_auto_step2.main
+      cluster_no: 2
+      docker:
+        image: "digdag/digdag-python:3.9"
+      _env:
+        TD_API_KEY: ${secret:td.apikey}
+        ENDPOINT:  ${api_region}
+        DB: ${db}
+        ML_SLACK_ACCESSTOKEN: ${secret:http.authorization}
+        ML_SLACK_ENDPOINT: ${ml_slack_endpoint}
+        ML_SLACK_CHANNEL:  ${ml_slack_channel}
+        
+        L2_DEMAND_FORECAST_DB: ${l2_demand_forecast}
+        L1_POS_DB: ${l1_pos}
+        L0_POS_DB: ${l0_pos}
+        L1_CORE_DB: ${l1_core}
+        L0_CORE_DB: ${l0_core}
+        L1_DATAMART_DB: ${l1_datamart}
+        L0_CSV_UPLOAD_DB: ${l0_csv_upload}
+        PREP_TREATMENT_HTABLE_HOURLY_TABLE: ${prep_treatment_htable_hourly}
+        MST_SHOPS_TABLE: ${mst_shops}
+        MST_PREFECTURES_TABLE: ${mst_prefectures}
+        PROPERTY_TABLE: ${property}
+        PREP_TREATMENT_VTABLE_HOURLY_TABLE: ${prep_treatment_vtable_hourly}
+        HOLIDAY_CALENDAR_TABLE: ${holiday_calendar}
+        HOLIDAY_TABLE: ${holiday}
+
+        OUTPUT_DB: ${output_db}
+        OUTPUT_DB_FLAG: ${outout_db_flag}
+        BASE_TS_PV_PRED_ADJ_TABLE: ${base_ts_pv_prep_adj}
+        FORECAST_CLUSTERING_BASE_TABLE:  ${forecast_clustering_base}
+        FORECAST_CLUSTERING_BASE_DATASET_TABLE: ${forecast_clustering_base_dataset}
+        FORECAST_PARAMETER_SEARCH_TABLE: ${forecast_parameter_search}
+        FORECAST_CLUSTERING_RESULT_TABLE: ${forecast_clustering_result}
+        FORECAST_PREDICT_RESULT_BY_CLUSTER_TABLE: ${forecast_predict_result_by_cluster}
+        FORECAST_REBATE_COEFFICIENT_TABLE: ${forecast_rebate_coefficient}
+        CONFIG_RESULT_TABLE: ${config_result}
+        PREPROCESSED_SHOP_MST_TABLE: ${preprocessed_shop_mst}
+
+    +cluster_3:
+      py>: scripts.predict_auto_step2.main
+      cluster_no: 3
+      docker:
+        image: "digdag/digdag-python:3.9"
+      _env:
+        TD_API_KEY: ${secret:td.apikey}
+        ENDPOINT:  ${api_region}
+        DB: ${db}
+        ML_SLACK_ACCESSTOKEN: ${secret:http.authorization}
+        ML_SLACK_ENDPOINT: ${ml_slack_endpoint}
+        ML_SLACK_CHANNEL:  ${ml_slack_channel}      
+
+        
+        L2_DEMAND_FORECAST_DB: ${l2_demand_forecast}
+        L1_POS_DB: ${l1_pos}
+        L0_POS_DB: ${l0_pos}
+        L0_CORE_DB: ${l0_core}
+        L1_CORE_DB: ${l1_core}
+        L1_DATAMART_DB: ${l1_datamart}
+        L0_CSV_UPLOAD_DB: ${l0_csv_upload}
+        PREP_TREATMENT_HTABLE_HOURLY_TABLE: ${prep_treatment_htable_hourly}
+        MST_SHOPS_TABLE: ${mst_shops}
+        MST_PREFECTURES_TABLE: ${mst_prefectures}
+        PROPERTY_TABLE: ${property}
+        PREP_TREATMENT_VTABLE_HOURLY_TABLE: ${prep_treatment_vtable_hourly}
+        HOLIDAY_CALENDAR_TABLE: ${holiday_calendar}
+        HOLIDAY_TABLE: ${holiday}
+
+        OUTPUT_DB: ${output_db}
+        OUTPUT_DB_FLAG: ${outout_db_flag}
+        BASE_TS_PV_PRED_ADJ_TABLE: ${base_ts_pv_prep_adj}
+        FORECAST_CLUSTERING_BASE_TABLE:  ${forecast_clustering_base}
+        FORECAST_CLUSTERING_BASE_DATASET_TABLE: ${forecast_clustering_base_dataset}
+        FORECAST_PARAMETER_SEARCH_TABLE: ${forecast_parameter_search}
+        FORECAST_CLUSTERING_RESULT_TABLE: ${forecast_clustering_result}
+        FORECAST_PREDICT_RESULT_BY_CLUSTER_TABLE: ${forecast_predict_result_by_cluster}
+        FORECAST_REBATE_COEFFICIENT_TABLE: ${forecast_rebate_coefficient}
+        CONFIG_RESULT_TABLE: ${config_result}
+        PREPROCESSED_SHOP_MST_TABLE: ${preprocessed_shop_mst}
+
+    +cluster_4:
+      py>: scripts.predict_auto_step2.main
+      cluster_no: 4
+      docker:
+        image: "digdag/digdag-python:3.9"
+      _env:
+        TD_API_KEY: ${secret:td.apikey}
+        ENDPOINT:  ${api_region}
+        DB: ${db}
+        ML_SLACK_ACCESSTOKEN: ${secret:http.authorization}
+        ML_SLACK_ENDPOINT: ${ml_slack_endpoint}
+        ML_SLACK_CHANNEL:  ${ml_slack_channel}      
+        
+        L2_DEMAND_FORECAST_DB: ${l2_demand_forecast}
+        L1_POS_DB: ${l1_pos}
+        L0_POS_DB: ${l0_pos}
+        L1_CORE_DB: ${l1_core}
+        L0_CORE_DB: ${l0_core}
+        L1_DATAMART_DB: ${l1_datamart}
+        L0_CSV_UPLOAD_DB: ${l0_csv_upload}
+        PREP_TREATMENT_HTABLE_HOURLY_TABLE: ${prep_treatment_htable_hourly}
+        MST_SHOPS_TABLE: ${mst_shops}
+        MST_PREFECTURES_TABLE: ${mst_prefectures}
+        PROPERTY_TABLE: ${property}
+        PREP_TREATMENT_VTABLE_HOURLY_TABLE: ${prep_treatment_vtable_hourly}
+        HOLIDAY_CALENDAR_TABLE: ${holiday_calendar}
+        HOLIDAY_TABLE: ${holiday}
+
+        OUTPUT_DB: ${output_db}
+        OUTPUT_DB_FLAG: ${outout_db_flag}
+        BASE_TS_PV_PRED_ADJ_TABLE: ${base_ts_pv_prep_adj}
+        FORECAST_CLUSTERING_BASE_TABLE:  ${forecast_clustering_base}
+        FORECAST_CLUSTERING_BASE_DATASET_TABLE: ${forecast_clustering_base_dataset}
+        FORECAST_PARAMETER_SEARCH_TABLE: ${forecast_parameter_search}
+        FORECAST_CLUSTERING_RESULT_TABLE: ${forecast_clustering_result}
+        FORECAST_PREDICT_RESULT_BY_CLUSTER_TABLE: ${forecast_predict_result_by_cluster}
+        FORECAST_REBATE_COEFFICIENT_TABLE: ${forecast_rebate_coefficient}
+        CONFIG_RESULT_TABLE: ${config_result}
+        PREPROCESSED_SHOP_MST_TABLE: ${preprocessed_shop_mst}

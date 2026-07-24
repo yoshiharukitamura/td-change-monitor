@@ -1,0 +1,25 @@
+timezone: Asia/Tokyo
+
+_export:
+  !include : proc_010/sys_production/config/tables_list_2.dig
+  td:
+    database: l2_tp_suggest
+
++set_tables_for_inital:
+  for_each>:
+    target_table: ${tables_list_sys_production}
+  _parallel: true
+  _do:
+    +create_tables:
+      td_ddl>:
+      create_tables:
+        - ${target_table.td_tbl}
+    +delete:
+      td>:
+      query: |
+        delete from ${target_table.td_tbl} where time = ${moment(session_date).unix()}
+    +data_load:
+      +load_from_quest:
+        td_load>: proc_010/sys_production/config/load_from_quest.yml
+        database: ${td.database}
+        table: ${target_table.td_tbl}

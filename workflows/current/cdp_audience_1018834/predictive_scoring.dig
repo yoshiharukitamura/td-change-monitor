@@ -1,0 +1,56 @@
++preprocess:
+  td>: predictive_scoring/preprocess.sql
+  create_table: cdp_tmp_predictive_score_${predictive_segment_id}_samples
+  _retry: 5
+
++vectorize:
+  +with_quantitative_features:
+    if>: ${JSON.parse(http.last_content)["predictive_segments"][predictive_segment_id]["rule"]["quantitative_as_column_names"].length > 0}
+    _do:
+      td>: predictive_scoring/vectorize.sql
+      create_table: cdp_tmp_predictive_score_${predictive_segment_id}_vectors
+      engine: hive
+      _retry: 5
+
+  +without_quantitative_features:
+    if>: ${JSON.parse(http.last_content)["predictive_segments"][predictive_segment_id]["rule"]["quantitative_as_column_names"].length == 0}
+    _do:
+      td>: predictive_scoring/vectorize_without_quantitative.sql
+      create_table: cdp_tmp_predictive_score_${predictive_segment_id}_vectors
+      engine: hive
+      _retry: 5
+
+  +rename:
+    td_ddl>:
+    rename_tables:
+    - from: cdp_tmp_predictive_score_${predictive_segment_id}_vectors
+      to: cdp_tmp_predictive_score_${predictive_segment_id}_samples
+    _retry: 5
+
++recompute_oversample_rate:
+  td>: predictive_scoring/oversample_rate.sql
+  store_last_results: true
+  _retry: 5
+
++predict:
+  td>: predictive_scoring/predict.sql
+  create_table: cdp_tmp_predictive_score_${predictive_segment_id}
+  engine: hive
+  _retry: 5
+
++add_train_label:
+  td>: predictive_scoring/add_train_label.sql
+  create_table: cdp_tmp_predictive_score_${predictive_segment_id}_labeled
+  _retry: 5
+
++rename:
+  td_ddl>:
+  rename_tables:
+  - from: cdp_tmp_predictive_score_${predictive_segment_id}_labeled
+    to: cdp_tmp_predictive_score_${predictive_segment_id}
+  _retry: 5
+
++clean:
+  td_ddl>:
+  drop_tables: ['cdp_tmp_predictive_score_${predictive_segment_id}_samples']
+  _retry: 5

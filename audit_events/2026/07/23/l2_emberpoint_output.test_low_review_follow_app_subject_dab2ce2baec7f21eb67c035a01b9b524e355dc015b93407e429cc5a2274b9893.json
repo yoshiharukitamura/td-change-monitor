@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "dab2ce2baec7f21eb67c035a01b9b524e355dc015b93407e429cc5a2274b9893",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "l2_emberpoint_output",
+  "events": [
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_delete",
+      "id": "b35fe6cf-b596-4b75-95e6-3cc06fc29804",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297428758",
+      "resource_id": "297428758",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-18T20:04:00+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_create",
+      "id": "357c4b5c-bece-4224-ab52-1870cfc3e813",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297637369",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-18T20:04:01+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_delete",
+      "id": "1a1f8f72-8cf3-43ab-ae41-89e3316fee08",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297637369",
+      "resource_id": "297637369",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-19T20:04:01+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_create",
+      "id": "88632b77-d15b-4015-8f01-ecca1c7bfd2a",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297858501",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-19T20:04:02+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_delete",
+      "id": "fdd356df-c13c-472f-a113-a43369a20ecc",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297858501",
+      "resource_id": "297858501",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-20T20:04:06+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_create",
+      "id": "39c06f3a-cae6-4019-9198-365ae6c6531a",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298073574",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-20T20:04:07+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_delete",
+      "id": "9592403d-a71f-4af2-afb2-eb1f86eab5b7",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298073574",
+      "resource_id": "298073574",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-21T20:04:02+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_create",
+      "id": "8fc34ba9-94c2-42e0-87c3-98fbd0c335f1",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298290298",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-21T20:04:04+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_delete",
+      "id": "c9a4b912-8167-4cfc-a191-e8dd34c9c4e8",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298290298",
+      "resource_id": "298290298",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-22T20:04:02+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_create",
+      "id": "cfe44278-d2eb-4e59-8957-366503bfc290",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298512380",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-22T20:04:02+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_delete",
+      "id": "ef695c71-793e-4b4a-90cf-a87d16f6a043",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298512380",
+      "resource_id": "298512380",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-23T20:04:09+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_emberpoint_output",
+      "event_name": "table_create",
+      "id": "ce1fc780-2ef9-45a4-9f06-84a7a1abcdf4",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298731829",
+      "table": "test_low_review_follow_app_subject",
+      "time": "2026-07-23T20:04:10+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "test_low_review_follow_app_subject"
+}

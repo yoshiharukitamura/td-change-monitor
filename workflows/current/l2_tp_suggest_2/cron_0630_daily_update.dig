@@ -1,0 +1,14 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 30 6 * * *
+
++time_slot_detail:
+  require>: ms_l0_proc_ingest_core_ss_5
+  project_name: mysql_ingest_preprocess
+  session_time: ${moment(session_time).format()}
+  rerun_on: all
+
++l2_tp_suggest_tel:
+  require>: l2_tp_suggest_tel
+  session_time: ${moment(session_time).format()}
+  rerun_on: all

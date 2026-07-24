@@ -1,0 +1,75 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Schedule Setting ###
+schedule:
+  cron>: 0 2 * * *
+
+### Manage Workflows ###
+_export:
+
+# l0
++require_l0_wf:
+  +_p100__pos:
+    require>: _p100__pos
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+    params:
+      initialize: 'false'
+
+  +_p110__core:
+    require>: _p110__core
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+    params:
+      initialize: 'false'
+
+  +_p120__hp:
+    require>: _p120__hp
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+    params:
+      initialize: 'false'
+  
+  +_p130__reservation:
+    require>: _p130__reservation
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+    params:
+      initialize: 'false'
+  
+  +_p140__point:
+    require>: _p140__point
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+    params:
+      initialize: 'false'
+
+# l1
++require_l1_wf:
+  +_p200__pos:
+    require>: _p200__pos
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+
+  +_p210__core:
+    require>: _p210__core
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+
+  +_p220__hp:
+    require>: _p220__hp
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+  
+  +_p230__reservation:
+    require>: _p230__reservation
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+  
+  +_p240__point:
+    require>: _p240__point
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+    params:
+      initialize: 'false'

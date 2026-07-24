@@ -1,0 +1,37 @@
++write_session_error_log:
+  td>:
+  query: |
+    select
+      '${project_id}' as project_id
+      , '${wf_name}' as wf_name
+      , '${attempt_id}' as attempt_id
+      , '${moment(session_time).format()}' as session_time
+      , ${moment(new Date()).unix()} as time
+      , 0 as is_success
+      , 1 as is_done
+      , 0 as is_cancel
+  insert_into: z_trailer_wf_session
+
++slack_alert:
+  if>: ${notify_slack}
+  _do:
+    http>: <REDACTED_SECRET>
+    method: POST
+    content:
+      username: "Failure Alert"
+      icon_emoji: ':fireball:'
+      channel: "${slack_ch}"
+      fields:
+      - title: workflow_name
+        value: "${wf_name}"
+        short: true
+      - title: session_time
+        value: "${session_local_time}"
+        short: true
+      - title: Console Access
+        value: "https://console.${api_region}/app/workflows/sessions/${session_id}"
+        short: false
+      - title: Command for Rerun
+        value: "`td wf retry ${attempt_id} --latest-revision --resume`"
+        short: false
+    content_format: json

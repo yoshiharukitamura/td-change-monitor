@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23913816",
+    "name": "l2_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": null,
+    "connector_type": null
+  },
+  "query_id": "2865823",
+  "query_name": "検証_個店需要予測_枠のばらつき",
+  "query_string": "drop table if exists l2_integration_datamart.analytics_demand_forecast_variance;\ncreate table l2_integration_datamart.analytics_demand_forecast_variance as \n\nwith agg_value as (\n  select\n    model\n    , property_id\n    , business_date || ' ' || lpad(cast(business_hour as varchar), 2, '0') || ':00:00' as time_slot\n    /* 不足　*/\n    , sum(if((entry_slot < (td1 + td2 + td3)) and entry_slot > 0, (forecast_value + lossopps_value))) as short__forecast_value\n    , sum(if((entry_slot < (td1 + td2 + td3)) and entry_slot > 0, treatment_minutes)) as short__treatment_value\n    /* 余剰 */\n    , sum(if(entry_slot > (td1 + td2 + td3), (forecast_value + lossopps_value))) as surplus__forecast_value\n    , sum(if(entry_slot > (td1 + td2 + td3), treatment_minutes)) as surplus__treatment_value\n    /* 適正 */\n    , sum(if((entry_slot = (td1 + td2 + td3)) and entry_slot > 0, (forecast_value + lossopps_value))) as appro__forecast_value\n    , sum(if((entry_slot = (td1 + td2 + td3)) and entry_slot > 0, treatment_minutes)) as appro__treatment_value\n  from\n    l2_integration_datamart.analytics_demand_forecast\n  where\n    business_week >= '2026-02-02'\n    and business_week <= '2026-03-09'\n  group by\n    1,2,3\n)\n\n\nselect\n  model\n  , property_id\n  , time_slot\n  /* 不足　*/\n  , short__forecast_value\n  , short__treatment_value\n  , short__treatment_value - short__forecast_value as short__vs_forecast\n  /* 余剰 */\n  , surplus__forecast_value\n  , surplus__treatment_value\n  , surplus__treatment_value - surplus__forecast_value as surplus__vs_forecast\n  /* 適正 */\n  , appro__forecast_value\n  , appro__treatment_value\n  , appro__treatment_value - appro__forecast_value as appro__vs_forecast\nfrom\n  agg_value",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

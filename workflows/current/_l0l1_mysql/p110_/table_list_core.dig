@@ -1,0 +1,209 @@
+#### Data Source Variables ####
+# 常に全量を取り込む場合はincremental_byはnull、差分の場合はキーとなるカラム名を設定
+
+table_list:
+### 利用中 ###
+  - {name: property, incremental_by: updated_datetime , pk: property_id}
+  - {name: property_additional_info, incremental_by: updated_datetime , pk: shop_additional_info_id}
+  - {name: therapist_daily_report, incremental_by: updated_datetime , pk: therapist_daily_report_id}
+  - {name: daily_time_slot, incremental_by: updated_datetime , pk: daily_time_slot_id}
+  - {name: therapist, incremental_by: updated_datetime , pk: therapist_id}
+  - {name: therapist_contract, incremental_by: updated_datetime , pk: therapist_contract_id}
+  - {name: therapist_skill, incremental_by: updated_datetime , pk: therapist_skill_id}
+  - {name: therapist_contact, incremental_by: updated_datetime , pk: therapist_contact_id}
+  - {name: therapist_working_info, incremental_by: updated_datetime , pk: therapist_working_info_id}
+  - {name: holiday, incremental_by: updated_datetime , pk: holiday_id}
+  - {name: applicant, incremental_by: updated_datetime , pk: applicant_id}
+  - {name: inquiry_summary, incremental_by: updated_datetime , pk: inquiry_summary_id}
+  - {name: therapist_monthly_reward_rank, incremental_by: updated_datetime , pk: therapist_monthly_reward_rank_id}
+  - {name: therapist_reward_rank_change_history, incremental_by: updated_datetime , pk: therapist_reward_rank_change_history_id}
+  - {name: time_slot_summary, incremental_by: updated_datetime , pk: time_slot_summary_id}
+  - {name: time_slot_detail, incremental_by: updated_datetime , pk: time_slot_detail_id}
+  - {name: suggest_entry_notification, incremental_by: start_public_date  , pk: suggest_entry_notification_id}
+  - {name: suggest_entry_notification_history, incremental_by: , pk: }
+  - {name: suggest_time_slot_detail, incremental_by: date, pk: suggest_time_slot_detail_id}
+  - {name: suggest_time_slot_detail_therapist, incremental_by: date, pk: suggest_time_slot_detail_therapist_id}
+  - {name: therapist_action_history, incremental_by: date, pk: therapist_action_history_id}
+  - {name: code_free_entry, incremental_by: updated_datetime , pk: code_free_entry_id}
+
+### 利用なし ###
+ # - {name: code_category, incremental_by: updated_datetime , pk: }
+ # - {name: code, iincremental_by: updated_datetime , pk: sys_code_id}
+ # - {name: property_comment, incremental_by: updated_datetime , pk: property_comment_id}
+ # - {name: property_interior, incremental_by: updated_datetime , pk: property_interior_id}
+ # - {name: interior_add_info, incremental_by: updated_datetime , pk: interior_add_info_id}
+ # - {name: contract, incremental_by: updated_datetime , pk: contract_id}
+ # - {name: contract_add_info, incremental_by: updated_datetime , pk: contract_add_info_id}
+ # - {name: billboard, incremental_by: updated_datetime , pk: billboard_id}
+ # - {name: billboard_add_info, incremental_by: updated_datetime , pk: billboard_add_info_id}
+ # - {name: advertise, incremental_by: updated_datetime , pk: advertise_id}
+ # - {name: recruiting, incremental_by: updated_datetime , pk: recruiting_id}
+ # - {name: neighborhood_shop, incremental_by: updated_datetime , pk: neighborhood_property_id}
+ # - {name: ideal_personnel, incremental_by: updated_datetime , pk: ideal_personnel_id}
+ # - {name: banished_therapist, incremental_by: updated_datetime , pk: banished_therapist_id}
+ # - {name: use_training_institute, incremental_by: updated_datetime , pk: use_training_institute_id}
+ # - {name: shop_deposit_cycle, incremental_by: updated_datetime , pk: shop_deposit_cycle_id}
+ # - {name: property_peak_time_target_rank, incremental_by: updated_datetime , pk: property_peak_time_target_rank_id}
+ # - {name: fb_deposit, incremental_by: updated_datetime , pk: fb_deposit_id}
+ # - {name: pos_sales, incremental_by: updated_datetime , pk: pos_sales_id}
+ # - {name: pos_payment, incremental_by: updated_datetime , pk: pos_payment_id}
+ # - {name: pos_sales_confirm, incremental_by: updated_datetime , pk: pos_sales_confirm_id}
+ # - {name: shop_business_basic_day, incremental_by: updated_datetime , pk: shop_business_basic_day_id}
+ # - {name: therapist_operation, incremental_by: updated_datetime , pk: therapist_operation_id} 
+ # - {name: offering_summary, incremental_by: updated_datetime , pk: offering_summary_id}
+ # - {name: application_summary, incremental_by: updated_datetime , pk: application_summary_id}
+ # - {name: application_detail, incremental_by: updated_datetime , pk: application_detail_id}
+ # - {name: basic_daily_time_slot, incremental_by: updated_datetime , pk: basic_daily_time_slot_id}
+ # - {name: pegged_order, incremental_by: updated_datetime , pk: pegged_order_id}
+ # - {name: pegged_daily_change_request, incremental_by: updated_datetime , pk: pegged_daily_change_request_id}
+ # - {name: pegged_daily_change_detail, incremental_by: updated_datetime , pk: pegged_daily_change_detail_id}
+ # - {name: urgent_change_apply, incremental_by: updated_datetime , pk: urgent_change_apply_id}
+ # - {name: based_time_slot_summary, incremental_by: updated_datetime , pk: based_time_slot_summary_id}
+ # - {name: based_time_slot, incremental_by: updated_datetime , pk: based_time_slot_id}
+ # - {name: based_time_slot_change_request, incremental_by: updated_datetime , pk: based_time_slot_change_req_id}
+ # - {name: based_time_slot_change_request_detail, incremental_by: updated_datetime , pk: based_time_slot_change_request_detail_id}
+ # - {name: fixed_daily_time_slot, incremental_by: updated_datetime , pk: fixed_daily_time_slot_id}
+ # - {name: reward_adjustment_apply, incremental_by: updated_datetime , pk: reward_adjustment_apply_id}
+ # - {name: monthly_reward_summary, incremental_by: updated_datetime , pk: monthly_reward_summary_id}
+ # - {name: monthly_reward, incremental_by: updated_datetime , pk: monthly_reward_id}
+ # - {name: settled_monthly_reward, incremental_by: updated_datetime , pk: settled_monthly_reward_id}
+ # - {name: temporary_reward, incremental_by: updated_datetime , pk: temporary_reward_id}
+ # - {name: therapist_daily_report_reward, incremental_by: updated_datetime , pk: therapist_daily_report_reward_id}
+ # - {name: therapist_operation_reward, incremental_by: updated_datetime , pk: therapist_operation_reward_id}
+ # - {name: cost, incremental_by: updated_datetime , pk: cost_id}
+ # - {name: charge_rate, incremental_by: updated_datetime , pk: charge_rate_id}
+ # - {name: pre_reward_adjustment, incremental_by: updated_datetime , pk: pre_reward_adjustment_id}
+ # - {name: change_request_adjustment, incremental_by: updated_datetime , pk: change_request_adjustment_id}
+ # - {name: reward_change_request, incremental_by: updated_datetime , pk: reward_change_request_id}
+ # - {name: accounting_deadline, incremental_by: updated_datetime , pk: accounting_deadline_id}
+ # - {name: monthly_reward_contact, incremental_by: updated_datetime , pk: monthly_reward_contact_id}
+ # - {name: therapist_additional_info, incremental_by: updated_datetime , pk: therapist_additional_info_id}
+ # - {name: therapist_reward, incremental_by: updated_datetime , pk: therapist_reward_id}
+ # - {name: therapist_qualification, incremental_by: updated_datetime , pk: therapist_qualification_id}
+ # - {name: therapist_emergency_contact, incremental_by: updated_datetime , pk: therapist_emergency_contact_id}
+ # - {name: therapist_account, incremental_by: updated_datetime , pk: therapist_account_id}
+ # - {name: therapist_background, incremental_by: updated_datetime , pk: therapist_background_id}
+ # - {name: therapist_change_history, incremental_by: updated_datetime , pk: therapist_change_history_id}
+ # - {name: therapist_appoint_fee, incremental_by: updated_datetime , pk: therapist_appoint_fee_id}
+ # - {name: therapist_hope_area, incremental_by: updated_datetime , pk: therapist_hope_area_id}
+ # - {name: sys_code_category, incremental_by: updated_datetime , pk: sys_code_category_id}
+ # - {name: sys_code, incremental_by: updated_datetime , pk: sys_code_id}
+ # - {name: bank, incremental_by: updated_datetime , pk: bank_id}
+ # - {name: staff, incremental_by: updated_datetime , pk: }
+ # - {name: staff_roll, incremental_by: updated_datetime , pk: }
+ # - {name: roll, incremental_by: updated_datetime , pk: }
+ # - {name: staff_permission, incremental_by: updated_datetime , pk: }
+ # - {name: permission, incremental_by: updated_datetime , pk: }
+ # - {name: client, incremental_by: updated_datetime , pk: client_id}
+ # - {name: property_change_history, incremental_by: updated_datetime , pk: property_change_history_id}
+ # - {name: contract_change_history, incremental_by: updated_datetime , pk: contract_change_history_id}
+ # - {name: tax, incremental_by: updated_datetime , pk: tax_id}
+ # - {name: order_month, incremental_by: updated_datetime , pk: order_month_id}
+ # - {name: kpi_therapist, incremental_by: updated_datetime , pk: kpi_therapist_id}
+ # - {name: kpi_property,incremental_by: updated_datetime , pk: kpi_property_id}
+ # - {name: kpi_reward, incremental_by: updated_datetime , pk: kpi_reward_id}
+ # - {name: kpi_based_time_slot, incremental_by: updated_datetime , pk: kpi_based_time_slot_id}
+ # - {name: kpi_training_therapist, incremental_by: updated_datetime , pk: kpi_training_therapist_id}
+ # - {name: area, incremental_by: updated_datetime , pk: }
+ # - {name: mail_send, incremental_by: updated_datetime , pk: mail_send_id}
+ # - {name: preset_item, incremental_by: updated_datetime , pk: preset_item_id}
+ # - {name: preset, incremental_by: updated_datetime , pk: preset_id}
+ # - {name: preset_pulldown, incremental_by: updated_datetime , pk: preset_pulldown_id}
+ # - {name: journal_master, incremental_by: updated_datetime , pk: journal_master_id}
+ # - {name: uploadfile, incremental_by: updated_datetime , pk: uploadfile_id}
+ # - {name: shop_no_issuing, incremental_by: updated_datetime , pk: shop_no_issuing_id}
+ # - {name: get_number, incremental_by: updated_datetime , pk: get_number_id}
+ # - {name: inquiry, incremental_by: updated_datetime , pk: inquiry_id}
+ # - {name: contract_update_training_institute, incremental_by: updated_datetime , pk: contract_update_training_institute_id}
+ # - {name: attendance, incremental_by: updated_datetime , pk: attendance_id}
+ # - {name: shop_cope, incremental_by: updated_datetime , pk: shop_cope_id}
+ # - {name: shop_cope_repair_trader_add_info, incremental_by: updated_datetime , pk: shop_cope_repair_trader_add_info_id}
+ # - {name: shop_cope_file_add_info, incremental_by: updated_datetime , pk: shop_cope_file_add_info_id}
+ # - {name: vote_summary, incremental_by: updated_datetime , pk: vote_id}
+ # - {name: vote_option, incremental_by: updated_datetime , pk: vote_detail_id}
+ # - {name: vote_detail, incremental_by: updated_datetime , pk: }
+ # - {name: certificate_summary, incremental_by: updated_datetime , pk: certificate_summary_id}
+ # - {name: certificate_detail, incremental_by: updated_datetime , pk: certificate_detail_id}
+ # - {name: applicant_qualification, incremental_by: updated_datetime , pk: applicant_qualification_id}
+ # - {name: applicant_background, incremental_by: updated_datetime , pk: applicant_background_id}
+ # - {name: applicant_emergency_contact, incremental_by: updated_datetime , pk: applicant_emergency_contact_id}
+ # - {name: applicant_change_history, incremental_by: updated_datetime , pk: applicant_change_history_id}
+ # - {name: call_history, incremental_by: updated_datetime , pk: call_history_id}
+ # - {name: interview_black_list, incremental_by: updated_datetime , pk: interview_black_list_id}
+ # - {name: interview_reservation_config, incremental_by: updated_datetime , pk: interview_reservation_config_id}
+ # - {name: interview_reservation_timezone, incremental_by: updated_datetime , pk: interview_reservation_timezone_id}
+ # - {name: interview_reservation, incremental_by: updated_datetime , pk: interview_reservation_id}
+ # - {name: training_timezone_config, incremental_by: updated_datetime , pk: training_timezone_config_id}
+ # - {name: therapist_training, incremental_by: updated_datetime , pk: therapist_training_id}
+ # - {name: training_actual_results, incremental_by: updated_datetime , pk: training_actual_results_id}
+ # - {name: garoon_approval, incremental_by: updated_datetime , pk: approval_id}
+ # - {name: shortage_nop_forecast, incremental_by: updated_datetime , pk: shortage_nop_forecast_id}
+ # - {name: shortage_deficiency, incremental_by: updated_datetime , pk: shortage_deficiency_id}
+ # - {name: introduction_reward_management, incremental_by: updated_datetime , pk: introduction_reward_management_id}
+ # - {name: inquiry_detail, incremental_by: updated_datetime , pk: inquiry_detail_id}
+ # - {name: sms_send, incremental_by: updated_datetime , pk: sms_send_id}
+ # - {name: garoon_approval_control, incremental_by: updated_datetime , pk: approval_type_id}
+ # - {name: therapist_information_change_request, incremental_by: updated_datetime , pk: therapist_information_change_request_id}
+ # - {name: therapist_information_change_request_qualification, incremental_by: updated_datetime , pk: therapist_information_change_request_qualification_id}
+ # - {name: therapist_information_change_request_confirmation_proof, incremental_by: updated_datetime , pk: therapist_information_change_request_confirmation_proof_id}
+ # - {name: code_category_free_entry, incremental_by: updated_datetime , pk: code_category_free_entry_id}
+ # - {name: kpi_inquiry, incremental_by: updated_datetime , pk: kpi_inquiry_id}
+ # - {name: garoon_approval_reward_control, incremental_by: updated_datetime , pk: approval_id}
+ # - {name: garoon_approval_therapistedit_control, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: operation_rate, incremental_by: updated_datetime , pk: therapist_operation_rate_id}
+ # - {name: mail_template, incremental_by: updated_datetime , pk: mail_template_id}
+ # - {name: mail_send_management, incremental_by: updated_datetime , pk: mail_send_management_id}
+ # - {name: read_management, incremental_by: updated_datetime , pk: read_management_id}
+ # - {name: therapist_contract_renewal_datetime, incremental_by: updated_datetime , pk: therapist_contract_renewal_datetime_id}
+ # - {name: therapist_monthly_status, incremental_by: updated_datetime , pk: therapist_monthly_status_id}
+ # - {name: therapist_monthly_operation_result, incremental_by: updated_datetime , pk: therapist_monthly_operation_result_id}
+ # - {name: short_term_reward, incremental_by: updated_datetime , pk: short_term_reward_id}
+ # - {name: calculated_therapist_monthly_reward_rank, incremental_by: updated_datetime , pk: calculated_therapist_monthly_reward_rank_id}
+ # - {name: therapist_contract_history, incremental_by: updated_datetime , pk: therapist_contract_history_id}
+ # - {name: therapist_reward_rank_summary, incremental_by: updated_datetime , pk: therapist_reward_rank_summary_id}
+ # - {name: interview_reservation_history, incremental_by: updated_datetime , pk: interview_history_id}
+ # - {name: settled_based_time_slot_summary, incremental_by: updated_datetime , pk: settled_based_time_slot_summary_id}
+ # - {name: settled_based_time_slot, incremental_by: updated_datetime , pk: settled_based_time_slot_id}
+ # - {name: therapist_contracted_info, incremental_by: updated_datetime , pk: therapist_contracted_info_id}
+ # - {name: institute_under_training, incremental_by: updated_datetime , pk: institute_under_training_id}
+ # - {name: skill_check_history, incremental_by: updated_datetime , pk: skill_check_history_id}
+ # - {name: mail_send_failed, incremental_by: updated_datetime , pk: mail_send_failed_id}
+ # - {name: training_timezone_summary, incremental_by: updated_datetime , pk: training_timezone_summary_id}
+ # - {name: education_area, incremental_by: updated_datetime , pk: education_area_id}
+ # - {name: trainer_table, incremental_by: updated_datetime , pk: trainer_table_id}
+ # - {name: html_mail_send, incremental_by: updated_datetime , pk: html_mail_send_id}
+ # - {name: recommend_display, incremental_by: updated_datetime , pk: recommend_display_id}
+ # - {name: step_mail_control, incremental_by: updated_datetime , pk: step_mail_control_id}
+ # - {name: therapist_browsing_history, incremental_by: updated_datetime , pk: therapist_browsing_history_id}
+ # - {name: cms_content_read_management, incremental_by: updated_datetime , pk: cms_content_read_management_id}
+ # - {name: therapist_weekly_operation_result, incremental_by: updated_datetime , pk: therapist_weekly_operation_result_id}
+ # - {name: product_summary, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_variation_summary, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_category_link, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_file_link, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_unit_price_summary, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_unit_price, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: quantity_discount, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: cart, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: cart_name_card_info, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_order_summary, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_order_shipping_detail, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_order_detail, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_order_name_card_info, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_order_quantity_discount_detail, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_order_status_change_history, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: therapist_point_grant_history, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: therapist_point_grant_therapist, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: therapist_point_order, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: therapist_point_summary, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: therapist_point_passbook, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: product_category, incremental_by: updated_datetime , pk: } #doesn't exists 20250730
+ # - {name: kpi_therapist_daily_status, incremental_by: updated_datetime , pk: kpi_therapist_daily_status_id}
+ # - {name: peak_time_shop_summary, incremental_by: updated_datetime , pk: peak_time_shop_summary_id}
+ # - {name: peak_time_shop_detail, incremental_by: updated_datetime , pk: peak_time_shop_detail_id}
+ # - {name: consent_form_file_summary, incremental_by: updated_datetime , pk: consent_form_file_summary_id}
+ # - {name: consent_form_specific_therapist, incremental_by: updated_datetime , pk: consent_form_specific_therapist_id}
+ # - {name: consent_form_agreement_status, incremental_by: updated_datetime , pk: consent_form_agreement_status_id}
+ # - {name: shop_specific_cost, incremental_by: updated_datetime , pk: }
+ # - {name: cancel_count_manage, incremental_by: updated_datetime , pk: cancel_count_manage_id}

@@ -1,0 +1,36 @@
+{
+  "project_id": "1346232",
+  "project_name": "_integration_datamart",
+  "schedules": [
+    {
+      "definition_path": "_cron_0700__monday_update.dig",
+      "enabled": true,
+      "schedule_id": "261426",
+      "schedule_type": "cron",
+      "schedule_value": "0 7 * * 1",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15949212",
+      "workflow_name": "_cron_0700__monday_update"
+    },
+    {
+      "definition_path": "_cron_1010__monday_update.dig",
+      "enabled": true,
+      "schedule_id": "381148",
+      "schedule_type": "cron",
+      "schedule_value": "10 10 * * 1",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15949218",
+      "workflow_name": "_cron_1010__monday_update"
+    },
+    {
+      "definition_path": "_cron_0600__daily_update.dig",
+      "enabled": true,
+      "schedule_id": "418913",
+      "schedule_type": "cron",
+      "schedule_value": "0 6 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15949220",
+      "workflow_name": "_cron_0600__daily_update"
+    }
+  ]
+}

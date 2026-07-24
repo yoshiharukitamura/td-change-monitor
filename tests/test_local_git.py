@@ -127,6 +127,30 @@ def test_local_git_rejects_oversized_generated_file_without_writing(
     assert run_git(work, "status", "--short").stdout == ""
 
 
+def test_local_git_rejects_detectable_secret_without_writing(
+    git_repository: tuple[Path, list[list[str]]],
+) -> None:
+    work, commands = git_repository
+    client = LocalGitRepositoryClient(
+        make_settings(git_repository_path=work),
+        runner=recording_runner(commands),
+    )
+    webhook = (
+        "https://hooks.slack.com/services/" + "T" * 12 + "/" + "B" * 12
+    ).encode()
+
+    with pytest.raises(ChangeMonitorError, match="contains a detectable secret"):
+        asyncio.run(
+            client.commit_files(
+                changes=[FileChange("workflows/current/sample/main.dig", webhook)],
+                message="Must fail",
+            )
+        )
+
+    assert not (work / "workflows").exists()
+    assert run_git(work, "status", "--short").stdout == ""
+
+
 def test_local_git_rejects_paths_outside_generated_directories(
     git_repository: tuple[Path, list[list[str]]],
 ) -> None:

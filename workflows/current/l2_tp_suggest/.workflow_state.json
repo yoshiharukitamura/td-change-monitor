@@ -1,0 +1,56 @@
+{
+  "archive_md5": "1HvVmQF/ZwjjEZqWGZWSJg==",
+  "files": [
+    {
+      "path": "___README.dig",
+      "sha256": "043b1e65a36be7af1763313fa28ff8303c32f10e8668dca28902cd30a83f98b9"
+    },
+    {
+      "path": "__cron_hhmm__daily_update.dig",
+      "sha256": "d29b28d2720eb909aab856bea3d5e7ff3fe8701b44f7f6ceff9398bff9bb62b4"
+    },
+    {
+      "path": "_z_p100_data_preparation.dig",
+      "sha256": "1f6a59fe37671d0fd9b8bb5a4bd48eb1cfdb459658a9c96d35642e226736ea5a"
+    },
+    {
+      "path": "_z_p200_parent_segment_update.dig",
+      "sha256": "7dd7e7fcd23ae7f53a1fc90a72c1ecd3f0b0eef2215ed22e868a0f0e7f8f6fe2"
+    },
+    {
+      "path": "_z_p300_activation_management.dig",
+      "sha256": "f491ef36e8cc680a322ae467ab9c55ba6d8a82f2775f99647f111c363fce9d86"
+    },
+    {
+      "path": "z_p100/ps_tbl__attr_xxx.sql",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "z_p100/ps_tbl__bhvr_xxx.sql",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "z_p100/ps_tbl__mstr_xxx.sql",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "z_p200/create_cnfg_fin.sql",
+      "sha256": "89bc72e23bcbc73a5ba743b7901ac734b78d5daf1a8544316a2e2b6c993fa686"
+    },
+    {
+      "path": "z_p200/get_api_scr.sql",
+      "sha256": "393c8b11bfe6d9d431f5f5bead714fbea046952a1b6ade42ab155bc40dbfbe47"
+    },
+    {
+      "path": "z_p200/get_update_list.sql",
+      "sha256": "6b4ec3b79fada293f7d51a53c1c7510c3207731354afa529b949206e6cd3d537"
+    },
+    {
+      "path": "z_p998__scan_references.dig",
+      "sha256": "8c627ddef6b3228cc3e320d62b35a6906b029ed885a365a76d52c2174e3c092d"
+    }
+  ],
+  "project_id": "1302002",
+  "project_name": "l2_tp_suggest",
+  "revision": "0d324e3e91254caeac304d3a03fc2c2f"
+}

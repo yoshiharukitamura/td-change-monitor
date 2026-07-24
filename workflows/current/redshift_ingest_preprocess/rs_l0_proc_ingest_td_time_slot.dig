@@ -1,0 +1,22 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_l0_proc_ingest_td_time_slot
+  notify_slack: false
+  # set td database
+  td:
+    database: l1_datamart_202210
+
++set_tables_for_inital:
+  td_ddl>:
+  create_tables:
+    - time_slot_for_alert
+
+# main process
++data_load:
+  td_load>: proc_010/time_slot_for_alert/config/load_from_rs.yml
+  database: ${td.database}
+  table: time_slot_for_alert

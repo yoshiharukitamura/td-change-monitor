@@ -1,0 +1,16 @@
+{
+  "project_id": "1330473",
+  "project_name": "l2_verification",
+  "schedules": [
+    {
+      "definition_path": "_cron_0900__daily_update.dig",
+      "enabled": true,
+      "schedule_id": "307748",
+      "schedule_type": "cron",
+      "schedule_value": "0 9 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15975030",
+      "workflow_name": "_cron_0900__daily_update"
+    }
+  ]
+}

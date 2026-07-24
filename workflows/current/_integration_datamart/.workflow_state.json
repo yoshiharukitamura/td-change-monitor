@@ -1,0 +1,156 @@
+{
+  "archive_md5": "pJ3NjpsFCs4ok+ElvwvF2Q==",
+  "files": [
+    {
+      "path": "___README.dig",
+      "sha256": "2854d93be3b24e7f9e6ae0e24ebb31e7c3320e22b5c84ee5e228d5dd0156def1"
+    },
+    {
+      "path": "__func_/date_trunc_list.sql",
+      "sha256": "76bd04ab64cdc24725fcf97793253d4ded5ac922b2c945bda8c7ce2c15b83d71"
+    },
+    {
+      "path": "_cron_0600__daily_update.dig",
+      "sha256": "4750ce7431bd5be85b72c1c012eeeb89a4582631dc8d9a8e3dea08cc45c39021"
+    },
+    {
+      "path": "_cron_0700__monday_update.dig",
+      "sha256": "44ed70e9bf6de443d34408a3c620c91f38ad6a5f3480dcad0d0183cdead3357e"
+    },
+    {
+      "path": "_cron_0915__monday_update.dig",
+      "sha256": "5d2ef3ce425faff2bbdff8f6aba76a7e7455d342a45c6f748b373e0e7a4d60aa"
+    },
+    {
+      "path": "_cron_1010__monday_update.dig",
+      "sha256": "86719b850aacc1753126e63d18f5672df88d1e4866a51d4b53c37360e1ef12ca"
+    },
+    {
+      "path": "_p100__datamart.dig",
+      "sha256": "c69d10f4e720afe5492b57c9c3b595e7a8a9d47bddcd4dcb765e603aa3420e4f"
+    },
+    {
+      "path": "_p101__customer_rf_ss.dig",
+      "sha256": "7613052364a034c9545e1ebac87f2b781b7e1f06552e39c73935eb21aacfd350"
+    },
+    {
+      "path": "_p102__therapist_flag_ss.dig",
+      "sha256": "21c3a9f3d6f77bf7ad5b5f35272d087161f39786e96e3f46d43b30061c161b7a"
+    },
+    {
+      "path": "_p103__app_log_update.dig",
+      "sha256": "7f9fa97c56b9db88cfcee5962872fbd7d6c07fc953c10cad4ac3608791d63743"
+    },
+    {
+      "path": "_p998__scan_references.dig",
+      "sha256": "47a6d934fd33e58a7a09b6a5ea51da85f47fc097d3c159c9977f10e3f0bcc51e"
+    },
+    {
+      "path": "_p999__generate_readme.dig",
+      "sha256": "101db97ecbb2364b0d2aa2091a9b2b716ce7fbba34afe26f78f63f7c6537723f"
+    },
+    {
+      "path": "_tmp_p101__customer_rf_ss.dig",
+      "sha256": "96f7fb417e7902c7d6b192733b2686a504d91b1fdf10606f347ff08ff68144ac"
+    },
+    {
+      "path": "p100_/cls_dwb_slot_raw.sql",
+      "sha256": "2c3e9c87b8bb6a8e4e3878b0a58fdc246767cb161b3bde0b0725d99b257e0cff"
+    },
+    {
+      "path": "p100_/cls_order_detail.sql",
+      "sha256": "06379ce46ff3cbe5681056f7d2e9852481a86f9f812d304c39a1bed94820f318"
+    },
+    {
+      "path": "p100_/cls_sufficiency.sql",
+      "sha256": "11c0aed6e7bdbb8364a61758ed46eb438eaa8eaae869a303986c39beb34c5606"
+    },
+    {
+      "path": "p100_/cls_suggest_app_time_slot_detail.sql",
+      "sha256": "2a0a5632179aa6d3cd8e15ea18ea4698f750653f530f4ad94bba83d3e7f18bf8"
+    },
+    {
+      "path": "p100_/cls_time_slot_detail.sql",
+      "sha256": "c47f5ef09bb4f1bbdebbdb5419af14db46407cc6730850fbeca05282b3ac2229"
+    },
+    {
+      "path": "p100_/cls_time_slot_integrated.sql",
+      "sha256": "5e5d60590195ff88fc99247ae4b7efd4e600c64f099a56b773383295a444eba2"
+    },
+    {
+      "path": "p100_/customer_rf_by_week.sql",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "p100_/mst_datetime.sql",
+      "sha256": "1f24389a4140b4340937d5f94a4e41fb143c071ae4ecf967444f8bd075be6af0"
+    },
+    {
+      "path": "p100_/mst_shop.sql",
+      "sha256": "020cc032184896ae97c85a96f902e6c85b21669eed98643a3f1a956af3cfab06"
+    },
+    {
+      "path": "p100_/mst_therapist.sql",
+      "sha256": "ea494c69fc2923c5981cbe160e6f851178f579aeeed11ad3f0b8c6059718f0b3"
+    },
+    {
+      "path": "p100_/z_tmp_cls_app_log_104w.sql",
+      "sha256": "b4959ccb31433e7ee430bbdfc6bd53db23073c4938496ea9dccc8952693a2384"
+    },
+    {
+      "path": "p100_/z_tmp_cls_app_reserve.sql",
+      "sha256": "3996b4da9009aa40447b0b57e3143cf078ee053ff1bd7b4f02fb4a469af12a21"
+    },
+    {
+      "path": "p100_/z_tmp_cls_reservation.sql",
+      "sha256": "d0bdf34615c7eb89dff87b0d543dbac730f07a5868f8da30e398e64a4acd466a"
+    },
+    {
+      "path": "p100_/z_tmp_cls_reservation_daily.sql",
+      "sha256": "d381ada911bc312a22b723ba78f27a655e123615822ad80ded309a2d49c77769"
+    },
+    {
+      "path": "p100_/z_tmp_cls_web_log_104w.sql",
+      "sha256": "57ded9ae75c46768726d7b0d6cd2a2c550d2cfb8f7aca291cb5727df3cf83e84"
+    },
+    {
+      "path": "p100_/z_tmp_cls_web_reserve.sql",
+      "sha256": "c1fc3ca19033cd514268a52ac377c627bdf812c1750974dd2731cc5df2fccc89"
+    },
+    {
+      "path": "p101_/hst_daily_customer_rf.sql",
+      "sha256": "ec32451251806e28899a4e88e5351be6659041f973f760fe51702c3e08aa5dd2"
+    },
+    {
+      "path": "p101_/hst_monthly_customer_rf_w12f.sql",
+      "sha256": "212416235aef73776d3668e2385e879472309aaf62899ca7d5df9f524c6ed01f"
+    },
+    {
+      "path": "p101_/hst_weekly_customer_rf.sql",
+      "sha256": "e8cf7aed9a8e32eddec0a7ab64e775deb5715bef747b82961cfa65286bc8606b"
+    },
+    {
+      "path": "p101_/hst_weekly_customer_rf_w12f.sql",
+      "sha256": "b74e17c218d7ec66a6ece73d7acad938e24da4f52c7bf85cb51730a46d0ba1fb"
+    },
+    {
+      "path": "p102_/hst_weekly_therapist_flag.sql",
+      "sha256": "843fa17515e4a590f62d301edb33f235c990d714645eb26a047d396dd062cf7e"
+    },
+    {
+      "path": "query/snapshot_time_slot_detail.sql",
+      "sha256": "0261a9937e50446f9b7b5e958ee3283399e73a09b6ae9cbfc3dcefd5c1a2bc7f"
+    },
+    {
+      "path": "z_init__snapshot_time_slot_detail.dig",
+      "sha256": "bac60d902cb5b6de4b0bc61d92493997603b4d4e3624578ccfb3e7759b72f3e9"
+    },
+    {
+      "path": "z_query/create_week_list.sql",
+      "sha256": "00a3c4fcce8753cc061c26ed4f4c53592f1af7b010d2f188c0ea71a885b67308"
+    }
+  ],
+  "project_id": "1346232",
+  "project_name": "_integration_datamart",
+  "revision": "a2b9d8d9536a480a87501456e578df76"
+}

@@ -1,0 +1,16 @@
+{
+  "project_id": "1390156",
+  "project_name": "_l2_mktg_datamart",
+  "schedules": [
+    {
+      "definition_path": "_cron_0730_daily.dig",
+      "enabled": true,
+      "schedule_id": "321946",
+      "schedule_type": "cron",
+      "schedule_value": "30 7 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15878590",
+      "workflow_name": "_cron_0730_daily"
+    }
+  ]
+}

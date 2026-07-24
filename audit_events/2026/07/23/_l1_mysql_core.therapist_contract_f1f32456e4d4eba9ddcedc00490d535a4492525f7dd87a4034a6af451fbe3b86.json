@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "f1f32456e4d4eba9ddcedc00490d535a4492525f7dd87a4034a6af451fbe3b86",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l1_mysql_core",
+  "events": [
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "f0fb789d-7a55-4109-8221-4fb8d78553df",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297407609",
+      "resource_id": "297407609",
+      "table": "therapist_contract",
+      "time": "2026-07-18T18:46:01+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "c01d8203-3c3d-4611-bd02-19223e3d04f6",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297622256",
+      "table": "therapist_contract",
+      "time": "2026-07-18T18:46:02+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "6437ff4a-8f16-49a1-8191-057a4ce52917",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297622256",
+      "resource_id": "297622256",
+      "table": "therapist_contract",
+      "time": "2026-07-19T18:30:28+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "1908446c-efbc-4c7c-ab49-65b06b159247",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297839857",
+      "table": "therapist_contract",
+      "time": "2026-07-19T18:30:29+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "c3c68c78-e1c5-4b81-bb1d-8fae1ad0d3e7",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297839857",
+      "resource_id": "297839857",
+      "table": "therapist_contract",
+      "time": "2026-07-20T18:43:31+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "57fb08f4-ad03-4db7-9dba-10a98cfbc345",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298056455",
+      "table": "therapist_contract",
+      "time": "2026-07-20T18:43:32+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "f6f4870f-ea11-4cf3-ad88-584e6127f8f2",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298269806",
+      "table": "therapist_contract",
+      "time": "2026-07-21T18:34:36+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "f8c0bfcb-d8da-48f0-be40-9af5c4b4815f",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298056455",
+      "resource_id": "298056455",
+      "table": "therapist_contract",
+      "time": "2026-07-21T18:34:36+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "5f3fee89-ca81-419b-9132-c7c700d65967",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298269806",
+      "resource_id": "298269806",
+      "table": "therapist_contract",
+      "time": "2026-07-22T18:43:31+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "60778da9-ec1e-4e72-b7bf-0a73d06575ed",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298495779",
+      "table": "therapist_contract",
+      "time": "2026-07-22T18:43:32+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_delete",
+      "id": "0128c376-71de-4dc3-ba18-d3b9136388c2",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298495779",
+      "resource_id": "298495779",
+      "table": "therapist_contract",
+      "time": "2026-07-23T18:44:12+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_core",
+      "event_name": "table_create",
+      "id": "7e981160-d7de-46ff-80c6-dad065906c36",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298714553",
+      "table": "therapist_contract",
+      "time": "2026-07-23T18:44:13+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "therapist_contract"
+}

@@ -1,0 +1,97 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 12 * * 3
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: df_cron_wed_1200_send_time_slot
+  notify_slack: true
+  td:
+    database: l2_demand_forecast_auto
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
++spreadsheet:
+  _parallel: true
+  # 時間枠手動連携データの取り込み
+  +spreadsheet_manual_linkage:
+    +delete_duplicate_data:
+      td>:
+      query: "delete from spreadsheet_manual_linkage where time = td_scheduled_time()"
+    +append_spreadsheet_manual_linkage:
+      td_load>: google_sheets_import_1685522029
+
+  # 必要枠の追加施策データの取り込み
+  # +spreadsheets_timeslot_multiply:
+  #   +delete_duplicate_data:
+  #     td>:
+  #     query: "delete from spreadsheets_timeslot_multiply where time = td_scheduled_time()"
+  #   +spreadsheets_timeslot_multiply:
+  #     td_load>: google_sheets_import_1705649259
+
+  # 必要枠の追加施策データの取り込み_v2
+  +spreadsheets_timeslot_multiply_v2:
+    +delete_duplicate_data:
+      td>:
+      query: "delete from spreadsheets_timeslot_multiply_v2 where time = td_scheduled_time()"
+    +spreadsheets_timeslot_multiply_v2:
+      td_load>: google_sheets_import_1709028110
+
+  # 必要枠の追加施策データの取り込み_v2
+  +spreadsheets_timeslot_multiply_v3:
+    +delete_duplicate_data:
+      td>:
+      query: "delete from spreadsheets_timeslot_multiply_v3 where time = td_scheduled_time()"
+    +spreadsheets_timeslot_multiply_v3:
+      td_load>: google_sheets_import_1742344674
+
+# 時間枠手動連携データを反映した縦持ちテーブル作成
++60_fin_timeslot_raw_fixed:
+  # Rerun用に重複レコードの削除を実施 (削除キーはtime=processing_date=処理週)
+  +delete_duplicate_data:
+    td>:
+    query: "delete from fin_timeslot_raw_vtable_fixed where time = td_date_trunc('week', td_scheduled_time(), 'jst')"
+  # 処理週の縦持ちデータを作成しInsert
+  +update_vtable:
+    td>: queries/60_fin_timeslot_raw_fixed/update_vtable.sql
+    insert_into: fin_timeslot_raw_vtable_fixed
+
+# 横持ちデータを作成しS3へ連携
++70_syndicate_to_s3_time_slot_prd:
+  td>: queries/70_syndicate_to_s3/create_htable_prd.sql
+  result_connection: prd_td_data_relay_treasuredata
+  result_settings:
+    bucket: prd-td-data-relay
+    path: /external_receve/IF-TD-001/visitors_forecast_${moment(session_date).startOf('isoWeek').format('YYYYMMDD')}.csv
+    format: csv
+    header: true
+    newline: "\n"
+
++70_syndicate_to_s3_time_slot_stg:
+  td>: queries/70_syndicate_to_s3/create_htable_stg.sql
+  result_connection: stg_td_data_relay_treasuredata
+  result_settings:
+    bucket: stg-td-data-relay
+    path: /external_receve/IF-TD-001/visitors_forecast_${moment(session_date).startOf('isoWeek').format('YYYYMMDD')}.csv
+    format: csv
+    header: true
+    newline: "\n"
+
+# 横持ちデータを作成しS3へ連携
++80_syndicate_to_s3_quest_slot:
+  td>: queries/80_syndicate_to_s3/create_quest_slot.sql
+  # result_connection: prd_td_data_relay_treasuredata
+  result_connection: stg_td_data_relay_treasuredata
+  result_settings:
+    # bucket: prd-td-data-relay
+    bucket: stg-td-data-relay
+    path: /external_receve/IF-TD-002/quest_time_slot_${moment(session_date).startOf('isoWeek').format('YYYYMMDD')}.csv
+    format: csv
+    header: true
+    newline: "\n"
+    quote: ""

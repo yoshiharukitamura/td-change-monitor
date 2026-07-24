@@ -1,0 +1,16 @@
+{
+  "project_id": "1562382",
+  "project_name": "cdp_segment_1709239",
+  "schedules": [
+    {
+      "definition_path": "syndication_564779.dig",
+      "enabled": true,
+      "schedule_id": "372412",
+      "schedule_type": "daily",
+      "schedule_value": "10:00:00",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "14713861",
+      "workflow_name": "syndication_564779"
+    }
+  ]
+}

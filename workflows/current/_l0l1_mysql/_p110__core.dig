@@ -1,0 +1,72 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+
+timezone: Asia/Tokyo
+
+_export:
+  ## 取得出力Databaseの定義
+  td:
+    database: _l0_mysql_core
+  from_mysql:
+    database: core
+  initialize: 'false'
+
+  ## 変数定義ファイルの読み込み
+  !include : p110_/table_list_core.dig
+  
+  ### 呼び出し元のWorkflowから受け取る変数 *** ここから ***
+  # initialize: true / false
+  ### 呼び出し元のWorkflowから受け取る変数 *** ここまで ***
+
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+_error:
+  require>: __failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### initializeの分岐 日次更新、再実行用に取得する予定のtimeに該当するレコードを削除 データの取込をtable_listに対して繰り返し行う###
++for_each_table_process:
+  for_each>: 
+    tbl: ${table_list}
+  _parallel:
+    limit: 8
+  _do:
+    # initializeに応じて　empty_tables / create_tables
+    +if_initialized_is_true:
+      if>: ${initialize == 'true'}
+      _do:
+        td_ddl>:
+        empty_tables: ["${tbl.name}"]
+      _else_do:
+        td_ddl>:
+        create_tables: ["${tbl.name}"]
+
+    # WFの再実行用にtime=session_dateとなるデータを削除
+    +delete_old_data:
+      td>:
+      query: |
+        delete
+        from
+          ${td.database}.${tbl.name}
+        where
+          time = ${moment(session_date).unix()}
+          -- ${moment(session_date).format('YYYY-MM-DD')} *** JOBでの期間確認用
+
+    # MySQLからデータを取得
+    +load_data_from_db:
+      td_load>: __cnfg_/load_from_mysql.yml
+      table: ${tbl.name}
+  

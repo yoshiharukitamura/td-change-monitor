@@ -1,0 +1,92 @@
+{
+  "archive_md5": "ixdhBza8w43zhna8uN3IQw==",
+  "files": [
+    {
+      "path": "___README.dig",
+      "sha256": "d0e4aaae94779cf3ab0f982519d85aadd87914fae82aee49e88b746f6fa2cb03"
+    },
+    {
+      "path": "__func_/date_trunc_list.sql",
+      "sha256": "76bd04ab64cdc24725fcf97793253d4ded5ac922b2c945bda8c7ce2c15b83d71"
+    },
+    {
+      "path": "_p100__preprocess.dig",
+      "sha256": "eb3c6111630b489e27893b922eb994ae2534273b68ffc59c9c562df8cd129fdd"
+    },
+    {
+      "path": "_p101__past_lost_opps.dig",
+      "sha256": "4bc647008979c110d949d9796378bec019af013c542a55ae5bb27d1f9c5275a6"
+    },
+    {
+      "path": "_p200__post_process.dig",
+      "sha256": "ee92b8bcadad8c5b4b8f55aa9c8c7b96a929a0d200fef64f2384d650d9b8abe3"
+    },
+    {
+      "path": "_p999__generate_readme.dig",
+      "sha256": "101db97ecbb2364b0d2aa2091a9b2b716ce7fbba34afe26f78f63f7c6537723f"
+    },
+    {
+      "path": "p200_/fin_timeslot_raw_vtable.sql",
+      "sha256": "ab837c391b1a3932de795b0c249a5ab2c44f59f296a1870166afcb11be9cadf1"
+    },
+    {
+      "path": "p200_/prep_forecast_treatment.sql",
+      "sha256": "ad9212e4a4b08194e84c6e218c32c2b81cf6decf760551109ba721778e89b5c7"
+    },
+    {
+      "path": "p200_/prep_join_all.sql",
+      "sha256": "7f24a35204bf453f40d00b022737f05a5ac9a8e249410464b275e82ea547a1aa"
+    },
+    {
+      "path": "p200_/prep_join_all_with_lost_opps.sql",
+      "sha256": "97f91a1b612d0699d87e764b7741667e8690f5079c55cfa0f09842d9432d6b0d"
+    },
+    {
+      "path": "p200_/prep_lost_opportunity.sql",
+      "sha256": "582e670961cee8926457f05555f42ba8260edcc4debae84079728f91f6c964fc"
+    },
+    {
+      "path": "p200_/prep_result_timeslot.sql",
+      "sha256": "e3270727c900a32ba449add51c8fd49135819d05dadf864320a3fdfc3683a3ea"
+    },
+    {
+      "path": "p200_/prep_result_treatment.sql",
+      "sha256": "32bae029a42e0ca6cb0ae8cb2bc77e69d037b8a7a9c05001d6f13a73071b40d9"
+    },
+    {
+      "path": "p200_/prep_sys_reservation_logs_with_therapy_date.sql",
+      "sha256": "505a3208f605ae3bba655953bcee50bea19bff6c93aa6b37c24c77f4046afc9e"
+    },
+    {
+      "path": "p200_/prep_time_slot_hourly.sql",
+      "sha256": "6760c21e0fb45e35419cda87313fd7f9d1ca11ef06af9262d925bde6c5251bc6"
+    },
+    {
+      "path": "p200_/z_lost_opportunity_analytics_fin.sql",
+      "sha256": "40b9ab1480cb9ca1d42aa0cf3f87b8e85e8306f12b3a8826507c56ea0f00e8a3"
+    },
+    {
+      "path": "p200_/z_lost_opportunity_analytics_fin_agg.sql",
+      "sha256": "0f7c2ced495489a2383d31db87711149587682c7007f7961b284a804523bfd58"
+    },
+    {
+      "path": "p200_/z_lost_opportunity_analytics_flag.sql",
+      "sha256": "d1750f6182c750151a6f82d9818b222b5432e243582281496da5dfaa5d348bc1"
+    },
+    {
+      "path": "p200_/z_lost_opportunity_analytics_raw.sql",
+      "sha256": "3b356c07d1321ff748f4939f35e2de4bc7bfe79d11c0918a359af6cd84d56641"
+    },
+    {
+      "path": "p200_/z_lost_opportunity_analytics_raw_by_user.sql",
+      "sha256": "7a476ddb8b2c7924ca41150eaa84352d27adb35437eb9cd9d875110b5c0b8450"
+    },
+    {
+      "path": "p200_/z_lost_opportunity_analytics_raw_tmp.sql",
+      "sha256": "148bb9fec04584bdfcfb2a26acd980c9d0a949422349377f5ca0b9051ce15c72"
+    }
+  ],
+  "project_id": "1346234",
+  "project_name": "_l2_demand_forecast_gcp",
+  "revision": "ec1e7f28fb514ef992f5b6b653312ba4"
+}

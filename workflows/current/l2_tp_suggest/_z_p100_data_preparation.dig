@@ -1,0 +1,40 @@
+### Table Naming Rules ###
+# Master Table: ps_tbl__mstr_{{xxx}}
+# Attribute Table: ps_tbl__attr_{{xxx}}
+# Behavior Table: ps_tbl__bhvr_{{xxx}}
+
+### See SQL below for detailed specifications ###
+# __ps_upd_/create_cnfg_fin.sql
+
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Variables ###
+_export:
+  ## Output Database
+  td:
+    database: l2_audience_studio
+
+### error handling ###
+_error:
+  require>: failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    # notify: {mail: true, slack: true}
+    notify: {mail: false, slack: false}
+
+### main process ###
++ps_tbl__mstr_xxx:
+  td>: z_p100/ps_tbl__mstr_xxx.sql
+  create_table: ps_tbl__mstr_xxx
+
++ps_tbl__attr_xxx:
+  td>: z_p100/ps_tbl__attr_xxx.sql
+  create_table: ps_tbl__attr_xxx
+
++ps_tbl__bhvr_xxx:
+  td>: z_p100/ps_tbl__bhvr_xxx.sql
+  create_table: ps_tbl__bhvr_xxx

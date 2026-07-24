@@ -1,0 +1,26 @@
+{
+  "project_id": "1346234",
+  "project_name": "_l2_demand_forecast_gcp",
+  "schedules": [
+    {
+      "definition_path": "_p100__preprocess.dig",
+      "enabled": true,
+      "schedule_id": "307711",
+      "schedule_type": "cron",
+      "schedule_value": "0 7 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15777805",
+      "workflow_name": "_p100__preprocess"
+    },
+    {
+      "definition_path": "_p200__post_process.dig",
+      "enabled": true,
+      "schedule_id": "309836",
+      "schedule_type": "cron",
+      "schedule_value": "0 13 * * 1",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15777801",
+      "workflow_name": "_p200__post_process"
+    }
+  ]
+}

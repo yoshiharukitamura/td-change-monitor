@@ -1,0 +1,53 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 3 * * *
+# -------------------------------------------
+#   cron>: m h d M W
+#   m: minute -> 0-59
+#   h: hour -> 0-23
+#   d: day -> 1-31
+#   M: month -> 1-12 or jan-dec
+#   W: week of day -> 0-7 (0&7=sun) or sun-sat
+# -------------------------------------------
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: weblog_cron_daily_process
+  notify_slack: false
+  # set td database
+  td:
+    database: l1_website_access
+    
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+    
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
+
+# main process
++proc_1000_mapping_cookie:
+  require>: weblog_proc_1000_mapping_cookie
+  session_time: ${session_time}
+  rerun_on: all
+
++proc_2000_sessionize_pv:
+  require>: weblog_proc_2000_sessionize_pv
+  session_time: ${session_time}
+  rerun_on: all
+
++proc_3000_map_tduid_others:
+  require>: weblog_proc_3000_map_tduid_others
+  session_time: ${session_time}
+  rerun_on: all
+
+ 
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig
+

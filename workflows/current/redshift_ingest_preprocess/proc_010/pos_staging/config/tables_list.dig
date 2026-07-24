@@ -1,0 +1,544 @@
+tables_list_pos_staging:
+#  - td_tbl: acos
+#    date_col: created
+#    flg: N
+
+  - td_tbl: acquired_stamps
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: amount_of_subsidiary_work_details
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: amount_of_subsidiary_work_detail_per_therapists
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: amount_of_subsidiary_works
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: attendance_core
+    date_col: updated_datetime
+    flg: N
+    pk: attendance_id
+
+  - td_tbl: attendance_temporary
+    date_col: updated_datetime
+    flg: N
+    pk: attendance_id
+
+  - td_tbl: attendances
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: balance_in_hands
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: batch_logs
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: break_time_temporary
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_id
+
+  - td_tbl: cashless_payment_api_call_histories
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: categories
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: coupon_customers
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: coupon_terms
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: customer_histories
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: daily_work_shifts
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: disclaimers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: fcm_customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: gift_cards
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: history_customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: history_order_detail_reward_items
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: history_order_details
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: history_orders
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: history_therapist_nominations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: hp_customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: messages
+    date_col: modified
+    flg: N
+    pk: id
+
+#  - td_tbl: mst_cashless_devices
+#    date_col: modified
+#    flg: N
+
+  - td_tbl: mst_consumption_tax_rates
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_holidays
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_product_groups
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_product_prices
+    date_col: modified
+    flg: N
+    pk: mst_product_id
+
+  - td_tbl: mst_products
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_promotion_texts
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_reasons_for_changing_therapists
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_shops
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_stamp_rallies
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_subsidiary_works
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_therapists
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: opening_closings
+    date_col: modified
+    flg: N
+    pk: id
+
+###  - td_tbl: operation_logs
+###    date_col: modified
+###    flg: N
+
+  - td_tbl: opportunity_loss_details
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: opportunity_losses
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: order_detail_reward_items
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: order_details
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: order_migration_maps
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: order_not_trancefers
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: orders
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: physical_condition_clauses
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: points
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: pos_payment_temporary
+    date_col: updated_datetime
+    flg: N
+    pk: pos_payment_id
+
+  - td_tbl: pos_sales_temporary
+    date_col: updated_datetime
+    flg: N
+    pk: pos_sales_id
+
+  - td_tbl: product_codes
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: product_group_price_relations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: product_group_shop_relations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: product_reward_items
+    date_col: created
+    flg: N
+    pk: id
+
+#  - td_tbl: product_shops
+#    date_col: modified
+#    flg: N
+
+  - td_tbl: receipt_advertisements
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: requested_parts_of_order_detail_comments
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: review_temporary
+    date_col: updated_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: reviews
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reward_categories
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reward_item_applicable_days
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reward_item_customers
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: reward_items
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: roles
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: sales_assists
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: set_menu_relations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: shop_messages
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: shop_receipt_advertisements
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: shop_reward_item_applicable_days
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: shop_subsidiary_works
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: shop_vacancies
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: summary_daily_sales_per_shops
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: summary_monthly_points
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: summary_monthly_shop_generate_points
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: system_users
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: templates
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: therapist_daily_report_temporary
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_daily_report_id
+
+  - td_tbl: therapist_nominations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: therapist_operation_temporary
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_operation_id
+
+  - td_tbl: therapist_works
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: treated_body_parts
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: use_of_stamp_rally_per_customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: user_preference_of_csv_output_columns
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: withdrawals
+    date_col: modified
+    flg: N
+    pk: id
+
+#  - td_tbl: aros
+#    flg: M
+
+#  - td_tbl: aros_acos
+#    flg: M
+
+#  - td_tbl: cashless_device_api_key_pos_device_product_code_relations
+#    flg: M
+
+  - td_tbl: mst_areas
+    flg: M
+    pk: id
+
+#  - td_tbl: mst_cashless_payment_api_types
+#    flg: M
+
+#  - td_tbl: mst_credit_card_payment_types
+#    flg: M
+
+  - td_tbl: mst_csv_output_columns
+    flg: M
+    pk: id
+
+  - td_tbl: mst_csv_output_tables
+    flg: M
+    pk: id
+
+  - td_tbl: mst_departments
+    flg: M
+    pk: id
+
+  - td_tbl: mst_languages
+    flg: M
+    pk: id
+
+  - td_tbl: mst_payment_types
+    flg: M
+    pk: id
+
+  - td_tbl: mst_permission_details
+    flg: M
+    pk: id
+
+  - td_tbl: mst_permissions
+    flg: M
+    pk: id
+
+  - td_tbl: mst_prefectures
+    flg: M
+    pk: id
+
+  - td_tbl: mst_product_types
+    flg: M
+    pk: id
+
+#  - td_tbl: mst_qr_code_payment_types
+#    flg: M
+
+  - td_tbl: mst_withdrawal_types
+    flg: M
+    pk: id
+
+  - td_tbl: sb_order_migration_maps
+    flg: M
+    pk: id
+
+  - td_tbl: shop_categories
+    flg: M
+    pk: id
+
+  - td_tbl: shop_sales_assists
+    flg: M
+    pk: id
+
+#  - td_tbl: stamp_rally_products
+#    flg: M
+
+  - td_tbl: stamp_rally_shops
+    flg: M
+    pk: id
+
+  - td_tbl: system_user_areas
+    flg: M
+    pk: id
+
+  - td_tbl: template_details
+    flg: M
+    pk: id
+
+#  - td_tbl: terms_of_services
+#    flg: M
+
+  - td_tbl: therapist_nomination_fees
+    date_col: modified
+    flg: N
+    pk: id
+
+#  - td_tbl: results_of_agreement_of_rewards
+#    date_col: created
+#    flg: N
+
+#  - td_tbl: therapist_auth_histories
+#    date_col: created
+#    flg: N
+
+#  - td_tbl: therapist_operations
+#    date_col: created
+#    flg: N
+
+#  - td_tbl: mst_system_types
+#    date_col: created
+#    flg: N

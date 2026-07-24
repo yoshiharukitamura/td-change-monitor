@@ -1,0 +1,943 @@
+tables_list_sys_production:
+#  - td_tbl: code_category
+#    date_col: updated_datetime
+#    flg: N
+
+  - td_tbl: code
+    date_col: updated_datetime
+    flg: N
+    pk: sys_code_id
+
+  - td_tbl: property
+    date_col: updated_datetime
+    flg: N
+    pk: property_id
+
+  - td_tbl: property_additional_info
+    date_col: updated_datetime
+    flg: N
+    pk: shop_additional_info_id
+
+  - td_tbl: property_comment
+    date_col: updated_datetime
+    flg: N
+    pk: property_comment_id
+
+  - td_tbl: property_interior
+    date_col: updated_datetime
+    flg: N
+    pk: property_interior_id
+
+  - td_tbl: interior_add_info
+    date_col: updated_datetime
+    flg: N
+    pk: interior_add_info_id
+
+  - td_tbl: contract
+    date_col: updated_datetime
+    flg: N
+    pk: contract_id
+
+  - td_tbl: contract_add_info
+    date_col: updated_datetime
+    flg: N
+    pk: contract_add_info_id
+
+  - td_tbl: billboard
+    date_col: updated_datetime
+    flg: N
+    pk: billboard_id
+
+  - td_tbl: billboard_add_info
+    date_col: updated_datetime
+    flg: N
+    pk: billboard_add_info_id
+
+  - td_tbl: advertise
+    date_col: updated_datetime
+    flg: N
+    pk: advertise_id
+
+  - td_tbl: recruiting
+    date_col: updated_datetime
+    flg: N
+    pk: recruiting_id
+
+  - td_tbl: neighborhood_shop
+    date_col: updated_datetime
+    flg: N
+    pk: neighborhood_property_id
+
+  - td_tbl: ideal_personnel
+    date_col: updated_datetime
+    flg: N
+    pk: ideal_personnel_id
+
+  - td_tbl: banished_therapist
+    date_col: updated_datetime
+    flg: N
+    pk: banished_therapist_id
+
+  - td_tbl: use_training_institute
+    date_col: updated_datetime
+    flg: N
+    pk: use_training_institute_id
+
+  - td_tbl: shop_deposit_cycle
+    date_col: updated_datetime
+    flg: N
+    pk: shop_deposit_cycle_id
+
+  - td_tbl: property_peak_time_target_rank
+    date_col: updated_datetime
+    flg: N
+    pk: property_peak_time_target_rank_id
+
+  - td_tbl: fb_deposit
+    date_col: updated_datetime
+    flg: N
+    pk: fb_deposit_id
+
+  - td_tbl: pos_sales
+    date_col: updated_datetime
+    flg: N
+    pk: pos_sales_id
+
+  - td_tbl: pos_payment
+    date_col: updated_datetime
+    flg: N
+    pk: pos_payment_id
+
+  - td_tbl: pos_sales_confirm
+    date_col: updated_datetime
+    flg: N
+    pk: pos_sales_confirm_id
+
+  - td_tbl: shop_business_basic_day
+    date_col: updated_datetime
+    flg: N
+    pk: shop_business_basic_day_id
+
+  - td_tbl: therapist_daily_report
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_daily_report_id
+
+  - td_tbl: therapist_operation
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_operation_id
+
+  - td_tbl: offering_summary
+    date_col: updated_datetime
+    flg: N
+    pk: offering_summary_id
+
+  - td_tbl: application_summary
+    date_col: updated_datetime
+    flg: N
+    pk: application_summary_id
+
+  - td_tbl: application_detail
+    date_col: updated_datetime
+    flg: N
+    pk: application_detail_id
+
+  - td_tbl: daily_time_slot
+    date_col: updated_datetime
+    flg: N
+    pk: daily_time_slot_id
+
+  - td_tbl: basic_daily_time_slot
+    date_col: updated_datetime
+    flg: N
+    pk: basic_daily_time_slot_id
+
+  - td_tbl: fixed_daily_time_slot
+    date_col: updated_datetime
+    flg: N
+    pk: fixed_daily_time_slot_id
+
+  - td_tbl: pegged_order
+    date_col: updated_datetime
+    flg: N
+    pk: pegged_order_id
+
+  - td_tbl: pegged_daily_change_request
+    date_col: updated_datetime
+    flg: N
+    pk: pegged_daily_change_request_id
+
+  - td_tbl: pegged_daily_change_detail
+    date_col: updated_datetime
+    flg: N
+    pk: pegged_daily_change_detail_id
+
+  - td_tbl: urgent_change_apply
+    date_col: updated_datetime
+    flg: N
+    pk: urgent_change_apply_id
+
+  - td_tbl: based_time_slot_summary
+    date_col: updated_datetime
+    flg: N
+    pk: based_time_slot_summary_id
+
+  - td_tbl: based_time_slot
+    date_col: updated_datetime
+    flg: N
+    pk: based_time_slot_id
+
+  - td_tbl: based_time_slot_change_request
+    date_col: updated_datetime
+    flg: N
+    pk: based_time_slot_change_req_id
+
+  - td_tbl: based_time_slot_change_request_detail
+    date_col: updated_datetime
+    flg: N
+    pk: based_time_slot_change_request_detail_id
+
+  - td_tbl: reward_adjustment_apply
+    date_col: updated_datetime
+    flg: N
+    pk: reward_adjustment_apply_id
+
+  - td_tbl: monthly_reward_summary
+    date_col: updated_datetime
+    flg: N
+    pk: monthly_reward_summary_id
+
+  - td_tbl: monthly_reward
+    date_col: updated_datetime
+    flg: N
+    pk: monthly_reward_id
+
+  - td_tbl: settled_monthly_reward
+    date_col: updated_datetime
+    flg: N
+    pk: settled_monthly_reward_id
+
+  - td_tbl: temporary_reward
+    date_col: updated_datetime
+    flg: N
+    pk: temporary_reward_id
+
+  - td_tbl: therapist_daily_report_reward
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_daily_report_reward_id
+
+  - td_tbl: therapist_operation_reward
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_operation_reward_id
+
+  - td_tbl: cost
+    date_col: updated_datetime
+    flg: N
+    pk: cost_id
+
+  - td_tbl: charge_rate
+    date_col: updated_datetime
+    flg: N
+    pk: charge_rate_id
+
+  - td_tbl: pre_reward_adjustment
+    date_col: updated_datetime
+    flg: N
+    pk: pre_reward_adjustment_id
+
+  - td_tbl: change_request_adjustment
+    date_col: updated_datetime
+    flg: N
+    pk: change_request_adjustment_id
+
+  - td_tbl: reward_change_request
+    date_col: updated_datetime
+    flg: N
+    pk: reward_change_request_id
+
+  - td_tbl: accounting_deadline
+    date_col: updated_datetime
+    flg: N
+    pk: accounting_deadline_id
+
+  - td_tbl: monthly_reward_contact
+    date_col: updated_datetime
+    flg: N
+    pk: monthly_reward_contact_id
+
+  - td_tbl: therapist
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_id
+
+  - td_tbl: therapist_additional_info
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_additional_info_id
+
+  - td_tbl: therapist_reward
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_reward_id
+
+  - td_tbl: therapist_contract
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_contract_id
+
+  - td_tbl: therapist_skill
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_skill_id
+
+  - td_tbl: therapist_qualification
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_qualification_id
+
+  - td_tbl: therapist_contact
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_contact_id
+
+  - td_tbl: therapist_emergency_contact
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_emergency_contact_id
+
+  - td_tbl: therapist_account
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_account_id
+
+  - td_tbl: therapist_background
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_background_id
+
+  - td_tbl: therapist_change_history
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_change_history_id
+
+  - td_tbl: therapist_appoint_fee
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_appoint_fee_id
+
+  - td_tbl: therapist_hope_area
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_hope_area_id
+
+  - td_tbl: therapist_working_info
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_working_info_id
+
+  - td_tbl: sys_code_category
+    date_col: updated_datetime
+    flg: N
+    pk: sys_code_category_id
+
+  - td_tbl: sys_code
+    date_col: updated_datetime
+    flg: N
+    pk: sys_code_id
+
+  - td_tbl: bank
+    date_col: updated_datetime
+    flg: N
+    pk: bank_id
+
+#  - td_tbl: staff
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: staff_roll
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: roll
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: staff_permission
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: permission
+#    date_col: updated_datetime
+#    flg: N
+
+  - td_tbl: client
+    date_col: updated_datetime
+    flg: N
+    pk: client_id
+
+  - td_tbl: property_change_history
+    date_col: updated_datetime
+    flg: N
+    pk: property_change_history_id
+
+  - td_tbl: contract_change_history
+    date_col: updated_datetime
+    flg: N
+    pk: contract_change_history_id
+
+  - td_tbl: tax
+    date_col: updated_datetime
+    flg: N
+    pk: tax_id
+
+  # - td_tbl: holiday
+  #   date_col: updated_datetime
+  #   flg: N
+  #   pk: holiday_id
+
+  - td_tbl: order_month
+    date_col: updated_datetime
+    flg: N
+    pk: order_month_id
+
+  - td_tbl: kpi_therapist
+    date_col: updated_datetime
+    flg: N
+    pk: kpi_therapist_id
+
+  - td_tbl: kpi_property
+    date_col: updated_datetime
+    flg: N
+    pk: kpi_property_id
+
+  - td_tbl: kpi_reward
+    date_col: updated_datetime
+    flg: N
+    pk: kpi_reward_id
+
+  - td_tbl: kpi_based_time_slot
+    date_col: updated_datetime
+    flg: N
+    pk: kpi_based_time_slot_id
+
+  - td_tbl: kpi_training_therapist
+    date_col: updated_datetime
+    flg: N
+    pk: kpi_training_therapist_id
+
+  # - td_tbl: area
+  #   date_col: updated_datetime
+  #   flg: N
+
+  - td_tbl: mail_send
+    date_col: updated_datetime
+    flg: N
+    pk: mail_send_id
+
+  - td_tbl: preset_item
+    date_col: updated_datetime
+    flg: N
+    pk: preset_item_id
+
+  - td_tbl: preset
+    date_col: updated_datetime
+    flg: N
+    pk: preset_id
+
+  - td_tbl: preset_pulldown
+    date_col: updated_datetime
+    flg: N
+    pk: preset_pulldown_id
+
+  - td_tbl: journal_master
+    date_col: updated_datetime
+    flg: N
+    pk: journal_master_id
+
+  - td_tbl: uploadfile
+    date_col: updated_datetime
+    flg: N
+    pk: uploadfile_id
+
+  - td_tbl: shop_no_issuing
+    date_col: updated_datetime
+    flg: N
+    pk: shop_no_issuing_id
+
+  - td_tbl: get_number
+    date_col: updated_datetime
+    flg: N
+    pk: get_number_id
+
+  - td_tbl: inquiry
+    date_col: updated_datetime
+    flg: N
+    pk: inquiry_id
+
+  - td_tbl: contract_update_training_institute
+    date_col: updated_datetime
+    flg: N
+    pk: contract_update_training_institute_id
+
+  - td_tbl: attendance
+    date_col: updated_datetime
+    flg: N
+    pk: attendance_id
+
+  - td_tbl: shop_cope
+    date_col: updated_datetime
+    flg: N
+    pk: shop_cope_id
+
+  - td_tbl: shop_cope_repair_trader_add_info
+    date_col: updated_datetime
+    flg: N
+    pk: shop_cope_repair_trader_add_info_id
+
+  - td_tbl: shop_cope_file_add_info
+    date_col: updated_datetime
+    flg: N
+    pk: shop_cope_file_add_info_id
+
+  - td_tbl: vote_summary
+    date_col: updated_datetime
+    flg: N
+    pk: vote_id
+
+#  - td_tbl: vote_option
+#    date_col: updated_datetime
+#    flg: N
+
+  - td_tbl: vote_detail
+    date_col: updated_datetime
+    flg: N
+    pk: vote_detail_id
+
+  - td_tbl: certificate_summary
+    date_col: updated_datetime
+    flg: N
+    pk: certificate_summary_id
+
+  - td_tbl: certificate_detail
+    date_col: updated_datetime
+    flg: N
+    pk: certificate_detail_id
+
+  - td_tbl: applicant
+    date_col: updated_datetime
+    flg: N
+    pk: applicant_id
+
+  - td_tbl: applicant_qualification
+    date_col: updated_datetime
+    flg: N
+    pk: applicant_qualification_id
+
+  - td_tbl: applicant_background
+    date_col: updated_datetime
+    flg: N
+    pk: applicant_background_id
+
+  - td_tbl: applicant_emergency_contact
+    date_col: updated_datetime
+    flg: N
+    pk: applicant_emergency_contact_id
+
+  - td_tbl: applicant_change_history
+    date_col: updated_datetime
+    flg: N
+    pk: applicant_change_history_id
+
+  - td_tbl: call_history
+    date_col: updated_datetime
+    flg: N
+    pk: call_history_id
+
+  - td_tbl: interview_black_list
+    date_col: updated_datetime
+    flg: N
+    pk: interview_black_list_id
+
+  - td_tbl: interview_reservation_config
+    date_col: updated_datetime
+    flg: N
+    pk: interview_reservation_config_id
+
+  - td_tbl: interview_reservation_timezone
+    date_col: updated_datetime
+    flg: N
+    pk: interview_reservation_timezone_id
+
+  - td_tbl: interview_reservation
+    date_col: updated_datetime
+    flg: N
+    pk: interview_reservation_id
+
+  - td_tbl: training_timezone_config
+    date_col: updated_datetime
+    flg: N
+    pk: training_timezone_config_id
+
+  - td_tbl: therapist_training
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_training_id
+
+  - td_tbl: training_actual_results
+    date_col: updated_datetime
+    flg: N
+    pk: training_actual_results_id
+
+  - td_tbl: garoon_approval
+    date_col: updated_datetime
+    flg: N
+    pk: approval_id
+
+  - td_tbl: shortage_nop_forecast
+    date_col: updated_datetime
+    flg: N
+    pk: shortage_nop_forecast_id
+
+  - td_tbl: shortage_deficiency
+    date_col: updated_datetime
+    flg: N
+    pk: shortage_deficiency_id
+
+  - td_tbl: introduction_reward_management
+    date_col: updated_datetime
+    flg: N
+    pk: introduction_reward_management_id
+
+  - td_tbl: inquiry_summary
+    date_col: updated_datetime
+    flg: N
+    pk: inquiry_summary_id
+
+  - td_tbl: inquiry_detail
+    date_col: updated_datetime
+    flg: N
+    pk: inquiry_detail_id
+
+  - td_tbl: sms_send
+    date_col: updated_datetime
+    flg: N
+    pk: sms_send_id
+
+  - td_tbl: garoon_approval_control
+    date_col: updated_datetime
+    flg: N
+    pk: approval_type_id
+
+  - td_tbl: therapist_information_change_request
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_information_change_request_id
+
+  - td_tbl: therapist_information_change_request_qualification
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_information_change_request_qualification_id
+
+  - td_tbl: therapist_information_change_request_confirmation_proof
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_information_change_request_confirmation_proof_id
+
+  - td_tbl: code_category_free_entry
+    date_col: updated_datetime
+    flg: N
+    pk: code_category_free_entry_id
+
+  - td_tbl: code_free_entry
+    date_col: updated_datetime
+    flg: N
+    pk: code_free_entry_id
+
+  - td_tbl: kpi_inquiry
+    date_col: updated_datetime
+    flg: N
+    pk: kpi_inquiry_id
+
+  - td_tbl: garoon_approval_reward_control
+    date_col: updated_datetime
+    flg: N
+    pk: approval_id
+
+#  - td_tbl: garoon_approval_therapistedit_control
+#    date_col: updated_datetime
+#    flg: N
+
+  - td_tbl: operation_rate
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_operation_rate_id
+
+  - td_tbl: mail_template
+    date_col: updated_datetime
+    flg: N
+    pk: mail_template_id
+
+  - td_tbl: mail_send_management
+    date_col: updated_datetime
+    flg: N
+    pk: mail_send_management_id
+
+  - td_tbl: read_management
+    date_col: updated_datetime
+    flg: N
+    pk: read_management_id
+
+  - td_tbl: therapist_contract_renewal_datetime
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_contract_renewal_datetime_id
+
+  - td_tbl: therapist_monthly_status
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_monthly_status_id
+
+  - td_tbl: therapist_monthly_operation_result
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_monthly_operation_result_id
+
+  - td_tbl: short_term_reward
+    date_col: updated_datetime
+    flg: N
+    pk: short_term_reward_id
+
+  - td_tbl: therapist_monthly_reward_rank
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_monthly_reward_rank_id
+
+  - td_tbl: calculated_therapist_monthly_reward_rank
+    date_col: updated_datetime
+    flg: N
+    pk: calculated_therapist_monthly_reward_rank_id
+
+  - td_tbl: therapist_contract_history
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_contract_history_id
+
+  - td_tbl: therapist_reward_rank_summary
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_reward_rank_summary_id
+
+  - td_tbl: interview_reservation_history
+    date_col: updated_datetime
+    flg: N
+    pk: interview_history_id
+
+  - td_tbl: therapist_reward_rank_change_history
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_reward_rank_change_history_id
+
+  - td_tbl: settled_based_time_slot_summary
+    date_col: updated_datetime
+    flg: N
+    pk: settled_based_time_slot_summary_id
+
+  - td_tbl: settled_based_time_slot
+    date_col: updated_datetime
+    flg: N
+    pk: settled_based_time_slot_id
+
+  - td_tbl: therapist_contracted_info
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_contracted_info_id
+
+  - td_tbl: institute_under_training
+    date_col: updated_datetime
+    flg: N
+    pk: institute_under_training_id
+
+  - td_tbl: skill_check_history
+    date_col: updated_datetime
+    flg: N
+    pk: skill_check_history_id
+
+  - td_tbl: mail_send_failed
+    date_col: updated_datetime
+    flg: N
+    pk: mail_send_failed_id
+
+  - td_tbl: training_timezone_summary
+    date_col: updated_datetime
+    flg: N
+    pk: training_timezone_summary_id
+
+  - td_tbl: education_area
+    date_col: updated_datetime
+    flg: N
+    pk: education_area_id
+
+  - td_tbl: trainer_table
+    date_col: updated_datetime
+    flg: N
+    pk: trainer_table_id
+
+  - td_tbl: html_mail_send
+    date_col: updated_datetime
+    flg: N
+    pk: html_mail_send_id
+
+  - td_tbl: recommend_display
+    date_col: updated_datetime
+    flg: N
+    pk: recommend_display_id
+
+  - td_tbl: step_mail_control
+    date_col: updated_datetime
+    flg: N
+    pk: step_mail_control_id
+
+  - td_tbl: therapist_browsing_history
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_browsing_history_id
+
+  - td_tbl: cms_content_read_management
+    date_col: updated_datetime
+    flg: N
+    pk: cms_content_read_management_id
+
+  - td_tbl: therapist_weekly_operation_result
+    date_col: updated_datetime
+    flg: N
+    pk: therapist_weekly_operation_result_id
+
+#  - td_tbl: product_summary
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_variation_summary
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_category_link
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_file_link
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_unit_price_summary
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_unit_price
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: quantity_discount
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: cart
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: cart_name_card_info
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_order_summary
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_order_shipping_detail
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_order_detail
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_order_name_card_info
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_order_quantity_discount_detail
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_order_status_change_history
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: therapist_point_grant_history
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: therapist_point_grant_therapist
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: therapist_point_order
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: therapist_point_summary
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: therapist_point_passbook
+#    date_col: updated_datetime
+#    flg: N
+
+#  - td_tbl: product_category
+#    date_col: updated_datetime
+#    flg: N
+
+  - td_tbl: kpi_therapist_daily_status
+    date_col: updated_datetime
+    flg: N
+    pk: kpi_therapist_daily_status_id
+
+  - td_tbl: peak_time_shop_summary
+    date_col: updated_datetime
+    flg: N
+    pk: peak_time_shop_summary_id
+
+  - td_tbl: peak_time_shop_detail
+    date_col: updated_datetime
+    flg: N
+    pk: peak_time_shop_detail_id
+
+  - td_tbl: consent_form_file_summary
+    date_col: updated_datetime
+    flg: N
+    pk: consent_form_file_summary_id
+
+  - td_tbl: consent_form_specific_therapist
+    date_col: updated_datetime
+    flg: N
+    pk: consent_form_specific_therapist_id
+
+  - td_tbl: consent_form_agreement_status
+    date_col: updated_datetime
+    flg: N
+    pk: consent_form_agreement_status_id
+
+#  - td_tbl: shop_specific_cost
+#    date_col: updated_datetime
+#    flg: N
+
+  - td_tbl: cancel_count_manage
+    date_col: updated_datetime
+    flg: N
+    pk: cancel_count_manage_id

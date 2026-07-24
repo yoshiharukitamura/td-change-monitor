@@ -1,0 +1,16 @@
+{
+  "project_id": "1347312",
+  "project_name": "_l0l1_bigquery",
+  "schedules": [
+    {
+      "definition_path": "_cron_0500__daily_update.dig",
+      "enabled": true,
+      "schedule_id": "326173",
+      "schedule_type": "cron",
+      "schedule_value": "0 5 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15283584",
+      "workflow_name": "_cron_0500__daily_update"
+    }
+  ]
+}

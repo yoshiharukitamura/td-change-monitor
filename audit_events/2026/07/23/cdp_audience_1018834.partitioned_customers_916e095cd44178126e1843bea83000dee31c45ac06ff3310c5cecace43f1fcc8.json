@@ -1,0 +1,559 @@
+{
+  "aggregated_change_id": "916e095cd44178126e1843bea83000dee31c45ac06ff3310c5cecace43f1fcc8",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "cdp_audience_1018834",
+  "events": [
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_create",
+      "id": "df0a401c-7afc-4238-848c-12ed3dd5d1a1",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297678497",
+      "table": "cdp_tmp_partitioned_customers",
+      "time": "2026-07-18T23:15:40+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "attribute_name": "name",
+      "database": "cdp_audience_1018834",
+      "event_name": "table_modify",
+      "id": "23821d43-13c2-4c87-b4cc-f46fe278fb4c",
+      "new_value": "partitioned_customers",
+      "old_value": "cdp_tmp_partitioned_customers",
+      "previous_table": "cdp_tmp_partitioned_customers",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "297678497",
+      "table": "partitioned_customers",
+      "time": "2026-07-18T23:16:57+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_delete",
+      "id": "941d133e-5de9-43e1-b8ee-1447f483cf1e",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "297469474",
+      "table": "partitioned_customers",
+      "time": "2026-07-18T23:16:57+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_create",
+      "id": "81f7e190-62a3-41e5-92d5-c0e4da2d16be",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297900222",
+      "table": "cdp_tmp_partitioned_customers",
+      "time": "2026-07-19T23:23:45+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_delete",
+      "id": "46e550ec-9b1b-47d7-bdb4-6a1b9ce81e10",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "297678497",
+      "table": "partitioned_customers",
+      "time": "2026-07-19T23:25:31+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "attribute_name": "name",
+      "database": "cdp_audience_1018834",
+      "event_name": "table_modify",
+      "id": "8d6e46bf-8c1f-43c3-9c08-d92bbed6872c",
+      "new_value": "partitioned_customers",
+      "old_value": "cdp_tmp_partitioned_customers",
+      "previous_table": "cdp_tmp_partitioned_customers",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "297900222",
+      "table": "partitioned_customers",
+      "time": "2026-07-19T23:25:31+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_create",
+      "id": "236a3eef-e914-44c6-83f7-724f68b5b698",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298114643",
+      "table": "cdp_tmp_partitioned_customers",
+      "time": "2026-07-20T23:19:26+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_delete",
+      "id": "bc6b57bb-b0b8-4e83-a524-1b8a87ecf4d8",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "297900222",
+      "table": "partitioned_customers",
+      "time": "2026-07-20T23:21:12+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "attribute_name": "name",
+      "database": "cdp_audience_1018834",
+      "event_name": "table_modify",
+      "id": "c9c1da76-adcf-467f-9673-bccfcafebc08",
+      "new_value": "partitioned_customers",
+      "old_value": "cdp_tmp_partitioned_customers",
+      "previous_table": "cdp_tmp_partitioned_customers",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "298114643",
+      "table": "partitioned_customers",
+      "time": "2026-07-20T23:21:12+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_create",
+      "id": "285198eb-8de5-4ba6-b091-3cdbade54c5e",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298332952",
+      "table": "cdp_tmp_partitioned_customers",
+      "time": "2026-07-21T23:24:28+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_delete",
+      "id": "5a9958c3-2234-4e81-a594-9eabef5220f5",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "298114643",
+      "table": "partitioned_customers",
+      "time": "2026-07-21T23:26:16+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "attribute_name": "name",
+      "database": "cdp_audience_1018834",
+      "event_name": "table_modify",
+      "id": "c8d261b7-ce9a-4ce3-b5d2-91ef81089fce",
+      "new_value": "partitioned_customers",
+      "old_value": "cdp_tmp_partitioned_customers",
+      "previous_table": "cdp_tmp_partitioned_customers",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "298332952",
+      "table": "partitioned_customers",
+      "time": "2026-07-21T23:26:16+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_create",
+      "id": "612bafe5-5d9c-4263-b408-598f0fec23f9",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298553786",
+      "table": "cdp_tmp_partitioned_customers",
+      "time": "2026-07-22T23:23:25+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "attribute_name": "name",
+      "database": "cdp_audience_1018834",
+      "event_name": "table_modify",
+      "id": "22e44d1f-e8fb-448a-aa0f-0f8957c49a1c",
+      "new_value": "partitioned_customers",
+      "old_value": "cdp_tmp_partitioned_customers",
+      "previous_table": "cdp_tmp_partitioned_customers",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "298553786",
+      "table": "partitioned_customers",
+      "time": "2026-07-22T23:25:12+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_delete",
+      "id": "55f0b3eb-d0ee-45f9-a35a-d53529a0d5cf",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "298332952",
+      "table": "partitioned_customers",
+      "time": "2026-07-22T23:25:12+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_create",
+      "id": "1dec51f1-9200-4ed0-a30f-fd4c1d171f29",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298772661",
+      "table": "cdp_tmp_partitioned_customers",
+      "time": "2026-07-23T23:19:29+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "attribute_name": "name",
+      "database": "cdp_audience_1018834",
+      "event_name": "table_modify",
+      "id": "00770ce9-060b-4881-83b3-71ff14e140c2",
+      "new_value": "partitioned_customers",
+      "old_value": "cdp_tmp_partitioned_customers",
+      "previous_table": "cdp_tmp_partitioned_customers",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "298772661",
+      "table": "partitioned_customers",
+      "time": "2026-07-23T23:21:46+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "cdp_audience_1018834",
+      "event_name": "table_delete",
+      "id": "6e7af325-12c8-46bd-b7c5-1ff73af01fc3",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/rename/cdp_audience_1018834/cdp_tmp_partitioned_customers/partitioned_customers",
+      "resource_id": "298553786",
+      "table": "partitioned_customers",
+      "time": "2026-07-23T23:21:46+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [
+      {
+        "after": 24,
+        "before": 3,
+        "name": "age"
+      },
+      {
+        "after": 3,
+        "before": 61,
+        "name": "area_name"
+      },
+      {
+        "after": 27,
+        "before": 11,
+        "name": "avg_applicant_reqenst"
+      },
+      {
+        "after": 9,
+        "before": 59,
+        "name": "contract_type"
+      },
+      {
+        "after": 60,
+        "before": 35,
+        "name": "cstm_01_email"
+      },
+      {
+        "after": 54,
+        "before": 21,
+        "name": "cstm_01_entry"
+      },
+      {
+        "after": 50,
+        "before": 32,
+        "name": "cstm_01_entry2"
+      },
+      {
+        "after": 28,
+        "before": 12,
+        "name": "cstm_01_entryw"
+      },
+      {
+        "after": 36,
+        "before": 43,
+        "name": "cstm_01_entryw2"
+      },
+      {
+        "after": 15,
+        "before": 56,
+        "name": "cstm_01_name"
+      },
+      {
+        "after": 42,
+        "before": 45,
+        "name": "cstm_01_therapist_no"
+      },
+      {
+        "after": 41,
+        "before": 48,
+        "name": "cstm_02_act"
+      },
+      {
+        "after": 51,
+        "before": 18,
+        "name": "cstm_02_email"
+      },
+      {
+        "after": 45,
+        "before": 37,
+        "name": "cstm_02_entry"
+      },
+      {
+        "after": 18,
+        "before": 17,
+        "name": "cstm_02_entry2"
+      },
+      {
+        "after": 32,
+        "before": 44,
+        "name": "cstm_02_entry3"
+      },
+      {
+        "after": 46,
+        "before": 38,
+        "name": "cstm_02_entryw"
+      },
+      {
+        "after": 57,
+        "before": 24,
+        "name": "cstm_02_entryw2"
+      },
+      {
+        "after": 63,
+        "before": 29,
+        "name": "cstm_02_entryw3"
+      },
+      {
+        "after": 38,
+        "before": 40,
+        "name": "cstm_02_name"
+      },
+      {
+        "after": 39,
+        "before": 41,
+        "name": "cstm_02_schedule"
+      },
+      {
+        "after": 29,
+        "before": 13,
+        "name": "cstm_02_therapist_no"
+      },
+      {
+        "after": 13,
+        "before": 53,
+        "name": "cstm_02_time"
+      },
+      {
+        "after": 16,
+        "before": 54,
+        "name": "cstm_02_today"
+      },
+      {
+        "after": 58,
+        "before": 25,
+        "name": "cstm_02_total"
+      },
+      {
+        "after": 31,
+        "before": 10,
+        "name": "cstm_02_w1"
+      },
+      {
+        "after": 19,
+        "before": 14,
+        "name": "cstm_02_w2"
+      },
+      {
+        "after": 4,
+        "before": 62,
+        "name": "cstm_02_w3"
+      },
+      {
+        "after": 52,
+        "before": 19,
+        "name": "cstm_02_w4"
+      },
+      {
+        "after": 12,
+        "before": 52,
+        "name": "cstm_02_yesterday"
+      },
+      {
+        "after": 17,
+        "before": 16,
+        "name": "cstm_03_email"
+      },
+      {
+        "after": 30,
+        "before": 9,
+        "name": "cstm_03_entry"
+      },
+      {
+        "after": 23,
+        "before": 8,
+        "name": "cstm_03_entry2"
+      },
+      {
+        "after": 55,
+        "before": 22,
+        "name": "cstm_03_entryw"
+      },
+      {
+        "after": 56,
+        "before": 23,
+        "name": "cstm_03_entryw2"
+      },
+      {
+        "after": 26,
+        "before": 5,
+        "name": "cstm_03_name"
+      },
+      {
+        "after": 43,
+        "before": 46,
+        "name": "cstm_03_therapist_no"
+      },
+      {
+        "after": 53,
+        "before": 20,
+        "name": "division"
+      },
+      {
+        "after": 14,
+        "before": 55,
+        "name": "email"
+      },
+      {
+        "after": 44,
+        "before": 36,
+        "name": "first_entry_datetime"
+      },
+      {
+        "after": 37,
+        "before": 39,
+        "name": "gender"
+      },
+      {
+        "after": 40,
+        "before": 47,
+        "name": "hope_property_id_1"
+      },
+      {
+        "after": 62,
+        "before": 27,
+        "name": "hope_property_id_2"
+      },
+      {
+        "after": 21,
+        "before": 6,
+        "name": "introducer_therapist_id"
+      },
+      {
+        "after": 59,
+        "before": 34,
+        "name": "max_applicant_reqenst"
+      },
+      {
+        "after": 8,
+        "before": 58,
+        "name": "max_nuturing_reqenst"
+      },
+      {
+        "after": 35,
+        "before": 42,
+        "name": "min_applicant_reqenst"
+      },
+      {
+        "after": 20,
+        "before": 15,
+        "name": "old_therapist_id"
+      },
+      {
+        "after": 61,
+        "before": 26,
+        "name": "pref_name"
+      },
+      {
+        "after": 48,
+        "before": 30,
+        "name": "professional_name"
+      },
+      {
+        "after": 22,
+        "before": 7,
+        "name": "tel01"
+      },
+      {
+        "after": 34,
+        "before": 50,
+        "name": "tel02"
+      },
+      {
+        "after": 6,
+        "before": 64,
+        "name": "tel03"
+      },
+      {
+        "after": 7,
+        "before": 57,
+        "name": "therapist_id"
+      },
+      {
+        "after": 47,
+        "before": 28,
+        "name": "therapist_name"
+      },
+      {
+        "after": 33,
+        "before": 49,
+        "name": "therapist_no"
+      },
+      {
+        "after": 10,
+        "before": 60,
+        "name": "timezone"
+      },
+      {
+        "after": 64,
+        "before": 33,
+        "name": "week_days"
+      },
+      {
+        "after": 5,
+        "before": 63,
+        "name": "work_holiday"
+      },
+      {
+        "after": 25,
+        "before": 4,
+        "name": "work_saturday"
+      },
+      {
+        "after": 11,
+        "before": 51,
+        "name": "work_sunday"
+      },
+      {
+        "after": 49,
+        "before": 31,
+        "name": "zip_code"
+      }
+    ],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "partitioned_customers"
+}

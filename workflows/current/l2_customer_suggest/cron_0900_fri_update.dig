@@ -1,0 +1,18 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 9 * * 5
+
++l2_customer_suggest:
+  require>: l2_customer_suggest
+  session_time: ${moment(session_time).format()}
+  rerun_on: all
+
++l2_customer_suggest_1d:
+  require>: l2_customer_suggest
+  session_time: ${moment(session_time).add(1, 'day').format()}
+  rerun_on: all
+
++l2_customer_suggest_2d:
+  require>: l2_customer_suggest
+  session_time: ${moment(session_time).add(2, 'day').format()}
+  rerun_on: all

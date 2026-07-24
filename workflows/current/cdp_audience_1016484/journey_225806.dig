@@ -1,0 +1,12 @@
+# CDP: Journey "journey_225806" created at
+# https://console.treasuredata.co.jp/app/ms/1016484/se/1362273
+timezone: "Asia/Tokyo"
+
+
+
++start_journey_workflow:
+  http_call>: https://api-cdp.treasuredata.co.jp/entities/journeys/225806/workflow_definition_for_http_call
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}

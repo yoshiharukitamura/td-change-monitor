@@ -1,0 +1,88 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 1 * * 4
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: df_cron_thu_0000_timeslot_entry_elected
+  notify_slack: false
+  td:
+    database: l2_demand_forecast_auto
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# +week_20240101:
+#   +load:
+#     td_load>: google_sheets_import_1700284682
+#   +prep:
+#     td>: thu_0000/prep_entry_preference_survey.sql
+#     reference_date: "2024-01-01"
+#     source_table: spreadsheet_entry_preference_survey_20240101
+#     create_table: prep_spreadsheet_entry_preference_survey_20240101
+
+# +week_20240108:
+#   +load:
+#     td_load>: google_sheets_import_1700284914
+#   +prep:
+#     td>: thu_0000/prep_entry_preference_survey.sql
+#     reference_date: "2024-01-08"
+#     source_table: spreadsheet_entry_preference_survey_20240108
+#     create_table: prep_spreadsheet_entry_preference_survey_20240108
+
++prd:
+  # +load:
+  #   require>: ms_l0_proc_ingest_core_ss_2
+  #   project_name: mysql_ingest_preprocess
+  #   rerun_on: all
+  +prep:
+    td>: thu_0000/prep_entry_preference_survey_prd.sql
+    create_table: prep_spreadsheet_entry_preference_survey_prd
+
++timeslot_entry_elected_raw:
+  td>: thu_0000/timeslot_entry_elected_raw.sql
+  # source_table: prep_spreadsheet_entry_preference_survey_20240101
+  # source_table: prep_spreadsheet_entry_preference_survey_20240108
+  source_table: prep_spreadsheet_entry_preference_survey_prd
+  create_table: timeslot_entry_elected_raw
+
++timeslot_entry_elected_prep:
+  +delete_duplicate_data:
+    td>:
+    query: "delete from timeslot_entry_elected_prep where time = ${moment(session_time).unix()}"
+  +append:
+    td>: thu_0000/timeslot_entry_elected_prep.sql
+    reference_date: "${moment(session_date).add(32, 'day').format('YYYY-MM-DD')}"
+    insert_into: timeslot_entry_elected_prep
+
++timeslot_entry_elected_result_vh:
+  +delete_duplicate_data:
+    td>:
+    query: "delete from timeslot_entry_elected_result_vh where time = ${moment(session_time).unix()}"
+  +append:
+    td>: thu_0000/timeslot_entry_elected_result_vh.sql
+    reference_date: "${moment(session_date).add(32, 'day').format('YYYY-MM-DD')}"
+    insert_into: timeslot_entry_elected_result_vh
+
++timeslot_entry_elected_result_hv:
+  +delete_duplicate_data:
+    td>:
+    query: "delete from timeslot_entry_elected_result_hv where time = ${moment(session_time).unix()}"
+  +append:
+    td>: thu_0000/timeslot_entry_elected_result_hv.sql
+    reference_date: "${moment(session_date).add(32, 'day').format('YYYY-MM-DD')}"
+    insert_into: timeslot_entry_elected_result_hv
+
++selection_time_slot:
+  td>: thu_0000/selection_time_slot.sql
+  result_connection: prd_td_data_relay_treasuredata
+  result_settings:
+    bucket: prd-td-data-relay
+    path: /external_receve/IF-TD-005/selection_time_slot_${moment(session_date).add(1, 'day').format('YYYYMMDD')}.csv
+    format: csv
+    header: true
+    newline: "\n"

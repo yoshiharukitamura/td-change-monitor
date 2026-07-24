@@ -1,0 +1,11 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Schedule Setting ###
+schedule:
+  cron>: 30 7 * * *
+
+### Manage Workflows ###
+_export:
++_p100__mktg_datamart:
+  require>: _p100__mktg_datamart

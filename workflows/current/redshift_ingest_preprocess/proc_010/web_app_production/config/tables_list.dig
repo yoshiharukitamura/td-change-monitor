@@ -1,0 +1,299 @@
+tables_list_web_app_production:
+  - td_tbl: admins
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: answers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: answer_details
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: api_auths
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: api_trainings
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: app_batch_logs
+    date_col: created
+    flg: N
+    pk: id
+
+#  - td_tbl: app_updates
+#    date_col: modified
+#    flg: N
+
+  - td_tbl: apply
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: area
+    flg: M
+    pk: id
+
+  - td_tbl: auth_customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: banners
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: business_cards
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: city
+    flg: M
+    pk: id
+
+  - td_tbl: customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: customer_reset_emails
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: fcm_customers
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: functions
+    flg: M
+    pk: id
+
+  - td_tbl: give_points
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: job_offer
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: job_offer_keyword
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: job_offer_more
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: job_offer_style
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: mst_job_offer_keyword
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: mst_job_offer_more
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: mst_job_offer_style
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: neighborhood_shop
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: news
+    date_col: updated
+    flg: N
+    pk: id
+
+  - td_tbl: news_log
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: news_type
+    date_col: updated
+    flg: N
+    pk: id
+
+  - td_tbl: operation_logs
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: orders
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: order_products
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: person_in_charges
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: pr_banners
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: pref
+    flg: M
+    pk: id
+
+  - td_tbl: products
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: product_skus
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: push_notifications
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: push_notification_customers
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: push_notification_logs
+    date_col: created
+    flg: N
+    pk: id
+
+####  - td_tbl: push_notification_log_details
+####    date_col: created
+####    flg: N
+
+  - td_tbl: questions
+    date_col: modified
+    flg: N
+    pk: id
+
+#  - td_tbl: red_customers
+#    flg: M
+
+  - td_tbl: reviews
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reward_points
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: roles
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: role_functions
+    flg: M
+    pk: id
+
+  - td_tbl: schema_migrations
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: selections
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: shop
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: shop_api_trainings
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: shop_image
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: shop_remark
+    date_col: update_datetime
+    flg: N
+    pk: id
+
+  - td_tbl: shop_services
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: shop_service_relations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: state_names
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: surveys
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: system_users
+    date_col: modified
+    flg: N
+    pk: id
+
+#  - td_tbl: terms
+#    flg: M
+
+  - td_tbl: therapist
+    date_col: update_time
+    flg: N
+    pk: id
+
+  - td_tbl: therapist_ranks
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: tokens
+    date_col: modified
+    flg: N
+    pk: id

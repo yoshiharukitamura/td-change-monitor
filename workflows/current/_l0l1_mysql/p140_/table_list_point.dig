@@ -1,0 +1,6 @@
+#### Data Source Variables ####
+# 常に全量を取り込む場合はincremental_byはnull、差分の場合はキーとなるカラム名を設定
+
+table_list:
+  - {name: cashable_points, incremental_by: modified , pk: id}
+  - {name: cashable_point_details, incremental_by: modified , pk: id}

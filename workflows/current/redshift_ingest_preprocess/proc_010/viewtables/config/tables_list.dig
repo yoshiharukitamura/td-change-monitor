@@ -1,0 +1,10 @@
+tables_list_viewtables:
+  # - td_tbl: viewtable_bi_orders_hs #取込データ量削減のため停止 20250930
+
+  - td_tbl: view_shop_extend
+
+  - td_tbl: view_customers
+
+  - td_tbl: view_app_customers
+
+  - td_tbl: tbl_fixed_therapist_daily_report

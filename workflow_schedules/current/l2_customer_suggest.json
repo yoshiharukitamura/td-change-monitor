@@ -1,0 +1,26 @@
+{
+  "project_id": "1370403",
+  "project_name": "l2_customer_suggest",
+  "schedules": [
+    {
+      "definition_path": "cron_0900_mon_thu_update.dig",
+      "enabled": true,
+      "schedule_id": "303669",
+      "schedule_type": "cron",
+      "schedule_value": "0 9 * * 1,2,3,4",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "12938449",
+      "workflow_name": "cron_0900_mon_thu_update"
+    },
+    {
+      "definition_path": "cron_0900_fri_update.dig",
+      "enabled": true,
+      "schedule_id": "303670",
+      "schedule_type": "cron",
+      "schedule_value": "0 9 * * 5",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "12938451",
+      "workflow_name": "cron_0900_fri_update"
+    }
+  ]
+}

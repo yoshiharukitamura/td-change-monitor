@@ -1,0 +1,109 @@
+tables_list_web_reservation_production:
+  - td_tbl: checkin_logs
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: checkin_log_details
+    date_col: created
+    flg: N
+    pk: id
+
+  - td_tbl: favorite_body_parts
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_body_parts
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_checkin_functions
+    flg: M
+    pk: id
+
+  - td_tbl: mst_conversations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_dwb_login_users
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_pressures
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_reservation_resources
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_resource_kinds
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_reservation_shops
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_reservation_therapists
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_shop_courses
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: mst_timetables
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reservations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reservation_histories
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reservation_persons
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reservation_products
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: reservation_relations
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: resource_timetables
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: resource_timetable_histories
+    date_col: modified
+    flg: N
+    pk: id
+
+  - td_tbl: therapist_priorities
+    date_col: modified
+    flg: N
+    pk: id

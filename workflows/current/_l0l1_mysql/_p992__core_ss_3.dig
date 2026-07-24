@@ -1,0 +1,75 @@
+###############################################################
+# タイムゾーンの設定とスケジュール、変数の定義
+###############################################################
+
+timezone: Asia/Tokyo
+
+schedule:
+  cron>: 0 12 * * 1
+
+_export:
+  ## 取得出力Databaseの定義
+  td:
+    database: _l0_mysql_core ### 20260617 新規DBに変更
+    table: time_slot_detail_mon_ss
+  from_mysql:
+    database: core
+
+  initialize: 'false'
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+_error:
+  require>: __failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### Mysqlからデータの取得、Redshiftへの転送 ###
+
+#initializeの分岐で、empty_tables / create_tables
++if_initialized_is_true:
+  if>: ${initialize == 'true'}
+  _do:
+    td_ddl>:
+    empty_tables: ["${td.table}"]
+  _else_do:
+    td_ddl>:
+    create_tables: ["${td.table}"]
+
+# WFの再実行用にtime=session_dateとなるデータを削除
++delete_duplicate_data:
+  td>:
+  query: |
+    delete 
+    from ${td.table} 
+    where time = ${moment(session_time).unix()}
+
+# MySQLからデータを取得
++load_from_ms_mst:
+  td_load>: __cnfg_/load_from_mysql_core_ss_3.yml
+  table: ${td.table}
+
+# # Redshiftへの転送
+# +send_to_rs:
+#   td>:
+#   query: |
+#     select *, td_time_string(time, 's!', 'jst') as snapshot_time
+#     from ${td.table}
+#     where time = ${moment(session_time).unix()} and therapist_id is not null
+#   result_connection: td_to_redshift
+#   result_settings:
+#     database: riraclepos
+#     table: time_slot_detail_mon_ss
+#     # mode: replace
+#     mode: append
+#     schema: from_td

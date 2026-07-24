@@ -1,0 +1,46 @@
+{
+  "project_id": "1418513",
+  "project_name": "_l0l1_mysql",
+  "schedules": [
+    {
+      "definition_path": "_p992__core_ss_3.dig",
+      "enabled": true,
+      "schedule_id": "295627",
+      "schedule_type": "cron",
+      "schedule_value": "0 12 * * 1",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15486007",
+      "workflow_name": "_p992__core_ss_3"
+    },
+    {
+      "definition_path": "_p991__core_ss_2.dig",
+      "enabled": true,
+      "schedule_id": "295629",
+      "schedule_type": "cron",
+      "schedule_value": "0 0 * * 4",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15486006",
+      "workflow_name": "_p991__core_ss_2"
+    },
+    {
+      "definition_path": "_cron_0200__daily_update.dig",
+      "enabled": true,
+      "schedule_id": "306785",
+      "schedule_type": "cron",
+      "schedule_value": "0 2 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15486022",
+      "workflow_name": "_cron_0200__daily_update"
+    },
+    {
+      "definition_path": "_p990__core_ss.dig",
+      "enabled": true,
+      "schedule_id": "312787",
+      "schedule_type": "cron",
+      "schedule_value": "0 15 * * 5",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15486005",
+      "workflow_name": "_p990__core_ss"
+    }
+  ]
+}

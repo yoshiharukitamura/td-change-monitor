@@ -1,0 +1,36 @@
+{
+  "project_id": "331980",
+  "project_name": "ml_demand_forecast",
+  "schedules": [
+    {
+      "definition_path": "df_cron_fri_1515_send_quest_data.dig",
+      "enabled": true,
+      "schedule_id": "80943",
+      "schedule_type": "cron",
+      "schedule_value": "15 15 * * 5",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15597999",
+      "workflow_name": "df_cron_fri_1515_send_quest_data"
+    },
+    {
+      "definition_path": "df_cron_thu_0000_timeslot_entry_elected.dig",
+      "enabled": true,
+      "schedule_id": "114988",
+      "schedule_type": "cron",
+      "schedule_value": "0 1 * * 4",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15598003",
+      "workflow_name": "df_cron_thu_0000_timeslot_entry_elected"
+    },
+    {
+      "definition_path": "df_cron_wed_1200_send_time_slot.dig",
+      "enabled": true,
+      "schedule_id": "285573",
+      "schedule_type": "cron",
+      "schedule_value": "0 12 * * 3",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "15598004",
+      "workflow_name": "df_cron_wed_1200_send_time_slot"
+    }
+  ]
+}

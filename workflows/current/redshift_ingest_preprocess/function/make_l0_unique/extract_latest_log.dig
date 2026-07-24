@@ -1,0 +1,30 @@
++check_if_record_exists:
+  td>:
+  query: |
+    select
+      count(1) > 0 as record_exists
+    from
+      ${db_name}.${target_table.td_tbl}
+  store_last_results: true
+
++if_record_exists:
+  if>: ${td.last_results.record_exists}
+  _do:
+    +make_l0_unique:
+      td>:
+      query: |
+        with latest as (
+          select
+            ${target_table.pk}
+            , max(time) as time
+          from
+            ${db_name}.${target_table.td_tbl}
+          group by
+            ${target_table.pk}
+        )
+        select
+          distinct *
+        from
+          ${db_name}.${target_table.td_tbl} AS t1
+          inner join latest as t2 using(${target_table.pk},time)
+      create_table: ${db_name}_unique.${target_table.td_tbl}

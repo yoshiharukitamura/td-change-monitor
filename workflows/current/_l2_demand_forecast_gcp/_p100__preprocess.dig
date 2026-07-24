@@ -1,0 +1,404 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 7 * * *
+
+_export:
+  ## 変数定義ファイルの読み込み
+  td:
+    database: _l2_demand_forecast_gcp
+  
+###############################################################
+# エラー発生時の通知
+###############################################################
+_error:
+  require>: failure_alert
+  project_name: _functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### 各種マスタやトランザクションを用意 ###
++master_tables:
+  _parallel: true
+  ## 店舗マスタ
+  +src_shop_master:
+    td>: 
+    query: |
+      select *
+      from _integration_datamart.mst_shop where status_name = '営業中'
+    create_table: src_shop_master
+  ## 祝日マスタ
+  +src_holiday_master:
+    td>: 
+    query: |
+      select distinct business_date, holiday_type, holiday_type_name, holiday_name from _integration_datamart.mst_datetime
+    create_table: src_holiday_master
+
++history_tables:
+  ## 施術履歴
+  +src_order_history:
+    +prep:
+      td>:
+      query: |
+        select
+          slot_from as time
+          , td_time_string(slot_from, 's!', 'jst') as business_datetime
+          , property_id
+          , s_property_id
+          , sum(if(order_detail_id_seq=1, treatment_minutes_in_hour, 0)) as treatment_minutes
+        from
+          _integration_datamart.cls_order_detail
+          inner join (select property_id, s_property_id from _l2_demand_forecast_gcp.src_shop_master) using (property_id)
+        where
+          slot_from <= ${moment(session_date).add(5, 'hour').unix()}
+        group by
+          1,2,3,4
+      create_table: z_tmp_src_order_history
+    +create_cols:
+      td>: 
+      query: |
+        select array_join(array_agg('if(element_at(kv, '''||s_property_id||''') is null, 0, kv['''||s_property_id||''']) as '||s_property_id order by property_id), ', ') cols
+        from (
+            select distinct property_id, s_property_id
+            from _integration_datamart.cls_order_detail
+              inner join src_shop_master using (property_id)
+          )
+      store_last_results: true
+    +unpivot:
+      td>:
+      query: |
+        select
+          td_time_parse(business_datetime, 'jst') as time
+          , business_datetime as time_fmt
+          , 'slot_from' as time_means
+          , business_datetime as slot_from
+          , td_time_string(td_time_add(td_time_parse(business_datetime, 'jst'), '1h'), 's!', 'jst') as slot_to
+          , business_week, business_dow, dow_num, business_hour
+          , holiday_type, holiday_type_name, holiday_name
+          , ${td.last_results.cols}
+        from
+          _integration_datamart.mst_datetime
+          left join (
+              select
+                business_datetime
+                , map_agg(s_property_id, treatment_minutes) as kv
+              from
+                z_tmp_src_order_history
+              group by
+                business_datetime
+            ) using (business_datetime)
+        where
+          td_time_parse(business_datetime, 'jst') <= ${moment(session_date).add(5, 'hour').unix()}
+      create_table: src_order_history
+    +unpivot_ts:
+      td>:
+      query: |
+        with tmp_time_slot as (
+          select
+            time_slot as business_datetime
+            , s_property_id
+            , sum(final_entry_minuites) as entry_minutes
+          from
+            _integration_datamart.cls_time_slot_integrated
+          group by
+            1,2
+        )
+        select
+          td_time_parse(business_datetime, 'jst') as time
+          , business_datetime as time_fmt
+          , 'slot_from' as time_means
+          , business_datetime as slot_from
+          , td_time_string(td_time_add(td_time_parse(business_datetime, 'jst'), '1h'), 's!', 'jst') as slot_to
+          , business_week, business_dow, dow_num, business_hour
+          , holiday_type, holiday_type_name, holiday_name
+          , ${td.last_results.cols}
+        from
+          _integration_datamart.mst_datetime
+          left join (
+              select
+                business_datetime
+                , map_agg(s_property_id, entry_minutes) as kv
+              from
+                tmp_time_slot
+              group by
+                business_datetime
+            ) using (business_datetime)
+        where
+          td_time_parse(business_datetime, 'jst') <= ${moment(session_date).add(5, 'hour').unix()}
+      create_table: src_timeslot_history
+
+  # 
+  +src_sufficiency_history:
+    td>:
+    query: |
+      with prep_td_timeslot as (
+        select
+          business_day as business_date
+          , cluster_id
+          , cast(null as bigint) as therapist_id
+          , mst_shop_id as property_id
+          , s_property_id
+          , business_hour
+          , time_slot as td_time_slot
+          , td1
+          , td2
+          , td3
+          , forecast_value
+          , loss_opps_fin_value
+        from
+          _l2_demand_forecast_gcp.fin_timeslot_raw_vtable
+          inner join (select business_day, min(weeks_ahead_riraku) as weeks_ahead_riraku from sandbox_hiveiq.fin_timeslot_raw_vtable_v9 group by 1) using (business_day, weeks_ahead_riraku)
+          inner join (select distinct property_id as mst_shop_id, s_property_id from _integration_datamart.mst_shop where status_name = '営業中') using (mst_shop_id)
+      )
+      , prep_timeslot as (
+        select
+          property_id
+          , business_date
+          , business_hour
+          , sum(entry_slot) as entry_slot
+        from
+          _integration_datamart.cls_time_slot_detail
+        group by
+          1,2,3
+      )
+      , prep_order as (
+        select
+          property_id
+          , business_date
+          , business_hour
+          , sum(treatment_minutes) as treatment_minutes
+        from
+          _integration_datamart.cls_order_detail
+        group by
+          1,2,3    
+      )
+
+      select
+        property_id
+        , s_property_id
+        , td_time_string(td_date_trunc('week', td_time_parse(business_date, 'jst'), 'jst'), 'd!', 'jst') as business_week
+        , substr('月火水木金土日', dow(cast(business_date as date)), 1) as business_dow
+        , business_date
+        , business_hour
+        , td_time_slot
+        , td1
+        , td2
+        , td3
+        , entry_slot
+        , treatment_minutes
+        , sum(entry_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 4 preceding and 1 preceding)
+          / sum(td_time_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 4 preceding and 1 preceding) as sufficiency_past_4week
+        , sum(entry_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 8 preceding and 1 preceding)
+          / sum(td_time_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 8 preceding and 1 preceding) as sufficiency_past_8week
+        , sum(entry_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 15 preceding and 1 preceding)
+          / sum(td_time_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 15 preceding and 1 preceding) as sufficiency_past_15week
+        , case
+            when sum(entry_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 4 preceding and 1 preceding) > 0
+            then
+                sum(treatment_minutes) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 4 preceding and 1 preceding) /60
+                / sum(entry_slot) over (partition by dow(cast(business_date as date)), business_hour, property_id order by business_date rows between 4 preceding and 1 preceding)
+            end as utilization
+      from
+        prep_td_timeslot
+        left join prep_timeslot using (property_id, business_date, business_hour)
+        left join prep_order using (property_id, business_date, business_hour)
+    create_table: src_sufficiency_history
+
++lost_opps:
+  +log:
+    td>:
+    query: |
+      with session_data as (
+        select
+          user_pseudo_id
+          , td_date_trunc('day', event_unixtime, 'jst') as session_date
+          , ga_session_id
+          , shop_no
+          , event_unixtime
+          , event_timestamp
+          , event_name
+          , event_status
+          , lead(event_unixtime) over (
+              partition by user_pseudo_id, ga_session_id
+              order by event_timestamp)
+            - event_unixtime as stay_sec
+        from
+          _integration_datamart.z_tmp_cls_app_log_104w
+        where
+          td_time_range(time, td_time_add(td_date_trunc('week', td_scheduled_time(), 'jst'), '-4w'), td_date_trunc('week', td_scheduled_time(), 'jst'), 'jst')
+      )
+      , therapy_data_all as (
+        select distinct *
+        from (
+            select user_pseudo_id, therapy_date
+            from (select distinct customer_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where customer_id is not null)
+              inner join (select distinct customer_id, td_date_trunc('day', start_unixtime, 'jst') as therapy_date from _integration_datamart.z_tmp_cls_reservation) using (customer_id)
+            union all
+            select user_pseudo_id, therapy_date
+            from (select distinct reservation_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where reservation_id is not null)
+              inner join (select distinct reservation_id, td_date_trunc('day', start_unixtime, 'jst') as therapy_date from _integration_datamart.z_tmp_cls_reservation) using (reservation_id)
+          )
+      )
+      , reservation_data_all as (
+        select distinct *
+        from (
+            select user_pseudo_id, reservation_date
+            from (select distinct customer_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where customer_id is not null)
+              inner join (select distinct customer_id, td_date_trunc('day', created_unixtime, 'jst') as reservation_date from _integration_datamart.z_tmp_cls_reservation) using (customer_id)
+            union all
+            select user_pseudo_id, reservation_date
+            from (select distinct reservation_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where reservation_id is not null)
+              inner join (select distinct reservation_id, td_date_trunc('day', created_unixtime, 'jst') as reservation_date from _integration_datamart.z_tmp_cls_reservation) using (reservation_id)
+          )
+      )
+      , merged as (
+        select
+          s0.user_pseudo_id
+          , s0.session_date
+          , array_distinct(array_agg(s0.shop_no) filter(where s0.shop_no is not null)) as arry_shop_no
+          , td_date_trunc('hour', max(event_unixtime), 'jst') as session_datehour
+          , day_of_week(from_unixtime(max(event_unixtime), 'Asia/Tokyo')) as session_dow
+          , hour(from_unixtime(max(event_unixtime), 'Asia/Tokyo')) as session_hour
+          , max(s0.event_status) as max_event_status
+          , coalesce(max(if(s0.stay_sec >= 10, s0.event_status)), 0) as max_event_status_over_n_sec
+          , max(if(t1.user_pseudo_id is not null or t2.user_pseudo_id is not null or t3.user_pseudo_id is not null, 1, 0)) as therapy_within_3day
+          , max(if(r1.user_pseudo_id is not null or r2.user_pseudo_id is not null or r3.user_pseudo_id is not null, 1, 0)) as reserve_within_3day
+        from
+          session_data as s0
+          left join therapy_data_all as t0 on s0.user_pseudo_id = t0.user_pseudo_id and s0.session_date = t0.therapy_date
+          left join therapy_data_all as t1 on s0.user_pseudo_id = t1.user_pseudo_id and s0.session_date = td_time_add(t1.therapy_date, '-1d', 'jst')
+          left join therapy_data_all as t2 on s0.user_pseudo_id = t2.user_pseudo_id and s0.session_date = td_time_add(t2.therapy_date, '-2d', 'jst')
+          left join therapy_data_all as t3 on s0.user_pseudo_id = t3.user_pseudo_id and s0.session_date = td_time_add(t3.therapy_date, '-3d', 'jst')
+          left join reservation_data_all as r1 on s0.user_pseudo_id = r1.user_pseudo_id and s0.session_date = td_time_add(r1.reservation_date, '-1d', 'jst')
+          left join reservation_data_all as r2 on s0.user_pseudo_id = r2.user_pseudo_id and s0.session_date = td_time_add(r2.reservation_date, '-2d', 'jst')
+          left join reservation_data_all as r3 on s0.user_pseudo_id = r3.user_pseudo_id and s0.session_date = td_time_add(r3.reservation_date, '-3d', 'jst')
+        where
+          event_status in (1, 2, 3, 4, 5)
+        group by
+          1,2
+      )
+
+      select
+        *
+        , session_date as time
+        , cardinality(arry_shop_no) as split_count
+        , case
+            when max_event_status in (2, 3)
+                  and max_event_status_over_n_sec in (2, 3)
+                  and therapy_within_3day = 0
+                  and reserve_within_3day = 0
+                then 1
+            else 0
+          end as loss_opps
+      from
+        merged
+    create_table: z_tmp_lost_opps_log
+  +raw:
+    td>:
+    query: |
+      with allocation_coef as (
+        select
+          day_of_week(from_unixtime(created_unixtime, 'Asia/Tokyo')) as session_dow
+          , hour(from_unixtime(created_unixtime, 'Asia/Tokyo')) as session_hour
+          , date_diff('hour', date_trunc('hour', from_unixtime(created_unixtime)), date_trunc('hour',from_unixtime(start_unixtime))) as diff_hour
+          , 1.0 * count(1) / sum(count(1)) over (partition by day_of_week(from_unixtime(created_unixtime, 'Asia/Tokyo')), hour(from_unixtime(created_unixtime, 'Asia/Tokyo'))) as coef
+        from
+          _integration_datamart.z_tmp_cls_reservation
+        where
+          td_time_range(time, td_time_add(td_date_trunc('week', td_scheduled_time(), 'jst'), '-4w'), td_date_trunc('week', td_scheduled_time(), 'jst'), 'jst')
+          and date_diff('hour', date_trunc('hour', from_unixtime(created_unixtime)), date_trunc('hour',from_unixtime(start_unixtime))) <= 24*7
+          and hour(from_unixtime(start_unixtime, 'Asia/Tokyo')) between 9 and 23
+          and reserved_from = 'APP'
+        group by
+          1,2,3
+      )
+
+      select
+        *
+        , td_time_add(session_datehour, cast(diff_hour as varchar)||'h') as business_datehour
+        , td_time_string(td_time_add(session_datehour, cast(diff_hour as varchar)||'h'), 'd!', 'jst') as business_date
+        , hour(from_unixtime(td_time_add(session_datehour, cast(diff_hour as varchar)||'h'), 'Asia/Tokyo')) as business_hour
+        , round((loss_opps * 0.831 * coef), 2) / split_count as loss_opps_fin
+      from
+        z_tmp_lost_opps_log
+        left join (
+          select
+            user_pseudo_id
+            , td_time_add(session_date, '1d', 'jst') as session_date
+            , 1 as loss_opps_yesterday
+          from
+            z_tmp_lost_opps_log
+        ) using (user_pseudo_id, session_date)
+        cross join unnest (
+            arry_shop_no
+          ) as t1(shop_no)
+        left join allocation_coef using (session_dow, session_hour)
+      where
+        loss_opps = 1
+        and arry_shop_no is not null
+        and loss_opps_yesterday is null
+    create_table: z_tmp_lost_opps_raw
+  +preset:
+    +td_ddl:
+      td_ddl>:
+      create_tables: ["src_lost_opps_history", "prep_lost_opps"]
+    +delete_src:
+      td>:
+      query: |
+        delete
+        from src_lost_opps_history
+        where td_time_range(time, ${moment(session_date).startOf("week").add(1, "d").subtract(7, "d").unix()}, ${moment(session_date).startOf("week").add(1, "d").unix()}, 'jst')
+    +delete_prep:
+      td>:
+      query: |
+        delete
+        from prep_lost_opps
+        where time = ${moment(session_date).startOf("week").add(1, "d").unix()}
+  +src:
+    td>:
+    query: |
+      select
+        business_datehour as time
+        , td_time_string(business_datehour, 's!', 'jst') as business_datetime
+        , shop_no
+        , property_id
+        , substr('月火水木金土日', dow(cast(business_date as date)), 1) as business_dow
+        , business_hour
+        , sum(loss_opps_fin) as lost_opps
+      from
+        z_tmp_lost_opps_raw
+        left join (select cast(shop_no as int) as shop_no, property_id from _integration_datamart.mst_shop) using (shop_no)
+      where
+        td_time_range(business_datehour, ${moment(session_date).startOf("week").add(1, "d").subtract(7, "d").unix()}, ${moment(session_date).startOf("week").add(1, "d").unix()}, 'jst')
+      group by
+        1,2,3,4,5,6
+    insert_into: src_lost_opps_history
+  +prep_lost_opps:
+    td>:
+    query: |
+      select
+        ${moment(session_date).startOf("week").add(1, "d").unix()} as time
+        , ${moment(session_date).startOf("week").add(1, "d").unix()} as processing_date
+        , shop_no
+        , property_id
+        , substr('月火水木金土日', dow(cast(business_date as date)), 1) as business_dow
+        , business_hour
+        , sum(loss_opps_fin)/4 as lost_opps
+      from
+        z_tmp_lost_opps_raw
+        left join (select cast(shop_no as int) as shop_no, property_id from _integration_datamart.mst_shop) using (shop_no)
+      group by
+        1,2,3,4,5,6
+    insert_into: prep_lost_opps
+
+
+

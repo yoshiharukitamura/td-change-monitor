@@ -1,0 +1,6 @@
++customer:
+  +aggregate:
+    td>: td_js_sdk/aggregate.sql
+    create_table: cdp_tmp_td_js_sdk
+    engine: hive
+    _retry: 5

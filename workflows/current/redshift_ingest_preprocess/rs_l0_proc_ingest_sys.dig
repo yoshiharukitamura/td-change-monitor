@@ -1,0 +1,49 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 7 * * *
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  !include : proc_010/sys_production/config/tables_list_2.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_l0_proc_ingest_sys
+  notify_slack: true
+  # set td database
+  td:
+    database: l0_sys_production
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
++set_tables_for_inital:
+  for_each>:
+    target_table: ${tables_list_sys_production}
+  _do:
+    td_ddl>:
+    create_tables:
+      - ${target_table.td_tbl}
+
+# main process
++for_each_tables:
+  _export:
+    db_name: l0_sys_production
+  for_each>:
+    target_table: ${tables_list_sys_production}
+  _do:
+    +data_load:
+      if>: ${target_table.flg == 'N'}
+      _do:
+        +load_from_rs:
+          td_load>: proc_010/sys_production/config/load_from_rs.yml
+          database: ${td.database}
+          table: ${target_table.td_tbl}
+      _else_do:
+        +load_from_rs_mst:
+          td_load>: proc_010/sys_production/config/load_from_rs_mst.yml
+          database: ${td.database}
+          table: ${target_table.td_tbl}
+#    +make_unique:
+#      call>: function/make_l0_unique/extract_latest_log.dig

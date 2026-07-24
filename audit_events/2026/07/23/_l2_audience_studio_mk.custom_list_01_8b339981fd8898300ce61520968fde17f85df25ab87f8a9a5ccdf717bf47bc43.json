@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "8b339981fd8898300ce61520968fde17f85df25ab87f8a9a5ccdf717bf47bc43",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l2_audience_studio_mk",
+  "events": [
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "88b5d63d-d8a3-4b9e-9468-9c31421d3484",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_mk/custom_list_01",
+      "resource_id": "297473403",
+      "table": "custom_list_01",
+      "time": "2026-07-18T23:44:03+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "8c199f22-3c0b-47f8-bec5-5b78cb8b65a9",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_mk/custom_list_01/log",
+      "resource_id": "297682996",
+      "table": "custom_list_01",
+      "time": "2026-07-18T23:44:04+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "c907c135-834b-4f6f-af0f-aa53d8319f1e",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_mk/custom_list_01",
+      "resource_id": "297682996",
+      "table": "custom_list_01",
+      "time": "2026-07-19T23:53:07+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "7a608d8c-2309-47b4-b718-e44bd652fb38",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_mk/custom_list_01/log",
+      "resource_id": "297904262",
+      "table": "custom_list_01",
+      "time": "2026-07-19T23:53:08+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "f08bb7e5-9480-4c7c-b8a7-87550cbf7d32",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_mk/custom_list_01",
+      "resource_id": "297904262",
+      "table": "custom_list_01",
+      "time": "2026-07-20T23:50:36+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "6ed0f2fe-301b-4480-a633-514b7b92d62e",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_mk/custom_list_01/log",
+      "resource_id": "298119458",
+      "table": "custom_list_01",
+      "time": "2026-07-20T23:50:38+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "e31a1afa-b834-4240-9fdf-b2e393aa4865",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_mk/custom_list_01",
+      "resource_id": "298119458",
+      "table": "custom_list_01",
+      "time": "2026-07-21T23:52:38+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "ce91d10a-78bf-4146-830b-3e813dbf86f6",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_mk/custom_list_01/log",
+      "resource_id": "298337151",
+      "table": "custom_list_01",
+      "time": "2026-07-21T23:52:39+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "ec768b8a-7c63-4de9-a436-9759475e4fdb",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_mk/custom_list_01",
+      "resource_id": "298337151",
+      "table": "custom_list_01",
+      "time": "2026-07-22T23:48:19+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "74427bd1-3214-4ee4-856b-9a75c5136cf1",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_mk/custom_list_01/log",
+      "resource_id": "298557275",
+      "table": "custom_list_01",
+      "time": "2026-07-22T23:48:20+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "436aaac1-6a3d-4225-8701-f0c55e78d47b",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_mk/custom_list_01",
+      "resource_id": "298557275",
+      "table": "custom_list_01",
+      "time": "2026-07-23T23:49:35+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "ce47b8e3-4122-4c0e-a0d3-a91f2328fad6",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_mk/custom_list_01/log",
+      "resource_id": "298777130",
+      "table": "custom_list_01",
+      "time": "2026-07-23T23:49:36+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "custom_list_01"
+}

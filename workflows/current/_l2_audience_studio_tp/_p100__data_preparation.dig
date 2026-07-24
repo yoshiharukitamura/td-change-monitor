@@ -1,0 +1,80 @@
+### Table Naming Rules ###
+# Master Table: ps_tbl__mstr_{{xxx}}
+# Attribute Table: ps_tbl__attr_{{xxx}}
+# Behavior Table: ps_tbl__bhvr_{{xxx}}
+
+### See SQL below for detailed specifications ###
+# __ps_upd_/create_cnfg_fin.sql
+
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Variables ###
+_export:
+  ## Output Database
+  td:
+    database: _l2_audience_studio_tp
+  google_sheets:
+    - custom_list_01
+    - custom_list_02
+    - custom_list_03
+
+### error handling ###
+_error:
+  require>: failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    # notify: {mail: true, slack: true}
+    notify: {mail: false, slack: false}
+
+### main process ###
++create_tables:
+  td_ddl>:
+  empty_tables: ${google_sheets}
+
++for_each_googlesheets:
+  for_each>:
+    sheet: ${google_sheets}
+  _do:
+    +load:
+      td_load>: p100_/load_google_sheets.yml
+      table: ${sheet}
+    +prep:
+      +create_columns:
+        td>: p100_/create_columns.sql
+        store_last_results: true
+      +custom_list_tables:
+        td>: p100_/custom_list_tables.sql
+        create_table: ps_tbl__attr_${sheet}
+
++ps_tbl__mstr_ids:
+  td>: p100_/ps_tbl__mstr_ids.sql
+  create_table: ps_tbl__mstr_ids
+
++ps_tbl__attr_therapist:
+  td>: p100_/ps_tbl__attr_therapist.sql
+  create_table: ps_tbl__attr_therapist
+
++ps_tbl__bhvr_entry:
+  td>: p100_/ps_tbl__bhvr_entry.sql
+  create_table: ps_tbl__bhvr_therapist_entry
+
++ps_tbl__bhvr_therapist_web:
+  td>: p100_/ps_tbl__bhvr_therapist_web.sql
+  create_table: ps_tbl__bhvr_therapist_web
+
++ps_tbl__bhvr_therapist_entry_hour:
+  td>: p100_/ps_tbl__bhvr_therapist_entry_hour.sql
+  create_table: ps_tbl__bhvr_therapist_entry_hour
+
++ps_tbl__bhvr_therapist_available_timeslot:
+  td>: p100_/ps_tbl__bhvr_therapist_available_timeslot.sql
+  create_table: ps_tbl__bhvr_therapist_available_timeslot
+
++ps_tbl__bhvr_therapist_app_suggest:
+  td>: p100_/ps_tbl__bhvr_therapist_app_suggest.sql
+  create_table: ps_tbl__bhvr_therapist_app_suggest
+

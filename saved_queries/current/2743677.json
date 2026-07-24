@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "25337356",
+    "name": "_l1_mysql_pos"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "7c4af3e34d3f44bca82c29667e239d3f23e64a9e264545466358c65e85dc9a5b",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2743677",
+  "query_name": "検証_ビンゴ施策_befo/afte",
+  "query_string": "with customer_info as (\n  select\n    dtb_customer_id as customer_id\n    , case\n        when substr(created_app, 1, 10) between '2024-10-28' and '2024-11-17' then '24_before'\n        when substr(created_app, 1, 10) between '2024-11-18' and '2025-01-28' then '24_after'\n        when substr(created_app, 1, 10) between '2025-10-27' and '2025-11-16' then '25_before'\n        when substr(created_app, 1, 10) between '2025-11-17' and '2025-12-08' then '25_after'\n        else 'other'\n      end as segment\n    , case\n        when substr(created_app, 1, 10) between '2024-10-28' and '2024-11-17' then 1\n        when substr(created_app, 1, 10) between '2024-11-18' and '2024-12-08' then 2\n        when substr(created_app, 1, 10) between '2025-10-27' and '2025-11-16' then 3\n        when substr(created_app, 1, 10) between '2025-11-17' and '2026-01-27' then 4\n        else 9\n      end as segment_id\n    , created_app\n  from\n    _l1_mysql_hp.customers\n)\n\n--, bingo_customer as (\n--  select\n--    customer_id\n--    , '25_after' as segment\n--    , 4 as segment_id\n--    , created as created_app\n--  from\n--    l2_verification.tmp_bingo_target_customer_251211\n--  where\n--    substr(created, 1, 10) between '2025-11-17' and '2025-12-08'\n--)\n\n, merged_target_customer as (\n  select\n    distinct\n    customer_id\n    , segment\n    , segment_id\n    , created_app\n  from (\n    select * from customer_info where segment <> 'other'\n  )\n)\n\n, order_log as (\n  select\n    customer_id\n    , id as order_id\n    , registered_business_date\n    , purchased_datetime\n    , total_amount_of_treatment_minutes\n  from\n    _l1_mysql_pos.orders\n  where coalesce(deleted, 0) = 0\n        and cancel_datetime is null\n        --and status = 2\n        and registered_business_date is not null\n        and total_amount_of_treatment_minutes > 0\n  group by\n    1,2,3,4,5\n)\n\n, date_list as (\n  select distinct registered_business_date from order_log where substr(registered_business_date, 1, 10) between '2024-10-28' and '2024-11-17'\n    union all\n  select distinct registered_business_date from order_log where substr(registered_business_date, 1, 10) between '2024-11-18' and '2025-01-28'\n    union all\n  select distinct registered_business_date from order_log where substr(registered_business_date, 1, 10) between '2025-10-27' and '2025-11-16'\n    union all\n  select distinct registered_business_date from order_log where substr(registered_business_date, 1, 10) between '2025-11-17' and '2026-01-27'\n)\n\n, customer_date_list as (\n  select\n    customer_id\n    , substr(registered_business_date, 1, 10) as business_date\n  from\n    merged_target_customer\n  cross join\n    date_list\n)\n\n, agg_order as (\n  select\n    customer_id\n    , segment\n    , segment_id\n    , substr(registered_business_date, 1, 10) as business_date\n    , if(created_app < purchased_datetime, total_amount_of_treatment_minutes, 0) as treatment_minuites\n  from\n    order_log\n  inner join\n    merged_target_customer using (customer_id)\n)\n\n, merged as (\n  select\n    customer_id\n    , segment\n    , segment_id\n    , year_of_week(date(business_date)) as yod\n    , business_date\n    , coalesce(treatment_minuites, 0) as treatment_minuites\n  from\n    customer_date_list\n  inner join\n    agg_order using (customer_id, business_date)\n)\n\n, agg_stats as (\n  select\n    customer_id\n    , min(if(treatment_minuites > 0, business_date)) as first_order_date\n    , count(distinct if(treatment_minuites > 0, business_date)) as order_count\n    , avg(if(treatment_minuites > 0, treatment_minuites)) as avg_treatment_minuites\n  from\n    merged\n  group by\n    1\n)\n\nselect\n  customer_id as \"Customer_ID\"\n  , first_order_date as \"初回利用日_APP登録後\"\n  , segment_id as \"セグメントNo\"\n  , segment as \"セグメント\"\n  , order_count as \"利用日数\"\n  , avg_treatment_minuites as \"平均施術分数\"\n  , yod as \"年\"\n  , business_date as \"営業日\"\n  , treatment_minuites as \"施術分数\"\nfrom\n  merged\ninner join\n  agg_stats using (customer_id)\norder by\n  1,3",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

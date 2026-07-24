@@ -1,0 +1,111 @@
+_export:
+###############################################################
+### プロジェクトの目的
+###############################################################
+# MySQLの以下DBからTBLの取得、TDへのl0、l1を行う
+# 対象DB
+# pos
+# core
+# hp
+# reservation
+# point #20250825時点でデータの更新がないため、移行後停止
+
+###############################################################
+### プロジェクト内での処理概要: リンクを辿れるようにtd>:を利用
+###############################################################
+## スケジュール管理
+    ## WFの概要を記載
+    # td>: _cron_0100__daily_update.dig
+## メイン処理
+    ## WFの概要を記載
+    # td>: _p100__pos.dig
+    ## WFの概要を記載
+    # td>: _p110__core.dig
+    ## WFの概要を記載
+    # td>: _p120__hp.dig
+    ## WFの概要を記載
+    # td>: _p130__reservation.dig
+    ## WFの概要を記載
+    # td>: _p140__point.dig
+    ## WFの概要を記載
+    # td>: _p200__pos.dig
+    ## WFの概要を記載
+    # td>: _p210__core.dig
+    ## WFの概要を記載
+    # td>: _p220__hp.dig
+    ## WFの概要を記載
+    # td>: _p230__reservation.dig
+    ## WFの概要を記載
+    # td>: _p240__point.dig
+    ## WFの概要を記載
+    # td>: _p990__core_ss.dig
+    ## WFの概要を記載
+    # td>: _p991__core_ss_2.dig
+    ## WFの概要を記載
+    # td>: _p992__core_ss_3.dig
+    ## WFの概要を記載
+    # td>: _p993__core_ss_4.dig
+    ## WFの概要を記載
+    # td>: _p994__core_ss_5.dig
+    ## WFの概要を記載
+    # td>: _p999__generate_readme.dig
+## 一括処理
+    ## WFの概要を記載
+    # td>: _z_bulk_p100__pos.dig
+    ## WFの概要を記載
+    # td>: _z_bulk_p110__core.dig
+    ## WFの概要を記載
+    # td>: _z_bulk_p120__hp.dig
+    ## WFの概要を記載
+    # td>: _z_bulk_p130__reservation.dig
+    ## WFの概要を記載
+    # td>: _z_bulk_p140__point.dig
+## その他
+ 
+ 
+###############################################################
+### ディレクトリ構造
+###############################################################
+# project
+# ┗━━ __cnfg_/
+#       ┗━━ load_from_mysql.yml
+#       ┗━━ load_from_mysql_core_ss.yml
+#       ┗━━ load_from_mysql_core_ss_2.yml
+#       ┗━━ load_from_mysql_core_ss_3.sql
+#       ┗━━ load_from_mysql_core_ss_4_5.yml
+# ┗━━ _cron_0100__daily_update.dig
+# ┗━━ _p100__pos.dig
+# ┗━━ _p110__core.dig
+# ┗━━ _p120__hp.dig
+# ┗━━ _p130__reservation.dig
+# ┗━━ _p140__point.dig
+# ┗━━ _p200__pos.dig
+# ┗━━ _p210__core.dig
+# ┗━━ _p220__hp.dig
+# ┗━━ _p230__reservation.dig
+# ┗━━ _p240__point.dig
+# ┗━━ _p990__core_ss.dig
+# ┗━━ _p991__core_ss_2.dig
+# ┗━━ _p992__core_ss_3.dig
+# ┗━━ _p993__core_ss_4.dig
+# ┗━━ _p994__core_ss_5.dig
+# ┗━━ _p999__generate_readme.dig
+# ┗━━ _z_bulk_p100__pos.dig
+# ┗━━ _z_bulk_p110__core.dig
+# ┗━━ _z_bulk_p120__hp.dig
+# ┗━━ _z_bulk_p130__reservation.dig
+# ┗━━ _z_bulk_p140__point.dig
+# ┗━━ p100_/
+#       ┗━━ table_list_pos.dig
+# ┗━━ p110_/
+#       ┗━━ table_list_core.dig
+# ┗━━ p120_/
+#       ┗━━ table_list_hp.dig
+# ┗━━ p130_/
+#       ┗━━ table_list_reservation.dig
+# ┗━━ p140_/
+#       ┗━━ table_list_point.dig
+# ┗━━ p200_/
+#       ┗━━ get_latest_data.sql
+# ┗━━ p999_/
+#       ┗━━ __modules.py

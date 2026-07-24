@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23958944",
+    "name": "_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": null,
+    "connector_type": null
+  },
+  "query_id": "2743766",
+  "query_name": "検証_ビンゴマス達成状況_デジ戦ver",
+  "query_string": "with target_customer as (\n  select\n    distinct\n    dtb_customer_id as customer_id\n    , created_app as registered_date\n  from\n    _l1_mysql_hp.customers\n  where\n    substr(created_app, 1, 10) between '2025-11-17' and '2026-01-27'\n)\n\n, order_log as (\n    select\n      t0.customer_id\n      , t0.id as order_id\n      , substr(registered_business_date, 1, 10) as business_date\n      , purchased_datetime\n      , max(if(t2.rate in (1,2), 1, 0)) as review_flag\n      , max(if(regexp_like(product_name, '足つぼ') and cast(regexp_extract(product_name, '([0-9]+)') as integer) >= 15, 1, 0)) as foot_flag\n      , max(if(total_amount_of_nomination_fee > 0.0, 1, 0)) as nomination_flag\n      , max(if(product_name in ('マットレス', 'Cool プレミアムマットレス'), 1, 0)) as premiummatt_flag\n      , max(if(cast(substr(t0.treatment_start_datetime, 12, 2) as integer) in (12,13,14,15,16,17,18) and holiday_type is null and business_dow not in ('土', '日'), 1, 0)) as daytime_flag\n      , max(if(total_amount_of_treatment_minutes >= 90, 1, 0)) as over90_flag\n      , max(if(t4.reservation_id is not null, 1, 0)) as app_reserve_flag\n    from\n      _l1_mysql_pos.orders as t0\n    left join\n      (select distinct order_id, product_name from _integration_datamart.cls_order_detail) as t1 on t0.id = t1.order_id\n    left join\n      _l1_mysql_hp.reviews as t2 on t0.id = t2.order_id\n    left join\n      _integration_datamart.mst_datetime as t3 on substr(t0.registered_business_date, 1, 10) = t3.business_date\n    left join\n      (select distinct reservation_id from _integration_datamart.z_tmp_cls_app_reserve where substr(td_time_string(event_unixtime, 'd!', 'jst'), 1, 10) >= '2024-11-18') as t4 on t0.reservation_id = t4.reservation_id\n    where\n      substr(t0.purchased_datetime, 1, 10) >= '2025-11-17' and substr(t0.purchased_datetime, 1, 10) <= '2026-01-27'\n      and total_amount_of_treatment_minutes > 0\n    group by\n      1,2,3,4\n)\n\n, merged as (\n  select\n    t0.customer_id\n    , order_id\n    , business_date\n    , review_flag\n    , foot_flag\n    , nomination_flag\n    , premiummatt_flag\n    , daytime_flag\n    , over90_flag\n    , app_reserve_flag\n    , if(lead(purchased_datetime) over (partition by t0.customer_id order by order_id) is not null, 1) as f2_flag\n    , date_diff('day', date(substr(registered_date, 1, 10)), date(business_date)) as registered_diff\n  from\n    target_customer as t0\n  left join\n    order_log as t1\n    on t0.customer_id = t1.customer_id\n       and t0.registered_date <= t1.purchased_datetime\n)\n\nselect\n  count(distinct if(premiummatt_flag = 1, customer_id)) as \"Pマットレス\"\n  , count(distinct if(review_flag = 1, customer_id)) as \"レビュー評価\"\n  , count(distinct if(foot_flag = 1, customer_id)) as \"足つぼ\"\n  , count(distinct if(nomination_flag = 1, customer_id)) as \"TP指名\"\n  , count(distinct if(f2_flag = 1, customer_id)) as \"2回目施術\"\n  , count(distinct if(app_reserve_flag = 1, customer_id)) as \"APP予約\"\n  , count(distinct if(daytime_flag = 1, customer_id)) as \"平日12-18時\"\n  , 'ダミー' as \"初回ログイン\"\n  , count(distinct if(over90_flag = 1, customer_id)) as \"90分以上\"\nfrom\n  merged",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

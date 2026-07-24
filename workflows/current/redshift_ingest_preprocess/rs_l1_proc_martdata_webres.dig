@@ -1,0 +1,48 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_l1_proc_martdata_webres
+  notify_slack: true
+  # set td database
+  td:
+    database: l1_web_reservation_production
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
+# main process
++10_upd_log_tables:
+  _parallel: true
+
+  +upd_log_reservation_persons:
+    td>: proc_110/web_reservation_production/queries/reservation_persons.sql
+    create_table: log_reservation_persons
+
+  +upd_log_reservation_products:
+    td>: proc_110/web_reservation_production/queries/reservation_products.sql
+    create_table: log_reservation_products
+
+  +upd_log_reservation_relations:
+    td>: proc_110/web_reservation_production/queries/reservation_relations.sql
+    create_table: log_reservation_relations
+
+  +upd_log_reservations:
+    td>: proc_110/web_reservation_production/queries/reservations.sql
+    create_table: log_reservations
+
+  +upd_log_resource_timetables:
+    td>: proc_110/web_reservation_production/queries/resource_timetables.sql
+    create_table: log_resource_timetables
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

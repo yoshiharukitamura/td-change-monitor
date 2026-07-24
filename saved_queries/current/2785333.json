@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23958944",
+    "name": "_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "1399eb41d945034257ba5665f8cc2fd00c7ccc4cc053070420c36ab66365dae0",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2785333",
+  "query_name": "R/wモニタリング_F2転換_w12f版",
+  "query_string": "with prep_order_log as (\n  select\n    customer_id\n    , business_date\n    , order_id\n  from\n    _integration_datamart.cls_order_detail\n  group by\n    1,2,3\n)\n\n, order_log as (\n  select\n    customer_id\n    , min(business_date) as first_business_date\n    , min(if(order_seq = 2, business_date)) as f2_business_date\n    , min(if(order_seq = 3, business_date)) as f3_business_date\n  from (\n    select\n      customer_id\n      , business_date\n      , order_id\n      , row_number() over (partition by customer_id order by business_date, order_id) as order_seq\n    from \n      prep_order_log\n  )\n  group by\n    1\n)\n\n, order_week_diff as (\n  select\n    customer_id\n    , first_business_date\n    , f2_business_date\n    , case\n        when f2_business_date is null then null\n        else date_diff('week', date(first_business_date), date(f2_business_date))\n      end as f2_week_diff\n    , f3_business_date\n    , case\n        when f3_business_date is null then null\n        else date_diff('week', date(first_business_date), date(f3_business_date))\n      end as f3_week_diff\n  from\n    order_log\n)\n\n, ob_week_diff as (\n  select\n    customer_id\n    , first_business_date\n    , f2_business_date\n    , f2_week_diff\n    , f3_business_date\n    , f3_week_diff\n    , ob_week_diff\n    , td_time_string(\n        td_date_trunc('week', td_time_parse(date_format(\n          date_add('week', ob_week_diff, date(first_business_date)), '%Y-%m-%d'), 'jst'), 'jst'), 'd!', 'jst') as business_week\n  from\n    order_week_diff\n  cross join unnest(sequence(1, 12)) as t(ob_week_diff)\n)\n\nselect\n  year_of_week(date(business_week)) as \"年\"\n  , week_of_year(date(business_week)) as \"週\"\n  , count(distinct if(ob_week_diff between 1 and 12, customer_id)) as \"OB顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f2_week_diff between 1 and 4, customer_id)) as \"4週以内_F2顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f2_week_diff between 5 and 8, customer_id)) as \"5~8週以内_F2顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f2_week_diff between 9 and 12, customer_id)) as \"9~12週以内_F2顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f2_week_diff >= 13, customer_id)) as \"OB期間外_F2顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f2_business_date is null, customer_id)) as \"F2なし顧客数\"\n\n  , count(distinct if(ob_week_diff between 1 and 12 and f3_week_diff between 1 and 4, customer_id)) as \"4週以内_F3顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f3_week_diff between 5 and 8, customer_id)) as \"5~8週以内_F3顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f3_week_diff between 9 and 12, customer_id)) as \"9~12週以内_F3顧客数\"\n  , count(distinct if(ob_week_diff between 1 and 12 and f3_week_diff >= 13, customer_id)) as \"OB期間外_F3顧客数\"\nfrom\n  ob_week_diff\nwhere date(business_week) >= date('2024-01-01')\n      and date(business_week) < date(td_time_string(td_date_trunc('week', td_scheduled_time(), 'jst'), 'd!', 'jst'))\ngroup by\n  1,2\norder by\n  1,2",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

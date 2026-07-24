@@ -1,0 +1,72 @@
+{
+  "archive_md5": "x9bmPCg2FLBMWTpSwMfYJg==",
+  "files": [
+    {
+      "path": "cls_sufficiency_current.sql",
+      "sha256": "3d3d804576b96c0ebae68ea972a5dfc50252616c48f50dcdf691cdd48bfe37e4"
+    },
+    {
+      "path": "cron_0630_daily_update.dig",
+      "sha256": "ad583adcc52e7cd9d5959daa53b79f0ca791a0b9542b286d653dc560581ea136"
+    },
+    {
+      "path": "cron_1300_mon_thu_update.dig",
+      "sha256": "341326011564736623870e3f41ffac512ef19dc15dd82556c1fd2c4360de7855"
+    },
+    {
+      "path": "cron_1700_fri_update.dig",
+      "sha256": "65890994f5d8b6989274bba89b5bc9666c5a6b02bdffcf1b1c6ebd1a22b8a1ae"
+    },
+    {
+      "path": "l2_tp_suggest_prep.dig",
+      "sha256": "8946d8aa8cd30dee48d90ed04382e1ab808e87c18578ccd39b4e5f3748143582"
+    },
+    {
+      "path": "l2_tp_suggest_tel.dig",
+      "sha256": "5f0461cac79ac697b31efd80c96b14c8c9909f7db25e5f9f24cc042e280a971e"
+    },
+    {
+      "path": "l2_tp_suggest_v1.dig",
+      "sha256": "07032cd4a32e9b6e281687079c3d4c96d338d3b06311662565c2299731b2d841"
+    },
+    {
+      "path": "l2_tp_suggest_v2.dig",
+      "sha256": "541d4d31fe0832f1a6acd5db5c90582e4add40b36b2552a60a449f6a468d1965"
+    },
+    {
+      "path": "l2_tp_suggest_verification.dig",
+      "sha256": "47e0093da610a46a1073a1b4f9a49c30ccf0a64bd763ceba8d0e9a372f6ca916"
+    },
+    {
+      "path": "suggest_history.sql",
+      "sha256": "730bd777ceeded235f21d1150a213205dd1382916f3ad43b6f4c8e8fbe29134f"
+    },
+    {
+      "path": "suggest_history_v2.sql",
+      "sha256": "6e5f24f5f25d9b6a8eebf76fb4761bba27f3f71ab64dc382bc8b00d060fa9702"
+    },
+    {
+      "path": "suggest_rawdata.sql",
+      "sha256": "ea7e86f7d86feb492a78a3521c742b301dec63a1dd8d70b67b77c53d9e4ac015"
+    },
+    {
+      "path": "suggest_rawdata_tel.sql",
+      "sha256": "b93a506941e508cdc88f570de8fb650c689c4c3e3f5a79e7633232724e8beef4"
+    },
+    {
+      "path": "suggest_rawdata_v2.sql",
+      "sha256": "d15f7a8865517144c8f7c272b3c0c30c960757c601ef4f4900bde7d0c1b260eb"
+    },
+    {
+      "path": "suggest_verification.sql",
+      "sha256": "078501c26ed2583fc7d5a6e5df30287f165232c5e258dbf50b4ff6a55b07f89a"
+    },
+    {
+      "path": "z_p998__scan_references.dig",
+      "sha256": "8c627ddef6b3228cc3e320d62b35a6906b029ed885a365a76d52c2174e3c092d"
+    }
+  ],
+  "project_id": "1353993",
+  "project_name": "l2_tp_suggest_2",
+  "revision": "da69582fc7b64b7ebd444e03f462d5de"
+}

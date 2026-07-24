@@ -1,0 +1,196 @@
+{
+  "archive_md5": "7Dyfa393OP8JgkoL9sEOCw==",
+  "files": [
+    {
+      "path": "__README.dig",
+      "sha256": "0a6e45cdd27219d63d3c567f6f9413535d267e846de8cd48dc085cde13dc2687"
+    },
+    {
+      "path": "_cron_0730_daily.dig",
+      "sha256": "98ecd5621ff33063635e03758cad844f6612dc93e5ce04b59233ce0b225a26be"
+    },
+    {
+      "path": "_p100__mktg_datamart.dig",
+      "sha256": "f0dd1b6ffe22bc5f475c764b92d962b394f1b32f8d85a1f0655e7fba2e9206ce"
+    },
+    {
+      "path": "_p200__customer_list_send_mail.dig",
+      "sha256": "4cdfd78dbf92da3b53e8a1a271ff674ff3fb21887d7df886bd2df6e0b2475820"
+    },
+    {
+      "path": "_p300__customer_flow_rw.dig",
+      "sha256": "266198ae77b23d04b911181fd69c8527e2302a2ca691ece250e38ecac633176e"
+    },
+    {
+      "path": "_p400__mktg_kpi.dig",
+      "sha256": "650b5ae756508402fba14284fae9a252800626a19e929c817c83261465b42ee2"
+    },
+    {
+      "path": "_p998__scan_references.dig",
+      "sha256": "47a6d934fd33e58a7a09b6a5ea51da85f47fc097d3c159c9977f10e3f0bcc51e"
+    },
+    {
+      "path": "_p999__generate_readme.dig",
+      "sha256": "101db97ecbb2364b0d2aa2091a9b2b716ce7fbba34afe26f78f63f7c6537723f"
+    },
+    {
+      "path": "p100_/mktg_app.sql",
+      "sha256": "940db4adb0df313239e7f1e966cc8ac5a8f15303bbcab7079fb1b170a6515349"
+    },
+    {
+      "path": "p100_/mktg_app_daily.sql",
+      "sha256": "c3572f900d62b5e456a272d4f3981f35d19789661494cb177c770f3e00f3bbe3"
+    },
+    {
+      "path": "p100_/mktg_app_since_y25.sql",
+      "sha256": "7857db5cb78859d5806ea3df5321d877a99b7c2589342e7fb5d2c7897407870b"
+    },
+    {
+      "path": "p100_/mktg_kpi_rf_segment_log.sql",
+      "sha256": "3382d1fea1f332ee146c5ab94e0f85adc13490c6c19dd872902a410b7aea93be"
+    },
+    {
+      "path": "p100_/mktg_sys.sql",
+      "sha256": "98823bc4a0dfb2e685c92ae4778b81f7f91f2af0eed0f7ab5879899466a2ee27"
+    },
+    {
+      "path": "p100_/mktg_sys_daily.sql",
+      "sha256": "d2b14ee821bf1ebd53efd0c4fbe411ecd13957e0606b9571c1f0357484f10b63"
+    },
+    {
+      "path": "p100_/mktg_sys_since_y25.sql",
+      "sha256": "ce0fc0e6f0a8aca2a9e068ce9950abf54714580bb0cc8a0928f59840212f3dec"
+    },
+    {
+      "path": "p100_/mktg_web.sql",
+      "sha256": "ce51c5a6e592497af8ef7ae792ec6bf02a34b8e6ea674e9f3441191e6120683c"
+    },
+    {
+      "path": "p100_/mktg_web_daily.sql",
+      "sha256": "42ab8aded4ed5e13f10e1be3ee000faeed5d33a48979f081539d1957aa8211ab"
+    },
+    {
+      "path": "p100_/mktg_web_since_y25.sql",
+      "sha256": "4f33a8e4f54a15d394604bb4dd54de0664189bb815b9b099d828ecfa5f74dad6"
+    },
+    {
+      "path": "p100_/out_gsheet_app.sql",
+      "sha256": "1a2c0b3d39686fbe40eaed3d9729f62e09492ea2282e9b6a7646d9a969d544a9"
+    },
+    {
+      "path": "p100_/out_gsheet_sys.sql",
+      "sha256": "9b77ff376d0a36fe188c52e6b040a5776d5fae70ac51fb932b8ce1392be48481"
+    },
+    {
+      "path": "p100_/out_gsheet_web.sql",
+      "sha256": "4cea49a65501bc278b20922cc37a2209d5b330a5486a482d2dccfd8fadb69860"
+    },
+    {
+      "path": "p100_/out_rs__new_customer_exist_flag.sql",
+      "sha256": "c0b8bf531353a1b886ec5d4030a8505be3cf6501df29185e9e1cbd9f0978528f"
+    },
+    {
+      "path": "p100_/z_tmp_cls_app_log_104w.sql",
+      "sha256": "f5b181f376529584736937304182a360f15459e545019d4bde3f04681ead7828"
+    },
+    {
+      "path": "p100_/z_tmp_cls_app_reserve.sql",
+      "sha256": "cd1d66eebd71db3542e591997ce33d416182a6f9a8450ef82a967644aa4f53e1"
+    },
+    {
+      "path": "p100_/z_tmp_cls_reservation.sql",
+      "sha256": "7e4fd8abd23bc38b8e5e13a391b72e54aecfcadba222adbc2bfaad30ab804943"
+    },
+    {
+      "path": "p100_/z_tmp_cls_web_log_104w.sql",
+      "sha256": "57ded9ae75c46768726d7b0d6cd2a2c550d2cfb8f7aca291cb5727df3cf83e84"
+    },
+    {
+      "path": "p100_/z_tmp_cls_web_reserve.sql",
+      "sha256": "c1fc3ca19033cd514268a52ac377c627bdf812c1750974dd2731cc5df2fccc89"
+    },
+    {
+      "path": "p200_/mktg_customer_list_1.sql",
+      "sha256": "b9f6b31d1fc3279eefc72b0ddbeb22ded25bf27c7a593f16a20c3aa3560eb83b"
+    },
+    {
+      "path": "p200_/mktg_customer_list_2.sql",
+      "sha256": "2fb8cd068ec8f3accceb71d9503699744f0785ea661ef6ed182fcf24b21a6dfe"
+    },
+    {
+      "path": "p200_/mktg_customer_list_rw13_prev12.sql",
+      "sha256": "8f51f2a577a3aa987c4768c358125f04d21b685087fda847585d0e1ad9ff85f1"
+    },
+    {
+      "path": "p300_/mktg_customer_flow_rw.sql",
+      "sha256": "c9ca13baf8c038d37eed16084c5c1fff2a054e4ad3c396348b1f78a141567f14"
+    },
+    {
+      "path": "p300_/mktg_customer_list_rf.sql",
+      "sha256": "7bb9f6af0969ae8d9e994c4aaa9f39d1eddfeb3bf0fbcea2ef930bdf6e33101d"
+    },
+    {
+      "path": "p300_/mktg_customer_rf_map.sql",
+      "sha256": "736209127a3ac160268db4944f36e6461c361c44a79dc50c7bb6f8ceb5d64b29"
+    },
+    {
+      "path": "p400_/mktg_kpi_app_session.sql",
+      "sha256": "01bc91e0d3dfeb6d878734f2a5810a626bd8ebc182239803ac62d8ab1dace72b"
+    },
+    {
+      "path": "p400_/mktg_kpi_app_session_monthly_w12f.sql",
+      "sha256": "cab57f140929508ad81614f2a69c41422df5bd30c301ca84f78162598e30f3cd"
+    },
+    {
+      "path": "p400_/mktg_kpi_app_session_w12f.sql",
+      "sha256": "35eeb2e42a12341380697df25dc7c169027e26918f59152ff822ee78e4ba7109"
+    },
+    {
+      "path": "p400_/mktg_kpi_rf.sql",
+      "sha256": "6cb5267466762c43dc50b290a4a58a4f32c1ed2da6f2feeacd47e8b22f8477e9"
+    },
+    {
+      "path": "p400_/mktg_kpi_rf_monthly_r12f.sql",
+      "sha256": "b2cdc9a371c683770d0934b31ea73a962bdc6dbb4410e8262524030ce17c57c0"
+    },
+    {
+      "path": "p400_/mktg_kpi_rf_w12f.sql",
+      "sha256": "17448b54dc00343df250147c058037053e1b4fbbd7debd8c3648e04ae8fee3ca"
+    },
+    {
+      "path": "p400_/mktg_kpi_rf_w12f_result.sql",
+      "sha256": "25d3a9d4471fd437c63c614d17002d5ef372717ede5ef8835c7456ee34a83479"
+    },
+    {
+      "path": "p400_/mktg_kpi_tp_card.sql",
+      "sha256": "61cc23144fe37c6a5c1718dc0665ca5ac7ad822577b9bf2b9dba37233526a8e5"
+    },
+    {
+      "path": "p400_/mktg_kpi_tp_card_insert.sql",
+      "sha256": "78668f643d0a8192c1f130890e410dec5aa828597518fb93ab1d791014053e70"
+    },
+    {
+      "path": "p400_/out_mktg_kpi_app_session.sql",
+      "sha256": "49d111b54accb611ce8fa8fe3d6d4edf3a36cfe8c9ec18580a920fae762b2b18"
+    },
+    {
+      "path": "p400_/out_mktg_kpi_integrated.sql",
+      "sha256": "f88a56021dddfd4d056f0bbc1f9cdf7def798cea0889dc2dae948da11dd724d5"
+    },
+    {
+      "path": "p400_/out_mktg_kpi_integrated_w12f.sql",
+      "sha256": "99e751529cc8fe182650f6a3103d0d8a5f8d9aafa4e48674b1315b5a29d3e09d"
+    },
+    {
+      "path": "p400_/out_mktg_kpi_integrated_w12f_monthly.sql",
+      "sha256": "3806de515870f04632647f20366cecc04f4bec02bcae4d039233b06b7a814eb0"
+    },
+    {
+      "path": "p400_/out_mktg_kpi_tpcard.sql",
+      "sha256": "49de1c0961279143f727fa03bd014893c0821e2db0bc42498c13a9f7e450f1b7"
+    }
+  ],
+  "project_id": "1390156",
+  "project_name": "_l2_mktg_datamart",
+  "revision": "1ee4e425e3504ac3963d7f50e285b175"
+}

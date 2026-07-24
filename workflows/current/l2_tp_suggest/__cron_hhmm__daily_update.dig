@@ -1,0 +1,22 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Schedule Setting ###
+# schedule:
+#   cron>: 0 8 * * *
+
+### Manage Workflows ###
++_z_p100_data_preparation:
+  require>: _z_p100_data_preparation
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+
++_z_p200_parent_segment_update:
+  require>: _z_p200_parent_segment_update
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+
++_z_p300_activation_management:
+  require>: _z_p300_activation_management
+  session_time: ${moment(session_date).format()}
+  rerun_on: all

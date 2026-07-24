@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "25337356",
+    "name": "_l1_mysql_pos"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "c1b240e70d59dd3475c9b1ecdfb03d8ce3d2fc7b121c9ce19859c2cab1621b54",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2740059",
+  "query_name": "検証_ビンゴ参加者の施術会計数",
+  "query_string": "with order_log as (\n  select\n    customer_id\n    , id as order_id\n    , purchased_datetime\n  from\n    _l1_mysql_pos.orders\n  where substr(purchased_datetime, 1, 10) >= '2025-11-17'\n        and substr(purchased_datetime, 1, 10) <= '2025-12-10'\n        and coalesce(deleted, 0) = 0\n        and cancel_datetime is null\n        --and status = 2\n        and registered_business_date is not null\n        and total_amount_of_treatment_minutes > 0\n  group by\n    1,2,3\n)\n\n, agg_order as (\n  select\n    t0.customer_id\n    , substr(created, 1, 10) as register_date\n    , count(distinct order_id) as order_count\n  from\n    l2_verification.tmp_bingo_target_customer_251211 as t0\n  left join\n    order_log as t1\n    on t0.customer_id = t1.customer_id\n    and t0.created < t1.purchased_datetime\n  group by\n    1,2\n)\n\nselect\n  customer_id as \"顧客ID\"\n  , register_date as \"ビンゴ参加日\"\n  , order_count as \"施術会計数\"\nfrom\n  agg_order\nwhere\n  register_date >= '2025-11-17'\norder by 2",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

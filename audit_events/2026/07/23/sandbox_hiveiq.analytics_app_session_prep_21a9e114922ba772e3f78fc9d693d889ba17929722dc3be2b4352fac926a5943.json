@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "21a9e114922ba772e3f78fc9d693d889ba17929722dc3be2b4352fac926a5943",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "sandbox_hiveiq",
+  "events": [
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_delete",
+      "id": "e8cc198c-db60-40b9-95c0-9143980a61c4",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297446510",
+      "resource_id": "297446510",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-18T21:11:06+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_create",
+      "id": "7e41da35-2a93-49bb-9c81-892f3f90d887",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297656495",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-18T21:11:08+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_delete",
+      "id": "998c06cd-e2ff-4913-b8ff-fb03e5aa99ff",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297656495",
+      "resource_id": "297656495",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-19T21:12:41+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_create",
+      "id": "79eeca43-4d65-4c10-96f3-aa00d659f2c5",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297877459",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-19T21:12:43+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_delete",
+      "id": "d45ae621-ea9b-4d51-9727-33847df1da3e",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297877459",
+      "resource_id": "297877459",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-20T21:13:21+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_create",
+      "id": "f7eb64eb-6ae5-44a8-a4c5-6c8dc785fc96",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298092754",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-20T21:13:22+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_delete",
+      "id": "d2a9739f-1d8b-4129-914c-86b53f19be18",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298092754",
+      "resource_id": "298092754",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-21T21:15:11+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_create",
+      "id": "75075788-18fe-40f2-a10b-614e258cb732",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298310639",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-21T21:15:12+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_delete",
+      "id": "05966cb2-c7e8-4034-8f60-103d6a0ed8e6",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298310639",
+      "resource_id": "298310639",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-22T21:13:02+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_create",
+      "id": "4c7a21e3-5d6d-41ea-8d64-8c191fa1e786",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298531148",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-22T21:13:03+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_delete",
+      "id": "60edac60-d3b6-4d0f-a55b-2ed8b97539b9",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298531148",
+      "resource_id": "298531148",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-23T21:13:16+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "sandbox_hiveiq",
+      "event_name": "table_create",
+      "id": "6c8459e0-2c41-448f-89c5-ac6ace57e1e1",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298750815",
+      "table": "analytics_app_session_prep",
+      "time": "2026-07-23T21:13:17+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "analytics_app_session_prep"
+}

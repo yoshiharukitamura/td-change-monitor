@@ -1,0 +1,92 @@
+timezone: Asia/Tokyo
+# schedule:
+#   cron>: 0 22 * * 4
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: df_cron_thu_2200_send_quest_stop_tp
+  notify_slack: true
+  td:
+    database: l2_demand_forecast_auto
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# スプレッドシートから手動更新データの取得
++load_each_data:
+  _parallel: True
+  # TP単位クエスト停止リスト
+  +spreadsheets_quest_stop_list:
+    +delete_duplicate_data:
+      td>:
+      query: "delete from spreadsheets_quest_stop_list where time = td_scheduled_time()"
+    +append_spreadsheets_quest_stop_list:
+      td_load>: google_sheets_import_1687417180
+
+  # # 店舗営業時間リスト
+  # +spreadsheets_shop_master:
+  #   +delete_duplicate_data:
+  #     td>:
+  #     query: "delete from spreadsheets_shop_master where time = td_scheduled_time()"
+  #   +append_spreadsheets_shop_master:
+  #     td_load>: google_sheets_import_1690291161
+  # # 店舗単位クエスト停止リスト
+  # +spreadsheets_quest_stop_list_shop:
+  #   +delete_duplicate_data:
+  #     td>: 
+  #     query: "delete from spreadsheets_quest_stop_list_shop where time = td_scheduled_time()"
+  #   +append_spreadsheets_quest_stop_list_shop:
+  #     td_load>: google_sheets_import_1689726487
+  # # 30h未満クエスト許可リスト
+  # +spreadsheets_less_than_30h_list:
+  #   +delete_duplicate_data:
+  #     td>: 
+  #     query: "delete from spreadsheets_less_than_30h_list where time = td_scheduled_time()"
+  #   +append_spreadsheets_less_than_30h_list:
+  #     td_load>: google_sheets_import_1694078127
+
+# 並列処理
++tasks:
+  _parallel: True
+  # # クエスト枠を作成
+  # +quest_time_slot:
+  #   +delete_duplicate_data:
+  #     td>:
+  #     query: "delete from quest_time_slot where time = td_scheduled_time()"
+
+  #   +append_quest_time_slot:
+  #     td>: th_2200/create_quest_time_slot.sql
+  #     insert_into: quest_time_slot
+
+  #   +syndicate_to_s3_quest_time_slot_except_received:
+  #     td>: th_2200/send_quest_time_slot.sql
+  #     result_connection: prd_td_data_relay_treasuredata
+  #     result_settings:
+  #       bucket: prd-td-data-relay
+  #       path: /external_receve/IF-TD-002/quest_time_slot_${moment(session_date).startOf('isoWeek').format('YYYYMMDD')}.csv
+  #       format: csv
+  #       header: true
+  #       newline: "\n"
+
+  +quest_stop_tp_list:
+    +delete_duplicate_data:
+      td>:
+      query: "delete from quest_stop_tp_list_history where time = td_scheduled_time()"
+
+    +append_quest_stop_tp_list:
+      td>: thu_2200/create_quest_stop_tp_list.sql
+      insert_into: quest_stop_tp_list_history
+
+    +syndicate_to_s3_forbid_quest_entry_prd:
+      td>: queries/create_forbid_quest_entry_prd.sql
+      result_connection: prd_td_data_relay_treasuredata
+      result_settings:
+        bucket: prd-td-data-relay
+        path: /external_receve/IF-TD-003/forbid_quest_entry_${moment(session_date).startOf('isoWeek').format('YYYYMMDD')}.csv
+        format: csv
+        header: true
+        newline: "\n"

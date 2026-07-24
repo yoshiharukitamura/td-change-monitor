@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "6abe19caa6dd9922830e35fb4912b20fc9c622ff30ac8345906243f58d4780f5",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l2_audience_studio_mk",
+  "events": [
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "d64628b7-29c3-4789-a86d-ccfbeca7a7cd",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297468048",
+      "resource_id": "297468048",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-18T23:10:17+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "3b4e1237-0366-4189-bc9f-eca049cae2af",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297677639",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-18T23:10:18+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "d8a6e9df-2080-4bca-9a54-0a14a4c182e0",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297677639",
+      "resource_id": "297677639",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-19T23:15:12+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "0d3044ff-6ed5-4086-97c1-a458ce8af5ed",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297898268",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-19T23:15:13+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "0fad6970-a899-4f17-9352-7552a5912f05",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297898268",
+      "resource_id": "297898268",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-20T23:13:45+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "92b7f34f-af54-49fe-86e7-63edaa1298cc",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298113644",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-20T23:13:46+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "4e3be21a-11d9-4caa-b323-cc80f41d2d02",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298113644",
+      "resource_id": "298113644",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-21T23:14:10+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "024e725d-3365-4c81-9948-137430f93cb0",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298330974",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-21T23:14:11+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "516387a5-4e0a-462f-92df-4d1764e05b37",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298330974",
+      "resource_id": "298330974",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-22T23:13:35+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "2ea5fac3-393c-4e71-a99e-a30a505f1800",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298551872",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-22T23:13:36+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_delete",
+      "id": "ef8eb606-e3ce-46b1-b292-1c62a72cee71",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298551872",
+      "resource_id": "298551872",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-23T23:13:37+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_mk",
+      "event_name": "table_create",
+      "id": "1f991460-52f3-4d03-83e5-67585e2f963a",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298771428",
+      "table": "ps_tbl__bhvr_reservation",
+      "time": "2026-07-23T23:13:39+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "ps_tbl__bhvr_reservation"
+}

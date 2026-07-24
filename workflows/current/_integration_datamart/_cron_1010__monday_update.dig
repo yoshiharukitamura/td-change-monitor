@@ -1,0 +1,20 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Schedule Setting ###
+schedule:
+  cron>: 10 10 * * 1
+
++p100__datamart:
+  require>: _p100__datamart
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+
++rf_monthly:
+  _export:
+    td:
+      database: _integration_datamart
+  
+  +hst_monthly_customer_rf_w12f:
+    td>: p101_/hst_monthly_customer_rf_w12f.sql
+    create_table: hst_monthly_customer_rf_w12f

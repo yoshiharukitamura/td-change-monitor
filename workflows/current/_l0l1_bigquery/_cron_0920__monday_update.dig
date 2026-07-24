@@ -1,0 +1,19 @@
+###############################################################
+# タイムゾーンとスケジュールの設定
+###############################################################
+timezone: Asia/Tokyo
+
+# schedule:
+#   cron>: 20 9 * * 1
+
+###############################################################
+# ワークフローの処理
+###############################################################
++_p100__ga4:
+  require>: _p100__ga4
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    date_from: "${moment(session_date).subtract(1, 'day').format('YYYY-MM-DD')}"
+    date_to: "${moment(session_date).subtract(1, 'day').format('YYYY-MM-DD')}"
+    split: day

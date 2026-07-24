@@ -1,0 +1,201 @@
+timezone: Asia/Tokyo
+
+_export:
+  td:
+    database: _l2_demand_forecast_gcp
+  date_from: "2024-01-01"
+  date_to: "${session_date}"
+  split: week
+
++td_for_each:
+  td_for_each>: __func_/date_trunc_list.sql
+  _do:
+    +lost_opps:
+      +log:
+        td>:
+        query: |
+          with session_data as (
+            select
+              user_pseudo_id
+              , td_date_trunc('day', event_unixtime, 'jst') as session_date
+              , ga_session_id
+              , shop_no
+              , event_unixtime
+              , event_timestamp
+              , event_name
+              , event_status
+              , lead(event_unixtime) over (
+                  partition by user_pseudo_id, ga_session_id
+                  order by event_timestamp)
+                - event_unixtime as stay_sec
+            from
+              _integration_datamart.z_tmp_cls_app_log_104w
+            where
+              td_time_range(time, td_time_add(td_date_trunc('week', ${moment(td.each.date_from).unix()}, 'jst'), '-4w'), td_date_trunc('week', ${moment(td.each.date_from).unix()}, 'jst'), 'jst')
+          )
+          , therapy_data_all as (
+            select distinct *
+            from (
+                select user_pseudo_id, therapy_date
+                from (select distinct customer_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where customer_id is not null)
+                  inner join (select distinct customer_id, td_date_trunc('day', start_unixtime, 'jst') as therapy_date from _integration_datamart.z_tmp_cls_reservation) using (customer_id)
+                union all
+                select user_pseudo_id, therapy_date
+                from (select distinct reservation_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where reservation_id is not null)
+                  inner join (select distinct reservation_id, td_date_trunc('day', start_unixtime, 'jst') as therapy_date from _integration_datamart.z_tmp_cls_reservation) using (reservation_id)
+              )
+          )
+          , reservation_data_all as (
+            select distinct *
+            from (
+                select user_pseudo_id, reservation_date
+                from (select distinct customer_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where customer_id is not null)
+                  inner join (select distinct customer_id, td_date_trunc('day', created_unixtime, 'jst') as reservation_date from _integration_datamart.z_tmp_cls_reservation) using (customer_id)
+                union all
+                select user_pseudo_id, reservation_date
+                from (select distinct reservation_id, user_pseudo_id from _integration_datamart.z_tmp_cls_app_log_104w where reservation_id is not null)
+                  inner join (select distinct reservation_id, td_date_trunc('day', created_unixtime, 'jst') as reservation_date from _integration_datamart.z_tmp_cls_reservation) using (reservation_id)
+              )
+          )
+          , merged as (
+            select
+              s0.user_pseudo_id
+              , s0.session_date
+              , array_distinct(array_agg(s0.shop_no) filter(where s0.shop_no is not null)) as arry_shop_no
+              , td_date_trunc('hour', max(event_unixtime), 'jst') as session_datehour
+              , day_of_week(from_unixtime(max(event_unixtime), 'Asia/Tokyo')) as session_dow
+              , hour(from_unixtime(max(event_unixtime), 'Asia/Tokyo')) as session_hour
+              , max(s0.event_status) as max_event_status
+              , coalesce(max(if(s0.stay_sec >= 10, s0.event_status)), 0) as max_event_status_over_n_sec
+              , max(if(t1.user_pseudo_id is not null or t2.user_pseudo_id is not null or t3.user_pseudo_id is not null, 1, 0)) as therapy_within_3day
+              , max(if(r1.user_pseudo_id is not null or r2.user_pseudo_id is not null or r3.user_pseudo_id is not null, 1, 0)) as reserve_within_3day
+            from
+              session_data as s0
+              left join therapy_data_all as t0 on s0.user_pseudo_id = t0.user_pseudo_id and s0.session_date = t0.therapy_date
+              left join therapy_data_all as t1 on s0.user_pseudo_id = t1.user_pseudo_id and s0.session_date = td_time_add(t1.therapy_date, '-1d', 'jst')
+              left join therapy_data_all as t2 on s0.user_pseudo_id = t2.user_pseudo_id and s0.session_date = td_time_add(t2.therapy_date, '-2d', 'jst')
+              left join therapy_data_all as t3 on s0.user_pseudo_id = t3.user_pseudo_id and s0.session_date = td_time_add(t3.therapy_date, '-3d', 'jst')
+              left join reservation_data_all as r1 on s0.user_pseudo_id = r1.user_pseudo_id and s0.session_date = td_time_add(r1.reservation_date, '-1d', 'jst')
+              left join reservation_data_all as r2 on s0.user_pseudo_id = r2.user_pseudo_id and s0.session_date = td_time_add(r2.reservation_date, '-2d', 'jst')
+              left join reservation_data_all as r3 on s0.user_pseudo_id = r3.user_pseudo_id and s0.session_date = td_time_add(r3.reservation_date, '-3d', 'jst')
+            where
+              event_status in (1, 2, 3, 4, 5)
+            group by
+              1,2
+          )
+
+          select
+            *
+            , session_date as time
+            , cardinality(arry_shop_no) as split_count
+            , case
+                when max_event_status in (2, 3)
+                      and max_event_status_over_n_sec in (2, 3)
+                      and therapy_within_3day = 0
+                      and reserve_within_3day = 0
+                    then 1
+                else 0
+              end as loss_opps
+          from
+            merged
+        create_table: z_tmp_lost_opps_log
+      +raw:
+        td>:
+        query: |
+          with allocation_coef as (
+            select
+              day_of_week(from_unixtime(created_unixtime, 'Asia/Tokyo')) as session_dow
+              , hour(from_unixtime(created_unixtime, 'Asia/Tokyo')) as session_hour
+              , date_diff('hour', date_trunc('hour', from_unixtime(created_unixtime)), date_trunc('hour',from_unixtime(start_unixtime))) as diff_hour
+              , 1.0 * count(1) / sum(count(1)) over (partition by day_of_week(from_unixtime(created_unixtime, 'Asia/Tokyo')), hour(from_unixtime(created_unixtime, 'Asia/Tokyo'))) as coef
+            from
+              _integration_datamart.z_tmp_cls_reservation
+            where
+              td_time_range(time, td_time_add(td_date_trunc('week', ${moment(td.each.date_from).unix()}, 'jst'), '-4w'), td_date_trunc('week', ${moment(td.each.date_from).unix()}, 'jst'), 'jst')
+              and date_diff('hour', date_trunc('hour', from_unixtime(created_unixtime)), date_trunc('hour',from_unixtime(start_unixtime))) <= 24*7
+              and hour(from_unixtime(start_unixtime, 'Asia/Tokyo')) between 9 and 23
+              and reserved_from = 'APP'
+            group by
+              1,2,3
+          )
+
+          select
+            *
+            , td_time_add(session_datehour, cast(diff_hour as varchar)||'h') as business_datehour
+            , td_time_string(td_time_add(session_datehour, cast(diff_hour as varchar)||'h'), 'd!', 'jst') as business_date
+            , hour(from_unixtime(td_time_add(session_datehour, cast(diff_hour as varchar)||'h'), 'Asia/Tokyo')) as business_hour
+            , round((loss_opps * 0.831 * coef), 2) / split_count as loss_opps_fin
+          from
+            z_tmp_lost_opps_log
+            left join (
+              select
+                user_pseudo_id
+                , td_time_add(session_date, '1d', 'jst') as session_date
+                , 1 as loss_opps_yesterday
+              from
+                z_tmp_lost_opps_log
+            ) using (user_pseudo_id, session_date)
+            cross join unnest (
+                arry_shop_no
+              ) as t1(shop_no)
+            left join allocation_coef using (session_dow, session_hour)
+          where
+            loss_opps = 1
+            and arry_shop_no is not null
+            and loss_opps_yesterday is null
+        create_table: z_tmp_lost_opps_raw
+      +preset:
+        +td_ddl:
+          td_ddl>:
+          create_tables: ["src_lost_opps_history", "prep_lost_opps"]
+        +delete_src:
+          td>:
+          query: |
+            delete
+            from src_lost_opps_history
+            where td_time_range(time, ${moment(td.each.date_from).startOf("week").add(1, "d").subtract(7, "d").unix()}, ${moment(td.each.date_from).startOf("week").add(1, "d").unix()}, 'jst')
+        +delete_prep:
+          td>:
+          query: |
+            delete
+            from prep_lost_opps
+            where time = ${moment(td.each.date_from).startOf("week").add(1, "d").unix()}
+      +src:
+        td>:
+        query: |
+          select
+            business_datehour as time
+            , td_time_string(business_datehour, 's!', 'jst') as business_datetime
+            , shop_no
+            , property_id
+            , substr('月火水木金土日', dow(cast(business_date as date)), 1) as business_dow
+            , business_hour
+            , sum(loss_opps_fin) as lost_opps
+          from
+            z_tmp_lost_opps_raw
+            left join (select cast(shop_no as int) as shop_no, property_id from _integration_datamart.mst_shop) using (shop_no)
+          where
+            td_time_range(business_datehour, ${moment(td.each.date_from).startOf("week").add(1, "d").subtract(7, "d").unix()}, ${moment(td.each.date_from).startOf("week").add(1, "d").unix()}, 'jst')
+          group by
+            1,2,3,4,5,6
+        insert_into: src_lost_opps_history
+      +prep_lost_opps:
+        td>:
+        query: |
+          select
+            ${moment(td.each.date_from).startOf("week").add(1, "d").unix()} as time
+            , ${moment(td.each.date_from).startOf("week").add(1, "d").unix()} as processing_date
+            , shop_no
+            , property_id
+            , substr('月火水木金土日', dow(cast(business_date as date)), 1) as business_dow
+            , business_hour
+            , sum(loss_opps_fin)/4 as lost_opps
+          from
+            z_tmp_lost_opps_raw
+            left join (select cast(shop_no as int) as shop_no, property_id from _integration_datamart.mst_shop) using (shop_no)
+          group by
+            1,2,3,4,5,6
+        insert_into: prep_lost_opps
+
+
+

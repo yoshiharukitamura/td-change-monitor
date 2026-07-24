@@ -1,0 +1,93 @@
+# TD table change: cdp_audience_1018834.customers
+
+- aggregated_change_id: `b0b203de95f2f3596aa557a74bd4a27d78f8bd5467629183d2d8ff9937e1514a`
+- change_kind: `table_recreate`
+- window: `2026-07-18T14:41:33.484853+00:00` - `2026-07-24T03:47:59.912486+00:00`
+- events: table_create, table_delete, table_modify, table_create, table_delete, table_modify, table_create, table_modify, table_delete, table_create, table_modify, table_delete, table_create, table_modify, table_delete, table_create, table_delete, table_modify
+- should_create_issue: `False`
+
+## Events
+
+- [10068361-fe3b-435f-bb39-1b9ad09f46ec] 2026-07-18T23:10:58+00:00 table_create by kyohei.tomita+riraku@hiveiq.co.jp
+- [8aac4258-8b36-4428-9756-75799a5a67eb] 2026-07-18T23:16:57+00:00 table_delete by kyohei.tomita+riraku@hiveiq.co.jp
+- [ed9d76a8-add9-4cbd-af6d-2c75e249e425] 2026-07-18T23:16:57+00:00 table_modify attribute=name by kyohei.tomita+riraku@hiveiq.co.jp
+- [0f245012-bc91-42b4-82d4-a19c5adf9caa] 2026-07-19T23:15:24+00:00 table_create by kyohei.tomita+riraku@hiveiq.co.jp
+- [70e90962-1d95-4195-95ba-9e6b0731c98c] 2026-07-19T23:25:31+00:00 table_delete by kyohei.tomita+riraku@hiveiq.co.jp
+- [d04d81e5-dcab-4d21-8704-25591cb4e35c] 2026-07-19T23:25:31+00:00 table_modify attribute=name by kyohei.tomita+riraku@hiveiq.co.jp
+- [a8214902-0b26-4c91-8588-80f9a0bc0832] 2026-07-20T23:14:40+00:00 table_create by kyohei.tomita+riraku@hiveiq.co.jp
+- [306210ae-144e-4456-95ff-e46c680249c3] 2026-07-20T23:21:12+00:00 table_modify attribute=name by kyohei.tomita+riraku@hiveiq.co.jp
+- [e0ff1180-b33e-4745-913a-cb3deb444b58] 2026-07-20T23:21:12+00:00 table_delete by kyohei.tomita+riraku@hiveiq.co.jp
+- [9cad7add-f06e-4ade-b8a7-e9233c291958] 2026-07-21T23:15:03+00:00 table_create by kyohei.tomita+riraku@hiveiq.co.jp
+- [a638bcef-46bc-4aa3-8b6b-7171b21af29f] 2026-07-21T23:26:15+00:00 table_modify attribute=name by kyohei.tomita+riraku@hiveiq.co.jp
+- [f51366a2-8163-4097-8040-1cebcd47c63d] 2026-07-21T23:26:15+00:00 table_delete by kyohei.tomita+riraku@hiveiq.co.jp
+- [7d95a1cb-f676-4bba-8be5-f949fb3435b4] 2026-07-22T23:12:58+00:00 table_create by kyohei.tomita+riraku@hiveiq.co.jp
+- [5766b9ed-eace-4e35-a90c-4307f1f5828e] 2026-07-22T23:25:12+00:00 table_modify attribute=name by kyohei.tomita+riraku@hiveiq.co.jp
+- [9241a9c4-ff5e-4f7b-af1d-dd1f51141094] 2026-07-22T23:25:12+00:00 table_delete by kyohei.tomita+riraku@hiveiq.co.jp
+- [c4f5d6b8-8e76-4e75-bfc2-ab6aad59c85d] 2026-07-23T23:13:11+00:00 table_create by kyohei.tomita+riraku@hiveiq.co.jp
+- [06026d61-b6c5-434c-b862-070cdf1918dc] 2026-07-23T23:21:46+00:00 table_delete by kyohei.tomita+riraku@hiveiq.co.jp
+- [4b431494-c762-42ac-a707-3bf9165c66b7] 2026-07-23T23:21:46+00:00 table_modify attribute=name by kyohei.tomita+riraku@hiveiq.co.jp
+
+## Schema diff
+
+### 並び順が変更されたカラム
+- `age`: `3` -> `15`
+- `area_name`: `29` -> `3`
+- `avg_applicant_reqenst`: `7` -> `17`
+- `contract_type`: `27` -> `8`
+- `cstm_01_email`: `61` -> `57`
+- `cstm_01_entry`: `59` -> `56`
+- `cstm_01_entry2`: `60` -> `55`
+- `cstm_01_entryw`: `58` -> `52`
+- `cstm_01_entryw2`: `62` -> `53`
+- `cstm_01_name`: `64` -> `51`
+- `cstm_01_therapist_no`: `63` -> `54`
+- `cstm_02_act`: `53` -> `43`
+- `cstm_02_email`: `43` -> `46`
+- `cstm_02_entry`: `48` -> `44`
+- `cstm_02_entry2`: `42` -> `36`
+- `cstm_02_entry3`: `52` -> `40`
+- `cstm_02_entryw`: `49` -> `45`
+- `cstm_02_entryw2`: `45` -> `48`
+- `cstm_02_entryw3`: `47` -> `50`
+- `cstm_02_name`: `50` -> `41`
+- `cstm_02_schedule`: `51` -> `42`
+- `cstm_02_therapist_no`: `40` -> `38`
+- `cstm_02_time`: `55` -> `34`
+- `cstm_02_today`: `56` -> `35`
+- `cstm_02_total`: `46` -> `49`
+- `cstm_02_w2`: `41` -> `37`
+- `cstm_02_w3`: `57` -> `32`
+- `cstm_02_w4`: `44` -> `47`
+- `cstm_02_yesterday`: `54` -> `33`
+- `cstm_03_email`: `35` -> `58`
+- `cstm_03_entry`: `34` -> `61`
+- `cstm_03_entry2`: `33` -> `59`
+- `cstm_03_entryw`: `36` -> `63`
+- `cstm_03_entryw2`: `37` -> `64`
+- `cstm_03_name`: `32` -> `60`
+- `cstm_03_therapist_no`: `38` -> `62`
+- `division`: `9` -> `27`
+- `email`: `24` -> `11`
+- `first_entry_datetime`: `17` -> `23`
+- `gender`: `18` -> `21`
+- `hope_property_id_1`: `20` -> `22`
+- `hope_property_id_2`: `11` -> `30`
+- `introducer_therapist_id`: `5` -> `13`
+- `max_applicant_reqenst`: `16` -> `28`
+- `max_nuturing_reqenst`: `26` -> `7`
+- `min_applicant_reqenst`: `19` -> `20`
+- `old_therapist_id`: `8` -> `12`
+- `pref_name`: `10` -> `29`
+- `professional_name`: `13` -> `25`
+- `tel01`: `6` -> `14`
+- `tel02`: `22` -> `19`
+- `tel03`: `31` -> `5`
+- `therapist_id`: `25` -> `6`
+- `therapist_name`: `12` -> `24`
+- `therapist_no`: `21` -> `18`
+- `timezone`: `28` -> `9`
+- `week_days`: `15` -> `31`
+- `work_holiday`: `30` -> `4`
+- `work_saturday`: `4` -> `16`
+- `work_sunday`: `23` -> `10`
+- `zip_code`: `14` -> `26`

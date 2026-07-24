@@ -1,0 +1,107 @@
+timezone: Asia/Tokyo
+
+_export:
+  ## Output Database
+  td:
+    database: l2_verification
+  # include variables
+  !include : p200_/table_list.dig
+
+### error handling ###
+# _error:
+#   require>: failure_alert
+#   project_name: functions
+#   session_time: ${moment(session_date).format()}
+#   rerun_on: all
+#   params:
+#     failure_session_id: ${session_id}
+#     # notify: {mail: true, slack: true}
+#     notify: {mail: false, slack: false}
+
+### main process ###
+# Iterate over all tables defined in the table_list
++for_each_tables:
+  for_each>:
+    tbl: ${table_list}
+  _parallel:
+    limit: 3
+  _do:
+    # テーブル初期化
+    +empty_tables:
+      td_ddl>:
+      empty_tables:
+        - list_${tbl.td_tbl_name}
+    # スプレッドシートからデータ取り込み
+    +load_data_from_gs:
+      td_load>: __cnfg_/google_sheets.yml
+      table: list_${tbl.td_tbl_name}
+    # 対象データのデータを集計しスプレッドシートに出力
+    +demand_verification_shop:
+      td>: p200_/demand_verification_shop.sql
+      result_connection: td_share
+      result_settings:
+        spreadsheet_id: ${tbl.ss_key}
+        sheet_title: ${tbl.ws_title.replace(/^_/, '')}
+        mode: truncate
+        rows_threshold: 10000
+        set_nil_for_double_nan: true
+        range: A1
+        value_input_option: RAW
+    # 対象データのデータを集計しスプレッドシートに出力（新規のみ）
+    +demand_verification_shop_new:
+      td>: p200_/demand_verification_shop_new.sql
+      result_connection: td_share
+      result_settings:
+        spreadsheet_id: ${tbl.ss_key}
+        sheet_title: ${tbl.ws_title.replace(/^_/, '')}_新規のみ
+        mode: truncate
+        rows_threshold: 10000
+        set_nil_for_double_nan: true
+        range: A1
+        value_input_option: RAW
+
+# +paypay_v3_v2:
+#   # 対象データのデータを集計しスプレッドシートに出力
+#   # 8/10,11の九州地方大雨、8/21,22の台風の影響を考慮した（同日を除外した）ver.
+#   +demand_verification_shop:
+#     td>: p200_/demand_verification_shop_paypay_v3_v2.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: 1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ
+#       sheet_title: PayPayクーポン_v3_v2
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW
+
+# +paypay_v4_v2:
+#   # 対象データのデータを集計しスプレッドシートに出力
+#   # 9/10の九州地方大雨、9/20の北海道の線上降水帯の影響を考慮した（同日を除外した）ver.
+#   +demand_verification_shop:
+#     td>: p200_/demand_verification_shop_paypay_v4_v2.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: 1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ
+#       sheet_title: PayPayクーポン_v4_v2
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW
+
+
+
+# +paypay:
+#   # 対象データのデータを集計しスプレッドシートに出力
+#   +demand_verification_shop:
+#     td>: p200_/demand_verification_shop_paypay.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: 1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ
+#       sheet_title: PayPayクーポン_v2_修正2
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW

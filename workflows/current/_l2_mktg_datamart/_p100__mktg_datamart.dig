@@ -1,0 +1,127 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+_export:
+  ## TD 出力取得Database TBL
+  td:
+    database: _integration_datamart
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+_error:
+  require>: __failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### クエリを実行し、TDにテーブル化、スプシへの書込、RedShiftへの転送 ###
++fin_tables:
+  _parallel: true
+  +mktg_sys:
+    td>: p100_/mktg_sys.sql
+    create_table: mktg_sys
+  +mktg_web:
+    td>: p100_/mktg_web.sql
+    create_table: mktg_web
+  +mktg_app:
+    td>: p100_/mktg_app.sql
+    create_table: mktg_app
+
++fin_tables_daily:
+  _parallel: true
+  +mktg_sys:
+    td>: p100_/mktg_sys_daily.sql
+    create_table: mktg_sys_daily
+  +mktg_web:
+    td>: p100_/mktg_web_daily.sql
+    create_table: mktg_web_daily
+  +mktg_app:
+    td>: p100_/mktg_app_daily.sql
+    create_table: mktg_app_daily
+
++fin_tables_since_y25:
+  _parallel: true
+  +mktg_sys:
+    td>: p100_/mktg_sys_since_y25.sql
+    create_table: tmp_mktg_sys
+  +mktg_web:
+    td>: p100_/mktg_web_since_y25.sql
+    create_table: tmp_mktg_web
+  +mktg_app:
+    td>: p100_/mktg_app_since_y25.sql
+    create_table: tmp_mktg_app
+
+## スプレッドシートに出力
++export_gsheet:
+  _export:
+    spreadsheet_id: "1I6ENIjgmw5IOJ5LH79ahbfYvjAgbH032h3iDZP-he4c"
+  _parallel: true
+  +sys:
+    td>: p100_/out_gsheet_sys.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: sys
+      range: A1
+      mode: truncate
+  +app:
+    td>: p100_/out_gsheet_app.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: app
+      range: A1
+      mode: truncate
+  +web:
+    td>: p100_/out_gsheet_web.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: web
+      range: A1
+      mode: truncate
+
+## Redshiftへの転送
++for_each_tables:
+  for_each>: 
+    tbl: ["mktg_sys", "mktg_app", "mktg_web", "mktg_sys_daily", "mktg_app_daily", "mktg_web_daily"]
+  _parallel: true
+  _do:
+    +export_redshift:
+      td>:
+      query: |
+        select * 
+        from ${tbl}
+      result_connection: td_to_redshift
+      result_settings:
+        database: riraclepos
+        table: ${tbl}
+        mode: replace
+        schema: from_td
+
++new_customer_exist_flag:
+  +mktg_kpi_rf_segment_log:
+    td>: p100_/mktg_kpi_rf_segment_log.sql
+    create_table: z_tmp_kpi_rf_base
+  +export_rs:
+    td>: p100_/out_rs__new_customer_exist_flag.sql
+    result_connection: td_to_redshift
+    result_settings:
+      database: riraclepos
+      table: new_customer_exist_flag
+      mode: append
+      schema: from_td
+
+
+

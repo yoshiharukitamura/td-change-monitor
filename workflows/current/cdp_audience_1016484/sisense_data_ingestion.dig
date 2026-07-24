@@ -1,0 +1,10 @@
+# CDP: Treasure Insights Data Ingestion "_l2_audience_studio_mk" created at
+# https://console.treasuredata.co.jp/app/ms/1016484
+timezone: "Asia/Tokyo"
+
++start_data_ingestion_workflow:
+  http_call>: https://api-cdp.treasuredata.co.jp/audiences/1016484/dashboard/workflow_definition_for_http_call
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}

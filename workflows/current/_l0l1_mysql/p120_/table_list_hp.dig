@@ -1,0 +1,70 @@
+#### Data Source Variables ####
+# 常に全量を取り込む場合はincremental_byはnull、差分の場合はキーとなるカラム名を設定
+
+table_list:
+### 利用中 ###
+  - {name: area, incremental_by:  , pk: id}
+  - {name: customers, incremental_by: modified , pk: id}
+  - {name: pref, incremental_by:  , pk: id}
+  - {name: reviews, incremental_by: modified , pk: id}
+
+### 利用なし ###
+ # - {name: admins, incremental_by: update_time , pk: id}
+ # - {name: answers, incremental_by: modified , pk: id}
+ # - {name: answer_details, incremental_by: modified , pk: id}
+ # - {name: api_auths, incremental_by: modified , pk: id}
+ # - {name: api_trainings, incremental_by: update_datetime , pk: id}
+ # - {name: app_batch_logs, incremental_by: created , pk: id}
+ # - {name: app_updates, incremental_by: modified , pk: }
+ # - {name: apply, incremental_by: update_datetime , pk: id}
+ # - {name: auth_customers, incremental_by: modified , pk: id}
+ # - {name: banners, incremental_by: modified , pk: id}
+ # - {name: business_cards, incremental_by: update_time , pk: id}
+ # - {name: city, incremental_by:  , pk: id}
+ # - {name: customer_reset_emails, incremental_by: modified , pk: id}
+ # - {name: fcm_customers, incremental_by: modified , pk: id}
+ # - {name: functions, incremental_by:  , pk: id}
+ # - {name: give_points, incremental_by: modified , pk: id}
+ # - {name: job_offer, incremental_by: update_datetime , pk: id}
+ # - {name: job_offer_keyword, incremental_by: update_datetime , pk: id}
+ # - {name: job_offer_more, incremental_by: update_datetime , pk: id}
+ # - {name: job_offer_style, incremental_by: update_datetime , pk: id}
+ # - {name: mst_job_offer_keyword, incremental_by:  , pk: id}
+ # - {name: mst_job_offer_more, incremental_by:  , pk: id}
+ # - {name: mst_job_offer_style, incremental_by:  , pk: id}
+ # - {name: neighborhood_shop, incremental_by: update_datetime , pk: id}
+ # - {name: news, incremental_by: updated , pk: id}
+ # - {name: news_log, incremental_by: created , pk: id}
+ # - {name: news_type, incremental_by: updated , pk: id}
+ # - {name: operation_logs, incremental_by: modified , pk: id}
+ # - {name: orders, incremental_by: update_time , pk: id}
+ # - {name: order_products, incremental_by: update_time , pk: id}
+ # - {name: person_in_charges, incremental_by: update_time , pk: id}
+ # - {name: pr_banners, incremental_by: modified , pk: id}
+ # - {name: products, incremental_by: update_time , pk: id}
+ # - {name: product_skus, incremental_by: update_time , pk: id}
+ # - {name: push_notifications, incremental_by: modified , pk: id}
+ # - {name: push_notification_customers, incremental_by: created , pk: id}
+ # - {name: push_notification_logs, incremental_by: created , pk: id}
+ # - {name: push_notification_log_details, incremental_by: created , pk: }
+ # - {name: questions, incremental_by: modified , pk: id}
+ # - {name: red_customers, incremental_by:  , pk: }
+ # - {name: reward_points, incremental_by: modified , pk: id}
+ # - {name: roles, incremental_by: modified , pk: id}
+ # - {name: role_functions, incremental_by:  , pk: id}
+ # - {name: schema_migrations, incremental_by: created , pk: id}
+ # - {name: selections, incremental_by: modified , pk: id}
+ # - {name: shop, incremental_by: update_datetime , pk: id}
+ # - {name: shop_api_trainings, incremental_by: created , pk: id}
+ # - {name: shop_image, incremental_by: update_datetime , pk: id}
+ # - {name: shop_remark, incremental_by: update_datetime , pk: id}
+ # - {name: shop_services, incremental_by: modified , pk: id}
+ # - {name: shop_service_relations, incremental_by: modified , pk: id}
+ # - {name: state_names, incremental_by: modified , pk: id}
+ # - {name: surveys, incremental_by: modified , pk: id}
+ # - {name: system_users, incremental_by: modified , pk: id}
+ # - {name: terms, incremental_by:  , pk: }
+ # - {name: therapist, incremental_by: update_time , pk: id}
+ # - {name: therapist_ranks, incremental_by: created , pk: id}
+ # - {name: tokens, incremental_by: modified , pk: id}
+ # - {name: reservation_logs, incremental_by: created , pk: id}

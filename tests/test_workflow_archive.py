@@ -113,6 +113,46 @@ def test_archive_extracts_only_confirmed_extensions_and_builds_inventory(
     assert b"not-read" not in b"".join(output.values())
 
 
+def test_archive_redacts_detectable_secrets_before_snapshot_and_git_output(
+    tmp_path: Path,
+) -> None:
+    slack_webhook = "https://hooks.slack.com/services/" + "T" * 12 + "/" + "B" * 12
+    slack_token = "xoxb-" + "1" * 12 + "-" + "a" * 24
+    archive = build_archive(
+        {
+            "main.dig": (
+                f"+notify:\n  http>: {slack_webhook}\n"
+                f"  token: '{slack_token}'\n"
+            ).encode()
+        }
+    )
+
+    snapshot, _ = snapshot_from_workflow_archive(
+        archive,
+        project_detail(),
+        extraction_root=tmp_path / "extract",
+        max_file_size_bytes=1024,
+        max_total_size_bytes=4096,
+    )
+    output = workflow_snapshot_to_files(snapshot)
+
+    assert slack_webhook not in snapshot.files[0].content
+    assert slack_token not in snapshot.files[0].content
+    assert output["main.dig"].count(b"<REDACTED_SECRET>") == 2
+
+
+def test_git_snapshot_reader_redacts_legacy_secret_after_hash_validation() -> None:
+    slack_token = "xoxb-" + "2" * 12 + "-" + "b" * 24
+    legacy = project_snapshot(
+        workflow_file("main.dig", f"token: '{slack_token}'\n")
+    )
+
+    restored = workflow_snapshot_from_files(workflow_snapshot_to_files(legacy))
+
+    assert slack_token not in restored.files[0].content
+    assert "<REDACTED_SECRET>" in restored.files[0].content
+
+
 def test_snapshot_git_files_round_trip() -> None:
     snapshot = project_snapshot(
         workflow_file("main.dig", "+task:\n  td>: query.sql\n"),

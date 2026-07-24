@@ -1,0 +1,43 @@
+# CDP: Metering Audience "_l2_audience_studio_tp" created at
+# https://console.treasuredata.co.jp/app/ms/1018834
+
+timezone: "Asia/Tokyo"
+
+_export:
+  td:
+    database: "cdp_audience_1018834"
+    hive_engine_version: "cdpaudience"
+    
+    
+
++get_queries:
+  http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/metering_workflow_queries"
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  store_content: true
+  retry: true
+  _retry: 5
+
++metering:
+  +execute_query:
+    td>:
+    query: ${JSON.parse(http.last_content)["query"]}
+    database: ${JSON.parse(http.last_content)["parent_database_name"]}
+    engine: hive
+    priority: -2
+    store_last_results: true
+    _retry: 5
+
++callback_finished:
+  http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/metering_workflow_finished"
+  method: POST
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  content: ${td.last_results}
+  content_type: "application/json"
+  retry: true
+  _retry: 5

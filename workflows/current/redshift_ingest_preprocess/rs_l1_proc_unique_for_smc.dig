@@ -1,0 +1,95 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_l1_proc_unique_for_smc
+  notify_slack: true
+  # set td database
+  td:
+    database: l1_unique_for_smc_old
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
++10_upd_unique_tables:
+  _parallel: true
+
+  +upd_customers_unique:
+    td>: proc_110/pos_staging/queries/customers_unique.sql
+    create_table: customers_unique
+
+  +upd_customer_histories_unique:
+    td>: proc_110/pos_staging/queries/customer_histories_unique.sql
+    create_table: customer_histories_unique
+
+  +upd_orders_unique:
+    td>: proc_110/pos_staging/queries/orders_unique.sql
+    create_table: orders_unique
+
+  +upd_order_details_unique:
+    td>: proc_110/pos_staging/queries/order_details_unique.sql
+    create_table: order_details_unique
+
+  +upd_order_detail_reward_items_unique:
+    td>: proc_110/pos_staging/queries/order_detail_reward_items_unique.sql
+    create_table: order_detail_reward_items_unique
+
+  +upd_reward_items_unique:
+    td>: proc_110/pos_staging/queries/reward_items_unique.sql
+    create_table: reward_items_unique
+
+  +upd_reward_item_customers_unique:
+    td>: proc_110/pos_staging/queries/reward_item_customers_unique.sql
+    create_table: reward_item_customers_unique
+
+  +upd_reward_categories_unique:
+    td>: proc_110/pos_staging/queries/reward_categories_unique.sql
+    create_table: reward_categories_unique
+
+  +upd_points_unique:
+    td>: proc_110/pos_staging/queries/points_unique.sql
+    create_table: points_unique
+
+  +upd_mst_shops_unique:
+    td>: proc_110/pos_staging/queries/mst_shops_unique.sql
+    create_table: mst_shops_unique
+
+  +upd_property_unique:
+    td>: proc_110/sys_production/queries/property_unique.sql
+    create_table: property_unique
+
+  +upd_reservations_unique:
+    td>: proc_110/web_reservation_production/queries/reservations_unique.sql
+    create_table: reservations_unique
+
+  +upd_reservation_relations_unique:
+    td>: proc_110/web_reservation_production/queries/reservation_relations_unique.sql
+    create_table: reservation_relations_unique
+
+  +upd_resource_timetables_unique:
+    td>: proc_110/web_reservation_production/queries/resource_timetables_unique.sql
+    create_table: resource_timetables_unique
+
+  +upd_reviews_unique:
+    td>: proc_110/web_app_production/queries/reviews_unique.sql
+    create_table: reviews_unique
+
+  +upd_log_web_customers_unique:
+    td>: proc_110/web_app_production/queries/web_customers_unique.sql
+    create_table: web_customers_unique
+
+  +upd_log_reservation_persons_unique:
+    td>: proc_110/web_reservation_production/queries/reservation_persons_unique.sql
+    create_table: reservation_persons_unique
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

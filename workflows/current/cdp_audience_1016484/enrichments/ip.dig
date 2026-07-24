@@ -1,0 +1,6 @@
++customer:
+  +aggregate:
+    td>: ip/aggregate.sql
+    create_table: cdp_tmp_ip
+    engine: hive
+    _retry: 5

@@ -1,0 +1,32 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Schedule Setting ###
+schedule:
+  cron>: 0 6 * * *
+
+### Manage Workflows ###
++_p100__datamart:
+  require>: _p100__datamart
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+
++_p101__customer_rf_ss:
+  require>: _p101__customer_rf_ss
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+
++_p102__therapist_flag_ss:
+  require>: _p102__therapist_flag_ss
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+
++saved_query:
+  +s1_v9:
+    td_run>: 2446454
+  +s1_v20:
+    td_run>: 2892646
+  +s2:
+    td_run>: 2368191
+  +s3:
+    td_run>: 2431323

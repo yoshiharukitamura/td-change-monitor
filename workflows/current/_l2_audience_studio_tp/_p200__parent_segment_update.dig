@@ -1,0 +1,111 @@
+### Secret Requirement in this Workflow ###
+# td.apikey
+#   Master key
+#   000/abcdefghijklmnopqrstuvwxyz0123456789
+
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Variables ###
+_export:
+  ## Output Database
+  td:
+    database: _l2_audience_studio_tp
+    api_region: treasuredata.co.jp
+  ## Tables for Processing
+  ps:
+    cnfg_raw: z_cnfg_raw
+    cnfg_fin: z_cnfg_fin
+    wf_logging: z_wf_logging
+    work_dir: ./p200_
+
+
+### error handling ###
+_error:
+  require>: failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    # notify: {mail: true, slack: true}
+    notify: {mail: false, slack: false}
+
+### main process ###
+## データ定義書の最新版を取得
++00_load_cnfg_raw:
+  ## テーブル初期化
+  +empty_tables:
+    td_ddl>:
+    empty_tables:
+      - ${ps.cnfg_raw}
+  ## Google Spread Sheetから取得
+  +load_data_from_ss:
+    td_load>: p200_/load_cnfg_raw.yml
+    table: ${ps.cnfg_raw}
+
++01_additional_info:
+  td>: p200_/additional_info.sql
+  insert_into: ${ps.cnfg_raw}
+
+## Data Sourcesから参照する場合
+# +00_load_cnfg_raw:
+#   td_load>: ${Unique ID}
+
+## Parent Segmentを更新するための情報を作成
++01_create_cnfg_fin:
+  td>: p200_/create_cnfg_fin.sql
+  create_table: ${ps.cnfg_fin}
+
+## Custom Scripts で Parent Segmentの作成・更新を実施
++02_update_parent_segments:
+  py>: p200_.__modules.PipeLines.update_parent_segment_proc
+  docker:
+    image: "digdag/digdag-python:3.9"
+  _env:
+    TD_API_KEY: ${secret:td.apikey}
+    TD_ENDPOINT: https://api.${td.api_region}
+    AS_ENDPOINT: https://api-cdp.${td.api_region}/audiences/
+    TD_DATABASE: ${td.database}
+    PS_CNFG_TBL: ${ps.cnfg_fin}
+    LOGGING_TBL: ${ps.wf_logging}
+    DIRECTORY: ${ps.work_dir}
+    SESSION_UUID: ${session_uuid}
+
+## 作成・更新された Parent Segmentの実行
++03_run_parent_segments:
+  for_each>:
+    parent_segment: ${dict_update_list}
+  _parallel: true
+  _do:
+    require>: audience
+    project_name: cdp_audience_${parent_segment['audience_id']}
+    session_time: ${moment(session_date).format()}
+    rerun_on: all
+    ignore_failure: true
+
+# ## WFの再実行用にtime=session_dateとなるデータを削除
+# +create_table:
+#   td_ddl>:
+#   create_tables:
+#     - z_activation_history
+
+# +delete_duplicate_data:
+#   td>:
+#   query: |
+#     delete
+#     from z_activation_history
+#     where time = ${moment(session_date).unix()}
+
+# ## Activationの実行
+# +04_run_activations:
+#   for_each>:
+#     activation: ${activation_list}
+#   _parallel:
+#     limit: 8
+#   _do:
+#     require>: syndication_${activation_id}
+#     project_name: cdp_segment_${segment_id}
+#     session_time: ${moment(session_date).format()}
+#     rerun_on: all
+#     ignore_failure: true

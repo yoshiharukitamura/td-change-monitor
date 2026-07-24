@@ -1,0 +1,69 @@
+timezone: Asia/Tokyo
+# schedule:
+#   cron>: 0 7 * * *
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: df_cron_daily_0700_update_tableau_data
+  notify_slack: true
+  td:
+    database: l2_shop_db_dev
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# 受発注時点のTPランクデータの更新
++tp_rank_update:
+  td>: daily_0700/001/tp_rank_update.sql
+  create_table: therapist_rank_class_weekly
+
+# 受発注進捗データの更新
++time_slot_progress_ss_list:
+  td>: daily_0700/002/time_slot_progress_ss_list.sql
+  # create_table: time_slot_progress_ss_list
+
++time_slot_progress_rawdata:
+  td>: daily_0700/003/time_slot_progress_rawdata.sql
+  # create_table: time_slot_progress_rawdata
+
++time_slot_progress_prep:
+  td>: daily_0700/004/time_slot_progress_prep.sql
+  create_table: time_slot_progress_prep
+
++time_slot_history:
+  td>: daily_0700/005/time_slot_history.sql
+  create_table: time_slot_history
+
++time_slot_progress_for_tableau_step1:
+  td>: daily_0700/006/time_slot_progress_for_tableau_step1.sql
+  create_table: time_slot_progress_for_tableau
+
++time_slot_progress_for_tableau_step2:
+  td>: daily_0700/007/time_slot_progress_for_tableau_step2.sql
+  insert_into: time_slot_progress_for_tableau
+
++time_slot_progress_for_tableau_step3:
+  td>: daily_0700/008/time_slot_progress_for_tableau_step3.sql
+  insert_into: time_slot_progress_for_tableau
+
+
+# 施策結果マッピングの更新
++reset_table:
+  td_ddl>:
+  empty_tables:
+    - analytics_20230912
+
++get_week_list:
+  td_for_each>: daily_0700/009/get_week_list.sql
+  _do:
+    +measures_mapping:
+      td>: daily_0700/010/measures_mapping.sql
+      insert_into: analytics_20230912
+
+# 事前エントリー結果の更新
++analytics_20231215:
+  td>: daily_0700/011/analytics_20231215.sql

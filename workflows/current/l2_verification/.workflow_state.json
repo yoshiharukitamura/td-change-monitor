@@ -1,0 +1,92 @@
+{
+  "archive_md5": "V+HHVjKRVfKp5fwnP9qipA==",
+  "files": [
+    {
+      "path": "___README.dig",
+      "sha256": "606660391eac492d7c75cf64e43feeac3cf6353fa53e9afca95d6128b25a3cec"
+    },
+    {
+      "path": "_cron_0900__daily_update.dig",
+      "sha256": "6869c4dd1cd3ffa0f4583c07abead0cc865d6a3ca07cef011c81bedd0629924e"
+    },
+    {
+      "path": "_p100__supply.dig",
+      "sha256": "4f74b0c46f92eb10334ad957ae189e371b5d1ea37cd59d95d0020dc6c839ad56"
+    },
+    {
+      "path": "_p200__demand_shop.dig",
+      "sha256": "40ae3b66d4300bbec0cd3824df7e9f61a385c91d85f5d3b5c86b5f01c68095c8"
+    },
+    {
+      "path": "_p300__demand_customer.dig",
+      "sha256": "75b67da060ae635d5c98d87d61579e45c2295e1d40c0753598568ff1d8a893ae"
+    },
+    {
+      "path": "p100_/supply_verification.sql",
+      "sha256": "3ccaa2abdd1125266922645cd3156e71d066637873102ca845007860e77d9503"
+    },
+    {
+      "path": "p100_/table_list.dig",
+      "sha256": "cdcb93ccca9a710d627868376156923d7569efee8f6a04a49c7585f010fa9bd5"
+    },
+    {
+      "path": "p200_/demand_verification_shop.sql",
+      "sha256": "598f424de921723bf755bf87f89f3a3c402c2c193e36ecbf5c71f6de9448af09"
+    },
+    {
+      "path": "p200_/demand_verification_shop_new.sql",
+      "sha256": "f297d21b4eed3d6c1ea6ce7d6b4be4d1b4cfc14db35b9b06937d34ee04d05139"
+    },
+    {
+      "path": "p200_/demand_verification_shop_paypay.sql",
+      "sha256": "203aa3fb3e82b094f6560d47a2594b4c4774a011a7ace4f428db3500cd8fcc58"
+    },
+    {
+      "path": "p200_/demand_verification_shop_paypay_v3_v2.sql",
+      "sha256": "0968172ec53165c368955b550e0340e41ddf436a28febde8a868c71b1477c44d"
+    },
+    {
+      "path": "p200_/demand_verification_shop_paypay_v4_v2.sql",
+      "sha256": "1d6ebdd9ddb4067011b62c9d03836948a44eb36a2dba20701213b79d7cc13e36"
+    },
+    {
+      "path": "p200_/table_list.dig",
+      "sha256": "21b7ba460586eb8b1dbca3fb92216f6e7a7cd3b48e3c768795a7769f3d295bb0"
+    },
+    {
+      "path": "p300_/demand_verification_customer.sql",
+      "sha256": "d34bd1f4099c3570003102538188b923244482257f90fba5a8a3792b5fdf4913"
+    },
+    {
+      "path": "p300_/demand_verification_customer_correct_tmp.sql",
+      "sha256": "7f518cce9a1eaf94537d32cc7878139c3c2d8bd7abbb501eda89d4236c94663e"
+    },
+    {
+      "path": "p300_/demand_verification_customer_tmp.sql",
+      "sha256": "24de1ccf0e67ee8898635237b5150a93d9528377fc94c45f69fcaa572d097fb1"
+    },
+    {
+      "path": "p300_/demand_verification_customer_tmp_2.sql",
+      "sha256": "8f8b7158a431bec1e568303ac4d7e21b453126c783404d573ac1c2cfa1e37ae2"
+    },
+    {
+      "path": "p300_/demand_verification_customer_tmp_3.sql",
+      "sha256": "a08a229f268cbed5e9b58a62c20f66733e456c645f72e83576fafe109ad94893"
+    },
+    {
+      "path": "p300_/demand_verification_customer_tmp_4.sql",
+      "sha256": "f5ce193fc2c452a7afa91747e9a6a9d5d5cd1987f84e928d3e05b791b76645d0"
+    },
+    {
+      "path": "p300_/segments_list.dig",
+      "sha256": "103c0aa5c3ed0ee7af1df19bd6811726e7302f0e9e30e359b715d7e5760acd82"
+    },
+    {
+      "path": "z_p998__scan_references.dig",
+      "sha256": "8c627ddef6b3228cc3e320d62b35a6906b029ed885a365a76d52c2174e3c092d"
+    }
+  ],
+  "project_id": "1330473",
+  "project_name": "l2_verification",
+  "revision": "52766d34f75e447ab8f432a6591c5e99"
+}

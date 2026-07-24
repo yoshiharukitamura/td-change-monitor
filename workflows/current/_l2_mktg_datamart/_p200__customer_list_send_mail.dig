@@ -1,0 +1,75 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+#schedule:
+#  cron>: 0 8 * * 1
+
+_export:
+  ## TD 出力取得Database TBL
+  td:
+    database: _integration_datamart
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+_error:
+  require>: __failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### クエリを実行し、スプシへの書込 ###
+
+# +app_new_customer:
+#   _export:
+#     spreadsheet_id: "1CMeJ8QAMcNUhBQzSkaIbDmheVHCFoOjy7X5ad1Hccf4"
+#   +customer_list_app:
+#     td>: p200_/mktg_customer_list_1.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${spreadsheet_id}
+#       sheet_title: ${moment(session_date).format("YYYY-MM-DD")}_抽出_APP_新規
+#       range: A1
+#       mode: truncate
+# 
+# +app_rw13ge_customer:
+#   _export:
+#     spreadsheet_id: "1CMeJ8QAMcNUhBQzSkaIbDmheVHCFoOjy7X5ad1Hccf4"
+#   +customer_list_app:
+#     td>: p200_/mktg_customer_list_2.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${spreadsheet_id}
+#       sheet_title: ${moment(session_date).format("YYYY-MM-DD")}_抽出_APP_Rw13+
+#       range: A1
+#       mode: truncate
+
++rw13_prev12_customer:
+  _export:
+    spreadsheet_id: "17Lw_0eWz1v18pNpwUUPkNGuQirtrq8fJkp6FK4JFpuY"
+  +customer_list:
+    td>: p200_/mktg_customer_list_rw13_prev12.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: ${moment(session_date).format("YYYY-MM-DD")}_抽出_Rw13_前週12
+      range: A1
+      mode: truncate
+
+  
+  
+            
+  
+
+  
+

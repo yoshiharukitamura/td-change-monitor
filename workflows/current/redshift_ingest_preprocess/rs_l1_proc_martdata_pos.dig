@@ -1,0 +1,100 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_l1_proc_martdata_pos
+  notify_slack: true
+  # set td database
+  td:
+    database: l1_pos_staging
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
+# main process
++10_upd_log_tables:
+  _parallel: true
+
+  +upd_log_customer_histories:
+    td>: proc_110/pos_staging/queries/customer_histories.sql
+    create_table: log_customer_histories
+
+  +upd_log_customers:
+    td>: proc_110/pos_staging/queries/customers.sql
+    create_table: log_customers
+
+  +upd_log_daily_work_shifts:
+    td>: proc_110/pos_staging/queries/daily_work_shifts.sql
+    create_table: log_daily_work_shifts
+
+  +upd_log_gift_cards:
+    td>: proc_110/pos_staging/queries/gift_cards.sql
+    create_table: log_gift_cards
+
+  +upd_log_hp_customers:
+    td>: proc_110/pos_staging/queries/hp_customers.sql
+    create_table: log_hp_customers
+
+  +upd_log_mst_holidays:
+    td>: proc_110/pos_staging/queries/mst_holidays.sql
+    create_table: log_mst_holidays
+
+  +upd_log_mst_shops:
+    td>: proc_110/pos_staging/queries/mst_shops.sql
+    create_table: log_mst_shops
+
+  +upd_log_opportunity_loss_details:
+    td>: proc_110/pos_staging/queries/opportunity_loss_details.sql
+    create_table: log_opportunity_loss_details
+
+  +upd_log_opportunity_losses:
+    td>: proc_110/pos_staging/queries/opportunity_losses.sql
+    create_table: log_opportunity_losses
+
+  +upd_log_order_detail_reward_items:
+    td>: proc_110/pos_staging/queries/order_detail_reward_items.sql
+    create_table: log_order_detail_reward_items
+
+  +upd_log_order_details:
+    td>: proc_110/pos_staging/queries/order_details.sql
+    create_table: log_order_details
+
+  +upd_log_orders:
+    td>: proc_110/pos_staging/queries/orders.sql
+    create_table: log_orders
+
+  +upd_log_points:
+    td>: proc_110/pos_staging/queries/points.sql
+    create_table: log_points
+
+  +upd_log_reward_categories:
+    td>: proc_110/pos_staging/queries/reward_categories.sql
+    create_table: log_reward_categories
+
+  +upd_log_reward_item_applicable_days:
+    td>: proc_110/pos_staging/queries/reward_item_applicable_days.sql
+    create_table: log_reward_item_applicable_days
+
+  +upd_log_reward_item_customers:
+    td>: proc_110/pos_staging/queries/reward_item_customers.sql
+    create_table: log_reward_item_customers
+
+  +upd_log_reward_items:
+    td>: proc_110/pos_staging/queries/reward_items.sql
+    create_table: log_reward_items
+
+  +upd_log_shop_categories:
+    td>: proc_110/pos_staging/queries/shop_categories.sql
+    create_table: log_shop_categories
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

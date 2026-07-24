@@ -1,0 +1,264 @@
+{
+  "archive_md5": "EF04Nt0mNyqUmuV89dOXKw==",
+  "files": [
+    {
+      "path": "common/config/env_variables.dig",
+      "sha256": "020bcea99a75254a51208beb2ba28eda39facd6d9ab8e31a11379e382e41e1d2"
+    },
+    {
+      "path": "common/function/wf_error_handling.dig",
+      "sha256": "0a58ced17f8bcf2cc0a81c426ebeaaf50130bd7cbf4abef6e98958f2eb3b768a"
+    },
+    {
+      "path": "common/function/wf_start_handling.dig",
+      "sha256": "fb38bfeea32a14372043481a0164273ce2d71af1771802b7c00cf2d9744ab826"
+    },
+    {
+      "path": "common/function/wf_success_handling.dig",
+      "sha256": "27561cfe24162b9ed397da54b367f58ef01049d98332b30bd92c9fd36c455d93"
+    },
+    {
+      "path": "config/variable.dig",
+      "sha256": "ff4d4b1b52cd821165ec4f43c2816e404d51ada79e41bbddcb2c16a3f57c558a"
+    },
+    {
+      "path": "function/custom_values.dig",
+      "sha256": "fb8bd361a86bc4bc973f5d20218e877bb4a45974a9cd7646e3358c22726c545b"
+    },
+    {
+      "path": "function/from_url_params.dig",
+      "sha256": "46c60bb88b21ad38abf16ac1001e052f5cee5df0e30b9dd7fbe624c1ca298648"
+    },
+    {
+      "path": "queries/proc_1100_accumulate_log_cookies.sql",
+      "sha256": "1c3ecfef55197ae0d93e52991b0e508844f372d2baa1c92f85c024cf8f249acc"
+    },
+    {
+      "path": "queries/proc_1200_split_log_cookies.sql",
+      "sha256": "bd7405b213d0a3419e3c1e20679f956c8a56acc74f745ee1b15ce1207ef47597"
+    },
+    {
+      "path": "queries/proc_1301_create_bigint_ids_step1.sql",
+      "sha256": "22ae82265f22755c41f4971b00bf7acdd3ffa4e721d8edc59344f547f5d80b1a"
+    },
+    {
+      "path": "queries/proc_1302_create_bigint_ids_step2.sql",
+      "sha256": "2abf428e6538a444e369d321741874d2105e295f1a82ade6073f4a0514cc37dc"
+    },
+    {
+      "path": "queries/proc_1303_create_bigint_ids_step3.sql",
+      "sha256": "d1cea5f56bdcaf04dc345561025bbcd630972d45d78d4baf89850d48a561a3aa"
+    },
+    {
+      "path": "queries/proc_1401_distinct_map_cid_gid_step1.sql",
+      "sha256": "fc4e1f9d9d6065260360d463b8a4d1067dcf9ad5a1114736f663f127ef40cb66"
+    },
+    {
+      "path": "queries/proc_1402_distinct_map_cid_gid_step2.sql",
+      "sha256": "afe014fcdd4cb404f3cd169884103b87dc7bd6dd1fd1d0b82c65035a90f5dc0a"
+    },
+    {
+      "path": "queries/proc_1510_create_tduid_cid1_gidn.sql",
+      "sha256": "e8e2e6df4bdc04cd94b494316f8cc267c6c7397abc4f82f29c3b2ba24ee94e80"
+    },
+    {
+      "path": "queries/proc_1520_create_tduid_cidn_gid1.sql",
+      "sha256": "e84c6ed1bc1e2a48943225039935ee8ebd35567ff4748088c41dc732dae03418"
+    },
+    {
+      "path": "queries/proc_1531_create_tduid_cidn_gidn_step1.sql",
+      "sha256": "d48f1c80ea73bbe4075f53102b8edca9681795190e2ea1611ef95bd8baefde6b"
+    },
+    {
+      "path": "queries/proc_1532_create_tduid_cidn_gidn_step2.sql",
+      "sha256": "82e5e1fa4b842e604f6ca9cea0c6e1d41234f61e080ad5ae07532621ff1352a3"
+    },
+    {
+      "path": "queries/proc_1533_create_tduid_cidn_gidn_step3.sql",
+      "sha256": "18d7bb2ab9e97533a7ba7f4514f606a4c65325feac045d5b7a755bece860a8a9"
+    },
+    {
+      "path": "queries/proc_1534_create_tduid_cidn_gidn_step4.sql",
+      "sha256": "752c1d2dc42a97bce05418f2e3744e1de24fd2ceca4f6c25f1a2e3201b012487"
+    },
+    {
+      "path": "queries/proc_1600_join_tduid_cookies.sql",
+      "sha256": "0925bf35d81556060a84770ac5d0ec3fe58531fd165a7725ac5a1fa589ec8824"
+    },
+    {
+      "path": "queries/proc_1701_check_exist_tduid_step1.sql",
+      "sha256": "9f8c436e1c45d2c6758a8856ee7e8e5aa808521b23d01d5ac1b164f68964a356"
+    },
+    {
+      "path": "queries/proc_1702_check_exist_tduid_step2.sql",
+      "sha256": "c31582b303c5cb464f652ade999b5ee9b98b8e163e1fd5be51750977356dd3fd"
+    },
+    {
+      "path": "queries/proc_1811_update_map_tduid_tdclientid_step1.sql",
+      "sha256": "24c7c56294d2fceceb4b589489dda84ab503a605f1476dd6936df569ba367d3c"
+    },
+    {
+      "path": "queries/proc_1812_update_map_tduid_tdclientid_step2.sql",
+      "sha256": "ebfc16a6b5cfe5e7b6406cfe6e6fb1160ba1917f2f31ec3d41bc24fdc17fb3a9"
+    },
+    {
+      "path": "queries/proc_1821_update_map_tduid_tdglobalid_step1.sql",
+      "sha256": "2d3799b94d11fd64ea429025c3cc543208ecdf066f10cf58dcd0b6bf5c629d95"
+    },
+    {
+      "path": "queries/proc_1822_update_map_tduid_tdglobalid_step2.sql",
+      "sha256": "988b76d0cf7f81e892e1a63010cac71027c01663ebc9adec35dabdf82eff12d9"
+    },
+    {
+      "path": "queries/proc_1831_update_map_tduid_tdclientid_daily_step1.sql",
+      "sha256": "add43a7c8762dcf154814e73d1b728b58e839ffbb25e68bf38bedd27404ce528"
+    },
+    {
+      "path": "queries/proc_1832_update_map_tduid_tdclientid_daily_step2.sql",
+      "sha256": "98eeb7e240f3bcd18f41fdb937fbadb3f94d736fb93654821042001166d07e38"
+    },
+    {
+      "path": "queries/proc_2100_accumulate_log_pvs.sql",
+      "sha256": "d371891f4595de5279bcad6dfccbc142c1354e26b8a0837b07758bd09216c7d8"
+    },
+    {
+      "path": "queries/proc_2200_split_log_pvs.sql",
+      "sha256": "b7e40a7f8c0b55f404851c7cbec8784c8b1c974f1f21fb8457d87d34758ca345"
+    },
+    {
+      "path": "queries/proc_2301_extract_target_pvs_step1.sql",
+      "sha256": "e1953d71562927437ecd1059b94d7508944ea626dd595ebf1005f27c31680a4a"
+    },
+    {
+      "path": "queries/proc_2302_extract_target_pvs_step2.sql",
+      "sha256": "5a90fc7160a28127bcf9feb647238921d0f33c9dcdcb8ebefc2778d0e2fcbbdd"
+    },
+    {
+      "path": "queries/proc_2400_create_session_keys.sql",
+      "sha256": "a19e8188a77a18a85f3a2dae4e435a58574b99d5a813747c190b3f72cb91fdd7"
+    },
+    {
+      "path": "queries/proc_2501_create_session_ids_step1.sql",
+      "sha256": "be1095fc98085acf3468b29d279d02823c9357e6348e2222a7724bb6974f9543"
+    },
+    {
+      "path": "queries/proc_2502_create_session_ids_step2.sql",
+      "sha256": "4f5db712d0fb672e74b74b4a75cfeda8ad383f46670d08724bb0caa17a52a550"
+    },
+    {
+      "path": "queries/proc_2503_create_session_ids_step3.sql",
+      "sha256": "f4330b8fe644f259639e49479ca2121b34d0638006f4e738f169aa7b15676fd6"
+    },
+    {
+      "path": "queries/proc_2610_create_log_pvs_for_carry_on.sql",
+      "sha256": "c480e44d63cb92526facb647d44b5f877b78df03a98097947981e8649eeab897"
+    },
+    {
+      "path": "queries/proc_2621_create_incr_trs_session_step1.sql",
+      "sha256": "efd59e335ca6ef43e4e67a71fa0e47d7de05878449e34b22578719c78b71a0e8"
+    },
+    {
+      "path": "queries/proc_2622_create_incr_trs_session_step2.sql",
+      "sha256": "6ecf392b6a40eed812cab315f92371b0c2d3e42facbcc4f6679e4e46533da98b"
+    },
+    {
+      "path": "queries/proc_2623_create_incr_trs_session_step3.sql",
+      "sha256": "30df6e15ec5bb69b139524d93d49d175b0a6ab20526aa2e3f12c4ee73836effd"
+    },
+    {
+      "path": "queries/proc_2624_create_incr_trs_session_step4.sql",
+      "sha256": "4990d31f45c141be4f1b362042e7d4d7182fbafab503e56a37a36a2086e8879e"
+    },
+    {
+      "path": "queries/proc_2711_update_mst_tduid_device_step1.sql",
+      "sha256": "58a77cae34373b6fb72c0c119660902b45bb0982c003e5bb6b6028c868cd2c29"
+    },
+    {
+      "path": "queries/proc_2712_update_mst_tduid_device_step2.sql",
+      "sha256": "50c48ac446c0c14de8fa19f45b1babe851e7861b54f2c81b7a2f6b59d2dd3682"
+    },
+    {
+      "path": "queries/proc_2721_create_mst_session_id_step1.sql",
+      "sha256": "9f5657bb912e48c0295a3955fbf8bb9ab8432430f62b068804950f9b14d9ad8f"
+    },
+    {
+      "path": "queries/proc_2722_create_mst_session_id_step2.sql",
+      "sha256": "04915077e494a7bc3624878972918ff7444eea957188486e3a14f8cba0022f6e"
+    },
+    {
+      "path": "queries/proc_2801_insert_trs_session_step1.sql",
+      "sha256": "401e8f2d189785f6732e873f2e3b808ce7e62dc3ee085896306b8a99426c2476"
+    },
+    {
+      "path": "queries/proc_2802_insert_trs_session_step2.sql",
+      "sha256": "0ebf17925e1e6ead98d569357f8acc18db9c398a62572a9c9b706bf575616f2d"
+    },
+    {
+      "path": "queries/proc_3101_simple_mapping_step1.sql",
+      "sha256": "f448a4a09e886264f66439f2a1a7cd3fd7db269609f00469a065f0e4d60013d2"
+    },
+    {
+      "path": "queries/proc_3102_simple_mapping_step2.sql",
+      "sha256": "22ae4141e9dba44c260f3ab14ac4b6dfa5f19b86709f29f582e4e27ed6082048"
+    },
+    {
+      "path": "queries/proc_3201_map_cross_over_step1.sql",
+      "sha256": "011e831e3e18843055d688fe8285316a703a5c37786a19273b3e18167de2b431"
+    },
+    {
+      "path": "queries/proc_3202_map_cross_over_step2.sql",
+      "sha256": "a9c6c0ddf31221513654476e2fe7275928d4b79fa3104d7a88c9ae1f6df44116"
+    },
+    {
+      "path": "queries/proc_3301_create_unify_num_step1.sql",
+      "sha256": "5cb554889fac6cae162f53d2e912e17e5338e85b882a0e0f185b3f70953fa306"
+    },
+    {
+      "path": "queries/proc_3302_create_unify_num_step2.sql",
+      "sha256": "1263407ddecec73c8153879e0a3c175ef9896046e915cc93a8e235f00ac335c7"
+    },
+    {
+      "path": "queries/proc_3303_create_unify_num_step3.sql",
+      "sha256": "fa43785c4101bb12aaa63d3a813ad18fc5f4bcafd368668370f478442bddaa73"
+    },
+    {
+      "path": "queries/proc_3304_create_unify_num_step4.sql",
+      "sha256": "da2ab23c395e3008ca7ffa6fb48481a7e18e12df042950e004c2bef78f2fc3df"
+    },
+    {
+      "path": "queries/proc_3305_create_unify_num_step5.sql",
+      "sha256": "a7eeb28d4559c20f2419514d13409887d1d0a35130a1cb4eae083777ce38420b"
+    },
+    {
+      "path": "queries/proc_3306_create_unify_num_step6.sql",
+      "sha256": "8b90a942f013cecea8dd667c2045867615866bb303aa9eff86e3f11c997c93b8"
+    },
+    {
+      "path": "weblog_cron_daily_process.dig",
+      "sha256": "f58c528cede04dc13366a9263265042e5da27c57f319cc314e175b74876670d6"
+    },
+    {
+      "path": "weblog_proc_1000_mapping_cookie.dig",
+      "sha256": "18cac43f971cd6ab8f3b2cb42a8f6aef3cd540d4f080494eff1bcb4fd114eeb3"
+    },
+    {
+      "path": "weblog_proc_2000_sessionize_pv.dig",
+      "sha256": "a817a6c99e0d6e5dec390c6ada5df76b88349e8a83be2b0fa7130942f08eda7d"
+    },
+    {
+      "path": "weblog_proc_2000_sessionize_pv_child_.dig",
+      "sha256": "ac6efed177a1f3660a1d26a51abf7cfdc02053953966a8b6cfbadbc10e5adaff"
+    },
+    {
+      "path": "weblog_proc_3000_map_tduid_others.dig",
+      "sha256": "20d09c223c5c2e5417e2a843dabb50025fe067c1cf8d26135daebd6d27cf007c"
+    },
+    {
+      "path": "zzz/weblog_proc_2000_sessionize_pv_child.dig",
+      "sha256": "ac6efed177a1f3660a1d26a51abf7cfdc02053953966a8b6cfbadbc10e5adaff"
+    }
+  ],
+  "project_id": "281730",
+  "project_name": "weblog_preprocess",
+  "revision": "e5eaa47d2dc54b0086828872fb7649c5"
+}

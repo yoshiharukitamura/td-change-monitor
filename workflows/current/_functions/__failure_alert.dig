@@ -1,0 +1,132 @@
+###############################################################
+# このワークフローの使い方: line 5-13 を各ワークフローに貼り付け
+###############################################################
+### 他プロジェクトへの貼付け範囲 *** ここから ***
+# _error:
+#   require>: __failure_alert
+#   project_name: functions
+#   session_time: ${moment(session_date).format()}
+#   rerun_on: all
+#   params:
+#     failure_session_id: ${session_id}
+#     ## default false. Set true only for usage
+#     notify: {mail: false, slack: false, teams: false}
+### 他プロジェクトへの貼付け範囲 *** ここまで ***
+
+
+###############################################################
+# 必要なシークレット
+###############################################################
+### API Workflow用のため必須
+# td.apikey (Master key)
+### 利用する通知チャネルに応じて設定
+# slack.apikey (Bot User OAuth Token)
+# teams.endpoint (Webhook URL)
+
+
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+_export:
+  ## リージョン設定(Tokyo/US) --- treasuredata.co.jp / treasuredata.com
+  api_region: treasuredata.co.jp
+  ## メール送信先アドレス
+  mail:
+    to:
+      - kyohei.tomita@hiveiq.co.jp
+    cc:
+      - kyohei.tomita@hiveiq.co.jp
+  ## Slacl送信先チャネル
+  slack:
+    channel: 案件_りらく通知用
+  ### 呼び出し元のWorkflowから受け取る変数 *** ここから ***
+  # failure_session_id: ${session_id}
+  # notify: {mail: true / false, slack: true / false, teams: true / false}
+  ### 呼び出し元のWorkflowから受け取る変数 *** ここまで ***
+
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### Get Workflow Information via API ###
++get_workflow_information:
+  http>: https://api-workflow.${api_region}/api/sessions/${failure_session_id}
+  headers:
+    - Authorization: "TD1 ${secret:td.apikey}"
+  store_content: true
+
+### Send Notifications ###
++notifications:
+  _parallel: true
+  ## Execute if notify.mail is true 
+  +mail:
+    if>: ${notify.mail}
+    _do:
+      mail>:
+      subject: '【TREASURE DATA エラー発生】${moment(JSON.parse(http.last_content).sessionTime).format("YYYY-MM-DD")} / ${JSON.parse(http.last_content).project.name} / ${JSON.parse(http.last_content).workflow.name}'
+      body: |
+        project_name: ${JSON.parse(http.last_content).project.name}
+        workflow_name: ${JSON.parse(http.last_content).workflow.name}
+        session_time: ${moment(JSON.parse(http.last_content).sessionTime).format("YYYY-MM-DD HH:mm:ss")}
+
+        該当WF: https://console.${api_region}/app/workflows/${JSON.parse(http.last_content).workflow.id}/sessions/${failure_session_id}
+
+  ## Execute if notify.slack is true 
+  +slack:
+    if>: ${notify.slack}
+    _do:
+      http>: "https://slack.com/api/chat.postMessage"
+      headers:
+        - Authorization: "Bearer ${secret:slack.apikey}"
+      method: POST
+      content_format: json
+      content:
+        channel: ${slack.channel}
+        username: "${JSON.parse(http.last_content).project.name}"
+        icon_emoji: ':no_entry:'
+        blocks:
+        - type: header
+          text:
+            type: plain_text
+            text: ${moment(JSON.parse(http.last_content).sessionTime).format("YYYY-MM-DD")} - ${JSON.parse(http.last_content).workflow.name}でエラーが発生しました。
+        - type: section
+          text:
+            type: mrkdwn
+            text: |-
+              *Project Name*
+              ${JSON.parse(http.last_content).project.name}
+
+              *Workflow Name*
+              ${JSON.parse(http.last_content).workflow.name}
+
+              *Session Time*
+              ${moment(JSON.parse(http.last_content).sessionTime).format("YYYY-MM-DD HH:mm:ss")}
+              
+              *Console Access*
+              https://console.${api_region}/app/workflows/${JSON.parse(http.last_content).workflow.id}/sessions/${failure_session_id}
+
+  ## Execute if notify.teams is true 
+  +teams:
+    if>: ${notify.teams}
+    _do:
+      http>: "${secret:teams.endpoint}"
+      method: POST
+      content_format: json
+      content:
+        text: |
+          ## Project Name
+          # ${JSON.parse(http.last_content).project.name}
+          <br/>
+
+          ## Workflow Name
+          # ${JSON.parse(http.last_content).workflow.name}
+          <br/>
+
+          ## Session Time
+          # ${moment(JSON.parse(http.last_content).sessionTime).format("YYYY-MM-DD HH:mm:ss")}
+          <br/>
+
+          ## Console Access
+          # https://console.${api_region}/app/workflows/${JSON.parse(http.last_content).workflow.id}/sessions/${failure_session_id} 

@@ -1,0 +1,25 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+
+timezone: Asia/Tokyo
+
+_export:
+  ## 取得出力Databaseの定義
+  td:
+    database: _l0_mysql_reservation
+
+###############################################################
+# ワークフローの処理
+###############################################################
+## エラー回避用: Databaseが存在しない場合は新規作成
++create_databases:
+  td_ddl>:
+  create_databases: ['${td.database}']
+
+## initializedの有無で分岐
++require_init:
+  require>: _p130__reservation
+  params:
+    initialize: 'true'
+    # initialize: 'false'

@@ -1,0 +1,70 @@
+{
+  "aggregated_change_id": "5eb74932699ef3971de145f1917b2d172dfa64d779c0a9008af5dd26020f0846",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_integration_datamart",
+  "events": [
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "3dae58f0-3bd9-40d7-80c1-e9491714ab4b",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/296394513",
+      "resource_id": "296394513",
+      "table": "z_tmp_kpi_app_session_monthly_w12f",
+      "time": "2026-07-21T00:54:03+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "41a0cc80-a9d4-4583-886a-df1745f4a30d",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298131234",
+      "table": "z_tmp_kpi_app_session_monthly_w12f",
+      "time": "2026-07-21T00:54:05+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "d8ab4c34-1327-4b46-be26-8aee1e4edc71",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298131234",
+      "resource_id": "298131234",
+      "table": "z_tmp_kpi_app_session_monthly_w12f",
+      "time": "2026-07-21T05:55:20+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "58e1b64b-a2e7-4bdb-a853-59a097ec6095",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298183043",
+      "table": "z_tmp_kpi_app_session_monthly_w12f",
+      "time": "2026-07-21T05:55:22+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "z_tmp_kpi_app_session_monthly_w12f"
+}

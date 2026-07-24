@@ -1,0 +1,64 @@
+timezone: Asia/Tokyo
+
+_export: 
+  td:
+    database: l2_tp_suggest
+
+## 移管不要 ここから
+#+suggest_rawdata:
+#  td>: suggest_rawdata_tel.sql
+## 移管不要 ここまで
+
+## 利用時に新スプレッドシートに反映（spreadsheet_id更新済）移管対象ではあるが、再利用時までコメントアウト
+## スプレッドシートURL：https://docs.google.com/spreadsheets/d/1Xc2poBNXsP8hvkkI18_A85VvQ1gVoz4vcRVZlYU_54Y/edit?gid=0#gid=0
+#+send_to_gs:
+#  td>:
+#  query: |
+#    select
+#      row_number() over (order by rnk, today_start_hour) as "#"
+#      , shop_no as "店舗No"
+#      , shop_name as "店舗名"
+#      , fax as "店舗FAX番号"
+#      , url as "時間枠リンク"
+#      , therapist_no as TPNo
+#      , professional_name as "表示名"
+#      , tel01 as "TEL"
+#      , avg_mon as "月ave."
+#      , avg_tue as "火ave."
+#      , avg_wed as "水ave."
+#      , avg_thu as "木ave."
+#      , avg_fri as "金ave."
+#      , avg_sat as "土ave."
+#      , avg_sun as "日ave."
+#      , hours_today as "当日E時間"
+#      , hours_lw as "前週E時間"
+#      , hours_next1 as "${moment(session_date).add(1, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(1, 'day').format('d'), 1)})"
+#      , hours_next2 as "${moment(session_date).add(2, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(2, 'day').format('d'), 1)})"
+#      , hours_next3 as "${moment(session_date).add(3, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(3, 'day').format('d'), 1)})"
+#      , hours_next4 as "${moment(session_date).add(4, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(4, 'day').format('d'), 1)})"
+#      , hours_next5 as "${moment(session_date).add(5, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(5, 'day').format('d'), 1)})"
+#      , hours_next6 as "${moment(session_date).add(6, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(6, 'day').format('d'), 1)})"
+#      , hours_next7 as "${moment(session_date).add(7, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(7, 'day').format('d'), 1)})"
+#      , '' as "担当者"
+#      , '' as "${moment(session_date).add(1, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(1, 'day').format('d'), 1)})"
+#      , '' as "${moment(session_date).add(2, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(2, 'day').format('d'), 1)})"
+#      , '' as "${moment(session_date).add(3, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(3, 'day').format('d'), 1)})"
+#      , '' as "${moment(session_date).add(4, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(4, 'day').format('d'), 1)})"
+#      , '' as "${moment(session_date).add(5, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(5, 'day').format('d'), 1)})"
+#      , '' as "${moment(session_date).add(6, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(6, 'day').format('d'), 1)})"
+#      , '' as "${moment(session_date).add(7, 'day').format('M/D')}(${'日月火水木金土'.substr(moment(session_date).add(7, 'day').format('d'), 1)})"
+#    from
+#      l2_tp_suggest.suggest_history_tel
+#    where
+#      time = td_date_trunc('day', td_scheduled_time(), 'jst')
+#    order by
+#      rnk, today_start_hour
+#  result_connection: td_share
+#  result_settings:
+#    spreadsheet_id: 1Xc2poBNXsP8hvkkI18_A85VvQ1gVoz4vcRVZlYU_54Y
+#    sheet_title: "${moment(session_date).format('M/D')}(${'日月火水木金土'.substr(moment(session_date).format('d'), 1)})"
+#    mode: truncate
+#    rows_threshold: 10000
+#    set_nil_for_double_nan: true
+#    range: A1
+#    value_input_option: RAW

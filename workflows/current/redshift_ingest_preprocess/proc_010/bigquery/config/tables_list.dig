@@ -1,0 +1,3 @@
+tables_list_bigquery:
+  - td_tbl: navy_final_remuneration_rate_management
+

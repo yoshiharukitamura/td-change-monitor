@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "24482784",
+    "name": "l2_verification"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": null,
+    "connector_type": null
+  },
+  "query_id": "2609117",
+  "query_name": "TP属性(新規/既存/復帰)_週次SS",
+  "query_string": "with agg_tp_slot as (\n  select\n    therapist_id\n    , therapist_no\n    , substr(business_date, 1, 10) as business_date\n    , sum(if(business_date <= '2019-01-01', original_usage_time, use_time_by_daily_slot)) as use_time_by_daily_slot\n    , sum(original_usage_time) as original_usage_time\n  from l0_viewtables.tbl_fixed_therapist_daily_report\n  left join l0_viewtables.view_shop_extend using (property_id)\n  where division = 0\n        and coalesce(deleted, 0) = 0\n        and shop_brand <> ''\n  group by 1,2,3\n)\n\n, agg_lead as (\n  select\n    therapist_id\n    , therapist_no\n    , business_date\n    , lead(business_date, 1) over (partition by therapist_id order by business_date) as next_business_date\n    , date_diff('day', cast(business_date as date), lead(cast(business_date as date), 1) over (partition by therapist_id order by business_date)) as diff_business_days\n  from agg_tp_slot\n  where use_time_by_daily_slot > 0\n        and original_usage_time > 0\n)\n\n, agg_first_business as (\n  select\n    therapist_id\n    , therapist_no\n    , min(business_date) as first_business_date\n    , min(if(business_date >='2023-01-02', business_date, null)) as first_business_date_y2023\n    , min(if(diff_business_days >= 61 and next_business_date >='2023-01-01', next_business_date, null)) as return_date\n  from agg_lead\n  group by 1,2\n)\n\n, tp_class as (\n  select\n    therapist_id\n    , therapist_no\n    , first_business_date\n    , first_business_date_y2023\n    , td_date_trunc('week', td_time_parse(first_business_date, 'jst'), 'jst') as first_business_week\n    , if(first_business_date >= '2023-03-01' and cast(therapist_no as int) < 46776, first_business_date, return_date) as return_date\n    , case\n        when first_business_date_y2023 is null then 'その他'\n        when first_business_date >= '2023-03-01' and cast(therapist_no as int) >= 46776 then '新規'\n        when first_business_date >= '2023-03-01' and cast(therapist_no as int) < 46776 then '復帰'\n        when first_business_date_y2023 is not null then '既存'\n        else 'その他'\n      end as tp_class\n  from agg_first_business\n)\n\n, hst_weekly as (\n  select\n    therapist_id\n    , therapist_no\n    , first_business_date\n    , first_business_date_y2023\n    , w.business_week\n    , return_date\n    , td_time_string(td_date_trunc('week', td_time_parse(return_date, 'jst'), 'jst'), 'd!', 'jst') as return_business_week\n    , case\n        when td_date_trunc('week', td_time_parse(first_business_date, 'jst'), 'jst') > w.business_week then 'その他'\n        when return_date is not null and td_date_trunc('week', td_time_parse(return_date, 'jst'), 'jst') <= w.business_week then '復帰'\n        else tp_class\n      end as tp_class\n    , date_diff('week', from_unixtime(first_business_week), from_unixtime(w.business_week)) + 1 as passes_week\n  from tp_class\n  cross join unnest(sequence(td_time_parse('2020-01-01', 'jst'), td_date_trunc('week', td_scheduled_time(), 'jst'), 60*60*24*7)) as w(business_week)\n  where w.business_week >= first_business_week\n)\n\nselect\n  business_week as time\n  , td_time_string(business_week, 'd!', 'jst') as time_fmt\n  , 'business_week' as time_means\n  , therapist_id\n  , therapist_no\n  , first_business_date\n  , first_business_date_y2023\n  , business_week\n  , return_date\n  , return_business_week\n  , case\n      when tp_class = '新規' and passes_week <= 8 then '新規1-8'\n      when tp_class = '新規' and passes_week between 9 and 16 then '新規9-16'\n      when tp_class = '新規' and passes_week between 17 and 24 then '新規17-24'\n      when tp_class = '新規' and passes_week >= 25 then '新規25+'\n      else tp_class\n    end as tp_flag\nfrom hst_weekly",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

@@ -1,0 +1,30 @@
+timezone: Asia/Tokyo
+
+_export: 
+  td:
+    database: l2_customer_suggest
+
++suggest_rawdata:
+  td>: suggest_rawdata.sql
+
++send_to_gs:
+  td>:
+  query: |
+    select *
+    from
+      l2_customer_suggest.suggest_rawdata
+    where
+      time = td_date_trunc('day', td_scheduled_time(), 'jst')
+      and area_name != '九州・沖縄'
+      and pattern is not null
+    order by
+      1,2,4
+  result_connection: td_share
+  result_settings:
+    spreadsheet_id: 1bCX3ewdMHTu5JcWYdaLk0xSCz-3Prnn5HpCdtqhHo6A
+    sheet_title: ${"日月火水木金土".substr(moment(session_date).format("d"), 1)}_送信
+    mode: truncate
+    rows_threshold: 10000
+    set_nil_for_double_nan: true
+    range: A1
+    value_input_option: RAW

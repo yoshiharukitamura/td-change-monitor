@@ -1,0 +1,29 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 0 * * *
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  wf_name: google_sheets_ingest_preprocess
+  notify_slack: true
+  td:
+    database: l0_spreadsheets
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
++create_tables:
+  td_ddl>:
+  create_tables:
+    - mst_shop_rank
+
++delete_duplication:
+  td>:
+  query: "DELETE FROM mst_shop_rank WHERE TD_DATE_TRUNC('day', time, 'JST') = ${moment(session_date).unix()}"
+
++load:
+  td_load>: config/mst_shop_rank.yml
+  table: mst_shop_rank

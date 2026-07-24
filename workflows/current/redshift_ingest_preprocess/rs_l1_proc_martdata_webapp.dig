@@ -1,0 +1,36 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_l1_proc_martdata_webapp
+  notify_slack: true
+  # set td database
+  td:
+    database: l1_web_app_production
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
+# main process
++10_upd_log_tables:
+  _parallel: true
+
+  +upd_log_customers:
+    td>: proc_110/web_app_production/queries/customers.sql
+    create_table: log_customers
+
+  +upd_log_reviews:
+    td>: proc_110/web_app_production/queries/reviews.sql
+    create_table: log_reviews
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

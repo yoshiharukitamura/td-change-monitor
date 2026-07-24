@@ -1,0 +1,15 @@
+tables_list_sys_production:
+  - td_tbl: quest
+    date_col: updated_datetime
+    flg: Y
+    pk: quest_id
+
+  - td_tbl: quest_time_slot
+    date_col: updated_datetime
+    flg: Y
+    pk: quest_time_slot_id
+
+  - td_tbl: quest_entry_history
+    date_col: updated_datetime
+    flg: Y
+    pk: quest_entry_id

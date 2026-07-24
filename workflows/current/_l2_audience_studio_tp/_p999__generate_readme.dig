@@ -1,0 +1,15 @@
+#######################################################################
+### Timezone Setting & Variables
+#######################################################################
+timezone: Asia/Tokyo
+_export:
+
+#######################################################################
+### main process
+#######################################################################
+## Custom Scripts で Parent Segmentの作成・更新を実施
++generate_readme:
+  py>: p999_.__modules.PipeLines.generate_readme
+  docker:
+    image: "digdag/digdag-python:3.9"
+  _env:

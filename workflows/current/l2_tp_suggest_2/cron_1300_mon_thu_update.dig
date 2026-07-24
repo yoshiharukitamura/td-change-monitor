@@ -1,0 +1,21 @@
+timezone: Asia/Tokyo
+#schedule:
+#  cron>: 0 13 * * 1,2,3,4
+
+
++l2_tp_suggest_prep:
+  require>: l2_tp_suggest_prep
+  session_time: ${moment(session_time).format()}
+  rerun_on: all
+
++suggest:
+  _parallel: true
+  +l2_tp_suggest_v1:
+    require>: l2_tp_suggest_v1
+    session_time: ${moment(session_time).format()}
+    rerun_on: all
+
+  +l2_tp_suggest_v2:
+    require>: l2_tp_suggest_v2
+    session_time: ${moment(session_time).format()}
+    rerun_on: all

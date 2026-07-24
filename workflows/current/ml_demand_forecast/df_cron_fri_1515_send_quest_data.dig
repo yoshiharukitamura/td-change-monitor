@@ -1,0 +1,45 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 15 15 * * 5
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: df_cron_fri_1515_send_quest_data
+  notify_slack: true
+  td:
+    database: l2_demand_forecast_auto
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# 金曜15時の受発注データをスプレッドシートへ出力
++synd_time_slot_fri_1500:
+  td>: fri_1515/snapshot_timeslot.sql
+  result_connection: td_share
+  result_settings:
+    spreadsheet_id: 1BgJ8E9eGYAtFkH2yw3f_e5A56c74CBGREC644rFkccY
+    sheet_title: シート1
+    mode: truncate
+    range: A1
+
+# クエスト発動時の断面データ作成
++time_slot_progress_rawdata:
+  td>: fri_1515/003/time_slot_progress_rawdata.sql
+
++time_slot_progress_prep:
+  td>: daily_0700/004/time_slot_progress_prep.sql
+  create_table: time_slot_progress_prep
+  database: l2_shop_db_dev
+
+# 受注済みデータを除外したクエスト枠を作成
++quest_time_slot_except_received:
+  +delete_duplicate_data:
+    td>:
+    query: "delete from quest_time_slot_except_received where time = td_scheduled_time()"
+  +append_quest_time_slot_except_received:
+    td>: fri_1515/create_quest_time_slot_except_received.sql
+    insert_into: quest_time_slot_except_received

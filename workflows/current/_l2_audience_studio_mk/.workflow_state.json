@@ -1,0 +1,92 @@
+{
+  "archive_md5": "56n3ffQE1DeiNBWWMrrzqg==",
+  "files": [
+    {
+      "path": "_cron_0800__daily_update.dig",
+      "sha256": "14724191f7e8b620d568225b1f4a39fb430dfcd7bc2a26de4a64513acaabc172"
+    },
+    {
+      "path": "_p100_data_preparation.dig",
+      "sha256": "fa24134cf0d7d1696969676247d69d267195b290cb1491aa717452971b820624"
+    },
+    {
+      "path": "_p200_parent_segment_update.dig",
+      "sha256": "115da84940629113f55608fc0505889921852a98985c221447b9028f13bed6c3"
+    },
+    {
+      "path": "_p999__generate_readme.dig",
+      "sha256": "3a165bb75caa03d7b9a762e355879dcfc25b612505a9a9359b1a26d03b3a7711"
+    },
+    {
+      "path": "p100_/create_columns.sql",
+      "sha256": "3cc419cfdd20dcc8cabc51e93e33d4cc1fac36acbad9cd9750c1d698d848dd1b"
+    },
+    {
+      "path": "p100_/custom_list_tables.sql",
+      "sha256": "a84baf86492f9dd172da7dde43648232abad036e11f1b72eba52ab167b8f6eee"
+    },
+    {
+      "path": "p100_/ps_tbl__attr_control_group.sql",
+      "sha256": "b6df2fcc51256316d0ffdf5509e860f39956e3dcdadd83b1413c43183c826e0c"
+    },
+    {
+      "path": "p100_/ps_tbl__attr_customer.sql",
+      "sha256": "cf09751d2c9eecd3d3ef3bc730548c8080fe8190088ee796b1e6f9344768c1bd"
+    },
+    {
+      "path": "p100_/ps_tbl__attr_order_first.sql",
+      "sha256": "80da847299a06d605615487a81047c40cb97458c05c8d26f4e5be838a4865407"
+    },
+    {
+      "path": "p100_/ps_tbl__attr_order_mode.sql",
+      "sha256": "dcba73c24b7d99f57ba777ab6b60b14b3a3bba58c0b4c46bc4eca334ead78ade"
+    },
+    {
+      "path": "p100_/ps_tbl__attr_order_recent.sql",
+      "sha256": "fb852d0125da1338878bab2b79f59c139aa8dd67f821739648d09d4f562478de"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_app_access.sql",
+      "sha256": "d77972a14b0335571e4a6f7e8e8fc11c388ef691b7795baf789251962e9ede06"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_order.sql",
+      "sha256": "dbd81c3009d3b89046eb9064a3437bcf81dcac46606c4fed477aad6edea209f5"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_reservation.sql",
+      "sha256": "5a6fb71494105edacbc750c4babde6ab227f88fe57abc13213c2f58ac32f82d9"
+    },
+    {
+      "path": "p100_/ps_tbl__bhvr_web_access.sql",
+      "sha256": "a2f07738d653eeac10db65481f348a0edc183669767a2fc5d8d9a756c9eab5fd"
+    },
+    {
+      "path": "p100_/ps_tbl__mstr_ids.sql",
+      "sha256": "4a3ae8be56d1eb12df85f6812945b86e94dc9a67e02bca5b039dcfe857308e6e"
+    },
+    {
+      "path": "p100_/ps_tble__attr_order_aggregate.sql",
+      "sha256": "d998d549bb69235e51851099a3cd64fc966267321f2365477a41e134ed1e41ce"
+    },
+    {
+      "path": "p200_/additional_info.sql",
+      "sha256": "b910ad3c5e1c1ef2983ba5dea3af45bed8367da9ceadb5f60594aaa57ee93317"
+    },
+    {
+      "path": "p200_/create_cnfg_fin.sql",
+      "sha256": "1db4fb730c89e4e29422fd41aeb329b8aa1111be42de79c289d074770b9fe677"
+    },
+    {
+      "path": "p200_/get_api_scr.sql",
+      "sha256": "fb34b3f5aa53889703f9bb7f4678673d6dc5ccd01cd22db77a9b486647fe2a61"
+    },
+    {
+      "path": "p200_/get_update_list.sql",
+      "sha256": "6b4ec3b79fada293f7d51a53c1c7510c3207731354afa529b949206e6cd3d537"
+    }
+  ],
+  "project_id": "1519715",
+  "project_name": "_l2_audience_studio_mk",
+  "revision": "28988322ef544e51a3f6e5c6c27ac6a9"
+}

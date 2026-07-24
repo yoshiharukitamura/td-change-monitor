@@ -1,0 +1,46 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+
+timezone: Asia/Tokyo
+
+_export:
+  ## 取得するDatabaseの定義
+  in_database:
+    database: _l0_mysql_core
+  
+  ## 出力するDatabaseの定義
+  td:
+    database: _l1_mysql_core
+
+  ## 変数定義ファイルの読み込み
+  !include : p110_/table_list_core.dig
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+_error:
+  require>: __failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### table_listに対して繰り返し処理を行う###
+
++for_each_tables:
+  for_each>:
+    tbl: ${table_list}
+  _parallel:
+    limit: 8
+  _do:
+    +get_latest_data:
+      td>: p200_/get_latest_data.sql
+      create_table: ${tbl.name}

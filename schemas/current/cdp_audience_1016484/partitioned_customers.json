@@ -575,49 +575,49 @@
       "type": "string"
     },
     {
-      "alias": "cstm_01_customer_id",
-      "description": null,
-      "name": "cstm_01_customer_id",
-      "position": 82,
-      "type": "string"
-    },
-    {
       "alias": "cstm_02_customer_id",
       "description": null,
       "name": "cstm_02_customer_id",
-      "position": 83,
+      "position": 82,
       "type": "string"
     },
     {
       "alias": "cstm_05_customer_id",
       "description": null,
       "name": "cstm_05_customer_id",
-      "position": 84,
+      "position": 83,
       "type": "string"
     },
     {
       "alias": "cstm_04_customer_id",
       "description": null,
       "name": "cstm_04_customer_id",
-      "position": 85,
+      "position": 84,
       "type": "string"
     },
     {
       "alias": "cstm_03_customer_id",
       "description": null,
       "name": "cstm_03_customer_id",
-      "position": 86,
+      "position": 85,
       "type": "string"
     },
     {
       "alias": "cstm_01_email",
       "description": null,
       "name": "cstm_01_email",
+      "position": 86,
+      "type": "string"
+    },
+    {
+      "alias": "cstm_01_customer_id",
+      "description": null,
+      "name": "cstm_01_customer_id",
       "position": 87,
       "type": "string"
     }
   ],
   "database": "cdp_audience_1016484",
   "table": "partitioned_customers",
-  "table_id": "297474617"
+  "table_id": "298780436"
 }

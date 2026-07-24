@@ -1,0 +1,24 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Schedule Setting ###
+schedule:
+  cron>: 0 9 * * *
+
+### Manage Workflows ###
++data_load:
+  _parallel: true
+  +_p100__supply:
+    require>: _p100__supply
+    session_time: ${moment(session_date).format()}
+    rerun_on: all
+
+  +_p200__demand_shop:
+    require>: _p200__demand_shop
+    session_time: ${moment(session_date).format()}
+    rerun_on: all
+
+  +_p300__demand_customer:
+    require>: _p300__demand_customer
+    session_time: ${moment(session_date).format()}
+    rerun_on: all

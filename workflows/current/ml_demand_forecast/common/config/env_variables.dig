@@ -1,0 +1,50 @@
+api_region: "https://api.treasuredata.co.jp"
+slack_ch: "#alert-riraku"
+db: 'sample_datasets'
+
+# ML_SEARCH_MODE
+parameter_search_mode: 'grid_search'
+
+# ML_CLUSTERING_MODE
+clustering_mode: 'timeserieskmeans'
+
+# ML_SLACK_UPLOAD_CHANNEL
+# ml_slack_accessToken: '<REDACTED_SECRET>' # ${secret:http.authorization}
+ml_slack_endpoint: 'https://slack.com/api/files.upload'
+ml_slack_chat_postmessage: "https://slack.com/api/chat.postMessage"
+# ml_slack_channel: "C03V2FL9B3K"
+ml_slack_channel: 'C086LKB158R'
+
+# INPUT_DB
+l2_demand_forecast: 'l2_demand_forecast_auto'
+
+# INPUT_TABLE
+l1_pos: '_l1_mysql_pos'
+l0_pos: '_l0_mysql_pos'
+l1_core: '_l1_mysql_core'
+l0_core: '_l0_mysql_core'
+l1_datamart: 'l1_datamart'
+l0_csv_upload: 'l0_csv_upload'
+prep_treatment_htable_hourly: 'prep_treatment_htable_hourly'
+prep_treatment_vtable_hourly: 'prep_treatment_vtable_hourly'
+mst_shops: 'mst_shops'
+mst_prefectures: 'mst_prefectures'
+property: 'property'
+holiday_calendar: 'holiday_calendar' 
+holiday: 'holiday'
+
+
+# OUTPUT_DB
+output_db: 'l2_demand_forecast_auto'
+outout_db_flag: 'True'
+
+# OUTPUT_TABLE
+base_ts_pv_prep_adj: 'base_ts_pv_prep_adj'
+forecast_clustering_base:  'forecast_clustering_base'
+forecast_clustering_base_dataset: 'forecast_clustering_base_dataset'
+forecast_parameter_search: 'forecast_parameter_search'
+forecast_clustering_result: 'forecast_clustering_result'
+forecast_predict_result_by_cluster: 'forecast_predict_result_by_cluster'
+forecast_rebate_coefficient: 'forecast_rebate_coefficient'
+config_result: 'config_result'
+preprocessed_shop_mst: 'preprocessed_shop_mst'

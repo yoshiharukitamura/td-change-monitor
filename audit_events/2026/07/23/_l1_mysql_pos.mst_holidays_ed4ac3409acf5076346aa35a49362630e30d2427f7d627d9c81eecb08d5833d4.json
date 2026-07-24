@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "ed4ac3409acf5076346aa35a49362630e30d2427f7d627d9c81eecb08d5833d4",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l1_mysql_pos",
+  "events": [
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "4383f234-6b92-474f-b3ce-df2bdcab59ca",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297405568",
+      "resource_id": "297405568",
+      "table": "mst_holidays",
+      "time": "2026-07-18T18:34:22+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "f10ddcce-ff93-47ee-a0b9-692947ee7526",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297619148",
+      "table": "mst_holidays",
+      "time": "2026-07-18T18:34:22+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "79e027b9-aaae-44e6-b841-b67b0d3572fb",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297837230",
+      "table": "mst_holidays",
+      "time": "2026-07-19T18:19:29+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "9be58643-f967-4dc0-8ac0-e9383209c09c",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297619148",
+      "resource_id": "297619148",
+      "table": "mst_holidays",
+      "time": "2026-07-19T18:19:29+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "2bbff9e6-6a88-4efd-9775-ece2aba8b05c",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297837230",
+      "resource_id": "297837230",
+      "table": "mst_holidays",
+      "time": "2026-07-20T18:32:57+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "185959fa-c5f7-452b-a23d-e5ad9587aefe",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298053781",
+      "table": "mst_holidays",
+      "time": "2026-07-20T18:32:58+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "e849aef5-a40a-4bd1-930f-78ca90b5ae21",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298053781",
+      "resource_id": "298053781",
+      "table": "mst_holidays",
+      "time": "2026-07-21T18:22:38+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "e45677e0-a197-436d-af67-370cb1da1913",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298268139",
+      "table": "mst_holidays",
+      "time": "2026-07-21T18:22:39+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "5bea6018-3c59-4db4-a3b5-78ed23e6afc4",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298268139",
+      "resource_id": "298268139",
+      "table": "mst_holidays",
+      "time": "2026-07-22T18:33:28+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "2b3539bb-d33b-4a8e-9eef-c041c7e24498",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298493277",
+      "table": "mst_holidays",
+      "time": "2026-07-22T18:33:29+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "8b2bf3dc-bdd8-46b2-a080-94c58b43cbfc",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298711908",
+      "table": "mst_holidays",
+      "time": "2026-07-23T18:33:13+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "d3f57aec-5f8f-43ef-9e5f-0b7409c99fc9",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298493277",
+      "resource_id": "298493277",
+      "table": "mst_holidays",
+      "time": "2026-07-23T18:33:13+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "mst_holidays"
+}

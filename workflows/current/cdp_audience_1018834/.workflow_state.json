@@ -1,0 +1,128 @@
+{
+  "archive_md5": "bXGwFt6ApLXvFsn8TXbCuw==",
+  "files": [
+    {
+      "path": "audience.dig",
+      "sha256": "8852eb7aa98d44dcd7a2c5152f12ad501b08c756a38cfd5ada5b3115567bb0b5"
+    },
+    {
+      "path": "create_empty_table_udp.sql",
+      "sha256": "f6e0835ee1ca0766ad50842986fdc7096dec8a1da08872881a179d8dd0a06c13"
+    },
+    {
+      "path": "create_empty_table_udp_if_not_exists.sql",
+      "sha256": "ea5cff28308dd0b1a23017be464dc2dec8a9bc74f5c48c6dbff172f868fb7546"
+    },
+    {
+      "path": "enrichments/ip.dig",
+      "sha256": "44ef9243bb8b00d6e9250144a3a2e37b0ec7b1354703c3937a3db9c55b26a4bf"
+    },
+    {
+      "path": "enrichments/ip/aggregate.sql",
+      "sha256": "12c00d90298a17d6b9ffada38f711e6ba449d66994af68ff7fb1e8085ec2ae79"
+    },
+    {
+      "path": "enrichments/td_js_sdk.dig",
+      "sha256": "484bb9911d465a57fee73986818e848bf436c2aaa30bc2e3f415871620386ec0"
+    },
+    {
+      "path": "enrichments/td_js_sdk/aggregate.sql",
+      "sha256": "403d3e4855c7bea2efeefecf2b129bc12bb320a6a40055aea780b19aa6b1287d"
+    },
+    {
+      "path": "enrichments/word_tagging.dig",
+      "sha256": "f128512ac37a340f3bc4ffda66f5d457f4ff4c5393b3005c4f343c4d67e14c90"
+    },
+    {
+      "path": "enrichments/word_tagging/articles_count.sql",
+      "sha256": "2456f8e102dc0bd9fe9274651390434d8a336370359bacd5fa120c18c7a78378"
+    },
+    {
+      "path": "enrichments/word_tagging/articles_detect_language.sql",
+      "sha256": "312032e94f8e3d2a598fd2f8d9a33127aece64080b73ffc4b7cab10ab587961d"
+    },
+    {
+      "path": "enrichments/word_tagging/articles_filter_bigrams.sql",
+      "sha256": "510ed6f9f61b370fd1c361df7b752ad5b767c64bd0d3e4bc9a3c1f746caa3add"
+    },
+    {
+      "path": "enrichments/word_tagging/articles_keywords.sql",
+      "sha256": "9a17d25695fc018ba3d104fcdb8019e3710116c1db388cf7126b0f43a6deda68"
+    },
+    {
+      "path": "enrichments/word_tagging/articles_tokenize_en.sql",
+      "sha256": "402366450910cf49862d05caf3b8613ce810fbbfaa9a6ba7170248e84d2b67a3"
+    },
+    {
+      "path": "enrichments/word_tagging/articles_tokenize_ja.sql",
+      "sha256": "34defb2e8ef7a59ec93de4ebe605f338386123f168c9ff62e7e5407fcaab50a0"
+    },
+    {
+      "path": "enrichments/word_tagging/behavior_enrich_by_articles.sql",
+      "sha256": "2e8731ef1c263679e2b1dd50ce278dc260c1548dbf9dc49059c00839a1a7dc20"
+    },
+    {
+      "path": "enrichments/word_tagging/behavior_preprocess.sql",
+      "sha256": "d06112cc8d141d2cc07753d158582ab38ce2658f7e1502cb1eee3338c922dfc5"
+    },
+    {
+      "path": "enrichments/word_tagging/behaviors_aggregate.sql",
+      "sha256": "b95793d36922cc7ed21735a92fcba106456826dc22aac38ef773ffb62d2723cb"
+    },
+    {
+      "path": "enrichments/word_tagging/customers_combine_main_sub_categories.sql",
+      "sha256": "370518a6eff2e1e90c308fc25c53f2fcd2e9034f1ba9f084aac5e080db225ab6"
+    },
+    {
+      "path": "enrichments/word_tagging/customers_filter_categories.sql",
+      "sha256": "ef1c34437c1c2df453c630b59f9d52982b89f09a473ac5b0d83108697310449e"
+    },
+    {
+      "path": "enrichments/word_tagging/customers_map_all_categories.sql",
+      "sha256": "d754e4e84280728b7a4f41973b112252b5305c21bfef13caa3b26af008171189"
+    },
+    {
+      "path": "enrichments/word_tagging/customers_tags.sql",
+      "sha256": "95a33ef46c3b7a0004751593494da8d3982769af544bcd6b960727e4c7f80e39"
+    },
+    {
+      "path": "metering_audience.dig",
+      "sha256": "2b1f2f6598c12462d26e43c6f13a8d87897f7949f3dd992644d87b259473c8ee"
+    },
+    {
+      "path": "predictive_scoring.dig",
+      "sha256": "a1ac48bce247fc79afdff8c0ec317f5f642fcd339c88d2a734207f205a8960ed"
+    },
+    {
+      "path": "predictive_scoring/add_train_label.sql",
+      "sha256": "883af22e36eec6f8e09fa5b02b1d2e06c6a5e7fced2bf39e52a54a62b0e12645"
+    },
+    {
+      "path": "predictive_scoring/oversample_rate.sql",
+      "sha256": "c86a1f76b44080f3047743b705005631164bd2da45361c520ab6e06a503175a7"
+    },
+    {
+      "path": "predictive_scoring/predict.sql",
+      "sha256": "46601a77f5860d99da0cefcaa24a76ae27c22aae5a2f5b924d2f47034f68ad9c"
+    },
+    {
+      "path": "predictive_scoring/preprocess.sql",
+      "sha256": "4a099d608ebdb60dc15d7e1697f14b40a75d9b6a164c649232c20b5e260d3ec3"
+    },
+    {
+      "path": "predictive_scoring/vectorize.sql",
+      "sha256": "d82569d3d2878f00da55c142345450bfe0f43487f6f5c88f03ad87a2be258501"
+    },
+    {
+      "path": "predictive_scoring/vectorize_without_quantitative.sql",
+      "sha256": "d8a6d8ba05b2c3cade0923d5ed2771fa05780efa23dd131aa14b1af27c0945e3"
+    },
+    {
+      "path": "sisense_data_ingestion.dig",
+      "sha256": "48a3ddfbe5bff30ddf980cac35bd687fc294861c188b83828c6f7665dc05f4fc"
+    }
+  ],
+  "project_id": "1524558",
+  "project_name": "cdp_audience_1018834",
+  "revision": "1d27d1ed-b009-4e94-a2a5-e9108b99454b"
+}

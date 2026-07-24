@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23958944",
+    "name": "_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "7b85cc0aade4fe5f3c2cd870557976c80c2a6b504061ca19f4a167be57aeb2c8",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2672021",
+  "query_name": "R/wローリング_前週からのR/w変化傾向",
+  "query_string": "with week_list as (\n  select distinct processing_date\n  from hst_weekly_customer_rf\n  where time >= td_time_parse('2023-10-01', 'jst')\n)\n\n, weekly_customer_status as (\n  select distinct\n      processing_date\n    , customer_id\n    , r_week\n    , f\n    , nomination_last_order\n    , shop_no_last_order\n    , shop_name as shop_name_last_order\n  from hst_weekly_customer_rf as t0\n  left join mst_shop as t1\n    on cast(t0.shop_no_last_order as varchar) = t1.shop_no\n  where t0.time between td_time_parse('2023-10-01', 'jst')\n                    and td_date_trunc('week', td_scheduled_time(), 'jst')\n)\n\n, weekly_order as (\n  select distinct\n    td_time_string(td_date_trunc('week', time, 'jst'), 'd!', 'jst') as processing_date\n    , customer_id\n  from cls_order_detail\n  where time >= td_time_parse('2023-10-01', 'jst')\n    and order_id_hour_seq = 1\n)\n\n, agg as (\n  select\n      coalesce(t0.processing_date, t1.processing_date) as processing_date\n    , coalesce(t0.customer_id, t1.customer_id) as customer_id\n    , case\n        when r_week is null and coalesce(t0.customer_id, t1.customer_id) is null then '新規(非会員)'\n        when r_week is null and coalesce(t0.customer_id, t1.customer_id) is not null then '新規(会員)'\n        when r_week between 1 and 4 then 'R/w1-4'\n        when r_week between 5 and 8 then 'R/w5-8'\n        when r_week between 9 and 12 then 'R/w9-12'\n        when r_week between 13 and 24 then 'R/w13-24'\n        when r_week between 25 and 52 then 'R/w25-52'\n        when r_week >= 53 then 'R/w53-'\n        else '不明'\n      end as r_week\n    , f\n  from weekly_customer_status as t0\n  full join weekly_order as t1\n    on t0.processing_date = t1.processing_date\n   and t0.customer_id = t1.customer_id\n)\n\n, prev_week as (\n  select\n    processing_date\n    , customer_id\n    , r_week\n    , f\n    , lag(r_week) over (partition by customer_id order by processing_date) as r_week_prev\n    , lag(f) over (partition by customer_id order by processing_date) as f_prev\n  from agg\n)\n\n, agg_total as (\n  select\n    processing_date\n    , r_week_prev\n    , count(distinct customer_id) as uu_total\n  from prev_week\n  group by 1,2\n)\n\nselect\n  year_of_week(date(processing_date)) as \"年\"\n  , week_of_year(date(processing_date)) as \"週数\"\n  , 'w'||cast(week_of_year(date(processing_date)) as varchar)||'_'||processing_date as \"営業日の週\"\n  , r_week_prev as \"R/w（前週）\"\n  , case\n      when r_week = 'R/w1-4' and r_week_prev = 'R/w1-4' and f > f_prev then r_week_prev||'→'||r_week||'（来店あり）'\n      else r_week_prev||'→'||r_week\n    end as \"ステータス\"\n  , count(distinct customer_id) as \"顧客数\"\n  , uu_total as \"顧客数(前週R/w）\"\nfrom prev_week\nleft join agg_total using (processing_date, r_week_prev)\nwhere r_week = 'R/w1-4'\n      and year_of_week(date(processing_date)) >= 2024\ngroup by 1,2,3,4\norder by 1,2,3,4",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

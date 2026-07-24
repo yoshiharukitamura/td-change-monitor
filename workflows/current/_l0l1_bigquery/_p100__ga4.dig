@@ -1,0 +1,79 @@
+### Secret Requirement in this Workflow ###
+## bq.json_key
+#     Need to use "Import Large Dataset"
+#         https://docs.treasuredata.com/articles/#!int/google-bigquery-import-integration/a/h1__351679846
+#     Required permissions
+#         bigquery.tables.export
+#         bigquery.tables.delete
+#         storage.buckets.get
+#         storage.objects.list
+#         storage.objects.create
+#         storage.objects.delete
+#         storage.objects.get
+#     Minimum IAM roles
+#         BigQuery Data Editor
+#         Storage Legacy Bucket Writer
+#         Storage Legacy Object Reader
+
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Variables ###
+_export:
+  ## Output Database
+  td:
+    database: _l0_bigquery
+  ## GCP common variables
+  gcp:
+    project_id: riraku-app-2d95e
+    dataset: 
+    temp_dataset: 
+    gcs_bucket: 
+    gcs_path_prefix: hiveiq/
+  ## Given by source workflow
+  # date_from: YYYY-MM-DD
+  # date_to: YYYY-MM-DD
+  # split: 
+  # is_initial: true or false
+
+### error handling ###
+# _error:
+#   require>: failure_alert
+#   project_name: functions
+#   session_time: ${moment(session_date).format()}
+#   rerun_on: all
+#   params:
+#     failure_session_id: ${session_id}
+#     # notify: {mail: true, slack: true}
+#     notify: {mail: false, slack: false}
+
+### main process ###
+# 初回実行用にテーブルが存在しない場合は作成
+# +initialize_tables:
+#   if>: ${is_initial}
+#   _do:
+#     td_ddl>:
+#     empty_tables: ["firebase_event_log"]
+#   _else_do:
+#     td_ddl>:
+#     create_tables: ["firebase_event_log"]
+
+# 日次更新、再実行用に取得する予定のtimeに該当するレコードを削除
++delete_duplicate_records:
+  +app_pv_log:
+    td>:
+    query: |
+      delete from firebase_event_log
+      where time between ${moment(date_from).unix()} and ${moment(date_to).unix()}
+
+# データの取得
++load_from_bq:
+  # _parallel: true
+  # app_pv_logのうちcontent_view: コンテンツの閲覧を1行にまとめて取得
+  td_for_each>: __func_/date_trunc_list.sql
+  _parallel: true
+  _do:
+    td_load>: p100_/firebase_event_log.yml
+    table: firebase_event_log
+    date_from: ${td.each.date_from}
+    date_to: ${td.each.date_to} # 終点含む

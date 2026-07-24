@@ -1,0 +1,44 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_bulk_l0_proc_ingest
+  notify_slack: true
+  # set td database
+  td:
+    database: l0_wf_logs
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
+# main process
++require_ingest_wf:
+  _parallel: true
+
+  +require_rs_bulk_l0_proc_ingest_pos:
+    require>: rs_bulk_l0_proc_ingest_pos
+    rerun_on: all
+
+  +require_rs_bulk_l0_proc_ingest_sys:
+    require>: rs_bulk_l0_proc_ingest_sys
+    rerun_on: all
+
+  +require_rs_bulk_l0_proc_ingest_webapp:
+    require>: rs_bulk_l0_proc_ingest_webapp
+    rerun_on: all
+
+  +require_rs_bulk_l0_proc_ingest_webres:
+    require>: rs_bulk_l0_proc_ingest_webres
+    rerun_on: all
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

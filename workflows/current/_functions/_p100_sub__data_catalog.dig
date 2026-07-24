@@ -1,0 +1,28 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Variables ###
+_export:
+  td:
+    database: ${database}
+  ## Given by source workflow
+  # database: ${database}
+  # table_schema: ${table_schema}
+  # table_name: ${table_name}
+
+### main process ###
+## テーブル毎にtimeの最小値と最大値、レコード数を取得
++get_table_info:
+  td>: p100_/sub_/get_table_info.sql
+  store_last_results: true
+
+## テーブルのカラム毎にサンプル値（min/max）とNULL/BLANK率を取得
++columns_info:
+  ## カラムのリストを取得
+  td_for_each>: p100_/sub_/get_column_list.sql
+  _parallel:
+    limit: 8
+  _do:
+    ## カラム単位で必要なデータを取得
+    td>: p100_/sub_/get_column_info.sql
+    insert_into: src_data_catalog_columns

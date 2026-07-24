@@ -1,0 +1,49 @@
+timezone: Asia/Tokyo
+
+_export:
+  ## Output Database
+  td:
+    database: l2_verification
+  # include variables
+  !include : p100_/table_list.dig
+
+### error handling ###
+# _error:
+#   require>: failure_alert
+#   project_name: functions
+#   session_time: ${moment(session_date).format()}
+#   rerun_on: all
+#   params:
+#     failure_session_id: ${session_id}
+#     # notify: {mail: true, slack: true}
+#     notify: {mail: false, slack: false}
+
+### main process ###
+# Iterate over all tables defined in the table_list
++for_each_tables:
+  for_each>:
+    tbl: ${table_list}
+  _parallel:
+    limit: 3
+  _do:
+    # テーブル初期化
+    +empty_tables:
+      td_ddl>:
+      empty_tables:
+        - list_${tbl.td_tbl_name}
+    # スプレッドシートからデータ取り込み
+    +load_data_from_gs:
+      td_load>: __cnfg_/google_sheets.yml
+      table: list_${tbl.td_tbl_name}
+    # 対象データのデータを集計しスプレッドシートに出力
+    +supply_verification:
+      td>: p100_/supply_verification.sql
+      result_connection: td_share
+      result_settings:
+        spreadsheet_id: ${tbl.ss_key}
+        sheet_title: ${tbl.ws_title.replace(/^_/, '')}
+        mode: truncate
+        rows_threshold: 10000
+        set_nil_for_double_nan: true
+        range: A1
+        value_input_option: RAW

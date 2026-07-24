@@ -1,0 +1,64 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_l1_proc_martdata_sys
+  notify_slack: true
+  # set td database
+  td:
+    database: l1_sys_production
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
+# main process
++10_upd_log_tables:
+  _parallel: true
+
+  +upd_log_fixed_daily_time_slot:
+    td>: proc_110/sys_production/queries/fixed_daily_time_slot.sql
+    create_table: log_fixed_daily_time_slot
+
+  +upd_log_monthly_reward_summary:
+    td>: proc_110/sys_production/queries/monthly_reward_summary.sql
+    create_table: log_monthly_reward_summary
+
+  +upd_log_monthly_reward:
+    td>: proc_110/sys_production/queries/monthly_reward.sql
+    create_table: log_monthly_reward
+
+  +upd_log_neighborhood_shop:
+    td>: proc_110/sys_production/queries/neighborhood_shop.sql
+    create_table: log_neighborhood_shop
+
+  +upd_log_operation_rate:
+    td>: proc_110/sys_production/queries/operation_rate.sql
+    create_table: log_operation_rate
+
+  +upd_log_pos_sales_confirm:
+    td>: proc_110/sys_production/queries/pos_sales_confirm.sql
+    create_table: log_pos_sales_confirm
+
+  +upd_log_pos_sales:
+    td>: proc_110/sys_production/queries/pos_sales.sql
+    create_table: log_pos_sales
+
+  +upd_log_property:
+    td>: proc_110/sys_production/queries/property.sql
+    create_table: log_property
+
+  +upd_log_therapist_daily_report:
+    td>: proc_110/sys_production/queries/therapist_daily_report.sql
+    create_table: log_therapist_daily_report
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

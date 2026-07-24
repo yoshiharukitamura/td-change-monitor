@@ -1,0 +1,115 @@
+timezone: Asia/Tokyo
+# schedule:
+#   cron>: 0 1 * * *
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_cron_daily_0100
+  notify_slack: true
+  # set td database
+  td:
+    database: wf_cron_logs
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
+# main process
++require_ingest_wf:
+  _parallel: true
+
+  +require_rs_l0_proc_ingest_pos:
+    require>: rs_l0_proc_ingest_pos
+    rerun_on: all
+
+  +require_rs_l0_proc_ingest_sys:
+    require>: rs_l0_proc_ingest_sys
+    rerun_on: all
+
+  +require_rs_l0_proc_ingest_webapp:
+    require>: rs_l0_proc_ingest_webapp
+    rerun_on: all
+
+  +require_rs_l0_proc_ingest_webres:
+    require>: rs_l0_proc_ingest_webres
+    rerun_on: all
+
++require_rs_l1_proc_unique_for_smc:
+  require>: rs_l1_proc_unique_for_smc
+  rerun_on: all
+
++require_ingest_unique_wf:
+  _parallel: true
+
+  +require_rs_l0_proc_ingest_pos_unique:
+    require>: rs_l0_proc_ingest_pos_unique
+    rerun_on: all
+
+  +require_rs_l0_proc_ingest_sys_unique:
+    require>: rs_l0_proc_ingest_sys_unique
+    rerun_on: all
+
+  +require_rs_l0_proc_ingest_webapp_unique:
+    require>: rs_l0_proc_ingest_webapp_unique
+    rerun_on: all
+
+  +require_rs_l0_proc_ingest_webres_unique:
+    require>: rs_l0_proc_ingest_webres_unique
+    rerun_on: all
+
+
++require_upd_martdata_wf:
+  _parallel: true
+
+  +require_rs_l1_proc_martdata_pos:
+    require>: rs_l1_proc_martdata_pos
+    rerun_on: all
+
+  +require_rs_l1_proc_martdata_sys:
+    require>: rs_l1_proc_martdata_sys
+    rerun_on: all
+
+  +require_rs_l1_proc_martdata_webapp:
+    require>: rs_l1_proc_martdata_webapp
+    rerun_on: all
+
+  +require_rs_l1_proc_martdata_webres:
+    require>: rs_l1_proc_martdata_webres
+    rerun_on: all
+
+# SMC停止
++for_marketing:
+  +l2_prep:
+    require>: rs_l2_bulk_martdata_for_marketing
+    session_time: ${moment(session_date).format()}
+    project_name: proc_summary
+    rerun_on: all
+
+#  +require_smc_sce_proc_210_create_scenario:
+#    require>: smc_sce_proc_210_create_scenario
+#    session_time: ${moment(session_date).format()}
+#    project_name: smc_scenario
+#    rerun_on: all
+
+#+send_to_smc_wf:
+#  +require_smc_synd_uniquedata_daily:
+#    require>: smc_synd_uniquedata_daily
+#    project_name: synd_smc
+#    rerun_on: all
+
+#  +require_smc_send_spreadsheets:
+#    require>: smc_send_spreadsheets
+#    session_time: ${moment(session_date).format()}
+#    project_name: smc_send_spreadsheets
+#    rerun_on: all
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

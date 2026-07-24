@@ -1,0 +1,30 @@
+#### Data Source Variables ####
+# 常に全量を取り込む場合はincremental_byはnull、差分の場合はキーとなるカラム名を設定
+
+table_list:
+### 利用中 ###
+  - {name: reservation_persons, incremental_by: modified, pk: id}
+  - {name: reservation_relations, incremental_by: modified, pk: id}
+  - {name: reservations, incremental_by: modified, pk: id}
+  - {name: resource_timetables, incremental_by: modified, pk: id}
+  - {name: mst_reservation_resources, incremental_by: modified, pk: id}
+
+### 利用なし ###
+ # - {name: checkin_logs, incremental_by: created , pk: id}
+ # - {name: checkin_log_details, incremental_by: created , pk: id}
+ # - {name: favorite_body_parts, incremental_by: modified , pk: id}
+ # - {name: mst_body_parts, incremental_by:  , pk: id}
+ # - {name: mst_checkin_functions, incremental_by:  , pk: id}
+ # - {name: mst_conversations, incremental_by:  , pk: id}
+ # - {name: mst_dwb_login_users, incremental_by:  , pk: id}
+ # - {name: mst_pressures, incremental_by:  , pk: id}
+ # - {name: mst_reservation_resources, incremental_by:  , pk: id}
+ # - {name: mst_resource_kinds, incremental_by:  , pk: id}
+ # - {name: mst_reservation_shops, incremental_by:  , pk: id}
+ # - {name: mst_reservation_therapists, incremental_by:  , pk: id}
+ # - {name: mst_shop_courses, incremental_by:  , pk: id}
+ # - {name: mst_timetables, incremental_by:  , pk: id}
+ # - {name: reservation_products, incremental_by: modified , pk: id} #存在せず（20250730）
+ # - {name: resource_timetables, incremental_by: modified , pk: id}
+ # - {name: resource_timetable_histories, incremental_by: modified , pk: id}
+ # - {name: therapist_priorities, incremental_by: modified , pk: id}

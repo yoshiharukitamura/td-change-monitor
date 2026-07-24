@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "24647479",
+    "name": "_l2_demand_forecast_gcp"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": null,
+    "connector_type": null
+  },
+  "query_id": "2858134",
+  "query_name": "検証_個店予測精度",
+  "query_string": "/* 個店予測 */\nwith proto__forecast as (\n  select\n    business_datetime\n    , sum(pred_q0_5) as prt__value__q0_5\n    , sum(pred_q0_6) as prt__value__q0_6\n    , sum(pred_q0_7) as prt__value__q0_7\n    , sum(pred_q0_8) as prt__value__q0_8\n    , sum(pred_q0_9) as prt__value__q0_9\n    , sum(pred_q_mixed) as prt__value__q_mixed\n  from\n    _l2_demand_forecast_gcp.tft_result_latest_main_0325\n  group by\n    1\n)\n\n/* 既存予測 */\n, current__forecast as (\n  select\n    forecast_datetime as business_datetime\n    , sum(forecast_treatment_value) as crt__value\n  from\n    _l2_demand_forecast_gcp.prep_forecast_treatment\n  where\n    processing_date = '2026-02-02'\n  group by\n    1\n)\n\n/* 実績 */\n, result as (\n  select\n    result_datetime as business_datetime\n    , business_week\n    , sum(result_treatment_value) as result__value\n    , sum(avg_result_treatment_value) as result__value__avg\n  from\n    _l2_demand_forecast_gcp.prep_result_treatment\n  where\n    processing_date between '2026-02-09' and '2026-03-16'\n  group by\n    1,2\n)\n\n, merged as (\n  select\n    business_datetime\n    , business_week\n    , result__value\n    , prt__value__q0_5\n    , prt__value__q0_6\n    , prt__value__q0_7\n    , prt__value__q0_8\n    , prt__value__q0_9\n    , prt__value__q_mixed\n    , crt__value\n  from\n    result\n    left join proto__forecast using (business_datetime)\n    left join current__forecast using (business_datetime)\n)\n\n\nselect\n  business_week\n  , s_property_id\n  , sum(result__value) as result__value\n  , sum(prt__value__q0_5) as prt__value__q0_5\n  , sum(prt__value__q0_6) as prt__value__q0_6\n  , sum(prt__value__q0_7) as prt__value__q0_7\n  , sum(prt__value__q0_8) as prt__value__q0_8\n  , sum(prt__value__q0_9) as prt__value__q0_9\n  , sum(prt__value__q_mixed) as prt__value__q_mixed\n  , sum(crt__value) as crt__value\n\n  , 1.0 * sum(prt__value__q0_5) / sum(result__value) as prd_rate__prt_q0_5\n  , 1.0 * sum(prt__value__q0_6) / sum(result__value) as prd_rate__prt_q0_6\n  , 1.0 * sum(prt__value__q0_7) / sum(result__value) as prd_rate__prt_q0_7\n  , 1.0 * sum(prt__value__q0_8) / sum(result__value) as prd_rate__prt_q0_8\n  , 1.0 * sum(prt__value__q0_9) / sum(result__value) as prd_rate__prt_q0_9\n  , 1.0 * sum(prt__value__q_mixed) / sum(result__value) as prd_rate__prt_q_mixed\n  , 1.0 * sum(crt__value) / sum(result__value) as prd_rate__crt\nfrom\n  merged\ngroup by\n  1,2\n\n\n",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

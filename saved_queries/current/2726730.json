@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23958944",
+    "name": "_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": null,
+    "connector_type": null
+  },
+  "query_id": "2726730",
+  "query_name": "顧客ID抽出_TPマッチング_店舗顧客_ver1.0",
+  "query_string": "drop table if exists l2_verification.tmp_tp_matching_customer_list;\ncreate table l2_verification.tmp_tp_matching_customer_list as \n\nwith order_log as (\n  select\n    distinct\n    customer_id\n    , business_date\n    , order_id\n    , property_id\n  from \n    _integration_datamart.cls_order_detail\n  where\n    customer_id in (\n      select distinct customer_id from _integration_datamart.cls_order_detail \n        where time >= td_time_parse('2022-12-01', 'jst') and time <= td_time_parse('2025-12-01', 'jst')\n    )\n    and\n    time >= td_time_parse('2024-12-01', 'jst')\n    and time <= td_time_parse('2025-12-01', 'jst')\n)\n\n, agg_order_count as (\n  select\n    customer_id\n    , property_id\n    , count(distinct order_id) as order_count\n    , max(business_date) as latest_business_date\n  from\n    order_log\n  group by\n    1,2\n)\n\n, agg_property_count as (\n  select\n    customer_id\n    , count(distinct property_id) as property_count\n  from\n    order_log\n  group by\n    1\n)\n\n, agg_order_rn as (\n  select\n    t0.*\n    , t1.property_count\n    , row_number() over (partition by t0.customer_id order by order_count desc, latest_business_date desc) as order_count_rn\n    , max_by(property_id, latest_business_date) over (partition by t0.customer_id) as latest_property_id\n    , min(t0.order_count) over (partition by t0.customer_id) as min_order_count\n    , max(t0.order_count) over (partition by t0.customer_id) as max_order_count\n  from\n    agg_order_count as t0\n  left join\n    agg_property_count as t1\n    on t0.customer_id = t1.customer_id\n)\n\n, customer_shop_list as (\n  select\n    customer_id\n    , case\n        when property_count between 1 and 2 then latest_property_id\n        when property_count >= 3 and (max_order_count - min_order_count) >= 5 then property_id\n        when property_count >= 3 and (max_order_count - min_order_count) < 5 then latest_property_id\n      end as property_id\n  from\n    agg_order_rn\n  where\n    order_count_rn = 1\n    and property_count > 0\n)\n\n, prep_agg_tp_nomination as (\n  select\n    customer_id\n    , therapist_id\n    , count(distinct if(nomination_fee > 0.0, order_id)) as nomination_count\n  from \n    _integration_datamart.cls_order_detail\n  where\n    customer_id in (\n      select distinct customer_id from _integration_datamart.cls_order_detail \n        where time >= td_time_parse('2022-12-01', 'jst') and time <= td_time_parse('2025-12-01', 'jst')\n    )\n    and\n    time >= td_time_parse('2024-12-01', 'jst')\n    and time <= td_time_parse('2025-12-01', 'jst')\n  group by\n    1,2\n)\n\n, agg_tp_nomination as (\n  select\n    customer_id\n    , max(nomination_count) as nomination_count\n  from\n    prep_agg_tp_nomination\n  group by\n    1\n)\n\nselect\n  customer_id\n  , property_id as store_id__property_id\n  , area_name\n  , if(nomination_count >= 2, 1, 0) as flag_repeat_tp\nfrom\n  customer_shop_list\nleft join\n  _integration_datamart.mst_shop using (property_id)\nleft join\n  agg_tp_nomination using (customer_id)\ninner join\n  (select distinct customer_id from hst_weekly_customer_rf where processing_date = '2025-12-01' and f between 1 and 5) using (customer_id)\norder by\n  1",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

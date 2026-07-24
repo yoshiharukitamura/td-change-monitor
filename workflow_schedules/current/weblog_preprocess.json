@@ -1,0 +1,16 @@
+{
+  "project_id": "281730",
+  "project_name": "weblog_preprocess",
+  "schedules": [
+    {
+      "definition_path": "weblog_cron_daily_process.dig",
+      "enabled": true,
+      "schedule_id": "20504",
+      "schedule_type": "cron",
+      "schedule_value": "0 3 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "10719398",
+      "workflow_name": "weblog_cron_daily_process"
+    }
+  ]
+}

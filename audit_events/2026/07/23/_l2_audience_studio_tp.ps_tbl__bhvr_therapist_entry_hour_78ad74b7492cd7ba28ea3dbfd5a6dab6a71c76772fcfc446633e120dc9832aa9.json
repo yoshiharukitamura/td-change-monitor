@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "78ad74b7492cd7ba28ea3dbfd5a6dab6a71c76772fcfc446633e120dc9832aa9",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l2_audience_studio_tp",
+  "events": [
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "f36d9f23-4a2d-42c1-95e8-54b0056726ef",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297466851",
+      "resource_id": "297466851",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-18T23:05:51+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "da92d6be-3746-4b8c-bb63-a4a49f5fd8c4",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297676495",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-18T23:05:52+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "8cc7b7c2-d72f-4f27-bab6-8cc716efe9e6",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297676495",
+      "resource_id": "297676495",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-19T23:10:16+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "8569cc18-b7dc-4a7e-804d-6cca3116b5ca",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297897406",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-19T23:10:17+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "a5e24033-01b1-4d17-bc01-c8897f3dab6b",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297897406",
+      "resource_id": "297897406",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-20T23:07:39+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "c0ffedb8-0cf7-4be6-b275-f9790e425ff8",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298112133",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-20T23:07:40+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "08a2942c-e01c-40c8-995a-f3200734646e",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298329726",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-21T23:07:10+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "a1e6dc53-ce14-4372-98dc-3cad54ed35a1",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298112133",
+      "resource_id": "298112133",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-21T23:07:10+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "bc1a2251-6d3f-4c7c-943e-648442fb1a10",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298329726",
+      "resource_id": "298329726",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-22T23:06:32+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "eff2cd93-f856-4fab-8b7f-85008c663420",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298550471",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-22T23:06:33+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "c48d6bd2-359a-4919-8db8-9adc8e04ccb5",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298550471",
+      "resource_id": "298550471",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-23T23:07:54+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "9473715c-8895-4c9e-839f-25d241f8004d",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298770162",
+      "table": "ps_tbl__bhvr_therapist_entry_hour",
+      "time": "2026-07-23T23:07:55+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "ps_tbl__bhvr_therapist_entry_hour"
+}

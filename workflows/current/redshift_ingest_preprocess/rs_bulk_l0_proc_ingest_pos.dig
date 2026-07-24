@@ -1,0 +1,43 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  !include : proc_010/pos_staging/config/tables_list.dig
+  # set wf_name(text) and notify_slack(true/false)
+  wf_name: rs_bulk_l0_proc_ingest_pos
+  notify_slack: true
+  # set td database
+  td:
+    database: l0_pos_staging
+
+# error handling
+_error:
+  +wf_error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# start handling
++wf_start_handling:
+  call>: common/function/wf_start_handling.dig
+
++set_tables_for_inital:
+  for_each>:
+    target_table: ${tables_list}
+  _do:
+    td_ddl>:
+    create_tables:
+      - ${target_table.td_tbl}
+
+# main process
++for_each_tables:
+  for_each>:
+    target_table: ${tables_list}
+  _do:
+    +load_from_rs:
+      td_load>: proc_010/pos_staging/config/load_from_rs_bulk.yml
+      database: ${td.database}
+      table: ${target_table.td_tbl}
+
+# success handling
++wf_success_handling:
+  call>: common/function/wf_success_handling.dig

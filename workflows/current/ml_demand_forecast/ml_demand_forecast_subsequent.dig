@@ -1,0 +1,98 @@
+timezone: Asia/Tokyo
+
+_export:
+  # include env_variables
+  !include : common/config/env_variables.dig
+  wf_name: ml_demand_forecast_subsequent
+  notify_slack: true
+  td:
+    database: l2_demand_forecast_auto
+    # database: l2_demand_forecast_auto_dev_fix_1
+    # database: l2_demand_forecast_auto_dev_fix_2
+    # database: l2_demand_forecast_auto_dev_fix_3
+    # database: l2_demand_forecast_auto_test_10_23
+    # database: l2_demand_forecast_auto_test2_10_23
+    # database: l2_demand_forecast_auto_test_9_23
+    # database: l2_demand_forecast_auto_test2_9_23
+    # database: tmp_nagase
+    # database: l2_demand_forecast_auto_test_fix2_10_23
+
+_error:
+  +error_handling:
+    call>: common/function/wf_error_handling.dig
+
+# main process
++prep_time_slot_hourly:
+  td>: queries/10_prep_each/prep_time_slot_hourly.sql
+  create_table: prep_time_slot_hourly
+
++10_prep_each:
+  _parallel: true
+  +forecast_treatment:
+    td>: queries/10_prep_each/forecast_treatment.sql
+    # td>: queries/10_prep_each/forecast_treatment_9.sql
+    create_table: prep_forecast_treatment
+
+  +result_treatment:
+    td>: queries/10_prep_each/result_treatment.sql
+    create_table: prep_result_treatment
+  
+  +result_timeslot:
+    td>: queries/10_prep_each/result_timeslot.sql
+    create_table: prep_result_timeslot
+
++20_join_all:
+  td>: queries/20_join_all/join_all.sql
+  create_table: prep_join_all
+
++30_lost_opportunity:
+  _export:
+    td:
+      database: l1_datamart_202210
+  # 予約日時と施術日時を取得 (wf: test_uzawa で更新される table: sys_reservation_logs を使用)
+  +prep_sys_reservation_logs_with_therapy_date:
+    td>: queries/30_lost_opportunity/prep_sys_reservation_logs_with_therapy_date.sql
+    create_table: prep_sys_reservation_logs_with_therapy_date
+  # アプリログから取りこぼし判定用のデータを作成 (wf: test_uzawa で更新される table: prep_app_logs を使用)
+  +z_lost_opportunity_analytics_raw_tmp:
+    td>: queries/30_lost_opportunity/z_lost_opportunity_analytics_raw_tmp.sql
+    create_table: z_lost_opportunity_analytics_raw_tmp
+  +z_lost_opportunity_analytics_raw:
+    td>: queries/30_lost_opportunity/z_lost_opportunity_analytics_raw.sql
+    create_table: z_lost_opportunity_analytics_raw
+  # 取りこぼし判定用データから取りこぼし数のデータを作成
+  +z_lost_opportunity_analytics_raw_by_user:
+    td>: queries/30_lost_opportunity/z_lost_opportunity_analytics_raw_by_user.sql
+    create_table: z_lost_opportunity_analytics_raw_by_user
+  # 取りこぼし数の分析用データを作成
+  +z_lost_opportunity_analytics_flag:
+    td>: queries/30_lost_opportunity/z_lost_opportunity_analytics_flag.sql
+    create_table: z_lost_opportunity_analytics_flag
+  # 予約時間から施術時間への変換を行い、需要予測に反映する取りこぼし数のデータを作成
+  +z_lost_opportunity_analytics_fin:
+    td>: queries/30_lost_opportunity/z_lost_opportunity_analytics_fin.sql
+    create_table: z_lost_opportunity_analytics_fin
+  +z_lost_opportunity_analytics_fin_agg:
+    td>: queries/30_lost_opportunity/z_lost_opportunity_analytics_fin_agg.sql
+    create_table: z_lost_opportunity_analytics_fin_agg
+
+# 需要予測に反映する最終的な取りこぼし数のデータを作成
++31_prep_lost_opportunity:
+  +prep_lost_opportunity:
+    td>: queries/31_prep_lost_opportunity/prep_lost_opportunity.sql
+    create_table: prep_lost_opportunity
+
+# 需要予測結果に取りこぼしを反映し時間枠への割戻しを実施
++40_join_all_with_lost_opps:
+  td>: queries/40_join_all_with_params/prep_join_all_with_lost_opps.sql
+  create_table: prep_join_all_with_lost_opps_55_3
+
++50_fin_timeslot_raw:
+  # Rerun用に重複レコードの削除を実施 (削除キーはtime=processing_date=処理週)
+  +delete_duplicate_data:
+    td>:
+    query: "delete from fin_timeslot_raw_vtable where time = td_date_trunc('week', td_scheduled_time(), 'jst')"
+  # 処理週の縦持ちデータを作成しInsert
+  +update_vtable:
+    td>: queries/50_fin_timeslot_raw/update_vtable.sql
+    insert_into: fin_timeslot_raw_vtable

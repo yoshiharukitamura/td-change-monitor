@@ -1,0 +1,26 @@
+table_list:
+  - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+    ws_title: "_供給逆L字施策w1"
+    ws_range: "A1:G1000"
+    ws_cols:
+      - {name: shop_no, type: string}
+      - {name: shop_name, type: string}
+      - {name: segment, type: string}
+      - {name: before_from, type: string}
+      - {name: before_to, type: string}
+      - {name: after_from, type: string}
+      - {name: after_to, type: string}
+    td_tbl_name: "supply_revl_w1"
+
+  - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+    ws_title: "_供給逆L字施策w2"
+    ws_range: "A1:G1000"
+    ws_cols:
+      - {name: shop_no, type: string}
+      - {name: shop_name, type: string}
+      - {name: segment, type: string}
+      - {name: before_from, type: string}
+      - {name: before_to, type: string}
+      - {name: after_from, type: string}
+      - {name: after_to, type: string}
+    td_tbl_name: "supply_revl_w2"

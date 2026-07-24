@@ -1,0 +1,28 @@
+{
+  "archive_md5": "KA4tfqjRLBErdoW2KYL1jw==",
+  "files": [
+    {
+      "path": "cron_0900_fri_update.dig",
+      "sha256": "7029ead11133d24a7b500836cd94408b5528e17fc79e765fd82b548ebb867de4"
+    },
+    {
+      "path": "cron_0900_mon_thu_update.dig",
+      "sha256": "b1625a355f0f522719a741c247019d55318bc4419da2794be50a508017df65eb"
+    },
+    {
+      "path": "l2_customer_suggest.dig",
+      "sha256": "838f5916e9626dfb8aba2cf5947352666b62ca784fd804576b197239f43cbf4e"
+    },
+    {
+      "path": "suggest_rawdata.sql",
+      "sha256": "fac16df07454dd67bc1a38b1a5861df8e5c0f62885d8d5fa781d8c26759ee755"
+    },
+    {
+      "path": "z_p998__scan_references.dig",
+      "sha256": "8c627ddef6b3228cc3e320d62b35a6906b029ed885a365a76d52c2174e3c092d"
+    }
+  ],
+  "project_id": "1370403",
+  "project_name": "l2_customer_suggest",
+  "revision": "e3cc84ab821549d39d4e10eb7c388877"
+}

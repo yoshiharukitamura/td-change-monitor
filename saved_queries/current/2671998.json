@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23958944",
+    "name": "_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "2eafda6ab4eb326bc739d032fbe195fc31aa7c1eb21803e9d0ea6c0598b1f762",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2671998",
+  "query_name": "R/wローリング_R/w1-4の前R/w",
+  "query_string": "with week_list as (\n  select distinct processing_date\n  from hst_weekly_customer_rf\n  where time >= td_time_parse('2023-10-01', 'jst')\n)\n\n, weekly_customer_status as (\n  select distinct\n      processing_date\n    , customer_id\n    , r_week\n    , f\n    , nomination_last_order\n    , shop_no_last_order\n    , shop_name as shop_name_last_order\n  from hst_weekly_customer_rf as t0\n  left join mst_shop as t1\n    on cast(t0.shop_no_last_order as varchar) = t1.shop_no\n  where t0.time between td_time_parse('2023-10-01', 'jst')\n                    and td_date_trunc('week', td_scheduled_time(), 'jst')\n)\n\n, weekly_order as (\n  select distinct\n      td_time_string(td_date_trunc('week', time, 'jst'), 'd!', 'jst') as processing_date\n    , customer_id\n  from cls_order_detail\n  where time >= td_time_parse('2023-10-01', 'jst')\n    and order_id_hour_seq = 1\n)\n\n, agg as (\n  select\n      coalesce(t0.processing_date, t1.processing_date) as processing_date\n    , coalesce(t0.customer_id, t1.customer_id) as customer_id\n    , case\n        when r_week is null and coalesce(t0.customer_id, t1.customer_id) is null then '01_新規(非会員)'\n        when r_week is null and coalesce(t0.customer_id, t1.customer_id) is not null then '02_新規(会員)'\n        when r_week between 1 and 4 then '03_R/w1-4'\n        when r_week between 5 and 8 then '04_R/w5-8'\n        when r_week between 9 and 12 then '05_R/w9-12'\n        when r_week between 13 and 24 then '06_R/w13-24'\n        when r_week between 25 and 52 then '07_R/w25-52'\n        when r_week >= 53 then '08_R/w53-'\n        else '不明'\n      end as r_week\n    , f\n  from weekly_customer_status as t0\n  full join weekly_order as t1\n    on t0.processing_date = t1.processing_date\n   and t0.customer_id = t1.customer_id\n)\n\n, prev_week as (\n  select\n    processing_date\n    , customer_id\n    , r_week\n    , f\n    , lag(r_week) over (partition by customer_id order by processing_date) as r_week_prev\n    , lag(processing_date) over (partition by customer_id order by processing_date) as processing_date_prev\n    , date_diff(\n        'day',\n        cast(lag(processing_date) over (partition by customer_id order by processing_date) as date),\n        cast(processing_date as date)\n      ) as gap_days_from_prev\n  from agg\n)\n\n, rw1_4_window as (\n  select\n    processing_date\n    , customer_id\n    , r_week\n    , f\n    , processing_date_prev\n    , case\n        when r_week = '03_R/w1-4'\n         and (coalesce(r_week_prev, '不明') <> '03_R/w1-4'\n              or coalesce(gap_days_from_prev, 999999) > 7)\n        then 1 else 0\n      end as start_flag_03\n    , sum(\n        case\n          when r_week = '03_R/w1-4'\n           and (coalesce(r_week_prev, '不明') <> '03_R/w1-4'\n                or coalesce(gap_days_from_prev, 999999) > 7)\n          then 1 else 0\n        end\n      ) over (partition by customer_id order by processing_date\n              rows between unbounded preceding and current row) as block_id_raw\n  from prev_week\n)\n\n, rw1_4_entered_week as (\n  select\n    customer_id\n    , block_id_raw\n    , min(processing_date) as entered_week\n    , min(processing_date_prev) as prev_week\n  from rw1_4_window\n  where r_week = '03_R/w1-4'\n    and block_id_raw is not null\n  group by customer_id, block_id_raw\n)\n\n, pre_rw_status as (\n  select\n    t0.customer_id\n    , entered_week\n    , prev_week\n    , t1.r_week as prev_r_week\n    , t1.f as prev_f\n  from rw1_4_entered_week as t0\n  left join agg as t1\n    on t0.customer_id = t1.customer_id\n       and t0.prev_week = t1.processing_date\n)\n\n, timeline as (\n  select\n    customer_id\n    , entered_week\n    , prev_week\n    , prev_r_week\n    , prev_f\n    , row_number() over (partition by customer_id order by entered_week) as boundary_rank\n  from pre_rw_status\n)\n\nselect\n  customer_id as \"会員ID\"\n  , boundary_rank as \"N回目のR/w1-4\"\n  , entered_week as \"R/w1-4になった週\"\n  , prev_week as \"R/w1-4になった前週\"\n  , prev_r_week as \"R/w1-4になる前のR/w\"\n  , prev_f + 1 as \"R/w1-4になった時点のF\"\nfrom timeline\nwhere substr(entered_week, 1, 4) = '2025'\norder by customer_id, boundary_rank\nlimit 3000",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

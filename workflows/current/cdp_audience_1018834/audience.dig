@@ -1,0 +1,381 @@
+# CDP: Audience "_l2_audience_studio_tp" created at
+# https://console.treasuredata.co.jp/app/ms/1018834
+
+timezone: "Asia/Tokyo"
+
+
+
+_export:
+  matrix_database_name: "cdp_audience_1018834"
+  matrix_customers_table_name: "customers"
+  link: "https://console.treasuredata.co.jp/app/ms/1018834"
+  td_console_endpoint: "https://console.treasuredata.co.jp"
+  td:
+    database: "cdp_audience_1018834"
+    hive_engine_version: "cdpaudience"
+    
+    
+
++get_queries:
+  http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/workflow_queries?v=9"
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  store_content: true
+  retry: true
+  _retry: 5
+
++create_database:
+  td_ddl>:
+  create_databases: ["cdp_audience_1018834"]
+  _retry: 5
+
++create_table_customers:
+  td>: create_empty_table_udp.sql
+  engine: 'presto'
+  table_name: "cdp_tmp_customers"
+  join_column_name: 'cdp_customer_id'
+  bucket_count: 512
+  _retry: 5
+
++customers:
+  td>:
+  query: ${JSON.parse(http.last_content)["customers"]}
+  engine: ${JSON.parse(http.last_content)["customers_engine"]}
+  insert_into: "cdp_tmp_customers"
+  _retry: 5
+
++behaviors:
+  for_each>:
+    behavior: ${Object.keys(JSON.parse(http.last_content)["behaviors"])}
+  _parallel: true
+  _do:
+    +create_table_behavior:
+      td>: create_empty_table_udp.sql
+      engine: 'presto'
+      table_name: cdp_tmp_${behavior}
+      join_column_name: 'cdp_customer_id'
+      bucket_count: 512
+      _retry: 5
+
+    +behavior:
+      td>:
+      query: ${JSON.parse(http.last_content)["behaviors"][behavior]["query"]}
+      engine: ${JSON.parse(http.last_content)["behaviors"][behavior]["engine"]}
+      insert_into: cdp_tmp_${behavior}
+      _retry: 5
+
+    +copy_metadata:
+      http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/copy_metadata"
+      method: POST
+      headers:
+        - authorization: ${secret:td.apikey}
+        - X-TD-CDP-SESSION-ID: ${session_id}
+        - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+      content: ${JSON.stringify(JSON.parse(http.last_content)["copy_metadata"]["behaviors"][behavior])}
+      content_type: 'application/json'
+      retry: true
+      _retry: 5
+
+    +behavior_rename:
+      td_ddl>:
+      rename_tables:
+      - from: cdp_tmp_${behavior}
+        to: ${behavior}
+      _retry: 5
+
++enrichments:
+  if>: ${Object.keys(JSON.parse(http.last_content)["enrichments"]).length > 0}
+  _do:
+    +enrich:
+      for_each>:
+        enrichment: ${Object.keys(JSON.parse(http.last_content)["enrichments"])}
+      _parallel: true
+      _do:
+        _export:
+          table_name: cdp_tmp_${enrichment}
+          join_column_name: 'cdp_customer_id'
+          schema: ${JSON.parse(http.last_content)["enrichments"][enrichment]["schema"]}
+
+        +create_empty_table_udp:
+          td>: create_empty_table_udp.sql
+          bucket_count: 512
+          _retry: 5
+
+        +run_workflow:
+          call>: enrichments/${enrichment}.dig
+
+    +disable_include_v_of_cdp_tmp_customers:
+      http>: "https://api.treasuredata.co.jp/v3/table/update/cdp_audience_1018834/cdp_tmp_customers"
+      headers:
+        - authorization: ${secret:td.apikey}
+      method: POST
+      content: 'include_v=false'
+      content_type: application/x-www-form-urlencoded
+      retry: true
+      _retry: 5
+
+    +create_table_enriched_customers:
+      td>: create_empty_table_udp.sql
+      engine: 'presto'
+      table_name: "cdp_tmp_enriched_customers"
+      join_column_name: 'cdp_customer_id'
+      bucket_count: 512
+      _retry: 5
+
+    +enriched_customers:
+      td>:
+      query: ${JSON.parse(http.last_content)["enriched_customers"]}
+      insert_into: "cdp_tmp_enriched_customers"
+      engine: ${JSON.parse(http.last_content)["customers_engine"]}
+      _retry: 5
+
+    +drop_tmp_enrichments:
+      td_ddl>:
+      drop_tables: ${Object.keys(JSON.parse(http.last_content)["enrichments"]).join('|').replace(/([^\|]+)/g, 'cdp_tmp_$1').split('|')}
+      _retry: 5
+
+    +drop_tmp_customers:
+      td_ddl>:
+      drop_tables: ["cdp_tmp_customers"]
+      _retry: 5
+
++predictive_scoring:
+  if>: ${Object.keys(JSON.parse(http.last_content)["predictive_segments"]).length > 0}
+  _do:
+    _export:
+      customers_table_name: ${Object.keys(JSON.parse(http.last_content)["enrichments"]).length > 0 && "cdp_tmp_enriched_customers" || "cdp_tmp_customers"}
+
+    +predictive_segments:
+      for_each>:
+        predictive_segment_id: ${Object.keys(JSON.parse(http.last_content)["predictive_segments"])}
+      _parallel: true
+      _do:
+        _export:
+          table_name: cdp_tmp_predictive_score_${predictive_segment_id}
+          join_column_name: 'cdp_customer_id'
+          schema: ${JSON.parse(http.last_content)["predictive_segments"][predictive_segment_id]["schema"]}
+
+        +create_empty_table_udp:
+          td>: create_empty_table_udp.sql
+          bucket_count: 512
+          _retry: 5
+
+        +run_workflow:
+          call>: predictive_scoring.dig
+
+    +disable_include_v_of_cdp_tmp_customers:
+      http>: "https://api.treasuredata.co.jp/v3/table/update/cdp_audience_1018834/${customers_table_name}"
+      headers:
+        - authorization: ${secret:td.apikey}
+      method: POST
+      content: 'include_v=false'
+      content_type: application/x-www-form-urlencoded
+      retry: true
+      _retry: 5
+
+    +create_table_scored_customers:
+      td>: create_empty_table_udp.sql
+      engine: 'presto'
+      table_name: "cdp_tmp_scored_customers"
+      join_column_name: 'cdp_customer_id'
+      bucket_count: 512
+      _retry: 5
+
+    +scored_customers:
+      td>:
+      query: ${JSON.parse(http.last_content)["predictive_scored_customers"]}
+      insert_into: "cdp_tmp_scored_customers"
+      engine: ${JSON.parse(http.last_content)["customers_engine"]}
+      _retry: 5
+
+    +drop_tmp_predictive_scores:
+      td_ddl>:
+      drop_tables: ${Object.keys(JSON.parse(http.last_content)["predictive_segments"]).join('|').replace(/([^\|]+)/g, 'cdp_tmp_predictive_score_$1').split('|')}
+      _retry: 5
+
+    +drop_tmp_customers:
+      td_ddl>:
+      drop_tables: ["${customers_table_name}"]
+      _retry: 5
+
++ml_solutions:
+  if>: ${Object.keys(JSON.parse(http.last_content)["ml_solutions"] || new Object).length > 0}
+  _do:
+    +inference_workflows:
+      for_each>:
+        solution_workflow_name: ${JSON.parse(http.last_content)["ml_solutions"]["wf_names"]}
+      _parallel:
+        limit: 5
+      _do:
+        +run_ml_solution_inference_workflow:
+          require>: ${solution_workflow_name}
+          rerun_on: all
+          ignore_failure: true
+          params:
+            in_audience_workflow: true
+          headers:
+            - authorization: ${secret:td.apikey}
+
+    +create_ml_solutions_customers:
+      td>: create_empty_table_udp.sql
+      engine: 'presto'
+      table_name: "cdp_tmp_ml_solution_customers"
+      join_column_name: 'cdp_customer_id'
+      bucket_count: 512
+      _retry: 5
+
+    +ml_solutions_customers:
+      td>:
+      insert_into: "cdp_tmp_ml_solution_customers"
+      query: ${JSON.parse(http.last_content)["ml_solutions"]["query"]}
+      engine: ${JSON.parse(http.last_content)["customers_engine"]}
+      _retry: 5
+
+    +drop_tmp_customers:
+       td_ddl>:
+       drop_tables: ['${Object.keys(JSON.parse(http.last_content)["predictive_segments"]).length > 0 && "cdp_tmp_scored_customers" || (Object.keys(JSON.parse(http.last_content)["enrichments"]).length > 0 && "cdp_tmp_enriched_customers" || "cdp_tmp_customers")}']
+       _retry: 5
+
++activities_and_partitioned_tables:
+  _parallel: true
+
+  +partitioned_customers:
+    +create_table_partitioned_customers:
+      td>: create_empty_table_udp.sql
+      engine: 'presto'
+      table_name: "cdp_tmp_partitioned_customers"
+      join_column_name: 'cdp_customer_id'
+      bucket_count: 4096
+      _retry: 5
+
+    +query_partitioned_customers:
+      td>:
+      query: ${JSON.parse(http.last_content)["partitioned_customers"]}
+      insert_into: "cdp_tmp_partitioned_customers"
+      engine: ${JSON.parse(http.last_content)["customers_engine"]}
+      _retry: 5
+
+  +activities:
+    +create_table_activities:
+      td>: create_empty_table_udp.sql
+      engine: 'presto'
+      table_name: "cdp_tmp_activities"
+      join_column_name: 'cdp_customer_id'
+      bucket_count: ${JSON.parse(http.last_content)["activities_bucket_count"]}
+      _retry: 5
+
+    +query_activities:
+      td>:
+      query: ${JSON.parse(http.last_content)["activities"]}
+      insert_into: "cdp_tmp_activities"
+      engine: ${JSON.parse(http.last_content)["activities_engine"]}
+      _retry: 5
+
+  +materialized_segments:
+    if>: ${JSON.parse(http.last_content)["materialized_segments_enabled"]}
+    _do:
+      +create_materialized_segments:
+        http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/materialized_segments"
+        method: POST
+        headers:
+          - authorization: ${secret:td.apikey}
+          - X-TD-CDP-SESSION-ID: ${session_id}
+          - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+        content: ${lc=JSON.parse(http.last_content), contents=new Object, contents["materialized_segments_creation_job_id"] = lc["materialized_segments_creation_job_id"], contents["predictive_segments"] = lc["predictive_segments"], contents["enrichments"] = lc["enrichments"], contents["partitioned_customers"] = lc["partitioned_customers"], contents["activities"] = lc["activities"], contents["source_table_name"] = Object.keys(lc["predictive_segments"]).length > 0 && "cdp_tmp_scored_customers" || (Object.keys(lc["enrichments"]).length > 0 && "cdp_tmp_enriched_customers" || "cdp_tmp_customers"), contents["materialized_segments_enabled"] = lc["materialized_segments_enabled"], JSON.stringify(contents)}
+        content_type: 'application/json'
+        store_content: true
+        retry: true
+        _retry: 5
+
+      +wait_materialized_segments_creation:
+        http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/materialized_segments_job_status"
+        method: POST
+        headers:
+          - authorization: ${secret:td.apikey}
+          - X-TD-CDP-SESSION-ID: ${session_id}
+          - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+        content:
+          job_id: ${JSON.parse(http.last_content)["job_id"]}
+        retry: true
+        _retry: 5
+
++copy_metadata:
+  http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/copy_metadata"
+  method: POST
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  content: ${JSON.stringify(JSON.parse(http.last_content)["copy_metadata"]["attributes"])}
+  content_type: 'application/json'
+  retry: true
+  _retry: 5
+
++rename_tables:
+  td_ddl>:
+  rename_tables:
+  - from: ${JSON.parse(http.last_content)["customers_tmp_table_name"]}
+    to: "customers"
+  - from: "cdp_tmp_partitioned_customers"
+    to: "partitioned_customers"
+  - from: "cdp_tmp_activities"
+    to: "activities"
+  _retry: 5
+
++funnels:
+  if>: ${Object.keys(JSON.parse(http.last_content)["funnels"]).length > 0}
+  _do:
+    +run_funnel_workflows:
+      for_each>:
+        funnel: ${JSON.parse(http.last_content)["funnels"]}
+      _do:
+        +run_funnel_workflow:
+          require>: ${funnel["workflow_name"]}
+          rerun_on: all
+          ignore_failure: true
+          headers:
+            - authorization: ${secret:td.apikey}
+
++enable_materialized_segments:
+  if>: ${JSON.parse(http.last_content)["materialized_segments_enabled"]}
+  _do:
+    http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/enable_materialized_segments"
+    method: POST
+    headers:
+      - authorization: ${secret:td.apikey}
+      - X-TD-CDP-SESSION-ID: ${session_id}
+      - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+    content:
+      job_id: ${JSON.parse(http.last_content)["job_id"]}
+    retry: true
+    _retry: 5
+
++delete_deprecated_tables:
+  td_ddl>:
+  drop_tables: ${JSON.parse(http.last_content)["deprecated_table_names"]}
+  _retry: 5
+
++callback_finished:
+  http>: "https://api-cdp.treasuredata.co.jp/audiences/1018834/workflow_finished?v=9&provoke_journey_workflows=true"
+  method: POST
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  retry: true
+  _retry: 5
+
+_error:
+  http>: https://api-cdp.treasuredata.co.jp/audiences/1018834/workflow_error
+  method: POST
+  headers:
+    - authorization: ${secret:td.apikey}
+    - X-TD-CDP-SESSION-ID: ${session_id}
+    - X-TD-CDP-ATTEMPT-ID: ${attempt_id}
+  content_format: form
+  content:
+    attempt_id: ${attempt_id}
+  retry: true
+  _retry: 2

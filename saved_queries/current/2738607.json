@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23958944",
+    "name": "_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "b0e05d8eaf564f30646fc04e69fdef6113aa46f30354a27d4ae772565608b51d",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2738607",
+  "query_name": "CPSクーポン_対象リスト作成",
+  "query_string": "select\n  shop_no\n  , shop_name\n  , case when pref_name in ('佐賀県', '宮崎県', '熊本県', '長崎県', '鹿児島県') then '非対象' else '対象' end as segment\n  , '2025-12-01' as before_from\n  , '2025-12-14' as before_to\n  , '2026-01-05' as after_from\n  , '2026-01-31' as after_to\nfrom\n  mst_shop\nwhere\n  status = '02'\norder by\n  1,2",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

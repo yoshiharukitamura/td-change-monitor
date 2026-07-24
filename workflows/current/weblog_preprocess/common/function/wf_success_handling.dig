@@ -1,0 +1,13 @@
++write_session_success_log:
+  td>:
+  query: |
+    select
+      '${project_id}' as project_id
+      , '${wf_name}' as wf_name
+      , '${attempt_id}' as attempt_id
+      , '${moment(session_time).format()}' as session_time
+      , ${moment(new Date()).unix()} as time
+      , 1 as is_success
+      , 1 as is_done
+      , 0 as is_cancel
+  insert_into: z_trailer_wf_session

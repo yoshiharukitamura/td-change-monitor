@@ -1,0 +1,670 @@
+table_list:
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_v6"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_v6"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_メルペイクーポン_11月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_merpay_202511"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_auPAYクーポン_11月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_aupay_202511"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_楽天ペイクーポン_11月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_rakutenpay_202511"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_12月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202512"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_メルペイクーポン_12月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_merpay_202512"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_auPAYクーポン_12月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_aupay_202512"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_楽天ペイクーポン_12月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_rakutenpay_202512"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_1月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202601"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_メルペイクーポン_1月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_merpay_202601"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_楽天ペイクーポン_1月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_rakutenpay_202601"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_PayPayクーポン_2月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_paypay_202602"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_メルペイクーポン_2月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_merpay_202602"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_楽天ペイクーポン_2月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_rakutenpay_202602"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_auPAYクーポン_2月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_aupay_202602"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_auPAYクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_aupay_202603"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_楽天ペイクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_rakutenpay_202603"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_メルペイクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_merpay_202603"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_PayPayクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_paypay_202603"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_auPAYクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_aupay_202603"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_楽天ペイクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_rakutenpay_202603"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_メルペイクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_merpay_202603"
+
+  # - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+  #   ws_title: "_PayPayクーポン_3月"
+  #   ws_range: "A1:G1000"
+  #   ws_cols:
+  #     - {name: shop_no, type: string}
+  #     - {name: shop_name, type: string}
+  #     - {name: segment, type: string}
+  #     - {name: before_from, type: string}
+  #     - {name: before_to, type: string}
+  #     - {name: after_from, type: string}
+  #     - {name: after_to, type: string}
+  #   td_tbl_name: "demand_paypay_202603"
+
+# 4月分記載
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_auPAYクーポン_4月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_aupay_202604"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_楽天ペイクーポン_4月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_rakutenpay_202604"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_メルペイクーポン_4月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_merpay_202604"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_4月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202604"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_4月_2"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202604_2"
+
+# 5月分記載
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_auPAYクーポン_5月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_aupay_202605"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_楽天ペイクーポン_5月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_rakutenpay_202605"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_メルペイクーポン_5月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_merpay_202605"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_5月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202605"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_5月_2"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202605_2"
+
+# # 6月分記載
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_auPAYクーポン_6月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_aupay_202606"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_楽天ペイクーポン_6月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_rakutenpay_202606"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_メルペイクーポン_6月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_merpay_202606"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_6月"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202606"
+
+#  - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#    ws_title: "_PayPayクーポン_6月_2"
+#    ws_range: "A1:G1000"
+#    ws_cols:
+#      - {name: shop_no, type: string}
+#      - {name: shop_name, type: string}
+#      - {name: segment, type: string}
+#      - {name: before_from, type: string}
+#      - {name: before_to, type: string}
+#      - {name: after_from, type: string}
+#      - {name: after_to, type: string}
+#    td_tbl_name: "demand_paypay_202606_2"
+
+ - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+   ws_title: "_PayPayクーポン_7月"
+   ws_range: "A1:G1000"
+   ws_cols:
+     - {name: shop_no, type: string}
+     - {name: shop_name, type: string}
+     - {name: segment, type: string}
+     - {name: before_from, type: string}
+     - {name: before_to, type: string}
+     - {name: after_from, type: string}
+     - {name: after_to, type: string}
+   td_tbl_name: "demand_paypay_202607"
+
+ - ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+   ws_title: "_PayPayクーポン_7月_2"
+   ws_range: "A1:G1000"
+   ws_cols:
+     - {name: shop_no, type: string}
+     - {name: shop_name, type: string}
+     - {name: segment, type: string}
+     - {name: before_from, type: string}
+     - {name: before_to, type: string}
+     - {name: after_from, type: string}
+     - {name: after_to, type: string}
+   td_tbl_name: "demand_paypay_202607_2"
+
+### 2025年10月以前の旧シート反映分 2025年11月以降更新不要 ###
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_PayPayクーポン"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_paypay"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_PayPayクーポン_v2"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_paypay_v2"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_メルペイクーポン"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_merpay"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_PayPayクーポン_v3"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_paypay_v3"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_aupayクーポン"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_aupay"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_PayPayクーポン_v4"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_paypay_v4"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_楽天ペイクーポン"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_rakutenpay"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_PayPayクーポン_v5"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_paypay_v5"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_PayPayクーポン_v5_v2"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_paypay_v5_v2"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_楽天ペイクーポン_10月"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_rakutenpay_v2"
+# 
+#   - ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#     ws_title: "_aupayクーポン_10月"
+#     ws_range: "A1:G1000"
+#     ws_cols:
+#       - {name: shop_no, type: string}
+#       - {name: shop_name, type: string}
+#       - {name: segment, type: string}
+#       - {name: before_from, type: string}
+#       - {name: before_to, type: string}
+#       - {name: after_from, type: string}
+#       - {name: after_to, type: string}
+#     td_tbl_name: "demand_aupay_v2"

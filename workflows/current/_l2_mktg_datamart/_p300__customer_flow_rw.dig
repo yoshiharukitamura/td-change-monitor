@@ -1,0 +1,43 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+# schedule:
+#   cron>: 30 7 * * 1
+
+_export:
+  ## TD 出力取得Database TBL
+  td:
+    database: _integration_datamart
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+_error:
+  require>: __failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
+### 顧客フロー R/w版のTableau参照データの更新を行う ###
+
++data_for_tableau:
+  _parallel: true
+  +customer_flow_rw:
+    td>: p300_/mktg_customer_flow_rw.sql
+    create_table: mktg_customer_flow_rw
+  +rf_map:
+    td>: p300_/mktg_customer_rf_map.sql
+    create_table: mktg_customer_rf_map
+  +customer_list_rf:
+    td>: p300_/mktg_customer_list_rf.sql
+    create_table: mktg_customer_list_rf

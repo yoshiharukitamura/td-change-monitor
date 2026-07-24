@@ -1,0 +1,16 @@
+{
+  "project_id": "1519715",
+  "project_name": "_l2_audience_studio_mk",
+  "schedules": [
+    {
+      "definition_path": "_cron_0800__daily_update.dig",
+      "enabled": true,
+      "schedule_id": "348942",
+      "schedule_type": "cron",
+      "schedule_value": "0 8 * * *",
+      "timezone": "Asia/Tokyo",
+      "workflow_id": "14533377",
+      "workflow_name": "_cron_0800__daily_update"
+    }
+  ]
+}

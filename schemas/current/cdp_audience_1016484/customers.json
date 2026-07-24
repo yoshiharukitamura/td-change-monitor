@@ -575,16 +575,16 @@
       "type": "string"
     },
     {
-      "alias": "cstm_01_customer_id",
+      "alias": "cstm_01_email",
       "description": null,
-      "name": "cstm_01_customer_id",
+      "name": "cstm_01_email",
       "position": 82,
       "type": "string"
     },
     {
-      "alias": "cstm_01_email",
+      "alias": "cstm_01_customer_id",
       "description": null,
-      "name": "cstm_01_email",
+      "name": "cstm_01_customer_id",
       "position": 83,
       "type": "string"
     },
@@ -619,5 +619,5 @@
   ],
   "database": "cdp_audience_1016484",
   "table": "customers",
-  "table_id": "297473930"
+  "table_id": "298777811"
 }

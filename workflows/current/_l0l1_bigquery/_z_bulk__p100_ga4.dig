@@ -1,0 +1,44 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+_export:
+  ## Output Database
+  td:
+    database: _l0_bigquery
+  ## GCP common variables
+  gcp:
+    project_id: riraku-app-2d95e
+    dataset: 
+    temp_dataset: 
+    gcs_bucket: 
+    gcs_path_prefix: hiveiq/  
+  ## 一括処理用の変数定義
+  initialize: false # 初期化する場合は true、過去データのうち特定範囲を再実行したい場合は false を指定
+  period:
+    from: '2024-01-01'
+    to: '2024-12-31' # 終点含む
+  split:
+    src: 'day' # destでの分割数が1000を超える場合は year を指定、''の場合は分割せずに処理される
+    dest: '' # '', year, quarter, month, week, day から選択、''の場合は分割せずに処理される
+  
+###############################################################
+# ワークフローの処理
+###############################################################
+## エラー回避用: Databaseが存在しない場合は新規作成
++create_databases:
+  td_ddl>:
+  create_databases: ['${td.database}']
+
+
++false:
+  td_for_each>: __func_/date_trunc_list.sql
+  date_from: ${period.from}
+  date_to: ${period.to}
+  split: ${split.src}
+  _do:
+    td_load>: p100_/firebase_event_log.yml
+    table: firebase_event_log
+    date_from: ${td.each.date_from}
+    date_to: ${td.each.date_to} # 終点含む

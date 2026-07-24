@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "23958944",
+    "name": "_integration_datamart"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "1b88b0d0d86e1dd32822a033b2beca52e3f5b3141d9cf9217e2f61f31f43b12a",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2727904",
+  "query_name": "検証_TPマッチング_来店店舗数_来店差分",
+  "query_string": "with order_log as (\n  select\n    distinct\n    customer_id\n    , business_date\n    , order_id\n    , property_id\n  from \n    _integration_datamart.cls_order_detail as t0\n  where\n    customer_id in (\n      select distinct customer_id from _integration_datamart.cls_order_detail \n        where time >= td_time_parse('2022-12-01', 'jst') and time <= td_time_parse('2025-12-01', 'jst')\n    )\n    and\n    t0.time >= td_time_parse('2024-12-01', 'jst')\n    and t0.time <= td_time_parse('2025-12-01', 'jst')\n)\n\n, agg_order_count as (\n  select\n    customer_id\n    , property_id\n    , count(distinct order_id) as order_count\n    , max(business_date) as latest_business_date\n  from\n    order_log\n  group by\n    1,2\n)\n\n, agg_property_count as (\n  select\n    customer_id\n    , count(distinct property_id) as property_count\n  from\n    order_log\n  group by\n    1\n)\n\n, agg_order_rn as (\n  select\n    t0.*\n    , t1.property_count\n    , row_number() over (partition by t0.customer_id order by order_count desc, latest_business_date desc) as order_count_rn\n    , max_by(property_id, latest_business_date) over (partition by t0.customer_id) as latest_property_id\n    , min(t0.order_count) over (partition by t0.customer_id) as min_order_count\n    , max(t0.order_count) over (partition by t0.customer_id) as max_order_count\n  from\n    agg_order_count as t0\n  left join\n    agg_property_count as t1\n    on t0.customer_id = t1.customer_id\n)\n\n, tmp as (\n  select\n    customer_id\n    , property_count\n    , sum(order_count) as total_order_count\n    , max(order_count) - min(order_count) as shop_order_count_diff\n  from\n    agg_order_rn\n  group by\n    1,2\n)\n\nselect\n  total_order_count as \"来店回数合計/年\"\n  , property_count as \"来店店舗数/年\"\n  , shop_order_count_diff as \"最頻来店店舗 - 最少来店店舗（来店回数差分）\"\n  , count(distinct customer_id) as \"顧客数\"\nfrom\n  tmp\ngroup by\n  1,2,3\norder by\n  1,2,3",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

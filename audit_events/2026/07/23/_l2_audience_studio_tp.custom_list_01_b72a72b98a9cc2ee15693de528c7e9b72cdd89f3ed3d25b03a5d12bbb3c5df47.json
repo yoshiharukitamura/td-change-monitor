@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "b72a72b98a9cc2ee15693de528c7e9b72cdd89f3ed3d25b03a5d12bbb3c5df47",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l2_audience_studio_tp",
+  "events": [
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "02ecfeb7-835d-4232-91fc-c37af8391b84",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_tp/custom_list_01",
+      "resource_id": "297464661",
+      "table": "custom_list_01",
+      "time": "2026-07-18T23:00:09+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "f67dd4be-cc46-4b62-9858-81a428cf0439",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_tp/custom_list_01/log",
+      "resource_id": "297674336",
+      "table": "custom_list_01",
+      "time": "2026-07-18T23:00:10+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "ae881ac5-e914-46c1-94c4-4b51c4104d0a",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_tp/custom_list_01",
+      "resource_id": "297674336",
+      "table": "custom_list_01",
+      "time": "2026-07-19T23:00:11+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "ce764727-4cb7-4e98-977a-05d4f67624a1",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_tp/custom_list_01/log",
+      "resource_id": "297894614",
+      "table": "custom_list_01",
+      "time": "2026-07-19T23:00:12+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "ce65361d-c4e4-436d-bded-3912a27ff821",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_tp/custom_list_01",
+      "resource_id": "297894614",
+      "table": "custom_list_01",
+      "time": "2026-07-20T23:00:09+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "c3b921c1-a3bd-4133-9441-df82c305cbb4",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_tp/custom_list_01/log",
+      "resource_id": "298109722",
+      "table": "custom_list_01",
+      "time": "2026-07-20T23:00:10+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "420d9901-e514-4b54-b847-953fe898adc4",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_tp/custom_list_01",
+      "resource_id": "298109722",
+      "table": "custom_list_01",
+      "time": "2026-07-21T23:00:10+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "b23de15b-9de9-4473-9bd4-d47af433a99c",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_tp/custom_list_01/log",
+      "resource_id": "298327678",
+      "table": "custom_list_01",
+      "time": "2026-07-21T23:00:11+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "571d0607-5803-46cf-a3c3-d941620c1768",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_tp/custom_list_01",
+      "resource_id": "298327678",
+      "table": "custom_list_01",
+      "time": "2026-07-22T23:00:05+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "7fb669ad-f979-4a48-8ecb-eebb8319d008",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_tp/custom_list_01/log",
+      "resource_id": "298548449",
+      "table": "custom_list_01",
+      "time": "2026-07-22T23:00:06+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_delete",
+      "id": "fe6dcc1d-be70-4604-8790-9d0ffb917c98",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/delete/_l2_audience_studio_tp/custom_list_01",
+      "resource_id": "298548449",
+      "table": "custom_list_01",
+      "time": "2026-07-23T23:00:04+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l2_audience_studio_tp",
+      "event_name": "table_create",
+      "id": "e8c8b977-ac45-4566-b03d-4a00a4a69875",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/v3/table/create/_l2_audience_studio_tp/custom_list_01/log",
+      "resource_id": "298767876",
+      "table": "custom_list_01",
+      "time": "2026-07-23T23:00:05+00:00",
+      "user_email": "kyohei.tomita+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "custom_list_01"
+}

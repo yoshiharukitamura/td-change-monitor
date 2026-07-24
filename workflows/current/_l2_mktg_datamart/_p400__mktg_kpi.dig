@@ -1,0 +1,124 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+#schedule:
+#  cron>: 30 10 * * 1
+
+_export:
+  ## TD 出力取得Database TBL
+  td:
+    database: _integration_datamart
+
+###############################################################
+# エラー発生時の通知
+###############################################################
+
+_error:
+  require>: __failure_alert
+  project_name: functions
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
+  params:
+    failure_session_id: ${session_id}
+    ## default false. Set true only for usage
+    notify: {mail: false, slack: false, teams: false}
+
+###############################################################
+# ワークフローの処理
+###############################################################
++kpi_weekly_tables:
+  +kpi_rf:
+    td>: p400_/mktg_kpi_rf.sql
+    create_table: z_tmp_kpi_rf
+  +kpi_app_session:
+    td>: p400_/mktg_kpi_app_session.sql
+    create_table: z_tmp_kpi_app_session
+  +kpi_rf_w12f__base:
+    td>: p400_/mktg_kpi_rf_w12f.sql
+    create_table: z_tmp_kpi_rf_base
+  +kpi_rf_w12f__result:
+    td>: p400_/mktg_kpi_rf_w12f_result.sql
+    create_table: z_tmp_kpi_rf_result
+  +kpi_app_session_w12f:
+    td>: p400_/mktg_kpi_app_session_w12f.sql
+    create_table: z_tmp_kpi_app_session_w12f
+  +kpi_tp_card:
+    td>: p400_/mktg_kpi_tp_card_insert.sql
+
++kpi_monthly_tables:
+  _parallel: true
+  +kpi_app_session_monthly_w12f:
+    td>: p400_/mktg_kpi_app_session_monthly_w12f.sql
+    create_table: z_tmp_kpi_app_session_monthly_w12f
+  +kpi_rf_monthly_w12f:
+    td>: p400_/mktg_kpi_rf_monthly_r12f.sql
+    create_table: z_tmp_kpi_rf_monthly_w12f
+  
+
++export_gsheet:
+  _export:
+    spreadsheet_id: "1fHc6QoNv9_Xq87zGx2qYa6wtcszJNtgArWX19eb5mHw"
+  _parallel: true
+  +out_kpi_app_session:
+    td>: p400_/out_mktg_kpi_app_session.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: raw_APPセッション構成比
+      range: A1
+      mode: truncate
+  +out_kpi_integrated:
+    td>: p400_/out_mktg_kpi_integrated.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: raw_統合
+      range: A1
+      mode: truncate
+
++export_gsheet_w12f:
+  _export:
+    spreadsheet_id: "1xrO0PJFSd3Y1XGkczeCc4ROuAYLuVBT2aBg7wYsSCH8"
+  _parallel: true
+  +out_kpi_integrated_weekly:
+    td>: p400_/out_mktg_kpi_integrated_w12f.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: raw_weekly
+      range: A1
+      mode: truncate
+  +out_kpi_integrated_monthly:
+    td>: p400_/out_mktg_kpi_integrated_w12f_monthly.sql
+    result_connection: td_share
+    result_settings:
+      spreadsheet_id: ${spreadsheet_id}
+      sheet_title: raw_monthly
+      range: A1
+      mode: truncate
+
++kpi_tpcard:
+  +delete_duplicated_data:
+    td>:
+    query: |
+      delete
+      from l2_verification.tmp_kpi__app_funnel
+      where time = ${moment(session_date).subtract(1, 'week').format('YYYY-MM-DD')}
+  +insert_latest_data:
+    td>: p400_/mktg_kpi_tp_card.sql
+    insert_into: l2_verification.tmp_kpi__app_funnel
+    
+  +export_gsheet_tpcard:
+    _export:
+      spreadsheet_id: "1gWwHOEfa99NAZBdd_8GM2Qt-1vM79bJhRC7UOS46sQY"
+      td>: p400_/out_mktg_kpi_tpcard.sql
+      result_connection: td_share
+      result_settings:
+        spreadsheet_id: ${spreadsheet_id}
+        sheet_title: raw
+        range: A1
+        mode: truncate
+      
+  

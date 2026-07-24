@@ -19,6 +19,7 @@ from td_change_monitor.models import (
     WorkflowProjectSnapshot,
     WorkflowSnapshotLoadResult,
 )
+from td_change_monitor.secret_redaction import redact_detectable_secrets
 
 MONITORED_WORKFLOW_EXTENSIONS = frozenset({".dig", ".sql"})
 WORKFLOW_METADATA_FILE = ".workflow_state.json"
@@ -179,6 +180,16 @@ def workflow_snapshot_to_files(
     戻り値:
         metadata JSONと`.dig`・`.sql`だけを持つマッピング。
     """
+    sanitized_files: list[tuple[str, str]] = []
+    for file in snapshot.files:
+        relative_path = _validate_snapshot_path(file.path)
+        if PurePosixPath(relative_path).suffix.lower() not in MONITORED_WORKFLOW_EXTENSIONS:
+            raise ValueError("Workflow snapshot contained an unmonitored extension")
+        # snapshotの生成元にかかわらず、Gitへ書き出す直前にも秘密値を除去する。
+        sanitized_files.append(
+            (relative_path, redact_detectable_secrets(file.content))
+        )
+
     metadata = {
         "project_id": snapshot.project_id,
         "project_name": snapshot.project_name,
@@ -186,10 +197,10 @@ def workflow_snapshot_to_files(
         "archive_md5": snapshot.archive_md5,
         "files": [
             {
-                "path": file.path,
-                "sha256": file.content_hash,
+                "path": path,
+                "sha256": _text_hash(content),
             }
-            for file in snapshot.files
+            for path, content in sanitized_files
         ],
     }
     output = {
@@ -200,11 +211,8 @@ def workflow_snapshot_to_files(
             indent=2,
         ).encode("utf-8")
     }
-    for file in snapshot.files:
-        relative_path = _validate_snapshot_path(file.path)
-        if PurePosixPath(relative_path).suffix.lower() not in MONITORED_WORKFLOW_EXTENSIONS:
-            raise ValueError("Workflow snapshot contained an unmonitored extension")
-        output[relative_path] = file.content.encode("utf-8")
+    for relative_path, content in sanitized_files:
+        output[relative_path] = content.encode("utf-8")
     return output
 
 
@@ -271,6 +279,9 @@ def workflow_snapshot_from_files(
         actual_hash = _text_hash(content)
         if actual_hash != expected_hash:
             raise ValueError("Workflow snapshot file hash did not match")
+        # 過去に保存されたsnapshotを読む場合も、後続処理には秘密値を渡さない。
+        content = redact_detectable_secrets(content)
+        actual_hash = _text_hash(content)
         snapshots.append(
             WorkflowFileSnapshot(
                 path=relative_path,
@@ -353,7 +364,9 @@ def _extract_monitored_file(
     source = archive.extractfile(member)
     if source is None:
         raise WorkflowArchiveError("Workflow archive file could not be read")
-    content = _normalize_text(source.read().decode("utf-8"))
+    content = redact_detectable_secrets(
+        _normalize_text(source.read().decode("utf-8"))
+    )
     target = (root / Path(*PurePosixPath(relative_path).parts)).resolve()
     if not target.is_relative_to(root):
         raise WorkflowArchiveError("Workflow archive path escaped temporary directory")

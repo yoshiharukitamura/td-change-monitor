@@ -1,0 +1,316 @@
+{
+  "archive_md5": "vMcmHREllmpMK0pZeNI4jQ==",
+  "files": [
+    {
+      "path": "common/config/env_variables.dig",
+      "sha256": "ff80c4d78a1464a349477c981f874ffd9782bd03d5bb19372676db82aba85a97"
+    },
+    {
+      "path": "common/function/wf_error_handling.dig",
+      "sha256": "78798b599c4b04be00a6ab87f25b379be4776c876e6d0901e5ac7843a6b2e797"
+    },
+    {
+      "path": "daily_0700/001/tp_rank_update.sql",
+      "sha256": "af1b44099d2dd0e7a3f462970b0e1c4c808994520ce95eda0f294d4a8513eccb"
+    },
+    {
+      "path": "daily_0700/002/time_slot_progress_ss_list.sql",
+      "sha256": "cbae78ac2bbd09f4a206ca5c403af651c0b62c89d705522e76fd8d7ff959b101"
+    },
+    {
+      "path": "daily_0700/003/time_slot_progress_rawdata.sql",
+      "sha256": "79edd7aa2fcdc36815701780c9e60892c3c9747705fefa52ffbe2e30667e004b"
+    },
+    {
+      "path": "daily_0700/004/time_slot_progress_prep.sql",
+      "sha256": "2e5b3b57483897c456954f17203652c162bae6db0b7f344583348e6c93da5b00"
+    },
+    {
+      "path": "daily_0700/005/time_slot_history.sql",
+      "sha256": "6a98fdaecffa2f00777d83cbf9240d4d1d980d2d63baf3be022ceadb81762f3e"
+    },
+    {
+      "path": "daily_0700/006/time_slot_progress_for_tableau_step1.sql",
+      "sha256": "b3a10e90213ad31b15e3c48aa8592356d46e5749440925862f56e480875a27cc"
+    },
+    {
+      "path": "daily_0700/007/time_slot_progress_for_tableau_step2.sql",
+      "sha256": "2361673d2a88eff0db645d5cc453db28c681fb43c1034a246e2a69cc2b774611"
+    },
+    {
+      "path": "daily_0700/008/time_slot_progress_for_tableau_step3.sql",
+      "sha256": "f06e21bca74b4b01c077faa69bf691f2c887531c34c1319fb03c551b95e672d3"
+    },
+    {
+      "path": "daily_0700/009/get_week_list.sql",
+      "sha256": "14ae8de7d4900ec7b37ce6358b339872bf0e5f8b209548443e5f44ed13152321"
+    },
+    {
+      "path": "daily_0700/010/measures_mapping.sql",
+      "sha256": "4c36f48365e10913fa268a9cf4ce79b8fcb064ead918df90255b024c6f658b2a"
+    },
+    {
+      "path": "daily_0700/011/analytics_20231215.sql",
+      "sha256": "9b54ff5e66d8778c76c2d8a11fed46d3b0bd50792cc15e644fa14988ebd27533"
+    },
+    {
+      "path": "df_cron_daily_0700_update_tableau_data.dig",
+      "sha256": "c87c40b97f45c7b7f0c3a90a460a056d4b5286cff1508014a538b8d21899ac16"
+    },
+    {
+      "path": "df_cron_fri_1515_send_quest_data.dig",
+      "sha256": "07a75799e3d8fd508cdb123eb31770cd7754256795d7bab31a96fbd5d4d94ddb"
+    },
+    {
+      "path": "df_cron_thu_0000_timeslot_entry_elected.dig",
+      "sha256": "8e77601ed2c5140e5872a0e2a606d4d40c7020605069f40e48135096fb77d287"
+    },
+    {
+      "path": "df_cron_thu_2200_send_quest_stop_tp.dig",
+      "sha256": "c94a2c628ca92fba9bb327e3c6761fd16c6bef82020b40a3b827c1f97ce8dcf0"
+    },
+    {
+      "path": "df_cron_wed_1200_send_time_slot.dig",
+      "sha256": "c5f8bcf8f32e421cb7af6f1424b825664e123c69f92a49851d4a7dab448fb27e"
+    },
+    {
+      "path": "fri_1515/003/time_slot_progress_rawdata.sql",
+      "sha256": "a107d4a273c0bcd9f89a691811ddafcfd10765e0f8320a4fbdf87b165451266f"
+    },
+    {
+      "path": "fri_1515/create_quest_time_slot.sql",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "fri_1515/create_quest_time_slot_except_received.sql",
+      "sha256": "29371087f0c3987dba9aaf2504dc7d28b63fcb24ba20739b902daa5e304ee745"
+    },
+    {
+      "path": "fri_1515/send_quest_time_slot.sql",
+      "sha256": "813c699ac62989f805bbcd40810a6672c547bb6d73106a7764866588adabb0e8"
+    },
+    {
+      "path": "fri_1515/snapshot_timeslot.sql",
+      "sha256": "073f894b8553dea368ca0840a0acbc12222778988d681b66d2e991d839aa81e7"
+    },
+    {
+      "path": "ml_demand_forecast_auto.dig",
+      "sha256": "3a73410f2f35e1faa71d44edd5a1f913f633d361f82581c4ef3c55ed4f9ea6d7"
+    },
+    {
+      "path": "ml_demand_forecast_auto_cron_weekly.dig",
+      "sha256": "f4224cb67596b2a50edb48eedbbb9c1f0c25a1ba3454df6d93d8529063ab308f"
+    },
+    {
+      "path": "ml_demand_forecast_prep.dig",
+      "sha256": "4dc136798df8a8377afa9d5447a6355a99613986c2f283fb2325a5cf47e4215f"
+    },
+    {
+      "path": "ml_demand_forecast_subsequent.dig",
+      "sha256": "6a3adf1c465070d0d65b503931da4d8fd5164f268ca8201974ddaeb9f7fabf0b"
+    },
+    {
+      "path": "queries/10_prep_each/forecast_treatment.sql",
+      "sha256": "72b4c4920167e6b18d389bb3d79d50bac0a76e4b2038529809d5ce11f94dfd89"
+    },
+    {
+      "path": "queries/10_prep_each/forecast_treatment_9.sql",
+      "sha256": "53dd6a9bf58f35396f1148a90d53621ea41c4b4e7663a548728cfb3dd5bcd988"
+    },
+    {
+      "path": "queries/10_prep_each/prep_time_slot_hourly.sql",
+      "sha256": "6760c21e0fb45e35419cda87313fd7f9d1ca11ef06af9262d925bde6c5251bc6"
+    },
+    {
+      "path": "queries/10_prep_each/result_timeslot.sql",
+      "sha256": "e3270727c900a32ba449add51c8fd49135819d05dadf864320a3fdfc3683a3ea"
+    },
+    {
+      "path": "queries/10_prep_each/result_timeslot_old.sql",
+      "sha256": "ddc6bb88ca4f46c6a8ed8982f9d0ed438e48cfa298781d6396031e9f932c7a28"
+    },
+    {
+      "path": "queries/10_prep_each/result_treatment.sql",
+      "sha256": "204be0fe5bc9b59a85340eeea0a6c03ebb7e8586ab3f061fefc967c10919681a"
+    },
+    {
+      "path": "queries/20_join_all/join_all.sql",
+      "sha256": "edc034cd382c957a17c67d77d1a00ef0a45dcbe2be3f5de71ee19f75aa47f08e"
+    },
+    {
+      "path": "queries/30_lost_opportunity/prep_sys_reservation_logs_with_therapy_date.sql",
+      "sha256": "505a3208f605ae3bba655953bcee50bea19bff6c93aa6b37c24c77f4046afc9e"
+    },
+    {
+      "path": "queries/30_lost_opportunity/z_lost_opportunity_analytics_fin.sql",
+      "sha256": "e691356de437ffaafdb4c63fa8b135d16ffe56fae76397d7ab42a9e77475e8ab"
+    },
+    {
+      "path": "queries/30_lost_opportunity/z_lost_opportunity_analytics_fin_agg.sql",
+      "sha256": "d6822e4a915a84868325d3ab1f428505e8a20406db1ca98dd7ec7c2041e77cd3"
+    },
+    {
+      "path": "queries/30_lost_opportunity/z_lost_opportunity_analytics_flag.sql",
+      "sha256": "fd689c66c28d6ca620ed2738a5b40979a6049e189c527d968049a67f4673f8a8"
+    },
+    {
+      "path": "queries/30_lost_opportunity/z_lost_opportunity_analytics_raw.sql",
+      "sha256": "137f8b7ea3cdd62d9e71947cab5bc350e57e3c14acf16f73714666a1ba08ec24"
+    },
+    {
+      "path": "queries/30_lost_opportunity/z_lost_opportunity_analytics_raw_by_user.sql",
+      "sha256": "9758b5fa43a3d5d33db084cd306ca9e5d2819444d2842b8c8b54949ac306cdf3"
+    },
+    {
+      "path": "queries/30_lost_opportunity/z_lost_opportunity_analytics_raw_tmp.sql",
+      "sha256": "3e3a4e58e3911145c9e739f4a391cdd13304faff53cb09bcc211f0d9f8b1e58a"
+    },
+    {
+      "path": "queries/31_prep_lost_opportunity/prep_lost_opportunity.sql",
+      "sha256": "4dc451f4b5c71b4391f731ac573e1b4529b3b1302511031d19813333647143fd"
+    },
+    {
+      "path": "queries/40_join_all_with_params/prep_join_all_with_lost_opps.sql",
+      "sha256": "0243aaa930d215ec229ccd6e9a7f63b6ed95ddcf3fd5fcc1415479ee8050bb24"
+    },
+    {
+      "path": "queries/50_fin_timeslot_raw/update_vtable.sql",
+      "sha256": "de3fe0dc3c56198549d258065b41e4c72c7f9e4146fb36634bd1cd633ccfff5b"
+    },
+    {
+      "path": "queries/60_fin_timeslot_raw_fixed/update_vtable.sql",
+      "sha256": "c225992265140ba6730146a4e6f9dc978f88261006dbfbae3055ed5b7da069ef"
+    },
+    {
+      "path": "queries/70_syndicate_to_s3/create_htable_prd.sql",
+      "sha256": "559edb91908b4aaf9258c4fd18287a60fb1c165b415bd39b028622bd5b80812d"
+    },
+    {
+      "path": "queries/70_syndicate_to_s3/create_htable_stg.sql",
+      "sha256": "298b62d877bf76f760c4818e8a54d2ab72fc8b68d555bdbb926ae523c225f657"
+    },
+    {
+      "path": "queries/80_syndicate_to_s3/create_quest_slot.sql",
+      "sha256": "f6afdc35b5f4eb5fd119185ad9c8042d8979ed2bd8a5fa2b9677830c4ff20717"
+    },
+    {
+      "path": "queries/agg_treatment/sql_1/get_shop_id.sql",
+      "sha256": "1859d7f30b675eef22781513eb7cbd6aeb7e6f73e4c63c68e1bacab883e898ca"
+    },
+    {
+      "path": "queries/agg_treatment/sql_2/prep_treatment_htable_hourly.sql",
+      "sha256": "cd212d06c29c4d3b70ac2e73ad993e7bf05ed52a64358ee75864f703e2893834"
+    },
+    {
+      "path": "queries/agg_treatment/sql_2/prep_treatment_htable_hourly_fixed_1.sql",
+      "sha256": "f5f710961f77f51de2b961f1849325fcda0f2131c23a9d32f33bbdbe0e72733e"
+    },
+    {
+      "path": "queries/agg_treatment/sql_2/prep_treatment_htable_hourly_fixed_2.sql",
+      "sha256": "9677d56b1c321137e730f3086d5710d0ae6d5039fa7f4f7da47948b48034ac1e"
+    },
+    {
+      "path": "queries/agg_treatment/sql_2/prep_treatment_htable_hourly_fixed_3.sql",
+      "sha256": "b0afdd81fcf97696559056f56287328acbec337620610b810f45f6fd5e1ce428"
+    },
+    {
+      "path": "queries/create_forbid_quest_entry_prd.sql",
+      "sha256": "bdb00dbb0b93b85aea6e6f7fd346ec11a9e79d70f4e7d7d4c33b248585170727"
+    },
+    {
+      "path": "queries/prep_treatment/sql_1/prep_treatment_from_to.sql",
+      "sha256": "daa3f0d1c24a8828e2edc644a59e6aa7d777d07ff403e9a4a673f4f42b8844c2"
+    },
+    {
+      "path": "queries/prep_treatment/sql_2/prep_treatment_vtable_minutely.sql",
+      "sha256": "3d2ca61b07752cda7ed9d428dee89408b5ef1fe26107152e508fc34f2323134e"
+    },
+    {
+      "path": "queries/prep_treatment/sql_3/prep_treatment_vtable_hourly.sql",
+      "sha256": "a4d7d773d533846ea4a85539b0555424a8dba076c591bcbd13ef6d1e4254582b"
+    },
+    {
+      "path": "queries/prep_treatment/sql_4/insert_prep_treatment_vtable_hourly.sql",
+      "sha256": "88077b59637799cf64d6a93d6ac70ab4c99e3b11e9e1a5b4e87b478036f09ba6"
+    },
+    {
+      "path": "queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_0.sql",
+      "sha256": "1c674d0b8bb159198720d3bf99c52c67fc8a36a29b992805346d8ec3c0cab9ca"
+    },
+    {
+      "path": "queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_1.sql",
+      "sha256": "89e89bcd8ad8f5ae47244bcc20d6746f6a0eea7740e7671d2d03dab9c33cc622"
+    },
+    {
+      "path": "queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_2.sql",
+      "sha256": "bd6f7ccdf8f0a6b8d03a4c15c6a6e9f83593122968942badd959fc1951330f43"
+    },
+    {
+      "path": "queries/prep_treatment/sql_5/prep_treatment_vtable_hourly_fixed_3.sql",
+      "sha256": "c34839f3ba59caad43d45925575e41a9d060255500e06efffc8bea711d7b7c70"
+    },
+    {
+      "path": "queries/prep_work/sql_1/prep_work_from_to.sql",
+      "sha256": "3e0b0b12b41f5b4fe69c4f9ed6f397739f797803f5a5edd7122856295078f641"
+    },
+    {
+      "path": "queries/prep_work/sql_2/prep_work_vtable_minutely.sql",
+      "sha256": "dda9405ff5e53fd2c6ca6a3e583e8e6f28e7137d21d67696f599ec3cde5d9faf"
+    },
+    {
+      "path": "queries/prep_work/sql_3/prep_break_vtable_minutly.sql",
+      "sha256": "c051fab16fb341d736b6b1e1f9086b7d6885cdf0988455a8432132c0f0534d71"
+    },
+    {
+      "path": "queries/prep_work/sql_4/prep_workbreak_vtable_minutely.sql",
+      "sha256": "33d77b9ef8be4e64a7c75012a2249ee5b8d56140dbe0f51a1e5bdd6d9be95228"
+    },
+    {
+      "path": "th_2200/create_quest_time_slot.sql",
+      "sha256": "5012371ea79555d67bdd781a6925ce0ae616b160a6cf66119a96e9137842c8ec"
+    },
+    {
+      "path": "th_2200/send_quest_time_slot.sql",
+      "sha256": "78b71be27e06a6f87b65184cd07ed4001fe1d144614b1dd0144774e12b45554c"
+    },
+    {
+      "path": "thu_0000/prep_entry_preference_survey.sql",
+      "sha256": "594ee26ed4e9ca8d5bdfc58b362caf1ba2c4e341b0bcc1b1336073cf1e22118a"
+    },
+    {
+      "path": "thu_0000/prep_entry_preference_survey_prd.sql",
+      "sha256": "85f5f9c98d2c9f4b27b960a98bdfac127586c4fa8500dfb15066c93ca368bc95"
+    },
+    {
+      "path": "thu_0000/selection_time_slot.sql",
+      "sha256": "48868ec59eaa4fd08263e322917683dacee9f7269bf5d922ef17e484b0d76053"
+    },
+    {
+      "path": "thu_0000/timeslot_entry_elected_prep.sql",
+      "sha256": "9076c7d40e2f57bba087457948d930a4256e2606384491dca3553347ad6403f0"
+    },
+    {
+      "path": "thu_0000/timeslot_entry_elected_raw.sql",
+      "sha256": "f4f1cb5021f98f4d9b6d3f20838da2f6095f3b7f7f5245e12cf2bcc70c8067bf"
+    },
+    {
+      "path": "thu_0000/timeslot_entry_elected_result_hv.sql",
+      "sha256": "c14f795f7733a9250beda4ee61cc7bf5b77bbe0e77571752da093739af71cddd"
+    },
+    {
+      "path": "thu_0000/timeslot_entry_elected_result_vh.sql",
+      "sha256": "6a96615ac1e19635b6ece674b92c9024f60a20b2a4856e07b80b225d84938489"
+    },
+    {
+      "path": "thu_2200/create_quest_stop_tp_list.sql",
+      "sha256": "fc4d247dcf6edd74d47c7126d3a48b4055f5e07352140b812817cda37fd69474"
+    },
+    {
+      "path": "z_p998__scan_references.dig",
+      "sha256": "8c627ddef6b3228cc3e320d62b35a6906b029ed885a365a76d52c2174e3c092d"
+    }
+  ],
+  "project_id": "331980",
+  "project_name": "ml_demand_forecast",
+  "revision": "ed165b645bca4c77ad5f460b67138db3"
+}

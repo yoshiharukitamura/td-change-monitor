@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "25313454",
+    "name": "_l0_mysql_hp"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": null,
+    "connector_type": null
+  },
+  "query_id": "2752789",
+  "query_name": "検証_ビンゴ達成者数_デジ戦TBL",
+  "query_string": "select\n  count(distinct customer_id) as bingo_customer_uu\n  , count(distinct if(bingo_ticket_mission_id = 1 and status = 1, customer_id)) as bingo_1_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 2 and status = 1, customer_id)) as bingo_2_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 3 and status = 1, customer_id)) as bingo_3_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 4 and status = 1, customer_id)) as bingo_4_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 5 and status = 1, customer_id)) as bingo_5_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 6 and status = 1, customer_id)) as bingo_6_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 7 and status = 1, customer_id)) as bingo_7_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 8 and status = 1, customer_id)) as bingo_8_complete_uu\n  , count(distinct if(bingo_ticket_mission_id = 9 and status = 1, customer_id)) as bingo_9_complete_uu\nfrom\n  bingo_ticket_mission_status\nwhere\n  customer_id in (select distinct customer_id from bingo_ticket_mission_status where substr(created, 1, 10) between '2025-11-17' and '2026-02-02')\n  and (completed_date is null or substr(completed_date, 1, 10) between '2025-11-17' and '2026-02-02')",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

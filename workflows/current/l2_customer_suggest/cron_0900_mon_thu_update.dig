@@ -1,0 +1,8 @@
+timezone: Asia/Tokyo
+schedule:
+  cron>: 0 9 * * 1,2,3,4
+
++l2_customer_suggest:
+  require>: l2_customer_suggest
+  session_time: ${moment(session_time).format()}
+  rerun_on: all

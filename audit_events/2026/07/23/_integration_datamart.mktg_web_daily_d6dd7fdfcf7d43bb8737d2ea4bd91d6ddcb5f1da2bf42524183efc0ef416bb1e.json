@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "d6dd7fdfcf7d43bb8737d2ea4bd91d6ddcb5f1da2bf42524183efc0ef416bb1e",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_integration_datamart",
+  "events": [
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "fddca644-098a-4f24-9f65-83843ded7df2",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297461363",
+      "resource_id": "297461363",
+      "table": "mktg_web_daily",
+      "time": "2026-07-18T22:33:15+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "2f1c889a-9de6-4f4c-adf8-4e102c87f881",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297671367",
+      "table": "mktg_web_daily",
+      "time": "2026-07-18T22:33:17+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "2712c2cf-dd66-4281-ad8b-03ef86de9b77",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297671367",
+      "resource_id": "297671367",
+      "table": "mktg_web_daily",
+      "time": "2026-07-19T22:33:46+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "43e6f0c2-315b-462b-bedd-e68d457d9f2c",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297891241",
+      "table": "mktg_web_daily",
+      "time": "2026-07-19T22:33:48+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "69b058f6-b2c2-434d-b0d6-97c6f02dda5f",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297891241",
+      "resource_id": "297891241",
+      "table": "mktg_web_daily",
+      "time": "2026-07-20T22:33:47+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "28c4589a-36f6-404c-9f45-0b57b086f41b",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298106620",
+      "table": "mktg_web_daily",
+      "time": "2026-07-20T22:33:49+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "203b564a-0357-42b8-809b-5eb52b7e0db2",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298106620",
+      "resource_id": "298106620",
+      "table": "mktg_web_daily",
+      "time": "2026-07-21T22:33:46+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "4035f8cb-ac11-4462-bba2-939b9e8228f4",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298324603",
+      "table": "mktg_web_daily",
+      "time": "2026-07-21T22:33:48+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "679c093c-a45c-4321-a257-c5d023ae25ff",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298324603",
+      "resource_id": "298324603",
+      "table": "mktg_web_daily",
+      "time": "2026-07-22T22:33:47+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "56f02f92-6e73-441d-97e8-a84103891977",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298545036",
+      "table": "mktg_web_daily",
+      "time": "2026-07-22T22:33:50+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_delete",
+      "id": "5c928da6-4faa-4c1c-bb19-2b3c2e9c2fa2",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298545036",
+      "resource_id": "298545036",
+      "table": "mktg_web_daily",
+      "time": "2026-07-23T22:33:47+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_integration_datamart",
+      "event_name": "table_create",
+      "id": "e4d49868-b76c-4077-8a79-b95d7d172697",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298764738",
+      "table": "mktg_web_daily",
+      "time": "2026-07-23T22:33:49+00:00",
+      "user_email": "risa.kiyomiya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "mktg_web_daily"
+}

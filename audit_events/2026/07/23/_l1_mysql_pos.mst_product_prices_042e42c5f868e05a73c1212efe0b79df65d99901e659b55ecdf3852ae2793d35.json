@@ -1,0 +1,158 @@
+{
+  "aggregated_change_id": "042e42c5f868e05a73c1212efe0b79df65d99901e659b55ecdf3852ae2793d35",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "_l1_mysql_pos",
+  "events": [
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "06f10195-f011-4221-88cd-b2c0bde42e44",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297404625",
+      "resource_id": "297404625",
+      "table": "mst_product_prices",
+      "time": "2026-07-18T18:27:57+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "5ba4f46e-b39c-477e-9e1b-ab8e0c11808c",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297617284",
+      "table": "mst_product_prices",
+      "time": "2026-07-18T18:27:58+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "28ce61ae-676f-4a98-8165-4424a6b1a3b9",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "297836223",
+      "table": "mst_product_prices",
+      "time": "2026-07-19T18:14:39+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "e4194df6-4564-446b-9a87-2d80604568f4",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297617284",
+      "resource_id": "297617284",
+      "table": "mst_product_prices",
+      "time": "2026-07-19T18:14:39+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "4d64a0a2-716a-4bf7-8bcc-735cdf10b01a",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/297836223",
+      "resource_id": "297836223",
+      "table": "mst_product_prices",
+      "time": "2026-07-20T18:26:35+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "a10a4b5c-5ae7-45bf-93a3-2f9ea8477713",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298052098",
+      "table": "mst_product_prices",
+      "time": "2026-07-20T18:26:36+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "088c1906-9bd1-4f1c-b88e-4c3b67a73a75",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298052098",
+      "resource_id": "298052098",
+      "table": "mst_product_prices",
+      "time": "2026-07-21T18:16:50+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "d3f12485-57bf-4a73-8fc5-7e1a90d6916f",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298267379",
+      "table": "mst_product_prices",
+      "time": "2026-07-21T18:16:50+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "6468193e-f695-4a74-90e1-fde76d3841c1",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298267379",
+      "resource_id": "298267379",
+      "table": "mst_product_prices",
+      "time": "2026-07-22T18:27:42+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "8f0242b8-07d7-4091-9982-8cba6c2f78cc",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298491736",
+      "table": "mst_product_prices",
+      "time": "2026-07-22T18:27:42+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_delete",
+      "id": "f9854ab8-b1e1-4d2c-a1cf-3487dd2bcbaa",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/298491736",
+      "resource_id": "298491736",
+      "table": "mst_product_prices",
+      "time": "2026-07-23T18:26:57+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    },
+    {
+      "database": "_l1_mysql_pos",
+      "event_name": "table_create",
+      "id": "8cb00bfe-b59f-40da-bd31-0d6652c3ff72",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298710199",
+      "table": "mst_product_prices",
+      "time": "2026-07-23T18:26:58+00:00",
+      "user_email": "tatsuki.oya+riraku@hiveiq.co.jp"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "mst_product_prices"
+}

@@ -1,0 +1,165 @@
++create_mapping_table:
+  for_each>:
+    lang: ['ja', 'en']
+  _parallel: true
+  _do:
+    +create:
+      td_ddl>:
+      empty_tables: ['cdp_tmp_word_tagging_category_mapping_${lang}']
+      _retry: 5
+
+    +load:
+      td_load>: word_tagging/s3_load_category_mapping.yml
+      table: cdp_tmp_word_tagging_category_mapping_${lang}
+      _retry: 5
+
++behaviors_each:
+  for_each>:
+    behavior: ${JSON.parse(http.last_content)["enrichments"]["word_tagging"]["behaviors"]}
+  _parallel: true
+  _do:
+    # Step 0 - Extract subset of behavioral records observed within the most recent 30 days
+    +preprocess:
+      td>: word_tagging/behavior_preprocess.sql
+      create_table: cdp_tmp_word_tagging_${behavior}
+      _retry: 5
+      engine: hive
+
+    # Step 1 - Extract keywords from articles
+    +articles:
+      +count:
+        td>: word_tagging/articles_count.sql
+        store_last_results: true
+        _retry: 5
+
+      +detect_language:
+        td>: word_tagging/articles_detect_language.sql
+        store_last_results: true
+        _retry: 5
+
+      # Write to a tmp table because the table is used twice by the next query
+      +tokenize_ja:
+        if>: ${td.last_results.lang === 'ja'}
+        _do:
+          td>: word_tagging/articles_tokenize_ja.sql
+          create_table: cdp_tmp_word_tagging_${behavior}_articles_tokens
+          engine: hive
+          _retry: 5
+
+      +tokenize_en:
+        if>: ${td.last_results.lang === 'en'}
+        _do:
+          +tokenize:
+            td>: word_tagging/articles_tokenize_en.sql
+            create_table: cdp_tmp_word_tagging_${behavior}_articles_tokens
+            engine: hive
+            _retry: 5
+
+          +filter_meaningless_bigrams:
+            td>: word_tagging/articles_filter_bigrams.sql
+            create_table: cdp_tmp_word_tagging_${behavior}_articles_tokens_filtered
+            engine: hive
+            _retry: 5
+
+          +replace_tokens_table:
+            td_ddl>:
+            rename_tables:
+            - from: cdp_tmp_word_tagging_${behavior}_articles_tokens_filtered
+              to: cdp_tmp_word_tagging_${behavior}_articles_tokens
+            _retry: 5
+
+      # (1) Compute TF-IDF score
+      # (2) Obtain top-20 words as keywords of article
+      +find_keywords:
+        td>: word_tagging/articles_keywords.sql
+        create_table: cdp_tmp_word_tagging_${behavior}_articles_keywords
+        engine: hive
+        _retry: 5
+
+      +clean_tmp_tables:
+        td_ddl>:
+        drop_tables: ['cdp_tmp_word_tagging_${behavior}_articles_tokens']
+        _retry: 5
+
+    # Step 3 - Join customers behavioral data with article data
+    +behavior:
+      +enrich:
+        td>: word_tagging/behavior_enrich_by_articles.sql
+        create_table: cdp_tmp_word_tagging_${behavior}_enriched
+        engine: hive
+        _retry: 5
+
+      +replace_preprocessed_source_table:
+        td_ddl>:
+        rename_tables:
+        - from: cdp_tmp_word_tagging_${behavior}_enriched
+          to: cdp_tmp_word_tagging_${behavior}
+        _retry: 5
+
+    # Step 4 - Aggregate keywords of customer's visited articles as "interest
+    # words" and infer "affinity categories" by using the mapping table
+    +customers:
+      _parallel: true
+
+      +tag:
+        td>: word_tagging/customers_tags.sql
+        create_table: cdp_tmp_word_tagging_${behavior}_customers_tags
+        engine: hive
+        _retry: 5
+
+      +category:
+        +join:
+          td>: word_tagging/customers_map_all_categories.sql
+          create_table: cdp_tmp_word_tagging_${behavior}_customers_categories_all
+          engine: hive
+          _retry: 5
+
+        +filter:
+          _parallel: true
+
+          +main:
+            td>: word_tagging/customers_filter_categories.sql
+            create_table: cdp_tmp_word_tagging_${behavior}_customers_categories_main
+            engine: hive
+            _export:
+              parent_category_is: 'NULL'
+            _retry: 5
+
+          +sub:
+            td>: word_tagging/customers_filter_categories.sql
+            create_table: cdp_tmp_word_tagging_${behavior}_customers_categories_sub
+            engine: hive
+            _export:
+              parent_category_is: 'NOT NULL'
+            _retry: 5
+
+        +combine:
+          td>: word_tagging/customers_combine_main_sub_categories.sql
+          create_table: cdp_tmp_word_tagging_${behavior}_customers_categories
+          engine: hive
+          _retry: 5
+
+    +clean_tmp_tables:
+      td_ddl>:
+      drop_tables: ['cdp_tmp_word_tagging_${behavior}_customers_categories_all', 'cdp_tmp_word_tagging_${behavior}_customers_categories_main', 'cdp_tmp_word_tagging_${behavior}_customers_categories_sub']
+      _retry: 5
+
+    # CDP-208 Hold intermediate article <> keyword table
+    +dump_articles:
+      td_ddl>:
+      rename_tables:
+      - from: cdp_tmp_word_tagging_${behavior}_articles_keywords
+        to: ${behavior}_articles_keywords
+      _retry: 5
+
++customer:
+  +aggregate:
+    td>: word_tagging/behaviors_aggregate.sql
+    create_table: cdp_tmp_word_tagging
+    engine: hive
+    _retry: 5
+
+  +clean:
+    td_ddl>:
+    drop_tables: ${JSON.parse(http.last_content)["enrichments"]["word_tagging"]["behaviors"].join('|').replace(/([^\|]+)/g, 'cdp_tmp_word_tagging_$1_customers_tags|cdp_tmp_word_tagging_$1_customers_categories').split('|')}
+    _retry: 5

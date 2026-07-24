@@ -1,0 +1,48 @@
+{
+  "aggregated_change_id": "86a60c21fe8c79f49627c0df3f9db4a435d074afb08b8de4cf0eb1b735a6741b",
+  "backlog_issue_key": null,
+  "change_kind": "table_recreate",
+  "database": "l2_demand_forecast_auto",
+  "events": [
+    {
+      "database": "l2_demand_forecast_auto",
+      "event_name": "table_delete",
+      "id": "b9849220-5cae-455c-aa1d-6d95d3affc5e",
+      "requested_http_verb": "DELETE",
+      "requested_path_info": "/tables/296943844",
+      "resource_id": "296943844",
+      "table": "timeslot_entry_elected_raw",
+      "time": "2026-07-22T16:00:25+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    },
+    {
+      "database": "l2_demand_forecast_auto",
+      "event_name": "table_create",
+      "id": "55caa67a-2a5d-41f1-9873-fb000c11e6f8",
+      "requested_http_verb": "POST",
+      "requested_path_info": "/internal/tables",
+      "resource_id": "298467875",
+      "table": "timeslot_entry_elected_raw",
+      "time": "2026-07-22T16:00:27+00:00",
+      "user_email": "kyohei.tomita+riraku@treasure-data.com"
+    }
+  ],
+  "net_diff": {
+    "added_columns": [],
+    "alias_changes": [],
+    "description_changes": [],
+    "order_changes": [],
+    "removed_columns": [],
+    "type_changes": []
+  },
+  "previous_table": null,
+  "run": {
+    "audit_query_from": "2026-07-18T14:41:33.484853+00:00",
+    "audit_query_to": "2026-07-24T03:47:59.912486+00:00",
+    "backlog_issue_count": 0,
+    "changed_table_count": 192,
+    "git_file_change_count": 577,
+    "run_id": "ecc205ba1fb749849d48346be269418b"
+  },
+  "table": "timeslot_entry_elected_raw"
+}

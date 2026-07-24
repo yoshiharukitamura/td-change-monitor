@@ -1,0 +1,78 @@
+###############################################################
+# タイムゾーンの設定と変数の定義
+###############################################################
+timezone: Asia/Tokyo
+
+_export:
+  ## Output Database
+  td:
+    database: z_admin
+  ## Input/Output Google Sheets
+  gs:
+    # td_authentication_id: your_authentication_id # for import
+    # result_connection: your_connection_name # for export
+    # key: "spreadsheet_key" # for import / export
+    td_authentication_id: 122337
+    result_connection: hiveiq_tomita
+    key: 1BN_o_z2UY9r6fc9OGfLPBc8OwdmyB4IThMOVu0NPxhY
+  ## Data Catalog List
+  data_catalog_list:
+    - dc_weblog
+    - dc_admin
+  ## Database List
+  database_list:
+    dc_weblog:
+      - l0_weblog
+      - l1_weblog
+    dc_admin:
+      - td_audit_log
+
+
+###############################################################
+# ワークフローの処理
+###############################################################
+## 初回実行用のエラー回避と作業テーブルの初期化
++td_ddl:
+  td_ddl>:
+  create_databases: ["${td.database}"]
+  create_tables: ${data_catalog_list}
+  empty_tables: ["src_data_catalog_columns"]
+
+## データカタログリストの各カタログリストに対して処理
++for_each_data_catalog_list:
+  for_each>:
+    data_catalog: ${data_catalog_list}
+  _do:
+    ## データカタログを更新しているスプレッドシートを取り込み（書き込みができればSS以外での運用も可）
+    +load_from_google_sheets:
+      td_load>: p100_/google_sheets.yml
+      table: ${data_catalog}
+
+    ## target_databasesで指定したデータベースに対して繰り返し処理
+    +get_table_list:
+      td_for_each>: p100_/get_table_list.sql
+      _parallel:
+        limit: 5
+      _do:
+        ## データベースxテーブル毎にサブプロシージャを呼び出し
+        require>: _p100_sub__data_catalog
+        session_time: ${moment(session_time).add(td.each.seq, 's').format()}
+        rerun_on: all
+        params:
+          database: ${td.database}
+          data_catalog: ${data_catalog}
+          table_schema: ${td.each.table_schema}
+          table_name: ${td.each.table_name}
+
+    ## 取得したデータをデータカタログ出力用に結合してスプレッドシートへ出力
+    +merge:
+      td>: p100_/merge_data_catalog.sql
+      result_connection: ${gs.result_connection}
+      result_settings:
+        spreadsheet_id: ${gs.key}
+        sheet_title: ${data_catalog}
+        mode: truncate
+        rows_threshold: 10000
+        set_nil_for_double_nan: true
+        range: A1
+        value_input_option: RAW

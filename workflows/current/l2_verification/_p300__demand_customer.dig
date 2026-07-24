@@ -1,0 +1,174 @@
+timezone: Asia/Tokyo
+
+_export:
+  ## Output Database
+  td:
+    database: l2_verification
+  # include variables
+  !include : p300_/segments_list.dig
+
+### error handling ###
+# _error:
+#   require>: failure_alert
+#   project_name: functions
+#   session_time: ${moment(session_date).format()}
+#   rerun_on: all
+#   params:
+#     failure_session_id: ${session_id}
+#     # notify: {mail: true, slack: true}
+#     notify: {mail: false, slack: false}
+
+### main process ###
+# Iterate over all tables defined in the table_list
++for_each_tables:
+  for_each>:
+    segment: ${segments_list}
+  _parallel:
+    limit: 3
+  _do:
+    # 対象データのデータを集計しスプレッドシートに出力
+    +demand_verification_customer:
+      td>: p300_/demand_verification_customer.sql
+      result_connection: td_share
+      result_settings:
+        spreadsheet_id: ${segment.ss_key}
+        sheet_title: ${segment.name}
+        mode: truncate
+        rows_threshold: 10000
+        set_nil_for_double_nan: true
+        range: A1
+        value_input_option: RAW
+
+# +tmp_tables_1:
+#   _export:
+#     segment:
+#       ss_key: "1m7xwV-bdWRgJbz52h296Ob7afKAJlDIK57IYNGE5FU0"
+#       name: "日曜セッション（特典なし）B"
+#       before_from: "2026-06-04"
+#       before_to: "2026-06-10"
+#       after_from: "2026-06-11"
+#       after_to: "2026-06-17"
+
+#   +demand_verification_customer_tmp:
+#     td>: p300_/demand_verification_customer_tmp_4.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${segment.ss_key}
+#       sheet_title: ${segment.name}
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW
+
+# +tmp_tables_1:
+#   _export:
+#     segment:
+#       ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#       name: "お盆前の予約促進メルマガ（特典なし）_v2"
+#       before_from: "2025-07-26"
+#       before_to: "2025-07-30"
+#       after_from: "2025-08-09"
+#       after_to: "2025-08-13"
+# 
+#   +demand_verification_customer_tmp:
+#     td>: p300_/demand_verification_customer_tmp.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${segment.ss_key}
+#       sheet_title: ${segment.name}
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW
+
+# +tmp_tables_2:
+#   _export:
+#     segment:
+#       ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#       name: "お盆明けの来店促進メルマガ（特典なし）_v2"
+#       before_from: "2025-07-28"
+#       before_to: "2025-08-03"
+#       after_from: "2025-08-18"
+#       after_to: "2025-08-24"
+# 
+#   +demand_verification_customer_tmp:
+#     td>: p300_/demand_verification_customer_tmp_2.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${segment.ss_key}
+#       sheet_title: ${segment.name}
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW
+
+# +tmp_tables_3:
+#   _export:
+#     segment:
+#       ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#       name: "台風後の来店促進（特典なし）"
+#       before_from: "2025-08-05"
+#       before_to: "2025-08-07"
+#       after_from: "2025-09-09"
+#       after_to: "2025-09-11"
+# 
+#   +demand_verification_customer_tmp:
+#     td>: p300_/demand_verification_customer_tmp_3.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${segment.ss_key}
+#       sheet_title: 台風後の来店促進（特典なし）_v2
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW
+
+# # 8/4抽出、配信分の新規限定クーポン_300円の対象者リストの修正
+# +tmp_correct_results_1:
+#   _export:
+#     segment:
+#       ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#       name: "新規限定クーポン_300円"
+#       before_from: "2025-07-29"
+#       before_to: "2025-08-04"
+#       after_from: "2025-08-05"
+#       after_to: "2025-08-11"
+#   
+#   +demand_verification_correct_1:
+#     td>: p300_/demand_verification_customer_correct_tmp.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${segment.ss_key}
+#       sheet_title: 新規限定クーポン_300円_修正
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW
+
+# # 8/4抽出、配信分の新規限定クーポン_500円の対象者リストの修正
+# +tmp_correct_results_2:
+#   _export:
+#     segment:
+#       ss_key: "1_m0tt8cIpYvX4ExXSWLBXjof4ti-Jnk8lSqH5kWeAiQ"
+#       name: "新規限定クーポン_500円"
+#       before_from: "2025-07-29"
+#       before_to: "2025-08-04"
+#       after_from: "2025-08-05"
+#       after_to: "2025-08-11"
+#   
+#   +demand_verification_correct_2:
+#     td>: p300_/demand_verification_customer_correct_tmp.sql
+#     result_connection: td_share
+#     result_settings:
+#       spreadsheet_id: ${segment.ss_key}
+#       sheet_title: 新規限定クーポン_500円_修正
+#       mode: truncate
+#       rows_threshold: 10000
+#       set_nil_for_double_nan: true
+#       range: A1
+#       value_input_option: RAW

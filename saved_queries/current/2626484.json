@@ -1,0 +1,24 @@
+{
+  "database": {
+    "id": "25337357",
+    "name": "_l1_mysql_core"
+  },
+  "engine": {
+    "type": "trino",
+    "version": "stable"
+  },
+  "output_settings": {
+    "config_sha256": "da8069c5e4cb7ad5426bcbfaf77e2923122024d12f5fbbd1121e61141129c127",
+    "connector_type": "google_sheets"
+  },
+  "query_id": "2626484",
+  "query_name": "F2転換率_TP基準",
+  "query_string": "with order_log as (\n  select\n    customer_id\n    , business_date\n    , therapist_id\n    , order_id\n    , shop_no\n    , shop_name\n    , row_number() over (partition by customer_id order by business_date) as order_sequence\n    , date_diff('week', date(business_date), date(lead(business_date) over (partition by customer_id order by business_date))) as diff_lead_order\n  from\n    _integration_datamart.cls_order_detail\n  left join (select distinct property_id, shop_no, shop_name from _integration_datamart.mst_shop)\n  using (property_id)\n  group by\n    1,2,3,4,5,6\n)\n\n, last_shop as (\n  select\n    therapist_id\n    , shop_no\n    , shop_name\n  from (\n    select\n      therapist_id\n      , shop_no\n      , shop_name\n      , row_number() over (partition by therapist_id order by business_date desc) as rn\n    from order_log\n    where business_date >= '2023-01-01'\n  )\n  where rn = 1\n)\n\nselect\n  t0.therapist_id as \"セラピストID\"\n  , therapist_no as \"セラピストNo\"\n  , if(deleted = 0, '在籍', '解約') as \"在籍/解約（10月16日時点）\"\n  , min(business_date) as \"初回施術日\"\n  , max(business_date) as \"直近施術日\"\n  , t2.shop_no as \"店舗No（直近施術店舗 10月16日時点）\"\n  , t2.shop_name as \"店舗名（直近施術店舗 10月16日時点）\"\n  , count(distinct if(business_date <= '2025-07-24', order_id)) as \"合計施術数(~25年7月24日)\"\n  , count(distinct if(business_date >= '2023-01-01' and business_date <= '2025-07-24' and order_sequence = 1, order_id)) as \"F1施術数(23年1月1日~25年7月24日)\"\n  , count(distinct if(business_date >= '2023-01-01' and business_date <= '2025-07-24'and order_sequence = 1 and diff_lead_order <= 12, order_id)) as \"F2施術数(23年1月1日~25年7月24日)\"\n  , coalesce(1.0 * count(distinct if(business_date >= '2023-01-01' and business_date <= '2025-07-24' and order_sequence = 1 and diff_lead_order <= 12, order_id)) / \n      count(distinct if(business_date >= '2023-01-01' and business_date <= '2025-07-24' and order_sequence = 1, order_id)), 0) as \"F2転換率(23年1月1日~25年7月24日)\"\nfrom\n  order_log as t0\nleft join\n  _l1_mysql_core.therapist as t1\n  on t0.therapist_id = t1.therapist_id\nleft join\n  last_shop as t2\n  on t0.therapist_id = t2.therapist_id\ngroup by\n  1,2,3\nhaving\n  max(business_date) >= '2023-01-01'\n  and count(distinct if(business_date <= '2025-07-24', order_id)) >= 1",
+  "schedule": {
+    "cron": null,
+    "delay": 0,
+    "priority": 0,
+    "retry_limit": 0,
+    "timezone": "UTC"
+  }
+}

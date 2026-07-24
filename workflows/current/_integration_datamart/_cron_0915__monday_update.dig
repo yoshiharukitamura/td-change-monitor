@@ -1,0 +1,12 @@
+### Timezone Setting ###
+timezone: Asia/Tokyo
+
+### Schedule Setting ###
+#schedule:
+#  cron>: 15 9 * * 1
+
+### Manage Workflows ###
++_p103__app_log_update:
+  require>: _p103__app_log_update
+  session_time: ${moment(session_date).format()}
+  rerun_on: all
