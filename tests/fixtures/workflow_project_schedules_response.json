@@ -1,0 +1,46 @@
+{
+  "schedules": [
+    {
+      "id": "261426",
+      "project": {
+        "id": "1346232",
+        "name": "_integration_datamart"
+      },
+      "workflow": {
+        "id": "15949212",
+        "name": "_cron_0700__monday_update"
+      },
+      "nextRunTime": "2026-07-26T22:00:00Z",
+      "nextScheduleTime": "2026-07-27T07:00:00+09:00",
+      "disabledAt": null
+    },
+    {
+      "id": "381148",
+      "project": {
+        "id": "1346232",
+        "name": "_integration_datamart"
+      },
+      "workflow": {
+        "id": "15949218",
+        "name": "_cron_1010__monday_update"
+      },
+      "nextRunTime": "2026-07-27T01:10:00Z",
+      "nextScheduleTime": "2026-07-27T10:10:00+09:00",
+      "disabledAt": null
+    },
+    {
+      "id": "418913",
+      "project": {
+        "id": "1346232",
+        "name": "_integration_datamart"
+      },
+      "workflow": {
+        "id": "15949220",
+        "name": "_cron_0600__daily_update"
+      },
+      "nextRunTime": "2026-07-23T21:00:00Z",
+      "nextScheduleTime": "2026-07-24T06:00:00+09:00",
+      "disabledAt": null
+    }
+  ]
+}

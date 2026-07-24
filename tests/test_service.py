@@ -15,8 +15,20 @@ from td_change_monitor.errors import (
     ExternalApiError,
     UnresolvedAuditEventsError,
 )
-from td_change_monitor.models import AuditEvent, ColumnDefinition, EventType, TableSnapshot
-from td_change_monitor.service import ChangeMonitorService
+from td_change_monitor.models import (
+    AuditEvent,
+    ColumnDefinition,
+    EventType,
+    SavedQueryDetectedChange,
+    SavedQueryDiff,
+    SavedQuerySnapshot,
+    TableSnapshot,
+)
+from td_change_monitor.resource_monitor import ResourceRunPlan
+from td_change_monitor.service import (
+    ChangeMonitorService,
+    ResourceMonitorProtocol,
+)
 from td_change_monitor.time_window import TimeWindow
 
 STATE_PATH = "state/state.json"
@@ -164,12 +176,35 @@ class FakeBacklog:
         return "PRJ-1"
 
 
+class FakeResourceMonitor:
+    """固定の追加リソース計画を返すサービス統合テスト用monitor。"""
+
+    def __init__(self, plan: ResourceRunPlan) -> None:
+        self.plan_result = plan
+
+    async def plan(
+        self,
+        *,
+        at: datetime,
+        window_start: datetime,
+        window_end: datetime,
+        bootstrap: bool,
+        workflow_project_names: dict[str, str],
+    ) -> ResourceRunPlan:
+        assert at.tzinfo is not None
+        assert window_start < window_end
+        assert not bootstrap
+        assert workflow_project_names == {}
+        return self.plan_result
+
+
 def service(
     *,
     td: FakeTreasureData,
     repository: FakeRepository,
     backlog: FakeBacklog,
     target_tables: TargetTablesConfig | None = None,
+    resource_monitor: ResourceMonitorProtocol | None = None,
     **settings_overrides: object,
 ) -> ChangeMonitorService:
     return ChangeMonitorService(
@@ -178,6 +213,7 @@ def service(
         treasure_data=td,
         repository=repository,
         backlog=backlog,
+        resource_monitor=resource_monitor,
         now_provider=lambda: datetime(2026, 7, 13, 1, 10, tzinfo=UTC),
     )
 
@@ -195,6 +231,88 @@ def audit_payload(repository: FakeRepository) -> dict[str, object]:
     payload = json.loads(item.content)
     assert isinstance(payload, dict)
     return payload
+
+
+def saved_query_snapshot(sql: str) -> SavedQuerySnapshot:
+    """サービス統合テスト用の登録クエリsnapshotを作る。"""
+    return SavedQuerySnapshot(
+        query_id="300",
+        query_name="query_a",
+        query_string=sql,
+        database_id="1",
+        database_name="db",
+        engine_type="trino",
+        engine_version="stable",
+        connector_type=None,
+        connector_config_hash=None,
+        cron=None,
+        timezone="UTC",
+        delay=0,
+        priority=0,
+        retry_limit=0,
+    )
+
+
+def test_additional_resource_issue_and_files_share_one_commit() -> None:
+    before = saved_query_snapshot("SELECT 1")
+    after = saved_query_snapshot("SELECT 2")
+    query_change = SavedQueryDetectedChange(
+        query_id="300",
+        query_name="query_a",
+        before=before,
+        after=after,
+        diff=SavedQueryDiff(
+            query_id="300",
+            sql_changed=True,
+            changed_fields=(),
+            deleted=False,
+        ),
+        change_id="query-change-id",
+        diff_path="diffs/saved_queries/2026/07/13/300_query-change-id.md",
+        github_diff_url=(
+            "https://github.example/repository/blob/main/"
+            "diffs/saved_queries/2026/07/13/300_query-change-id.md"
+        ),
+        should_create_issue=True,
+    )
+    resource_plan = ResourceRunPlan(
+        target_count=1,
+        workflow_changes=(),
+        saved_query_changes=(query_change,),
+        file_changes=(
+            FileChange(
+                "saved_queries/current/300.json",
+                b'{"query_id":"300"}',
+            ),
+            FileChange(query_change.diff_path, b"# diff"),
+        ),
+        workflow_project_names={},
+        baseline_count=0,
+    )
+    repository = FakeRepository({STATE_PATH: state_text()})
+    backlog = FakeBacklog()
+
+    summary = asyncio.run(
+        service(
+            td=FakeTreasureData(),
+            repository=repository,
+            backlog=backlog,
+            target_tables=TargetTablesConfig((), (), ()),
+            resource_monitor=FakeResourceMonitor(resource_plan),
+        ).run()
+    )
+
+    files = committed_map(repository)
+    assert summary["target_count"] == 1
+    assert summary["diff_count"] == 1
+    assert summary["issue_count"] == 1
+    assert backlog.issues == ["query-change-id"]
+    assert "- run_id:" in backlog.requests[0]["description"]
+    assert "- 対象Audit Log ID: 取得対象外" in backlog.requests[0]["description"]
+    assert "saved_queries/current/300.json" in files
+    assert query_change.diff_path in files
+    assert STATE_PATH in files
+    assert json.loads(files[STATE_PATH].content or b"{}")["version"] == 3
 
 
 def test_no_schema_change_writes_only_state_and_no_daily_run_file() -> None:
@@ -548,6 +666,7 @@ def test_bootstrap_overwrites_only_current_snapshot_without_daily_schema() -> No
     )
 
     assert summary["bootstrap"] is True
+    assert summary["baseline_count"] == 1
     assert set(committed_map(repository)) == {SCHEMA_PATH}
 
 

@@ -39,6 +39,13 @@ from td_change_monitor.rendering import (
     render_issue_description,
     render_issue_summary,
 )
+from td_change_monitor.resource_monitor import ResourceRunPlan
+from td_change_monitor.resource_rendering import (
+    render_saved_query_issue_description,
+    render_saved_query_issue_summary,
+    render_workflow_issue_description,
+    render_workflow_issue_summary,
+)
 from td_change_monitor.time_window import TimeWindow, build_optional_time_window
 
 logger = logging.getLogger(__name__)
@@ -54,6 +61,7 @@ class _RunState:
     processed_aggregated_change_ids: dict[str, datetime]
     backlog_issues: dict[str, str]
     table_ids: dict[str, str]
+    workflow_project_names: dict[str, str]
 
 
 class TreasureDataClientProtocol(Protocol):
@@ -92,6 +100,22 @@ class BacklogClientProtocol(Protocol):
         ...
 
 
+class ResourceMonitorProtocol(Protocol):
+    """Workflow・schedule・登録クエリ監視計画を作る契約を表す。"""
+
+    async def plan(
+        self,
+        *,
+        at: datetime,
+        window_start: datetime,
+        window_end: datetime,
+        bootstrap: bool,
+        workflow_project_names: Mapping[str, str],
+    ) -> ResourceRunPlan:
+        """現在状態を比較し、外部書き込み前の実行計画を返す。"""
+        ...
+
+
 class ChangeMonitorService:
     """Audit取得からBacklog・Git反映までの業務フローを統括する。"""
 
@@ -103,6 +127,7 @@ class ChangeMonitorService:
         treasure_data: TreasureDataClientProtocol,
         repository: RepositoryProtocol,
         backlog: BacklogClientProtocol,
+        resource_monitor: ResourceMonitorProtocol | None = None,
         now_provider: Callable[[], datetime] | None = None,
     ) -> None:
         """設定と外部依存を受け取り監視サービスを初期化する。
@@ -113,6 +138,7 @@ class ChangeMonitorService:
             treasure_data: Auditと現在schemaを取得するクライアント。
             repository: state・snapshot読取とGit書き込みを行うクライアント。
             backlog: 重複防止付き課題作成クライアント。
+            resource_monitor: Workflow・schedule・登録クエリの任意監視サービス。
             now_provider: テスト時に現在時刻を固定する任意関数。
         戻り値:
             なし。
@@ -122,6 +148,7 @@ class ChangeMonitorService:
         self._td = treasure_data
         self._repository = repository
         self._backlog = backlog
+        self._resource_monitor = resource_monitor
         self._now_provider = now_provider or (lambda: datetime.now(UTC))
 
     async def run(
@@ -211,36 +238,96 @@ class ChangeMonitorService:
                 f"{len(target_groups)} > {self._settings.max_changed_tables_per_run}"
             )
 
-        changes = [
-            change
-            for group in target_groups
-            if (change := await self._build_detected_change(group=group)) is not None
-        ]
+        changes: list[DetectedChange] = []
+        for group in target_groups:
+            detected_change = await self._build_detected_change(group=group)
+            if detected_change is not None:
+                changes.append(detected_change)
+        # Workflow・schedule・登録クエリはAudit Logに依存せず、安定IDの現在状態を
+        # 前回Git snapshotと比較する。同一project内の変更は1件へ集約される。
+        resource_plan = await self._plan_additional_resources(
+            at=now,
+            window_start=window.start,
+            window_end=window.end,
+            bootstrap=False,
+            workflow_project_names=state.workflow_project_names,
+        )
         # ここでは次のstate内容をメモリ上だけで作り、Backlogとpush成功まで確定しない。
         processed_audit_event_ids = dict(state.processed_audit_event_ids)
         processed_audit_event_ids.update({event.event_id: event.occurred_at for event in events})
         processed_aggregated_change_ids = dict(state.processed_aggregated_change_ids)
         processed_aggregated_change_ids.update(
-            {change.change_id: group_time(change.events) for change in changes}
+            {
+                table_change.change_id: group_time(table_change.events)
+                for table_change in changes
+            }
+        )
+        processed_aggregated_change_ids.update(
+            {
+                workflow_change.change_id: window.end
+                for workflow_change in resource_plan.workflow_changes
+            }
+        )
+        processed_aggregated_change_ids.update(
+            {
+                query_change.change_id: window.end
+                for query_change in resource_plan.saved_query_changes
+            }
         )
         backlog_issues = dict(state.backlog_issues)
         table_ids = _updated_table_ids(state.table_ids, changes)
 
         if dry_run:
             # dry-runでは判定根拠をログへ出すが、課題作成とrepository書き込みは行わない。
-            for change in changes:
+            for table_change in changes:
                 logger.info(
                     "td_change_monitor_dry_run_change",
-                    extra={"dry_run_change": _dry_run_change_dict(change)},
+                    extra={"dry_run_change": _dry_run_change_dict(table_change)},
+                )
+            for workflow_change in resource_plan.workflow_changes:
+                logger.info(
+                    "td_change_monitor_dry_run_change",
+                    extra={
+                        "dry_run_change": {
+                            "resource_type": "workflow_project",
+                            "resource_id": workflow_change.project_id,
+                            "resource_name": workflow_change.project_name,
+                            "change_kind": workflow_change.change_kind,
+                            "change_id": workflow_change.change_id,
+                            "should_create_issue": (
+                                workflow_change.should_create_issue
+                            ),
+                        }
+                    },
+                )
+            for query_change in resource_plan.saved_query_changes:
+                logger.info(
+                    "td_change_monitor_dry_run_change",
+                    extra={
+                        "dry_run_change": {
+                            "resource_type": "saved_query",
+                            "resource_id": query_change.query_id,
+                            "resource_name": query_change.query_name,
+                            "change_kind": (
+                                "deleted"
+                                if query_change.diff.deleted
+                                else "modified"
+                            ),
+                            "change_id": query_change.change_id,
+                            "should_create_issue": query_change.should_create_issue,
+                        }
+                    },
                 )
             planned_files = self._build_run_file_changes(
                 run_id=run_id,
                 window=fetch_window,
                 changes=changes,
+                additional_files=resource_plan.file_changes,
                 processed_audit_event_ids=processed_audit_event_ids,
                 processed_aggregated_change_ids=processed_aggregated_change_ids,
                 backlog_issues=backlog_issues,
                 table_ids=table_ids,
+                workflow_project_names=resource_plan.workflow_project_names,
                 last_successful_run_at=now,
                 audit_query_to=window.end,
             )
@@ -248,40 +335,99 @@ class ChangeMonitorService:
                 run_id=run_id,
                 dry_run=True,
                 bootstrap=False,
-                target_count=len(target_groups),
-                diff_count=len(changes),
-                issue_count=sum(1 for change in changes if change.should_create_issue),
+                target_count=len(target_groups) + resource_plan.target_count,
+                diff_count=len(changes) + resource_plan.diff_count,
+                issue_count=(
+                    sum(
+                        1
+                        for table_change in changes
+                        if table_change.should_create_issue
+                    )
+                    + sum(
+                        1
+                        for workflow_change in resource_plan.workflow_changes
+                        if workflow_change.should_create_issue
+                    )
+                    + sum(
+                        1
+                        for query_change in resource_plan.saved_query_changes
+                        if query_change.should_create_issue
+                    )
+                ),
                 planned_file_count=len(planned_files),
+                baseline_count=resource_plan.baseline_count,
             )
 
         issue_count = 0
         # 同一change_idの課題キーがstateにあればBacklog APIを呼ばず重複作成を防ぐ。
-        for change in changes:
-            if not change.should_create_issue:
+        for table_change in changes:
+            if not table_change.should_create_issue:
                 continue
-            if change.change_id in backlog_issues:
+            if table_change.change_id in backlog_issues:
                 continue
             issue_key = await self._backlog.ensure_issue(
-                change_id=change.change_id,
-                summary=render_issue_summary(change),
+                change_id=table_change.change_id,
+                summary=render_issue_summary(table_change),
                 description=render_issue_description(
-                    change,
+                    table_change,
                     window_start=window.start,
                     window_end=window.end,
                     display_timezone=self._settings.display_timezone,
                 ),
             )
-            backlog_issues[change.change_id] = issue_key
+            backlog_issues[table_change.change_id] = issue_key
+            issue_count += 1
+
+        for workflow_change in resource_plan.workflow_changes:
+            if (
+                not workflow_change.should_create_issue
+                or workflow_change.change_id in backlog_issues
+            ):
+                continue
+            issue_key = await self._backlog.ensure_issue(
+                change_id=workflow_change.change_id,
+                summary=render_workflow_issue_summary(workflow_change),
+                description=render_workflow_issue_description(
+                    workflow_change,
+                    run_id=run_id,
+                    window_start=window.start,
+                    window_end=window.end,
+                    display_timezone=self._settings.display_timezone,
+                ),
+            )
+            backlog_issues[workflow_change.change_id] = issue_key
+            issue_count += 1
+
+        for query_change in resource_plan.saved_query_changes:
+            if (
+                not query_change.should_create_issue
+                or query_change.change_id in backlog_issues
+            ):
+                continue
+            issue_key = await self._backlog.ensure_issue(
+                change_id=query_change.change_id,
+                summary=render_saved_query_issue_summary(query_change),
+                description=render_saved_query_issue_description(
+                    query_change,
+                    run_id=run_id,
+                    window_start=window.start,
+                    window_end=window.end,
+                    display_timezone=self._settings.display_timezone,
+                ),
+            )
+            backlog_issues[query_change.change_id] = issue_key
             issue_count += 1
 
         planned_files = self._build_run_file_changes(
             run_id=run_id,
             window=fetch_window,
             changes=changes,
+            additional_files=resource_plan.file_changes,
             processed_audit_event_ids=processed_audit_event_ids,
             processed_aggregated_change_ids=processed_aggregated_change_ids,
             backlog_issues=backlog_issues,
             table_ids=table_ids,
+            workflow_project_names=resource_plan.workflow_project_names,
             last_successful_run_at=now,
             audit_query_to=window.end,
         )
@@ -293,10 +439,11 @@ class ChangeMonitorService:
             run_id=run_id,
             dry_run=False,
             bootstrap=False,
-            target_count=len(target_groups),
-            diff_count=len(changes),
+            target_count=len(target_groups) + resource_plan.target_count,
+            diff_count=len(changes) + resource_plan.diff_count,
             issue_count=issue_count,
             planned_file_count=len(planned_files),
+            baseline_count=resource_plan.baseline_count,
             commit_sha=commit_sha,
         )
 
@@ -317,11 +464,6 @@ class ChangeMonitorService:
             bootstrap対象数と予定ファイル数を含むRunSummary。
         """
         targets = self._target_tables.bootstrap_targets()
-        if not targets:
-            raise ChangeMonitorError(
-                "bootstrap requires explicit tables in config/target_tables.yml"
-            )
-
         changes: list[FileChange] = []
         bootstrap_table_ids: dict[str, str] = {}
         missing_targets: list[str] = []
@@ -348,28 +490,51 @@ class ChangeMonitorService:
                 f"count={len(missing_targets)}; tables={','.join(missing_targets)}"
             )
 
+        now = self._now_provider().astimezone(UTC)
+        plan_at = (
+            state_end_at.astimezone(UTC)
+            if state_end_at is not None and state_end_at.tzinfo is not None
+            else now
+        )
+        resource_plan = await self._plan_additional_resources(
+            at=now,
+            window_start=plan_at,
+            window_end=plan_at,
+            bootstrap=True,
+            workflow_project_names={},
+        )
+        changes = _merge_file_changes(changes, resource_plan.file_changes)
+        if not targets and resource_plan.target_count == 0:
+            raise ChangeMonitorError(
+                "bootstrap requires explicit table, Workflow, or saved query targets"
+            )
+
         if state_end_at is not None:
             if state_end_at.tzinfo is None:
                 raise ChangeMonitorError("--bootstrap-state-end-at must include a timezone")
             state_at = state_end_at.astimezone(UTC)
-            changes.append(
-                FileChange(
-                    path="state/state.json",
-                    content=_json_bytes(
-                        {
-                            "version": 2,
-                            "last_successful_run_at": self._now_provider()
-                            .astimezone(UTC)
-                            .isoformat(),
-                            "audit_query_from": state_at.isoformat(),
-                            "audit_query_to": state_at.isoformat(),
-                            "processed_audit_event_ids": {},
-                            "processed_aggregated_change_ids": {},
-                            "backlog_issues": {},
-                            "table_ids": bootstrap_table_ids,
-                        }
+            changes = _merge_file_changes(
+                changes,
+                (
+                    FileChange(
+                        path="state/state.json",
+                        content=_json_bytes(
+                            {
+                                "version": 3,
+                                "last_successful_run_at": now.isoformat(),
+                                "audit_query_from": state_at.isoformat(),
+                                "audit_query_to": state_at.isoformat(),
+                                "processed_audit_event_ids": {},
+                                "processed_aggregated_change_ids": {},
+                                "backlog_issues": {},
+                                "table_ids": bootstrap_table_ids,
+                                "workflow_project_names": (
+                                    resource_plan.workflow_project_names
+                                ),
+                            }
+                        ),
                     ),
-                )
+                ),
             )
 
         if dry_run:
@@ -384,10 +549,11 @@ class ChangeMonitorService:
             run_id=run_id,
             dry_run=dry_run,
             bootstrap=True,
-            target_count=len(targets),
+            target_count=len(targets) + resource_plan.target_count,
             diff_count=0,
             issue_count=0,
             planned_file_count=len(changes),
+            baseline_count=len(targets) + resource_plan.baseline_count,
             commit_sha=commit_sha,
         )
 
@@ -471,10 +637,12 @@ class ChangeMonitorService:
         run_id: str,
         window: TimeWindow,
         changes: list[DetectedChange],
+        additional_files: tuple[FileChange, ...],
         processed_audit_event_ids: dict[str, datetime],
         processed_aggregated_change_ids: dict[str, datetime],
         backlog_issues: dict[str, str],
         table_ids: dict[str, str],
+        workflow_project_names: dict[str, str],
         last_successful_run_at: datetime,
         audit_query_to: datetime,
     ) -> list[FileChange]:
@@ -484,16 +652,22 @@ class ChangeMonitorService:
             run_id: 今回実行のID。
             window: 今回取得したAudit検索範囲。
             changes: Git証跡を残す検出変更一覧。
+            additional_files: Workflow・schedule・登録クエリの反映予定。
             processed_audit_event_ids: 更新後の処理済みAudit ID対応表。
             processed_aggregated_change_ids: 更新後の処理済み変更ID対応表。
             backlog_issues: 更新後の変更IDとBacklog課題キー対応表。
             table_ids: 更新後のtable完全修飾名とTD ID対応表。
+            workflow_project_names: Project IDと現在project名の対応表。
             last_successful_run_at: 今回の正常終了候補時刻。
             audit_query_to: 今回処理済みとするAudit終端時刻。
         戻り値:
             schema、diff、Audit証跡、stateのFileChange一覧。
         """
-        files: dict[str, bytes | None] = {}
+        files: dict[str, bytes | None] = {
+            change.path: change.content for change in additional_files
+        }
+        if len(files) != len(additional_files):
+            raise ChangeMonitorError("additional resource paths were duplicated")
         git_file_change_count = _git_file_change_count(changes)
         backlog_issue_count = sum(1 for change in changes if change.should_create_issue)
         for change in changes:
@@ -549,7 +723,7 @@ class ChangeMonitorService:
         }
         files["state/state.json"] = _json_bytes(
             {
-                "version": 2,
+                "version": 3,
                 "last_successful_run_at": last_successful_run_at.astimezone(UTC).isoformat(),
                 "audit_query_from": window.start.isoformat(),
                 "audit_query_to": audit_query_to.isoformat(),
@@ -563,6 +737,7 @@ class ChangeMonitorService:
                 },
                 "backlog_issues": retained_backlog_issues,
                 "table_ids": table_ids,
+                "workflow_project_names": workflow_project_names,
             }
         )
         return [FileChange(path=path, content=content) for path, content in sorted(files.items())]
@@ -594,6 +769,47 @@ class ChangeMonitorService:
             ),
             backlog_issues=_state_string_map(payload, "backlog_issues"),
             table_ids=_state_string_map(payload, "table_ids"),
+            workflow_project_names=_state_string_map(
+                payload,
+                "workflow_project_names",
+            ),
+        )
+
+    async def _plan_additional_resources(
+        self,
+        *,
+        at: datetime,
+        window_start: datetime,
+        window_end: datetime,
+        bootstrap: bool,
+        workflow_project_names: Mapping[str, str],
+    ) -> ResourceRunPlan:
+        """任意の追加監視サービスから外部書き込み前の計画を取得する。
+
+        引数:
+            at: 成果物の日付に使用する今回実行UTC時刻。
+            window_start: 差分へ表示する監視期間開始。
+            window_end: 差分へ表示する監視期間終了。
+            bootstrap: 初回snapshot作成かどうか。
+            workflow_project_names: Project IDと前回project名の対応表。
+        戻り値:
+            追加監視が未設定なら空、設定済みなら比較結果を持つ計画。
+        """
+        if self._resource_monitor is None:
+            return ResourceRunPlan(
+                target_count=0,
+                workflow_changes=(),
+                saved_query_changes=(),
+                file_changes=(),
+                workflow_project_names=dict(workflow_project_names),
+                baseline_count=0,
+            )
+        return await self._resource_monitor.plan(
+            at=at,
+            window_start=window_start,
+            window_end=window_end,
+            bootstrap=bootstrap,
+            workflow_project_names=workflow_project_names,
         )
 
     async def _read_snapshot(self, path: str) -> TableSnapshot | None:
@@ -795,6 +1011,33 @@ def _json_bytes(payload: Mapping[str, Any]) -> bytes:
         キー順を固定したJSONバイト列。
     """
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2).encode("utf-8")
+
+
+def _merge_file_changes(
+    base: list[FileChange],
+    additions: tuple[FileChange, ...],
+) -> list[FileChange]:
+    """複数の監視種別が作ったファイル変更をpath単位で安全に統合する。
+
+    引数:
+        base: 先に作成済みのファイル変更。
+        additions: 後から追加するファイル変更。
+    戻り値:
+        pathで並べ替えた一意なファイル変更一覧。
+    """
+    merged = {change.path: change.content for change in base}
+    if len(merged) != len(base):
+        raise ChangeMonitorError("generated file paths were duplicated")
+    for change in additions:
+        if change.path in merged and merged[change.path] != change.content:
+            raise ChangeMonitorError(
+                f"generated file path conflicted: {change.path}"
+            )
+        merged[change.path] = change.content
+    return [
+        FileChange(path=path, content=content)
+        for path, content in sorted(merged.items())
+    ]
 
 
 def _audit_event_dict(event: AuditEvent) -> dict[str, object]:

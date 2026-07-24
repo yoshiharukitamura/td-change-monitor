@@ -1,0 +1,33 @@
+{
+  "id": "1001",
+  "createdAt": "2022-01-01T00:00:00Z",
+  "updatedAt": "2024-01-01T00:00:00Z",
+  "priority": 0,
+  "retryLimit": 0,
+  "cron": null,
+  "delay": 0,
+  "description": null,
+  "draft": false,
+  "timeZone": "UTC",
+  "name": " sample_saved_query",
+  "nextRunAt": null,
+  "engineVersion": "stable",
+  "type": "trino",
+  "lastJob": null,
+  "user": {
+    "id": "2001",
+    "name": "Sample User"
+  },
+  "database": {
+    "id": "3001",
+    "name": "sample_database"
+  },
+  "permissions": {
+    "destroy": true,
+    "update": true,
+    "cloneResultExport": true
+  },
+  "connectorConfig": null,
+  "queryString": "SELECT 1",
+  "isQueryStringTruncated": false
+}

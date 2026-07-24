@@ -1,0 +1,35 @@
+{
+  "test_id": "TEST-WF-004",
+  "request": {
+    "method": "GET",
+    "path": "/api/projects/1519759/archive",
+    "query": {
+      "revision": "abae650d-0ed0-414c-8cce-5ad24528e06c",
+      "direct_download": "false"
+    }
+  },
+  "response": {
+    "status_code": 200,
+    "content_type": "application/gzip",
+    "reported_content_length": 11711
+  },
+  "downloaded_archive": {
+    "file_size": 11688,
+    "md5_base64": "i2w3Mbzsslg5OG6BC4VNwg==",
+    "matches_project_archive_md5": true,
+    "format": "gzip_tar",
+    "entry_count": 32,
+    "unsafe_path_count": 0,
+    "duplicate_path_count": 0,
+    "extensions": {
+      ".dig": 8,
+      ".sql": 23,
+      ".yml": 1
+    },
+    "approved_monitored_extensions": [
+      ".dig",
+      ".sql",
+      ".yml"
+    ]
+  }
+}

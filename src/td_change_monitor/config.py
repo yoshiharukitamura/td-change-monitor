@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Iterable
 from dataclasses import dataclass
+from enum import StrEnum
 from pathlib import Path
 from typing import Annotated, Any
 
@@ -14,6 +16,15 @@ from td_change_monitor.audit import AuditColumnConfig
 _SQL_IDENTIFIER_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
 _TD_RESOURCE_NAME_RE = re.compile(r"^[A-Za-z0-9_]+$")
 _QUALIFIED_TABLE_RE = re.compile(r"^[A-Za-z0-9_]+\.[A-Za-z0-9_]+$")
+
+
+class MonitorStatus(StrEnum):
+    """棚卸し結果に基づくリソースの監視状態を表す。"""
+
+    MONITOR = "monitor"
+    EVIDENCE_ONLY = "evidence_only"
+    EXCLUDE = "exclude"
+    NEEDS_REVIEW = "needs_review"
 
 
 class Settings(BaseSettings):
@@ -34,12 +45,15 @@ class Settings(BaseSettings):
     processed_id_retention_days: int = Field(default=7, ge=1)
     local_log_retention_days: int = Field(default=30, ge=1)
     max_generated_file_size_mb: int = Field(default=5, ge=1)
+    workflow_archive_max_total_size_mb: int = Field(default=100, ge=1)
 
     http_connect_timeout_seconds: float = 10
     http_read_timeout_seconds: float = 60
     http_max_retries: int = 3
 
     td_api_base_url: str
+    td_workflow_api_base_url: str = "https://api-workflow.treasuredata.co.jp"
+    td_console_api_base_url: str = "https://console.treasuredata.co.jp"
     td_api_key: SecretStr
     td_query_engine: str = "presto"
     td_audit_database: str = "td_audit_log"
@@ -209,6 +223,86 @@ class TargetTablesConfig:
         return tuple(_split_qualified_table(item) for item in tables)
 
 
+@dataclass(frozen=True)
+class WorkflowProjectTarget:
+    """Workflowプロジェクトの安定IDと棚卸し対象を保持する。"""
+
+    project_name: str
+    project_id: str | None
+    target_workflows: tuple[str, ...]
+    target_schedule_ids: tuple[str, ...]
+    monitor_status: MonitorStatus
+
+    @property
+    def is_active(self) -> bool:
+        """日次バッチで現在状態を取得する対象かを返す。
+
+        引数:
+            なし。
+        戻り値:
+            monitorまたはevidence_onlyでproject IDが確定していればTrue。
+        """
+        return (
+            self.monitor_status
+            in {MonitorStatus.MONITOR, MonitorStatus.EVIDENCE_ONLY}
+            and self.project_id is not None
+        )
+
+
+@dataclass(frozen=True)
+class SavedQueryTarget:
+    """登録クエリの安定IDと初回照合情報を保持する。"""
+
+    query_id: str | None
+    query_name: str
+    database: str
+    owner: str
+    monitor_status: MonitorStatus
+
+    @property
+    def is_active(self) -> bool:
+        """日次バッチで現在状態を取得する対象かを返す。
+
+        引数:
+            なし。
+        戻り値:
+            monitorまたはevidence_onlyでQuery IDが確定していればTrue。
+        """
+        return (
+            self.monitor_status
+            in {MonitorStatus.MONITOR, MonitorStatus.EVIDENCE_ONLY}
+            and self.query_id is not None
+        )
+
+
+@dataclass(frozen=True)
+class ResourceTargetsConfig:
+    """Workflowプロジェクトと登録クエリの監視対象マスターを保持する。"""
+
+    workflow_projects: tuple[WorkflowProjectTarget, ...]
+    saved_queries: tuple[SavedQueryTarget, ...]
+
+    def active_workflow_projects(self) -> tuple[WorkflowProjectTarget, ...]:
+        """日次処理対象のWorkflowプロジェクトを返す。
+
+        引数:
+            なし。
+        戻り値:
+            project IDが確定したmonitor・evidence_only対象。
+        """
+        return tuple(target for target in self.workflow_projects if target.is_active)
+
+    def active_saved_queries(self) -> tuple[SavedQueryTarget, ...]:
+        """日次処理対象の登録クエリを返す。
+
+        引数:
+            なし。
+        戻り値:
+            Query IDが確定したmonitor・evidence_only対象。
+        """
+        return tuple(target for target in self.saved_queries if target.is_active)
+
+
 def load_target_tables_config(path: str | Path = "config/target_tables.yml") -> TargetTablesConfig:
     """YAMLファイルから監視対象設定を読み込み検証する。
 
@@ -245,6 +339,39 @@ def load_target_tables_config(path: str | Path = "config/target_tables.yml") -> 
         monitored_tables=monitored_tables,
         exclude_table_patterns=exclude_patterns,
         bootstrap_tables=bootstrap_tables,
+    )
+
+
+def load_resource_targets_config(
+    path: str | Path = "config/resource_targets.yml",
+) -> ResourceTargetsConfig:
+    """YAMLからWorkflowと登録クエリの監視対象マスターを読み込む。
+
+    引数:
+        path: Git管理する追加リソース対象マスターのパス。
+    戻り値:
+        ID重複とstatus整合性を検証したResourceTargetsConfig。
+    """
+    config_path = Path(path)
+    if not config_path.exists():
+        return ResourceTargetsConfig(workflow_projects=(), saved_queries=())
+    payload = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
+    if not isinstance(payload, dict):
+        raise ValueError("resource target config must be a mapping")
+
+    workflow_projects = _workflow_project_targets(payload.get("workflow_projects"))
+    saved_queries = _saved_query_targets(payload.get("saved_queries"))
+    _validate_unique_optional_ids(
+        (target.project_id for target in workflow_projects),
+        "Workflow project ID",
+    )
+    _validate_unique_optional_ids(
+        (target.query_id for target in saved_queries),
+        "saved query ID",
+    )
+    return ResourceTargetsConfig(
+        workflow_projects=workflow_projects,
+        saved_queries=saved_queries,
     )
 
 
@@ -363,3 +490,204 @@ def _monitored_tables(value: object) -> tuple[tuple[str, str], ...]:
         validate_td_resource_name(table)
         tables.append((database, table))
     return tuple(tables)
+
+
+def _workflow_project_targets(value: object) -> tuple[WorkflowProjectTarget, ...]:
+    """YAMLのWorkflowプロジェクト対象を型付き設定へ変換する。
+
+    引数:
+        value: `workflow_projects`配列またはNone。
+    戻り値:
+        statusとID整合性を検証したWorkflowProjectTarget列。
+    """
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError("workflow_projects must be a list")
+    targets: list[WorkflowProjectTarget] = []
+    for item in value:
+        if not isinstance(item, dict):
+            raise ValueError("workflow_projects items must be mappings")
+        project_name = _required_config_string(item, "project_name")
+        project_id = _optional_digit_id(item.get("project_id"), "project_id")
+        status = _monitor_status(item.get("monitor_status"))
+        _validate_resolved_status(project_id, status, "Workflow project")
+        workflows = _config_string_tuple(item.get("target_workflows"))
+        schedule_ids = _config_string_tuple(item.get("target_schedule_ids"))
+        if any(not schedule_id.isdigit() for schedule_id in schedule_ids):
+            raise ValueError("target_schedule_ids must contain digits only")
+        targets.append(
+            WorkflowProjectTarget(
+                project_name=project_name,
+                project_id=project_id,
+                target_workflows=tuple(sorted(set(workflows))),
+                target_schedule_ids=tuple(
+                    sorted(set(schedule_ids), key=lambda item: (len(item), item))
+                ),
+                monitor_status=status,
+            )
+        )
+    return tuple(sorted(targets, key=lambda item: item.project_name))
+
+
+def _saved_query_targets(value: object) -> tuple[SavedQueryTarget, ...]:
+    """YAMLの登録クエリ対象を型付き設定へ変換する。
+
+    引数:
+        value: `saved_queries`配列またはNone。
+    戻り値:
+        statusとID整合性を検証したSavedQueryTarget列。
+    """
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError("saved_queries must be a list")
+    targets: list[SavedQueryTarget] = []
+    for item in value:
+        if not isinstance(item, dict):
+            raise ValueError("saved_queries items must be mappings")
+        query_id = _optional_digit_id(item.get("query_id"), "query_id")
+        status = _monitor_status(item.get("monitor_status"))
+        _validate_resolved_status(query_id, status, "saved query")
+        targets.append(
+            SavedQueryTarget(
+                query_id=query_id,
+                query_name=_required_config_string(
+                    item,
+                    "query_name",
+                    preserve_whitespace=True,
+                ),
+                database=_required_config_string(item, "database"),
+                owner=_required_config_string(item, "owner"),
+                monitor_status=status,
+            )
+        )
+    return tuple(
+        sorted(
+            targets,
+            key=lambda item: (
+                item.query_id is None,
+                len(item.query_id or ""),
+                item.query_id or "",
+                item.query_name,
+            ),
+        )
+    )
+
+
+def _required_config_string(
+    payload: dict[str, Any],
+    key: str,
+    *,
+    preserve_whitespace: bool = False,
+) -> str:
+    """設定mappingの必須文字列を取得する。
+
+    引数:
+        payload: YAMLの1対象を表すmapping。
+        key: 取得する項目名。
+        preserve_whitespace: 登録クエリ名の先頭空白を保持するかどうか。
+    戻り値:
+        空でない文字列。
+    """
+    value = payload.get(key)
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{key} must be a non-empty string")
+    return value if preserve_whitespace else value.strip()
+
+
+def _optional_digit_id(value: object, key: str) -> str | None:
+    """任意IDを数字文字列またはNoneへ正規化する。
+
+    引数:
+        value: YAMLのID値。
+        key: エラー表示用の項目名。
+    戻り値:
+        数字だけの文字列。nullまたは空文字ならNone。
+    """
+    if value is None or value == "":
+        return None
+    if isinstance(value, bool) or not isinstance(value, str | int):
+        raise ValueError(f"{key} must be a digit string or null")
+    normalized = str(value)
+    if not normalized.isdigit():
+        raise ValueError(f"{key} must contain digits only")
+    return normalized
+
+
+def _monitor_status(value: object) -> MonitorStatus:
+    """YAMLのmonitor_statusを列挙値へ変換する。
+
+    引数:
+        value: status文字列。
+    戻り値:
+        対応するMonitorStatus。
+    """
+    if not isinstance(value, str):
+        raise ValueError("monitor_status must be a string")
+    try:
+        return MonitorStatus(value)
+    except ValueError as exc:
+        raise ValueError(f"unsupported monitor_status: {value}") from exc
+
+
+def _validate_resolved_status(
+    resource_id: str | None,
+    status: MonitorStatus,
+    resource_name: str,
+) -> None:
+    """ID未確定の対象が監視状態へ入ることを拒否する。
+
+    引数:
+        resource_id: 安定IDまたはNone。
+        status: 対象のmonitor_status。
+        resource_name: エラー表示用のリソース種別。
+    戻り値:
+        なし。
+    """
+    if resource_id is None and status in {
+        MonitorStatus.MONITOR,
+        MonitorStatus.EVIDENCE_ONLY,
+    }:
+        raise ValueError(f"{resource_name} without ID must use needs_review or exclude")
+
+
+def _config_string_tuple(value: object) -> tuple[str, ...]:
+    """設定内の任意文字列配列を空要素なしのタプルへ変換する。
+
+    引数:
+        value: YAML配列またはNone。
+    戻り値:
+        前後空白を除いた文字列タプル。
+    """
+    if value is None:
+        return ()
+    if not isinstance(value, list):
+        raise ValueError("expected string list")
+    result: list[str] = []
+    for item in value:
+        if not isinstance(item, str) or not item.strip():
+            raise ValueError("expected non-empty string list item")
+        result.append(item.strip())
+    return tuple(result)
+
+
+def _validate_unique_optional_ids(
+    values: Iterable[str | None],
+    label: str,
+) -> None:
+    """Noneを除く安定IDに重複がないことを確認する。
+
+    引数:
+        values: ID列を反復できる値。
+        label: エラー表示用のID種別。
+    戻り値:
+        なし。
+    """
+    seen: set[str] = set()
+    for value in values:
+        if value is None:
+            continue
+        if value in seen:
+            raise ValueError(f"duplicate {label}: {value}")
+        seen.add(value)

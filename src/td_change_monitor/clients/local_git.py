@@ -225,11 +225,14 @@ def _is_generated_path(path: str) -> bool:
     引数:
         path: repositoryルート基準の相対パス。
     戻り値:
-        schema、diff、Audit、stateのいずれかならTrue。
+        各resourceのcurrent、diff、Audit、stateのいずれかならTrue。
     """
     normalized = path.replace("\\", "/")
     return (
         normalized.startswith("schemas/current/")
+        or normalized.startswith("workflows/current/")
+        or normalized.startswith("workflow_schedules/current/")
+        or normalized.startswith("saved_queries/current/")
         or normalized.startswith("diffs/")
         or normalized.startswith("audit_events/")
         or normalized == "state/state.json"

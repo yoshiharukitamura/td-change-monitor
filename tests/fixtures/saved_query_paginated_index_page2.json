@@ -1,0 +1,47 @@
+{
+  "queries": [
+    {
+      "id": "1003",
+      "createdAt": "2022-01-03T00:00:00Z",
+      "updatedAt": "2024-01-03T00:00:00Z",
+      "priority": 0,
+      "retryLimit": 0,
+      "cron": null,
+      "delay": 0,
+      "description": null,
+      "draft": true,
+      "timeZone": "UTC",
+      "name": "sample_query_3",
+      "nextRunAt": null,
+      "engineVersion": "stable",
+      "type": "trino",
+      "lastJob": null,
+      "user": {
+        "id": "2003",
+        "name": "Test User"
+      },
+      "database": {
+        "id": "3003",
+        "name": "test_database"
+      },
+      "permissions": {
+        "destroy": true,
+        "update": true,
+        "cloneResultExport": true
+      },
+      "connectorConfig": null
+    }
+  ],
+  "pagination": {
+    "availableAnchors": [
+      "cron",
+      "last_job",
+      "name",
+      "output",
+      "updated_at"
+    ],
+    "hasNextPage": false,
+    "nextPage": null,
+    "queriesFound": 3
+  }
+}

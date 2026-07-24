@@ -1,0 +1,78 @@
+{
+  "queries": [
+    {
+      "id": "1001",
+      "createdAt": "2022-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z",
+      "priority": 0,
+      "retryLimit": 0,
+      "cron": null,
+      "delay": 0,
+      "description": null,
+      "draft": false,
+      "timeZone": "UTC",
+      "name": "sample_query_1",
+      "nextRunAt": null,
+      "engineVersion": "stable",
+      "type": "trino",
+      "lastJob": null,
+      "user": {
+        "id": "2001",
+        "name": "Sample User"
+      },
+      "database": {
+        "id": "3001",
+        "name": "sample_database"
+      },
+      "permissions": {
+        "destroy": true,
+        "update": true,
+        "cloneResultExport": true
+      },
+      "connectorConfig": null
+    },
+    {
+      "id": "1002",
+      "createdAt": "2022-01-02T00:00:00Z",
+      "updatedAt": "2024-01-02T00:00:00Z",
+      "priority": 1,
+      "retryLimit": 2,
+      "cron": "0 0 * * *",
+      "delay": 60,
+      "description": "sample",
+      "draft": false,
+      "timeZone": "Asia/Tokyo",
+      "name": "sample_query_2",
+      "nextRunAt": null,
+      "engineVersion": "stable",
+      "type": "presto",
+      "lastJob": null,
+      "user": {
+        "id": "2002",
+        "name": "Example User"
+      },
+      "database": {
+        "id": "3002",
+        "name": "example_database"
+      },
+      "permissions": {
+        "destroy": false,
+        "update": false,
+        "cloneResultExport": false
+      },
+      "connectorConfig": null
+    }
+  ],
+  "pagination": {
+    "availableAnchors": [
+      "cron",
+      "last_job",
+      "name",
+      "output",
+      "updated_at"
+    ],
+    "hasNextPage": true,
+    "nextPage": "/v4/queries/paginated_index?anchor_column=name&anchor_id=1002&anchor_value=sample_query_2&locale=en&page_size=2&sort_direction=asc",
+    "queriesFound": 3
+  }
+}

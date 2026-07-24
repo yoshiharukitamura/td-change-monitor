@@ -1,0 +1,66 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/queries/{query_id}",
+    "observed_authentication": [
+      "browser_session",
+      "td_api_key_without_cookie"
+    ]
+  },
+  "response_summary": {
+    "http_status": 200,
+    "top_level_type": "object",
+    "item_keys": [
+      "connectorConfig",
+      "createdAt",
+      "cron",
+      "database",
+      "delay",
+      "description",
+      "draft",
+      "engineVersion",
+      "id",
+      "isQueryStringTruncated",
+      "lastJob",
+      "name",
+      "nextRunAt",
+      "permissions",
+      "priority",
+      "queryString",
+      "retryLimit",
+      "timeZone",
+      "type",
+      "updatedAt",
+      "user"
+    ],
+    "database_keys": [
+      "id",
+      "name"
+    ],
+    "permissions_keys": [
+      "cloneResultExport",
+      "destroy",
+      "update"
+    ],
+    "user_keys": [
+      "id",
+      "name"
+    ],
+    "stable_id_key": "id",
+    "request_id_matches_response_id": true,
+    "non_null_connector_config_confirmed": true
+  },
+  "redaction": {
+    "raw_response_stored": false,
+    "excluded_content": [
+      "query ID",
+      "query text",
+      "query name",
+      "database identifiers",
+      "user identifiers",
+      "user names",
+      "timestamps"
+    ]
+  },
+  "next_verification": "Identify the list endpoint that returns stable query IDs."
+}

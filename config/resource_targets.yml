@@ -1,0 +1,402 @@
+workflow_projects:
+- project_name: _functions
+  project_id: '1346231'
+  target_workflows:
+  - ___README
+  - __failure_alert
+  - __failure_alert_test
+  - _p100__data_catalog
+  - _p100_sub__data_catalog
+  - _p999__generate_readme
+  target_schedule_ids: []
+  monitor_status: monitor
+- project_name: _integration_datamart
+  project_id: '1346232'
+  target_workflows:
+  - ___README
+  - _cron_0600__daily_update
+  - _cron_0700__monday_update
+  - _cron_1010__monday_update
+  - _p100__datamart
+  - _p101__customer_rf_ss
+  - _p102__therapist_flag_ss
+  - _p103__app_log_update
+  - _p998__scan_references
+  - _p999__generate_readme
+  target_schedule_ids:
+  - '261426'
+  - '307712'
+  - '381148'
+  monitor_status: monitor
+- project_name: _l0l1_bigquery
+  project_id: '1347312'
+  target_workflows:
+  - _cron_0500__daily_update
+  - _cron_0920__monday_update
+  - _p100__ga4
+  - _z_bulk__p100_ga4
+  target_schedule_ids:
+  - '326173'
+  - '377897'
+  monitor_status: monitor
+- project_name: _l0l1_mysql
+  project_id: '1418513'
+  target_workflows:
+  - __README
+  - _cron_0200__daily_update
+  - _p100__pos
+  - _p110__core
+  - _p120__hp
+  - _p130__reservation
+  - _p140__point
+  - _p200__pos
+  - _p210__core
+  - _p220__hp
+  - _p230__reservation
+  - _p240__point
+  - _p990__core_ss
+  - _p991__core_ss_2
+  - _p992__core_ss_3
+  - _p999__generate_readme
+  - _tmp_p120__hp
+  - _z_bulk_p100__pos
+  - _z_bulk_p110__core
+  - _z_bulk_p120__hp
+  - _z_bulk_p130__reservation
+  - _z_bulk_p140__point
+  target_schedule_ids:
+  - '295627'
+  - '295629'
+  - '306785'
+  - '312787'
+  monitor_status: monitor
+- project_name: _l2_audience_studio_mk
+  project_id: '1519715'
+  target_workflows:
+  - _cron_0800__daily_update
+  - _p100_data_preparation
+  - _p200_parent_segment_update
+  - _p999__generate_readme
+  target_schedule_ids:
+  - '348942'
+  monitor_status: monitor
+- project_name: _l2_audience_studio_tp
+  project_id: '1524333'
+  target_workflows:
+  - ___README
+  - __cron_hhmm__daily_update
+  - _p100__data_preparation
+  - _p200__parent_segment_update
+  - _p999__generate_readme
+  target_schedule_ids:
+  - '369762'
+  monitor_status: monitor
+- project_name: _l2_demand_forecast_gcp
+  project_id: '1346234'
+  target_workflows:
+  - ___README
+  - _p100__preprocess
+  - _p101__past_lost_opps
+  - _p200__post_process
+  - _p999__generate_readme
+  target_schedule_ids:
+  - '307711'
+  - '309836'
+  monitor_status: monitor
+- project_name: _l2_mktg_datamart
+  project_id: '1390156'
+  target_workflows:
+  - __README
+  - _cron_0730_daily
+  - _p100__mktg_datamart
+  - _p300__customer_flow_rw
+  - _p400__mktg_kpi
+  - _p998__scan_references
+  - _p999__generate_readme
+  target_schedule_ids:
+  - '321946'
+  - '377898'
+  monitor_status: monitor
+- project_name: cdp_audience_1016484
+  project_id: '1519759'
+  target_workflows:
+  - audience
+  - journey_225806
+  - metering_audience
+  - predictive_scoring
+  - sisense_data_ingestion
+  target_schedule_ids: []
+  monitor_status: monitor
+- project_name: cdp_audience_1018834
+  project_id: '1524558'
+  target_workflows:
+  - audience
+  - metering_audience
+  - predictive_scoring
+  - sisense_data_ingestion
+  target_schedule_ids: []
+  monitor_status: monitor
+- project_name: cdp_segment_1397918
+  project_id: '1546685'
+  target_workflows:
+  - syndication_461747
+  target_schedule_ids: []
+  monitor_status: monitor
+- project_name: cdp_segment_1709239
+  project_id: '1562382'
+  target_workflows:
+  - syndication_564779
+  target_schedule_ids:
+  - '372412'
+  monitor_status: monitor
+- project_name: google_sheets_ingest_preprocess
+  project_id: '1151969'
+  target_workflows:
+  - google_sheets_ingest_preprocess
+  target_schedule_ids:
+  - '169635'
+  monitor_status: monitor
+- project_name: l2_customer_suggest
+  project_id: '1370403'
+  target_workflows:
+  - cron_0900_fri_update
+  - cron_0900_mon_thu_update
+  - l2_customer_suggest
+  - z_p998__scan_references
+  target_schedule_ids:
+  - '303669'
+  - '303670'
+  monitor_status: monitor
+- project_name: l2_tp_suggest
+  project_id: '1302002'
+  target_workflows:
+  - ___README
+  target_schedule_ids: []
+  monitor_status: monitor
+- project_name: l2_tp_suggest_2
+  project_id: '1353993'
+  target_workflows:
+  - cron_0630_daily_update
+  - l2_tp_suggest_prep
+  - l2_tp_suggest_tel
+  - l2_tp_suggest_v1
+  - l2_tp_suggest_v2
+  - l2_tp_suggest_verification
+  - z_p998__scan_references
+  target_schedule_ids:
+  - '269498'
+  monitor_status: monitor
+- project_name: l2_verification
+  project_id: '1330473'
+  target_workflows:
+  - ___README
+  - _cron_0900__daily_update
+  - _p100__supply
+  - _p200__demand_shop
+  - _p300__demand_customer
+  - z_p998__scan_references
+  target_schedule_ids:
+  - '307748'
+  monitor_status: monitor
+- project_name: ml_demand_forecast
+  project_id: '331980'
+  target_workflows:
+  - df_cron_fri_1515_send_quest_data
+  - df_cron_thu_0000_timeslot_entry_elected
+  - df_cron_wed_1200_send_time_slot
+  target_schedule_ids:
+  - '80943'
+  - '114988'
+  - '285573'
+  monitor_status: monitor
+- project_name: redshift_ingest_preprocess
+  project_id: '256493'
+  target_workflows:
+  - rs_l0_proc_ingest_sys
+  - rs_l0_proc_ingest_viewtables
+  target_schedule_ids:
+  - '49256'
+  - '282377'
+  monitor_status: monitor
+- project_name: weblog_preprocess
+  project_id: '281730'
+  target_workflows:
+  - weblog_cron_daily_process
+  - weblog_proc_1000_mapping_cookie
+  - weblog_proc_2000_sessionize_pv
+  - weblog_proc_2000_sessionize_pv_child_
+  - weblog_proc_3000_map_tduid_others
+  target_schedule_ids:
+  - '20504'
+  monitor_status: monitor
+saved_queries:
+- query_id: '2843291'
+  query_name: 4点比較_UI刷新
+  database: l2_verification
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2738607'
+  query_name: CPSクーポン_対象リスト作成
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2626484'
+  query_name: F2転換率_TP基準
+  database: _l1_mysql_core
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2782005'
+  query_name: R/wモニタリング_APP指標_セグメント変更
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2785333'
+  query_name: R/wモニタリング_F2転換_w12f版
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2779077'
+  query_name: R/wモニタリング_OP他指標_セグメント変更
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2671998'
+  query_name: R/wローリング_R/w1-4の前R/w
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2672261'
+  query_name: R/wローリング_前R/wからの変化
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2672021'
+  query_name: R/wローリング_前週からのR/w変化傾向
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2609117'
+  query_name: TP属性(新規/既存/復帰)_週次SS
+  database: l2_verification
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2657563'
+  query_name: WEB_施策レポート_1106まで
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2727904'
+  query_name: 検証_TPマッチング_来店店舗数_来店差分
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2726778'
+  query_name: 検証_TPマッチング_来店店舗数_顧客分布
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2743766'
+  query_name: 検証_ビンゴマス達成状況_デジ戦ver
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2740059'
+  query_name: 検証_ビンゴ参加者の施術会計数
+  database: _l1_mysql_pos
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2745318'
+  query_name: 検証_ビンゴ対象顧客の施術数
+  database: _l0_mysql_pos
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2743677'
+  query_name: 検証_ビンゴ施策_befo/afte
+  database: _l1_mysql_pos
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2701733'
+  query_name: 検証_ビンゴ施策_シミュレーション
+  database: _l0_mysql_pos
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2707099'
+  query_name: 検証_ビンゴ施策_シミュレーション_週次進捗ver
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2752789'
+  query_name: 検証_ビンゴ達成者数_デジ戦TBL
+  database: _l0_mysql_hp
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2858134'
+  query_name: 検証_個店予測精度
+  database: _l2_demand_forecast_gcp
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2859311'
+  query_name: 検証_個店需要予測_s1_v10
+  database: _l2_demand_forecast_gcp
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2859554'
+  query_name: 検証_個店需要予測_s1_v11
+  database: _l2_demand_forecast_gcp
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2859558'
+  query_name: ' 検証_個店需要予測_s1_v12'
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2859348'
+  query_name: 検証_個店需要予測_s2
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2859364'
+  query_name: 検証_個店需要予測_s3
+  database: l2_integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2865823'
+  query_name: 検証_個店需要予測_枠のばらつき
+  database: l2_integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2801107'
+  query_name: 検証_営業割合 x 稼働率_APP CVR
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2797307'
+  query_name: 検証_営業割合x稼働率_店舗分布
+  database: sandbox_hiveiq
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2797105'
+  query_name: 検証_営業割合x稼働率_店舗分布_分布
+  database: sandbox_hiveiq
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2779270'
+  query_name: 集計_TPカード経由指標
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2729951'
+  query_name: 顧客ID抽出_TPマッチング_店舗TP_ver1.0
+  database: _l0_mysql_core
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2726730'
+  query_name: 顧客ID抽出_TPマッチング_店舗顧客_ver1.0
+  database: _integration_datamart
+  owner: Tatsuki Oya
+  monitor_status: monitor
+- query_id: '2368124'
+  query_name: 受発注進捗
+  database: l2_integration_datamart
+  owner: Kyohei Tomita
+  monitor_status: monitor

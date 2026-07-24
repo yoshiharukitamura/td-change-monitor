@@ -1,0 +1,41 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v3/schedule/list"
+  },
+  "response_summary": {
+    "http_status": "not_provided",
+    "top_level_keys": [
+      "schedules"
+    ],
+    "observed_item_count": 911,
+    "item_keys": [
+      "created_at",
+      "cron",
+      "database",
+      "delay",
+      "name",
+      "next_time",
+      "priority",
+      "query",
+      "result",
+      "retry_limit",
+      "timezone",
+      "type",
+      "user_name"
+    ],
+    "stable_id_candidate_keys": [],
+    "source_capture_parseable_as_json": false
+  },
+  "redaction": {
+    "raw_response_stored": false,
+    "excluded_content": [
+      "query text",
+      "query names",
+      "result settings",
+      "database names",
+      "user names"
+    ]
+  },
+  "conclusion": "This endpoint does not expose a stable query ID in the observed response."
+}

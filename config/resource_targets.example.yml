@@ -1,0 +1,15 @@
+workflow_projects:
+  - project_name: sample_project
+    project_id: "12345"
+    target_workflows:
+      - daily_workflow
+    target_schedule_ids:
+      - "67890"
+    monitor_status: monitor
+
+saved_queries:
+  - query_id: "1044596"
+    query_name: sample_query
+    database: sample_database
+    owner: Sample User
+    monitor_status: monitor

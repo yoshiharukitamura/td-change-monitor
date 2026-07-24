@@ -6,13 +6,27 @@ import json
 import logging
 import sys
 from datetime import UTC, datetime
+from pathlib import Path
 
 from td_change_monitor.clients.backlog import BacklogClient
 from td_change_monitor.clients.local_git import LocalGitRepositoryClient
 from td_change_monitor.clients.treasure_data import TreasureDataClient
-from td_change_monitor.config import Settings, load_target_tables_config
+from td_change_monitor.clients.treasure_data_saved_query import (
+    TreasureDataSavedQueryClient,
+)
+from td_change_monitor.clients.treasure_data_workflow import TreasureDataWorkflowClient
+from td_change_monitor.config import (
+    Settings,
+    load_resource_targets_config,
+    load_target_tables_config,
+)
 from td_change_monitor.errors import ChangeMonitorError
+from td_change_monitor.resource_monitor import AdditionalResourceMonitor
 from td_change_monitor.service import ChangeMonitorService
+from td_change_monitor.target_import import (
+    build_resource_targets_from_workbook,
+    write_resource_targets,
+)
 
 
 async def run_application(
@@ -33,15 +47,26 @@ async def run_application(
     settings = Settings()  # type: ignore[call-arg]
     _configure_logging(settings.log_level)
     target_tables = load_target_tables_config()
+    resource_targets = load_resource_targets_config()
     treasure_data = TreasureDataClient(settings)
+    workflow = TreasureDataWorkflowClient(settings)
+    saved_query = TreasureDataSavedQueryClient(settings)
     repository = LocalGitRepositoryClient(settings)
     backlog = BacklogClient(settings)
+    resource_monitor = AdditionalResourceMonitor(
+        settings=settings,
+        targets=resource_targets,
+        workflow=workflow,
+        saved_query=saved_query,
+        repository=repository,
+    )
     service = ChangeMonitorService(
         settings=settings,
         target_tables=target_tables,
         treasure_data=treasure_data,
         repository=repository,
         backlog=backlog,
+        resource_monitor=resource_monitor,
     )
     try:
         return await service.run(
@@ -51,7 +76,39 @@ async def run_application(
         )
     finally:
         await treasure_data.aclose()
+        await workflow.aclose()
+        await saved_query.aclose()
         await backlog.aclose()
+
+
+async def import_resource_targets(
+    *,
+    workbook_path: Path,
+    output_path: Path = Path("config/resource_targets.yml"),
+) -> dict[str, int]:
+    """棚卸しExcelを実APIの安定IDと照合して対象マスターを生成する。
+
+    引数:
+        workbook_path: 3つの対象シートを持つ棚卸しExcel。
+        output_path: 生成するGit管理用YAML。
+    戻り値:
+        Workflow・登録クエリの照合件数要約。
+    """
+    settings = Settings()  # type: ignore[call-arg]
+    _configure_logging(settings.log_level)
+    workflow = TreasureDataWorkflowClient(settings)
+    saved_query = TreasureDataSavedQueryClient(settings)
+    try:
+        config, summary = await build_resource_targets_from_workbook(
+            workbook_path,
+            workflow_client=workflow,
+            saved_query_client=saved_query,
+        )
+        write_resource_targets(output_path, config)
+        return summary.as_dict()
+    finally:
+        await workflow.aclose()
+        await saved_query.aclose()
 
 
 async def _run(
@@ -93,6 +150,35 @@ async def _run(
     return 0
 
 
+async def _run_target_import(
+    *,
+    workbook_path: Path,
+    output_path: Path,
+) -> int:
+    """対象マスター生成を実行し、例外をCLI終了コードへ変換する。
+
+    引数:
+        workbook_path: 入力する棚卸しExcel。
+        output_path: 生成する対象マスターYAML。
+    戻り値:
+        成功なら0、失敗なら1。
+    """
+    _configure_logging("INFO")
+    try:
+        summary = await import_resource_targets(
+            workbook_path=workbook_path,
+            output_path=output_path,
+        )
+    except Exception as exc:
+        logging.getLogger(__name__).error(
+            "td_change_monitor_target_import_failed",
+            extra={"error": str(exc), "exc_type": type(exc).__name__},
+        )
+        return 1
+    print(json.dumps(summary, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
 def cli() -> None:
     """CLI引数を解析して非同期バッチを起動する。
 
@@ -105,11 +191,33 @@ def cli() -> None:
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--bootstrap", action="store_true")
     parser.add_argument(
+        "--import-targets-from",
+        type=Path,
+        help="inventory xlsx used to generate config/resource_targets.yml",
+    )
+    parser.add_argument(
+        "--resource-targets-output",
+        type=Path,
+        default=Path("config/resource_targets.yml"),
+        help="output YAML path for --import-targets-from",
+    )
+    parser.add_argument(
         "--bootstrap-state-end-at",
         type=_parse_datetime,
         help="ISO timestamp to write state/state.json during bootstrap",
     )
     args = parser.parse_args()
+    if args.import_targets_from is not None:
+        if args.dry_run or args.bootstrap or args.bootstrap_state_end_at is not None:
+            parser.error("--import-targets-from cannot be combined with run options")
+        raise SystemExit(
+            asyncio.run(
+                _run_target_import(
+                    workbook_path=args.import_targets_from,
+                    output_path=args.resource_targets_output,
+                )
+            )
+        )
     raise SystemExit(
         asyncio.run(
             _run(
@@ -173,7 +281,13 @@ class _JsonFormatter(logging.Formatter):
             "message": record.getMessage(),
             "logger": record.name,
         }
-        for key in ("summary", "dry_run_change", "error", "exc_type"):
+        for key in (
+            "summary",
+            "dry_run_change",
+            "workflow_archive_inventory",
+            "error",
+            "exc_type",
+        ):
             value = getattr(record, key, None)
             if value is not None:
                 payload[key] = value

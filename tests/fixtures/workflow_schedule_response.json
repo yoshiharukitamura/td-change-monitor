@@ -1,0 +1,14 @@
+{
+  "id": "261426",
+  "project": {
+    "id": "1346232",
+    "name": "_integration_datamart"
+  },
+  "workflow": {
+    "id": "15949212",
+    "name": "_cron_0700__monday_update"
+  },
+  "nextRunTime": "2026-07-26T22:00:00Z",
+  "nextScheduleTime": "2026-07-27T07:00:00+09:00",
+  "disabledAt": null
+}

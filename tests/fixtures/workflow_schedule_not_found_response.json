@@ -1,0 +1,15 @@
+{
+  "test_id": "TEST-WF-005",
+  "request": {
+    "method": "GET",
+    "path": "/api/schedules/14768836"
+  },
+  "response": {
+    "status_code": 404,
+    "content_type": "application/json",
+    "body": {
+      "message": "Resource does not exist: schedule id=14768836",
+      "status": 404
+    }
+  }
+}

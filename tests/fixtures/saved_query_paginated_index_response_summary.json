@@ -1,0 +1,89 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v4/queries/paginated_index",
+    "query_parameter_names": [
+      "minimalConnectorConfig"
+    ],
+    "observed_authentication": [
+      "browser_session",
+      "td_api_key_without_cookie"
+    ]
+  },
+  "response_summary": {
+    "http_status": 200,
+    "top_level_keys": [
+      "pagination",
+      "queries"
+    ],
+    "observed_queries_found": 911,
+    "query_item_keys": [
+      "connectorConfig",
+      "createdAt",
+      "cron",
+      "database",
+      "delay",
+      "description",
+      "draft",
+      "engineVersion",
+      "id",
+      "lastJob",
+      "name",
+      "nextRunAt",
+      "permissions",
+      "priority",
+      "retryLimit",
+      "timeZone",
+      "type",
+      "updatedAt",
+      "user"
+    ],
+    "pagination_keys": [
+      "availableAnchors",
+      "hasNextPage",
+      "nextPage",
+      "queriesFound"
+    ],
+    "next_page_query_parameter_names": [
+      "anchor_column",
+      "anchor_id",
+      "anchor_value",
+      "locale",
+      "page_size",
+      "sort_direction"
+    ],
+    "query_string_included": false,
+    "stable_id_key": "id",
+    "verified_page_count": 2,
+    "observed_items_per_verified_page": [
+      25,
+      25
+    ],
+    "query_id_overlap_between_verified_pages": 0,
+    "first_query_ids_differ": true,
+    "observed_non_null_connector_config_count": 6,
+    "connector_config_keys": [
+      "connector",
+      "id"
+    ],
+    "connector_keys": [
+      "id",
+      "name",
+      "type"
+    ],
+    "observed_non_null_cron_count": 2
+  },
+  "redaction": {
+    "raw_response_stored": false,
+    "excluded_content": [
+      "query IDs",
+      "query names",
+      "database identifiers",
+      "database names",
+      "user identifiers",
+      "user names",
+      "nextPage values",
+      "timestamps"
+    ]
+  }
+}

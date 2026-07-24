@@ -37,3 +37,37 @@ def build_change_id(
         snapshot_hash(after),
     ]
     return hashlib.sha256("\n".join(parts).encode("utf-8")).hexdigest()
+
+
+def build_resource_change_id(
+    *,
+    resource_type: str,
+    stable_resource_id: str,
+    event_ids: Iterable[str],
+    before_hash: str,
+    after_hash: str,
+    change_kind: str,
+) -> str:
+    """table以外のリソースに共通する集約変更IDを作る。
+
+    引数:
+        resource_type: workflowやsaved_queryなどのリソース種別。
+        stable_resource_id: project IDやQuery IDなどの安定ID。
+        event_ids: 集約した検知イベントID。
+        before_hash: 前回の正規化済み状態hash。
+        after_hash: 現在の正規化済み状態hash。
+        change_kind: 最終的に判定した変更種別。
+    戻り値:
+        入力順に依存しないSHA-256文字列。
+    """
+    parts = [
+        resource_type.strip(),
+        stable_resource_id.strip(),
+        ",".join(sorted(set(event_ids))),
+        before_hash,
+        after_hash,
+        change_kind.strip(),
+    ]
+    if not all(parts[index] for index in (0, 1, 3, 4, 5)):
+        raise ValueError("resource change ID inputs must not be blank")
+    return hashlib.sha256("\n".join(parts).encode("utf-8")).hexdigest()

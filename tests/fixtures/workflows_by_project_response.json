@@ -1,0 +1,37 @@
+{
+  "workflows": [
+    {
+      "id": "15997382",
+      "name": "predictive_scoring",
+      "project": {
+        "id": "1519759",
+        "name": "cdp_audience_1016484"
+      },
+      "revision": "abae650d-0ed0-414c-8cce-5ad24528e06c",
+      "timezone": "UTC",
+      "config": {}
+    },
+    {
+      "id": "15997383",
+      "name": "journey_225806",
+      "project": {
+        "id": "1519759",
+        "name": "cdp_audience_1016484"
+      },
+      "revision": "abae650d-0ed0-414c-8cce-5ad24528e06c",
+      "timezone": "Asia/Tokyo",
+      "config": {}
+    },
+    {
+      "id": "15997384",
+      "name": "sisense_data_ingestion",
+      "project": {
+        "id": "1519759",
+        "name": "cdp_audience_1016484"
+      },
+      "revision": "abae650d-0ed0-414c-8cce-5ad24528e06c",
+      "timezone": "Asia/Tokyo",
+      "config": {}
+    }
+  ]
+}

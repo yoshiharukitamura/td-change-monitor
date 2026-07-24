@@ -1,0 +1,15 @@
+{
+  "test_id": "TEST-WF-001",
+  "request": {
+    "method": "GET",
+    "base_url": "https://api-workflow.treasuredata.co.jp",
+    "path": "/api/projects",
+    "query": {
+      "name": "cdp_audience_1016484"
+    }
+  },
+  "response": {
+    "status_code": 404,
+    "body": "<html><head><title>Error</title></head><body>Not Found</body></html>"
+  }
+}
